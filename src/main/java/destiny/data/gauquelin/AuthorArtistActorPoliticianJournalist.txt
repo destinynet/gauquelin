@@ -1,0 +1,1539 @@
+0001    PO       ABEL Jean-Baptiste              12.01.1863,14:00    Toulon, FR                    83   
+0002    PO       ABELIN Pierre                   16.05.1909,11:45    Poitiers, FR                  86   
+0003    PO       ACHILLE-FOULD Aymar             17.07.1925,10:45    Tarbes, FR                    65   
+0004    PO       AIGRAIN Pierre                  28.09.1924,14:00    Poitiers, FR                  86   
+0005    PO       AJAM Maurice Pierre             11.06.1861,07:00    Ruillé sur Loir, FR           72   
+0006    AC       AJORET Danielle (THEBAUD)       10.05.1938,16:00    Le Raincy, FR                 93   
+0007    MUS      ALAIN Marie-Claire              10.08.1926,20:30    St Germain en Laye, FR        78   
+0008    JO       ALBERT Charles (DAUDET)         23.11.1869,03:00    Carpentras, FR                84   
+0009    PO       ALBERT François                 04.04.1877,03:00    Bordeaux, FR                  33   
+0010    PO       ALBERT-FAVRE Ernest             12.07.1868,10:00    St Georges du B, FR           86   
+0011    PO       ALBERTIN Fabien                 30.11.1879,02:30    Martigues, FR                 13   
+0012    JO       ALEXANDRE Jacques,Claude        27.10.1929,21:30    Nancy, FR                     54   
+0013    JO       ALLARD Maurice                  01.05.1860,12:00    Amboise, FR                   37   
+0014    JO       ALLEGRE Jean                    07.04.1896,15:00    Colmars les Al, FR            04   
+0015    MUS      AMELLER André                   02.01.1912,04:00    Arnavilla, FR                 54   
+0016    PO       ANDRAUD Henry                   09.04.1895,17:00    Clermont-Ferrand, FR          63   
+0017    MUS      ANDRE Maurice                   21.05.1933,17:00    Alès, FR                      30   
+0018    JO     * ANDRÉ Pierre Jean d'            24.01.1914,08:00    Soigy sous Montmor, FR        95   
+0019    JO       ANDRIEU René                    24.03.1920,11:00    Beauregard, FR                46   
+0020    JO       ANJUBAULT Jacques               19.07.1918,19:30    Alençon, FR                   61   
+0021    MUS      ANNOUX Jean-Claude (BOURNIZ)    15.05.1939,00:30    Beauvals, FR                  60   
+0022    AC       ANOUK Aimée (DREYFUS Nic.)      27.04.1932,12:00    Paris 16 ième, FR             75   
+0023    PO       ANSQUER Vincent                 11.01.1925,23:00    Traize-Septiers, FR           85   
+0024    PO       ANTERIOU Louis                  15.06.1887,01:00    La Voulte/Rhône, FR           7    
+0025    PO       ANTHONIOZ Marcel                26.04.1911,17:00    Divonne les Baina, FR         1    
+0026    PO       APPELL Pierre                   03.07.1887,16:00    St Germain en Laye, FR        78   
+0027    JO       ARCHAMBAULT François            10.09.1938,08:40    Tours, FR                     37   
+0028    PO       ARCHIMBAUD Léon                 23.09.1880,08:00    Poyols en Diois, FR           26   
+0029    PO       ARNAL Frank                     30.10.1898,11:00    Vialas, FR                    48   
+0030    AC       ARNAUD Michèle (CARÉ)           18.03.1919,11:00    Toulon, FR                    83   
+0031    AUT      ARON Robert                     25.05.1898,03:30    Le Vésinet, FR                78   
+0032    PAI      ARRIEU Lucien-Frederic          27.04.1913,04:00    Marseille, FR                 13   
+0033    JO       ARRIVETS Charles                28.10.1920,22:00    Agen, FR                      47   
+0034    PAI      ASSE Geneviève (BODIN)          24.01.1923,20:10    Vannes, FR                    56   
+0035    PO       ASTIER DE LA VIGERIE Emm.       06.01.1900,19:00    Paris 8 ème, FR               75   
+0036    JO       ATGER Philipps                  29.08.1928,19:00    Anduze, FR                    30   
+0037    AUT      AUBAREDE Gabriel d'             28.09.1898,11:00    Marseille, FR                 13   
+0038    PO       AUBAUD Raoul                    03.11.1881,11:30    Le Havre, FR                  76   
+0039    JO       AUBERTOT Jean                   02.10.1932,09:00    Royat, FR                     63   
+0040    AUT      AUBRY Cécile (BENARD Anne)      03.08.1928,22:30    Paris 16 ième, FR             75   
+0041    AC       AUDRAN Stéphane (DACHEVILLE)    08.11.1932,02:15    Versailles, FR                78   
+0042    AUT      AUDRY Colette                   06.07.1906,03:00    Orange, FR                    84   
+0043    AC       AUFRAY Hugues (AUFFRAY)         18.08.1929,08:15    Neuilly sur Seine, FR         92   
+0044    PO       AUGAGNEUR Victor                16.05.1855,23:00    Lyon ler, FR                  69   
+0045    JO       AUMONIER André                  25.02.1916,07:30    St Malo, FR                   35   
+0046    JO       AUPHAN Louis-François           28.08.1902,05:00    Alès, FR                      30   
+0047    PO       AURIOL Vincent                  27.08.1884,18:00    Revel, FR                     31   
+0048    AUT      AURY Dominique(DESCLOS A.)      23.09.1907,14:00    Rochefort sur Mer, FR         17   
+0049    AC       AVRON Philippe                  18.09.1928,05:30    Le Croisic, FR                44   
+0050    AUT      AYCARD Albert                   02.01.1922,08:00    Marseille, FR                 13   
+0051    AC       AZNAVOUR Charles (AZNAOURIAN)   22.05.1924,00:15    Paris 6ieme, FR               75   
+0052    JO       BALLET André Etienne            23.05.1903,08:15    Neufchateau, FR               88   
+0053    PO       BARAGNON Numa                   24.11.1835,01:00    Nîmes, FR                     30   
+0054    AC       BARBARA (SERF Monique)          09.06.1930,16:00    Paris 17 ièma, FR             75   
+0055    PO       BARBÉ François Paul             04.02.1836,16:00    Nancy, FR                     54   
+0056    JO       BARBE Huguea-Vincent            27.12.1929,09:30    Bidarray, FR                  64   
+0057    PO       BARBEY Edouard                  02.09.1831,05:00    Béziers, FR                   34   
+0058    PO       BARDON André                    10.01.1901,22:00    Arnac la Poste, FR            87   
+0059    PO       BARDOUX Benjamin                15.01.1829,19:00    Bourges, FR                   18   
+0060    PO       BAREL Virgile                   17.12.1889,10:00    Drap, FR                      6    
+0061    PO       BARETY Léon                     18.10.1883,08:00    Nice, FR                      6    
+0062    JO       BARIAL Jean                     07.05.1931,14:00    Donzenac, FR                  19   
+0063    AC       BARRAY Gerard (BARRAILLE)       02.11.1931,16:15    Toulouse, FR                  31   
+0064    PO       BARRE Raymond                   12.04.1924,06:30    St Denis de la Réun, FR       74   
+0065    PO     * BARRES Maurice                  17.08.1862,15:00    Charmes, FR                   88   
+0066    JO       BARRES Philippe                 08.07.1896,11:30    Neuilly sur Seine, FR         92   
+0067    PO       BARROT Jacques                  03.02.1937,03:30    Yssingeaux, FR                43   
+0068    JO       BARSALOU Joseph                 16.11.1903,10:00    Carcasonne, FR                11   
+0069    AUT      BARTHES Roland                  12.11.1915,09:00    Cherbourg, FR                 50   
+0070    PO       BARTHOU Louis                   25.08.1862,01:00    Oloron Ste Marie, FR          64   
+0071    JO       BASSI Michel                    09.07.1935,09:30    Nogent sur Marne, FR          94   
+0072    PO       BAUDIN Pierre                   21.08.1863,21:30    Nantua, FR                    1    
+0073    PO       BAYLOT Jean                     27.03.1897,04:00    Pau, FR                       64   
+0074    PO       BAYROU Maurice                  02.03.1905,08:00    Lanta, FR                     31   
+0075    PO       BAZILE Gaston                   16.02.1883,01:00    Vauvert, FR                   30   
+0076    JO       BEAUCHAMPS Annik (RAUGLAUDRE)   17.06.1940,16:50    Cauderan-Bordeaux, FR         33   
+0077    PAI      BEAUDIN André                   03.02.1895,12:00    Mennecy, FR                   91   
+0078    AUT      BEAUJOUAN Guy                   23.06.1925,08:00    Orléans, FR                   45   
+0079    AUT      BEAUMONT Germaine (BATTENDIER)  31.10.1890,15:00    Le Petit-Couronne, FR         76   
+0080    PO       BECHARD Paul                    25.12.1899,01:00    Alès, FR                      30   
+0081    JO       BÉCUWE Maurice                  31.01.1910,02:15    Dailleul, FR                  59   
+0082    AC       BEDOS Guy                       15.06.1934,22:00    Alger ,Algérîe                ALG  
+0083    PO       BEDOUCE Albert                  08.01.1869,10:00    Toulouse, FR                  31   
+0084    AUT      BEER Jean de (DEBEER)           21.09.1911,12:30    Roubaix, FR                   59   
+0085    PO       BÉGOUIN Lucien                  17.04.1908,05:00    Angoulème, FR                 16   
+0086    DAN      BEJART Maurice (BERGER)         01.01.1927,18:00    Marseille, FR                 13   
+0087    AC       BELL Marie (BELLON)             23.12.1900,20:00    Bordeaux, FR                  33   
+0088    JO       BELLANGER Claude                02.04.1910,15:00    Le Mans, FR                   72   
+0089    PO       BELLANGER Robert                03.01.1884,07:30    St Denis, FR                  93   
+0090    JO       BELLEMARE Pierre                21.10.1929,10:15    Boulogne-Billt, FR            92   
+0091    AC       BELLON Georges                  14.05.1925,13:00    Bayonne, FR                   64   
+0092    AUT      BELLONI Georges                 02.04.1896,10:00    Blaisy-Bas, FR                21   
+0093    AC       BELMONDO Jean-Paul              09.04.1933,09:00    Neuilly sur Seine, FR         92   
+0094    PAI      BELONI André                    07.10.1905,20:30    Châteaubriant, FR             44   
+0095    JO       BELTOISE Jean Pierre            26.04.1937,07:15    Boulogne Billt, FR            92   
+0096    CAR      BEN (GUITTONEAU Benjamin)       17.01.1908,15:00    Vaudelney, FR                 49   
+0097    JO       BENEDETTI Jean de               25.02.1913,09:00    Boulogne-Billt, FR            92   
+0098    JO       BENOIST Alain de                11.12.1943,17:40    St Symphorien-Tours, FR       37   
+0099    AUT      BENOIT-GUYOT Jeanne (LAROURET)  30.07.1896,20:00    Bergerac, FR                  24   
+0100    PO       BERARD Alexandre                03.02.1859,16:00    Lyon, FR                      69   
+0101    PO       BÉRARD Léon                     06.01.1876,07:00    Sauveterre de Béarn, FR       64   
+0102    JO       BÉRARD-QUELIN Georges           25.09.1917,09:00    Villeurbanne, FR              69   
+0103    PO       BERENGER René                   22.04.1830,21:00    Bourg les Valence, FR         26   
+0104    JO       BERG Roger                      22.12.1910,21:00    Nancy, FR                     54   
+0105    AUT      BERGER Yves                     14.01.1931,10:30    Avignon, FR                   84   
+0106    PO       BERGERON André                  01.01.1922,09:00    Suarce, FR                    90   
+0107    PO       BERGEY Vivien                   19.04.1881,05:00    St-Trélody, FR                33   
+0108    JO       BERLIOUX Monique (LIBOTTE)      22.12.1923,17:00    Metz, FR                      57   
+0109    JO       BERNADAC Christian              01.08.1937,21:00    Tarascon/Ariège, FR           9    
+0110    AUT      BERNARDY André                  09.03.1901,12:00    Uzès, FR                      30   
+0111    PO       BERNIER Paul                    10.07.1866,02:00    Ligueil, FR                   37   
+0112    PO       BERTEAUX Maurice                03.06.1852,20:00    St Maur des Fossés, FR        94   
+0113    PO       BERTHOD Aimé                    09.08.1878,15:00    Champagnole, FR               39   
+0114    PO       BERTHOIN Jean-Marie             12.01.1895,13:00    Enghien les Bains, FR         95   
+0115    PAI      BERTRAND Solange                20.03.1913,14:00    Montigny les Metz, FR         57   
+0116    PO       BERTRAND William                09.11.1881,20:00    Marellnes, FR                 17   
+0117    PO       BESNARD Armand                  11.10.1833,15:00    Rambouillet, FR               78   
+0118    PO       BESNARD René                    12.04.1879,11:00    Artannns, FR                  37   
+0119    PO       BESSE René                      20.02.1891,17:00    Toulon, FR                    83   
+0120    JO       BESSY Maurice                   04.12.1910,14:00    Nice, FR                      6    
+0121    PAI      BIAUSSAT Raymond                21.01.1932,09:00    Vergt, FR                     24   
+0122    PO       BIBIÉ Maxence                   11.01.1891,02:00    Allemans, FR                  24   
+0123    PO       BIENVENU-MARTIN Jean-Baptiste   22.07.1847,02:00    St Bris le Vineux, FR         89   
+0124    PO       BICHET Robert                   03.10.1903,02:00    Rougemont, FR                 25   
+0125    PO       BIGNON Paul                     14.04.1858,04:00    Eu, FR                        76   
+0126    PO       BILLERES René                   29.08.1910,13:45    Ger près Lourdes, FR          65   
+0127    PO       BINET François                  04.05.1880,04:00    Bonnat, FR                    23   
+0128    PO       BION~I Jean                     09.05.1900,23:00    Sari d'Orcino, FR             20   
+0129    AUT      BLACHERE Régis                  30.06.1900,15:00    Montrouge, FR                 92   
+0130    AC       BLAIN Gérard                    23.10.1930,01:45    Paria 12 ième, FR             75   
+0131    PO       BLAISOT Camille                 19.01.1881,23:00    Valognes, FR                  50   
+0132    AUT      BLANC Aimé                      30.01.1908,15:00    Ribiers, FR                   5    
+0133    SIN      BLANC Ernest                    01.11.1923,21:00    Sanary, FR                    83   
+0134    JO       BLANCHET André                  30.06.1918,19:00    Tours, FR                     37   
+0135    PO       BLANCHO Fran~ois                20.06.1893,16:00    St Nazaire, FR                44   
+0136    PO     * BLANQUI Louis Auguste           08.02.1805,01:00    Puget-Théniers, FR            6    
+0137    AUT      BLIN Georges                    18.12.1917,13:00    Pertuis, FR                   84   
+0138    AUT      BLOND Georges                   11.07.1906,21:00    Marseille, FR                 13   
+0139    MUS      BLOT Robert                     14.05.1907,01:20    Seurre, FR                    21   
+0140    PO       BLUM Leon                       09.04.1872,11:00    Paris 2ième, FR               75   
+0141    AUT      BODIN Jean                      28.08.1899,03:30    Rannes, FR                    35   
+0142    JO       BODIN Paul                      16.04.1909,19:00    Boulogne-Blllt, FR            92   
+0143    MUS      BOEGNER Michèle                 12.08.1941,06:00    Lyon 6 ieme, FR               69   
+0144    JO       BOEGNER Philippe                07.01.1910,23:30    Aouste aur Sye, FR            26   
+0145    JO       BOIZEAU Jean                    17.07.1918,12:15    Nevers, FR                    58   
+0146    MUS      BOLLING Claude                  10.04.1930,18:00    Cannes, FR                    6    
+0147    AUT      BOMMART Jean                    12.09.1894,17:00    Douai, FR                     59   
+0148    JO       BOMPARD Germaine (LEDUC)        21.07.1907,21:00    Avignon, FR                   84   
+0149    JO       BONCHE Henri                    27.11.1910,16:00    St-Etlenne, FR                42   
+0150    MUS      BONDON Jacques                  06.12.1927,08:00    Boulbon, FR                   13   
+0151    PO       BONETY René                     05.09.1920,06:00    Onnaing, FR                   59   
+0152    MUS      BONFILS Jean                    21.04.1921,22:00    St-Etienne, FR                42   
+0153    JO       BONHEUR Gaston (TESSEYRE)       27.11.1913,23:00    Belvianes, FR                 11   
+0154    PAI      BONNAT Yves                     20.02.1912,09:00    Voiron, FR                    38   
+0155    JO       BONNAURE Louis                  19.01.1911,14:00    Caroassonne, FR               11   
+0156    MUS      BONNEAU Paul                    14.09.1918,01:00    Moret sur Loing, FR           77   
+0157    DAN      BONNEFOUS Jean-Pierre           09.04.1943,22:10    Bourg en Bresse, FR           1    
+0158    JO       BONNENfANT René-Jean            22.02.1920,09:00    Molèdes, FR                   15   
+0159    PO       BONNET Georges                  23.07.1889,03:00    Bassillac, FR                 24   
+0160    AUT      BONNET Henri                    20.02.1904,12:00    Roanne, FR                    42   
+0161    PO       BONNEVAY Laurent                28.07.1870,13:00    St Didier eu Mt d'Or, FR      69   
+0162    PO       BORD André                      30.11.1922,21:00    Strasbourg, FR                67   
+0163    PO       BORDENEUVE Jacques              28.08.1908,05:00    Ste Livrade/Lot, FR           47   
+0164    PO     * BOREL Emile                     07.01.1871,04:00    St Affrique, FR               12   
+0165    PO       BORET Victor                    18.08.1872,11:30    Saumur, FR                    49   
+0166    AUT      BORNECQUE Jacques Henry         15.12.1910,22:00    Lille, FR                     59   
+0167    JO       BORNERIE Camilla                18.05.1908,14:00    Ste Foy la Grande, FR         33   
+0168    PO       BORREL Antoine                  22.11.1878,19:30    Moutiers, FR                  73   
+0169    AUT      BORRICAND René                  05.07.1931,04:30    Digne, FR                     4    
+0170    AUT      BORY Jean-louis                 25.06.1919,11:00    Méréville, FR                 91   
+0171    PO       BOSCARY-MONSSERVIN Roland       12.05.1904,19:00    Rodez, FR                     12   
+0172    JO       BOSSON Joseph                   14.12.1924,08:00    Sevrier, FR                   74   
+0173    PO       BOTHEREAU Robert                22.02.1901,13:00    Baule, FR                     45   
+0174    AUT      BOUCARD Robert                  12.09.1894,11:00    Maison6-Lafitte, FR           78   
+0175    PO       BOUCHARDEAU Huguette (BRIAUT)   01.06.1935,15:00    St Etienne, FR                42   
+0176    PAI      BOUCHAUD Jean                   29.10.1891,11:00    St-Herblain, FR               44   
+0177    PO       BOUCHER Henry                   19.09.1847,12:30    Bruyere, FR                   88   
+0178    AUT      BOUDARD Alphonse (BOUDON P.)    17.12.1925,19:00    Paris 15 ième, FR             75   
+0179    AC       BOUDET Micheline                28.04.1926,09:30    Metz, FR                      57   
+0180    JO       BOUDET Roland                   09.11.1913,18:00    Bubertré, FR                  61   
+0181    AUT      BOUDOT Pierre                   22.09.1930,17:55    Besançon, FR                  25   
+0182    SIN      BOUÉ Geori (Georgette)          16.10.1918,02:00    Toulouse, FR                  31   
+0183    PO       BOUGENOT André                  10.07.1907,17:00    Bourg en Bresse, FR           1    
+0184    MUS      BOUILLON Gabriel                05.03.1898,03:00    Montpellier, FR               34   
+0185    PO       BOUISSON Fernand                16.06.1874,01:00    Constantine,Algérie           CONST
+0186    PO       BOULADOUX Maurice               16.07.1907,13:00    Parthenay, FR                 79   
+0187    AUT      BOULANGER Daniel                24.01.1922,15:30    Compiègne, FR                 60   
+0188    PO     * BOULANGER Georges               29.04.1837,08:15    Rennes, FR                    35   
+0189    MUS      BOULANGER Nadia                 16.09.1887,00:15    Paris 9 ième, FR              75   
+0190    JO       BOULAY Robert                   12.09.1920,11:00    St-Ouen, FR                   93   
+0191    PO       BOULIN Robert                   20.07.1920,23:00    Villandraut, FR               33   
+0192    AC       BOUQUET Michel                  06.11.1925,00:15    Paris 14 lème, FR             75   
+0193    PO       BOURELY Paul                    08.12.1867,07:00    Vallon Pont d'Arc, FR         7    
+0194    JO       BOURGEON Roger                  01.11.1924,08:45    Meudon, FR                    92   
+0195    PO       BOURGES Yvon                    29.06.1921,07:20    Pau, FR                       66   
+0196    MUS      BOURGUE Maurice                 06.11.1939,14:00    Avignon, FR                   84   
+0197    JO       BOURIN André                    28.06.1918,06:30    Tours, FR                     37   
+0198    AUT      BOUTANG Pierre                  20.09.1916,07:00    St-Etienne, FR                42   
+0199    PO       BOUTHILLIER Yves                26.02.1901,04:00    St Martin de Ré, FR           17   
+0200    JO       BOUVARD Philippe                06.12.1929,02:30    Coulommiers, FR               77   
+0201    JO       BOUZINAC Roger                  28.07.1920,04:00    Albi, FR                      81   
+0202    PO       BOVIER-LAPIERRE Edouard         28.04.1883,11:30    Grenoble, FR                  38   
+0203    PO       BRACKE-DESROUSSEAUX Alexandre   29.09.1861,11:00    Lille, FR                     59   
+0204    JO       BRANDON Paul                    02.06.1899,19:00    Troyes, FR                    10   
+0205    PAI      BRASILIER André                 29.10.1929,11:00    Saumur, FR                    49   
+0206    AC       BRASSEUR Claude (ESPINASSE)     15.06.1936,07:50    Neuilly sur Suinu, FR         92   
+0207    PO       BREANT Ernest                   25.12.1880,19:30    Châteaubriand, FR             44   
+0208    MUS      BRELET Gisèle                   06.03.1915,17:00    Fontenaylu Comte, FR          85   
+0209    AUT      BRÉMOND D'ARS Yvonne            02.08.1894,22:00    Nantes, FR                    44   
+0210    AUT      BRETON 6uy                      06.08.1919,09:30    Giun, FR                      45   
+0211    PO     * BRETON Jules                    01.04.1872,01:00    Courrières, FR                62   
+0212    PO       BRIAND Aristide                 28.03.1862,10:30    Nantes, FR                    44   
+0213    JO       BRIGNEAU François (ALLOT E.)    30.04.1919,13:30    Concarneau, FR                29   
+0214    JO       BRINCOURT André                 08.11.1920,08:00    Neuilly sur Seine, FR         92   
+0215    PO       BRINON Fernand de               16.08.1885,12:00    Libourne, FR                  33   
+0216    JO       BRIQUET Georges                 05.02.1898,23:00    Limoges, FR                   87   
+0217    JO       BRISARD Pierre                  15.01.1917,07:00    Argentré, FR                  53   
+0218    AUT      BRISSAUD André                  14.04.1920,09:00    Epernay, FR                   51   
+0219    PO       BRISSON Henri                   31.07.1835,21:00    Bourges, FR                   18   
+0220    JO       BRISSON Jean-François           29.07.1918,01:00    Agen, FR                      47   
+0221    JO       BRITSCH Jacques                 10.09.1906,23:00    Broye, FR                     71   
+0222    JO       BROMBERGER Merry                10.07.1906,16:00    Strasbourg, FR                67   
+0223    JO       BROMBERGER Serge                29.08.1912,02:00    Chatillon 85 Bagneux, FR      92   
+0224    PO       BROSSOLETTE Pierre              25.06.1903,07:00    Paris 16 ième, FR             75   
+0225    PO       BROUSSE Emmanuel                23.08.1866,03:00    Perpignan, FR                 66   
+0226    PO       BROUSSE Paul                    23.01.1844,13:00    Montpellier, FR               34   
+0227    PO       BROUSSE Pierre                  30.11.1926,19:00    Limoges, FR                   87   
+0228    MUS      BRUCHOLLERIE Monique de la      20.04.1915,06:35    Paris 8 ième, FR              75   
+0229    JO       BRULÉ Eugène                    02.09.1929,04:00    Le Sel de Bretagne, FR        35   
+0230    PO       BRUN Charles                    22.11.1821,08:00    Toulon, FR                    83   
+0231    PO     * BRUN Jean                       24.04.1849,12:00    Marmande, FR                  47   
+0232    PO       BRUNET René                     13.11.1882,01:00    Latresne, FR                  33   
+0233    PO       BRUNSCHVIGG Cécile (KAHN)       19.07.1877,07:15    Enghien les Bains, FR         78   
+0234    PO       BRUYNEEL Robert                 25.06.1905,00:30    Lille, FR                     59   
+0235    PO       BUCARD Marcel                   07.12.1895,02:00    St Clair aur Epts, FR         95   
+0236    PAI      BUFFET Bernard                  10.07.1928,07:30    Paria 9 ième, FR              75   
+0237    PO       BUFFET Louis Joseph             26.10.1818,13:00    Mirecourt, FR                 88   
+0238    PO       BUISSON Ferdinand               20.12.1841,04:00    Paris, FR                     75   
+0239    JO       BUJON Maurice                   16.08.1912,15:00    Narbonne, FR                  11   
+0240    PO       BURDEAU Auguste Laurent         10.09.1851,06:00    Lyon, FR                      69   
+0241    PAI      BURKHALTER Jean                 17.10.1895,16:00    Auxerre, FR                   89   
+0242    JO       BUSSINGER André                 12.01.1921,05:00    Evron, FR                     53   
+0243    JO       CABANES Bernard                 27.08.1933,21:20    Clermont-l'Hérault, FR        34   
+0244    JO       CAILLAU Georges                 12.01.1922,14:00    Nérac, FR                     47   
+0245    PO       CAILLAUX Eugène                 10.09.1822,08:00    Orléans, FR                   45   
+0246    PO       CAILLAUX Joseph                 30.03.1863,09:00    Le Mana, FR                   72   
+0247    AUT      CAILLEMER Henri                 16.11.1907,22:00    Grenoble, FR                  38   
+0248    MUS      CALVET Joseph                   08.10.1897,04:00    Valence d'Agen, FR            82   
+0249    AUT      CAMPAUX François                14.04.1906,19:30    Auxerre, FR                   89   
+0250    PO       CAMPINCHI César                 05.03.1882,17:00    Calcataggio, FR               20   
+0251    PO       CAPITANT René                   19.08.1901,00:30    La Tronche, FR                38   
+0252    PO       CAPUS Joseph                    18.08.1867,08:00    Marseille, FR                 13   
+0253    PAI      CARBONELL Marguerite            23.01.1910,15:00    Meudon, FR                    92   
+0254    PO       CARBUCCIA Horace de             01.03.1891,04:00    Paris 10 ième, FR             75   
+0255    JO       CARITÉ Maurice                  02.04.1906,03:10    Bolleville, FR                76   
+0256    JO       CARLIER Jean                    24.05.1922,13:00    Pont du Chateau, FR           63   
+0257    PAI      CARLU Jean                      03.05.1900,07:00    Bonnièrea aur Seine, FR       78   
+0258    PO       CARNOT Sadi                     11.08.1837,18:00    Limoges, FR                   87   
+0259    JO       CARO Henri                      26.10.1941,01:00    St Jean Brevelay, FR          56   
+0260    MUS      CARON Nelly                     15.05.1912,00:04    Dieppe, FR                    76   
+0261    AC       CARRIERE Anne-Mar (BLANQUART)   16.01.1925,16:30    Paris 14 ième, FR             76   
+0262    AUT      CARRIERE Jean                   06.03.1904,09:00    Cauaaade, FR                  82   
+0263    AUT      CARRIERE Jean                   06.08.1928,23:00    Nîmes, FR                     30   
+0264    PHO      CARTIER-BRESSON Henri           22.08.1908,15:00    Chanteloup, FR                77   
+0265    AC       CARTON Pauline (BIAREZ)         04.07.1884,02:30    8iarritz, FR                  64   
+0266    AC       CASADESUS Gisèle                14.06.1914,04:10    Parla 18 ième, FR             75   
+0267    AC       CASILE Geneviève (VANNEUFVIL.)  15.08.1937,08:00    Boulogne- Billt, FR           92   
+0268    PO       CASIMIR-PÉRIER Jean-Paul        08.11.1847,08:00    Paris, FR                     75   
+0269    AC       CASSEL Jean Pierre(CROCHON)     27.10.1932,03:00    Paris 13 ième, FR             75   
+0270    PO       CASSEZ Emile                    23.07.1871,23:00    Bournonville, FR              62   
+0271    JO       CASTELOT André (STORMS)         23.01.1911,07:00    Anvers ,Belgique              ANVER
+0272    AUT      CASTEX Louis                    03.02.1896,08:00    Pinsaguel, FR                 31   
+0273    AUT      CASTEX Pierre-Georges           20.06.1915,12:00    Toulouse, FR                  31   
+0274    AUT      CASTRIES René de                06.08.1908,16:30    La Bastide d'Engras, FR       30   
+0275    PO       CATHALA Pierre                  22.09.1888,20:00    Montfort sur Mer, FR          35   
+0276    PO       CATOIRE Jules                   31.01.1899,10:00    Beaurains les Arras, FR       62   
+0277    JO       CAUCHOIS Maurice                22.08.1908,05:00    St Nexans, FR                 24   
+0278    AUT      CAUDE Roland                    25.10.1921,17:00    Querqueville, FR              50   
+0279    JO       CAUNES Georges de               26.04.1919,10:00    Toulouse, FR                  31   
+0280    PO       CAUTRU Camille                  04.02.1879,22:00    Lassy, FR                     14   
+0281    PO       CAVAIGNAC Godefroy              21.05.1853,02:00    Paris, FR                     75   
+0282    PO       CAVAILLÉ Marcel                 03.02.1927,14:00    Lisle Rur Tarn, FR            81   
+0283    PO       CAVELIER Lucien                 12.08.1925,12:30    Sausseuzemare enC, FR         76   
+0284    AUT      CAYROL Jean                     06.06.1910,08:00    Bordeaux, FR                  33   
+0285    AUT      CAZENAVE Michel                 09.06.1942,08:00    Toulouse, FR                  31   
+0286    PO       CAZOT Théodore                  11.02.1821,16:00    Alès, FR                      30   
+0287    AC       CECCALDI Daniel                 25.07.1927,21:15    Meaux, FR                     77   
+0288    PAI      CERRANO Jacqueline              30.10.1920,01:00    Nice, FR                      6    
+0289    SCU      CÉSAR (BALDACCINI César)        01.01.1921,12:00    Marseille, FR                 13   
+0290    AUT      CESBRON Gilbert                 13.01.1913,03:00    Paris 17 ième, FR             75   
+0291    PO     * CHABAN-DELMAS Jacques           07.03.1915,23:40    Parls 13 ième, FR             75   
+0292    PO       CHABRUN César                   14.12.1880,21:00    Mayonne, FR                   53   
+0293    JO       CHAFFANJON Arnaud               23.04.1929,15:40    Lestelle-Bétharram, FR        66   
+0294    AUT      CHAIX-RUY Jules                 07.11.1896,11:00    Avignon, FR                   84   
+0295    JO       CHALAIS François (BAUER)        15.12.1919,06:10    Strasbourg, FR                67   
+0296    PO       CHALANDON Albin                 11.06.1920,13:30    Reyrieux, FR                  1    
+0297    PO       CHALLEMEL-LACOUR Paul           18.05.1827,17:00    Avranches, FR                 50   
+0298    AUT      CHAMFLEURY Robert (GOHIN E.)    24.05.1900,12:00    Bohain, FR                    2    
+0299    PO       CHAMPEIX Maroel                 31.03.1902,01:00    Masseret, FR                  19   
+0300    PO       CHAMPETIER DE RIDES Auguste     30.07.1882,16:06    Antony, FR                    92   
+0301    AUT      CHAMPIGNEULLE Bernard           09.07.1896,07:30    Neufchâteau, FR               88   
+0302    JO       CHANCEL Jacques (CRAMPES J.)    02.07.1928,21:00    Ost, FR                       66   
+0303    JO       CHAPATTE Robert                 14.10.1921,02:10    Neuilly sur Seine, FR         92   
+0304    JO       CHAPELA N Maurice               01.01.1906,04:00    Valence, FR                   26   
+0305    PAI      CHAPELET Roger                  25.09.1903,22:30    Versailles, FR                78   
+0306    PO       CHAPPEDELAINE Louis de          21.06.1876,18:30    St Just, FR                   35   
+0307    PO       CHAPSAL Fernand                 10.03.1862,20:00    Limoges, FR                   87   
+0308    PO       CHARBONNEL Jean                 22.04.1927,23:45    La Fère, FR                   2    
+0309    PAI      CHARB0NNIER Pierre              24.08.1897,13:00    Vienne, FR                    38   
+0310    JO       CHARDIGNY Louis                 08.08.1909,01:00    Curtil ss Burnand, FR         71   
+0311    JO       CHARENSOL Georges               26.12.1899,13:00    Privas, FR                    7    
+0312    JO       CHARLES-ROUX Edmonde            17.04.1920,20:55    Neuilly sur Seine, FR         75   
+0313    PAI      CHARLET José                    19.10.1916,21:00    Bourg en Bresse, FR           1    
+0314    PO       CHARLOT Etienne                 27.09.1865,21:00    Pommard, FR                   21   
+0315    AC       CHARON Jacques                  27.02.1920,22:00    Paris 4 ième, FR              75   
+0316    JO       CHARPY Pierre                   25.05.1919,03:00    Lyon 6 ième, FR               69   
+0317    JO       CHARROUX Robert (GRUGEAU)       07.04.1909,08:30    Payroux, FR                   86   
+0318    JO       CHAULEUR Pierre                 28.03.1902,22:30    Lille, FR                     59   
+0319    PO       CHAUMET Charles                 21.02.1866,10:00    Prlgnac Marcamps, FR          33   
+0320    PO       CHAUVEAU Claude                 22.08.1861,11:00    Pouilly en Auxois, FR         21   
+0321    JO       CHAUVEAU Jean (BABIN DE LIG.)   19.12.1909,17:00    Issoudun, FR                  36   
+0322    SIN      CHAUVET Guy                     02.10.1933,01:55    Montluçon, FR                 3    
+0323    JO       CHAUVET Louis                   27.07.1906,06:00    Perpignan, FR                 66   
+0324    PO       CHAUVIN Georges                 16.11.1885,05:00    Tilleul-Lambert, FR           27   
+0325    MUS      CHAYNES Charles                 11.07.1925,16:00    Toulouse, FR                  31   
+0326    JO       CHAZAL Robert                   03.09.1912,03:00    St Nom la Drétèche, FR        78   
+0327    DAN      CHAZOT Jacques                  25.09.1928,14:45    Locmiquélic, FR               56   
+0328    AUT      CHEGARAY Jacques                15.02.1917,09:45    Le Havre, FR                  76   
+0329    JO       CHENEBENOIT André               05.01.1895,11:45    Soissona, FR                  2    
+0330    PO       CHÉRON Adolphe                  27.03.1873,05:30    Levallois-Perret, FR          93   
+0331    AUT      CHESNEAU Marc                   15.06.1899,02:00    Rouen, FR                     76   
+0332    PO       CHEVENEMENT Jean Pierre         09.03.1939,23:00    Belfort, FR                   90   
+0333    AC       CHEVRIER Jean (DUFAYARD)        26.04.1915,18:00    Paris 18 ième, FR             75   
+0334    PO       CHIAPPE Jean                    03.05.1878,09:00    Ajaccio, FR                   20   
+0335    JO       CHIAPPE Jean-François           30.11.1931,00:05    Laon, FR                      2    
+0336    MUS      CHIBOUST Noël                   04.10.1909,14:30    Thorigny, FR                  77   
+0337    PO       CHICHERY Albert                 12.10.1888,16:00    Leblanc, FR                   36   
+0338    PAI      CHIGOT Pierre                   21.02.1910,22:00    Limoges, FR                   87   
+0339    PO       CHIRAC Jacques                  29.11.1932,12:00    Paris 5 ième, FR              75   
+0340    PO       CHOCHOY Dernard                 14.08.1908,07:00    Nielles les Bléquin, FR       62   
+0341    PAI      CHOT-PLASSOT Maurice            22.04.1929,16:00    Neuilly sur Seine, FR         92   
+0342    AUT      CHRISTOPHE Robert               12.06.1907,15:30    Lille, FR                     59   
+0343    PO       CHRISTOPHLE Albert Charles      13.07.1830,06:00    Domfront, FR                  61   
+0344    JO       CIANTAR Maurice                 04.03.1915,01:00    Asnières, FR                  92   
+0345    PAI      CIZOS-NATOU Pierre              15.10.1927,23:00    Bordeaux, FR                  33   
+0346    PO       CLAMANUS Jean Marie             28.07.1879,21:00    St Léger des Vignes, FR       58   
+0347    PO       CLAVEILLE Albert                01.01.1865,22:00    Mouleydier, FR                24   
+0348    JO       CLARE Michel                    21.02.1927,03:50    Sceaux, FR                    92   
+0349    JO       CLAUWAERT Jules                 15.03.1923,00:15    Izel, FR                      62   
+0350    AC       CLAY Philippe(MATHEVET)         07.03.1927,01:25    Paris 14 ième, FR             75   
+0351    PO     * CLÉMENCEAU Georges              28.09.1841,21:30    Mouilleron en Pareds, FR      85   
+0352    AUT      CLÉMENT Jean-Baptiste           31.05.1836,02:00    Boulogne-Billt, FR            92   
+0353    JO       CLÉMENT Jean-Louis              19.05.1930,22:30    Vanves, FR                    92   
+0354    PO       CLÉMENTEL Etienne               29.03.1864,01:00    Clermont-Ferrand, FR          63   
+0355    JO       CLOSETS François de             25.12.1933,20:15    Enghien les Bains, FR         95   
+0356    JO       CLOT André                      09.11.1909,13:00    Grenoble, FR                  38   
+0357    MUS      COCHEREAU Pierre                09.07.1924,20:00    St-Mandé, FR                  94   
+0358    AC       COCHET Jean-Laurent             28.01.1935,11:00    Romainville, FR               93   
+0359    PO       COCHIN Denys                    01.09.1851,15:30    Paris, FR                     75   
+0360    AC       COGGIO Roger                    11.03.1934,18:00    Lyon 7 ième, FR               69   
+0361    PO       COHN-BENDIT Daniel              04.04.1945,20:00    Montauban, FR                 82   
+0362    JO       COLAS Alain                     16.09.1943,05:30    Clamecy, FR                   58   
+0363    JO       COLDEFY Jean-Marie              02.06.1922,20:30    St-Mandé, FR                  94   
+0364    PO       COLIN André                     19.01.1910,08:00    Dregt, FR                     29   
+0365    JO       COLINON Maurice                 16.02.1922,07:00    Châtaau-Thierry, FR           2    
+0366    JO       COLLARO Stéphane                20.05.1943,23:15    Neuilly sur Seine, FR         92   
+0367    JO       COLLET Georges                  20.08.1918,06:00    Valençay, FR                  36   
+0368    AC       COLLETIN Jeanne (FOURNIER)      16.07.1938,08:00    Toulouse, FR                  31   
+0369    PO       COLLIARD Pierre                 30.04.1852,12:00    Jons, FR                      38   
+0370    AC       COLOMDI Myriam (FEUNE DE)       23.02.1940,15:00    La Carneille, FR              61   
+0371    PO       COLRAT DE MONTROZIER Maurice    29.09.1871,06:00    Sarrazac, FR                  46   
+0372    PO       COMBES Emile                    06.09.1835,02:00    Roquecourbe, FR               81   
+0373    PO       COMITI Joseph                   04.06.1920,08:00    Sotta, FR                     20   
+0374    AUT      CONCHON Georges                 09.05.1925,14:00    St-Avit, FR                   63   
+0375    AUT      CONGAR Yveq                     13.04.1904,04:00    Sedan, FR                     8    
+0376    JO       CONIA Jacques                   03.04.1929,11:30    Laventie, FR                  62   
+0377    PO       CONSTANS Ernest Jean            03.05.1833,08:00    Béziers, FR                   34   
+0378    PO       CONSTANT Emile                  20.07.1861,06:00    Bordeaux, FR                  33   
+0379    PO       CONTE Arthur                    31.03.1920,13:00    Salses, FR                    66   
+0380    MUS      CONTET Henri(Alexandre)         08.05.1904,11:00    Anost, FR                     71   
+0381    AUT      COQUATRIX Bruno                 04.08.1910,20:00    Ronchin, FR                   59   
+0382    JO       COQUELIN Maurice                26.06.1887,12:00    Ville d'Avray, FR             92   
+0383    JO       C0QUET James de                 16.07.1898,01:00    Bordeaux, FR                  33   
+0384    JO       CORDELIER Pierre                09.07.1918,20:00    Périgueux, FR                 24   
+0385    AC       CORDY Annie (COOREMAN Leonia)   16.06.1928,22:00    Laeken-Bruxelles,Belgi.       LAEK 
+0386    PO       CORNU André                     27.06.1892,16:00    Gap, FR                       5    
+0387    PAI      CORNU Pierre                    16.11.1895,05:00    Salon de Provence, FR         13   
+0388    PO       CORNUT-GENTILLE Bernard         26.07.1909,22:48    Brest, FR                     29   
+0389    AC       COSTE Nora (Simone Renée)       28.06.1927,18:00    St Christophe de Ch, FR       16   
+0390    AC       COSTER Claudine                 16.02.1939,07:40    Nancy, FR                     54   
+0391    JO       COTTA Michèle                   15.06.1937,00:10    Nice, FR                      6    
+0392    PAI      COTTAVOZ André                  29.07.1922,19:00    St Marcellin, FR              38   
+0393    JO       COTTEN Yann-Yvon                20.01.1941,19:25    Angers, FR                    49   
+0394    PO       COTY François (SPOTURNO)        03.05.1874,20:00    Ajaccio, FR                   20   
+0395    PO       COTY René                       20.03.1882,04:00    Le Havre, FR                  76   
+0396    PO       COUDE DU FORESTO Yvon           10.02.1897,16:00    Piedicroce, FR                20   
+0397    AUT      COUDEKERQUE-LAMBRECHT André     27.08.1898,12:45    Rambouillet, FR               78   
+0398    JO       COUDERC Roger                   12.07.1918,17:00    Souillac, FR                  46   
+0399    PO       COUPAT Pierre                   17.06.1860,02:00    St Etienne, FR                42   
+0400    JO       COURDY Jean Claude              20.11.1928,16:00    Bressols, FR                  82   
+0401    PO       COURSON Léon                    21.10.1883,13:00    Noyant de Touraine, FR        37   
+0402    PO       COUVE DE MURVILLE Maurice       24.01.1907,13:00    Reims, FR                     51   
+0403    PO       COUYDA Maurice                  01.01.1866,16:00    Dampierre/Salon, FR           70   
+0404    AC       CREMER Bruno                    06.10.1929,06:00    St-Mandé, FR                  94   
+0405    PAI      CRÉMIER Jean Eddie              04.02.1926,04:30    St Maur des Fossés, FR        94   
+0406    PO       CRÉPEAU Michel                  30.10.1930,04:00    Fontenay 18 Comte, FR         85   
+0407    JO       CRESPELLE Jean Paul             24.12.1910,11:15    Nogent sur Marne, FR          94   
+0408    SIN      CRESPIN Régine                  23.02.1927,02:00    Marseille, FR                 13   
+0409    AUT      CRIQUI Fernand                  14.05.1921,23:00    Straabourg, FR                67   
+0410    PO       CROIZAT Amboise                 28.01.1901,17:00    Notre Dame de Brian, FR       73   
+0411    AUT      CROZIER Michel                  06.11.1922,21:00    Ste Menehould, FR             51   
+0412    PO       CRUPPI Jean                     22.05.1855,18:00    Toulouse, FR                  31   
+0413    JO       CUAU Yves                       10.09.1934,04:00    Boulogne-Billt, FR            92   
+0414    PO       CUCUEL Jacques                  18.05.1901,11:00    Levallois-Perret, FR          92   
+0415    JO       DAILLET Jean-Marie              24.11.1929,12:32    Renneg, FR                    35   
+0416    PO       DALADIER Edouard                18.06.1884,11:00    Carpentras, FR                84   
+0417    PO       DALBIEZ Victor                  23.06.1876,12:00    Corneille de Confl, FR        66   
+0418    JO       DALEVEZE Jean (CONILLEAU)       04.10.1912,12:30    Le Mans, FR                   72   
+0419    PO       DALIMIER Albert                 20.02.1875,19:00    Bordeaux, FR                  33   
+0420    AC       DALMES Mony (ETENNEMARE S.)     24.07.1914,18:00    Kremlin-Bicêtre, FR           94   
+0421    AC       DAMIA (DAMIEN Marie-Louise)     05.12.1889,03:00    Paris 13 ième, FR             75   
+0422    JO       DANIEL Jean (BENSAlD)           21.07.1920,11:00    Blida ,Algérie                BLIDA
+0423    AUT      DANIELOU Alain                  04.10.1907,03:45    Neuilly sur Seine, FR         92   
+0424    PO       DANIELOU Charles                13.07.1878,01:00    Douarnenez, FR                29   
+0425    AUT      DANIELOU Jean                   14.05.1905,21:00    Neuilly sur Sgins, FR         92   
+0426    JO       DANNENMULLER Jean               21.11.1913,09:45    Epône, FR                     78   
+0427    AUT      DANSETTE Adrien                 16.04.1901,01:00    Armentières, FR               59   
+0428    AC       DARC Mireille (AIGROZ)          15.05.1938,16:00    Toulon, FR                    83   
+0429    AUT      DARD Frédéric                   29.06.1921,18:00    Bourgoin-Jallieu, FR          38   
+0430    AUT      DARD Michel                     09.12.1908,07:30    Aire sur la Lys, FR           62   
+0431    PO       DARIAC Adrien                   14.06.1868,01:00    Périgueux, FR                 24   
+0432    PO       DARLAN Jean-Baptiste            10.06.1848,09:00    Podensac, FR                  33   
+0433    AUT      DARNAL Jean-Claude              24.06.1929,03:00    Douai, FR                     59   
+0434    PO       DARNAND Joseph                  19.03.1897,06:00    Coligny, FR                   1    
+0435    JO       DAROLLE Raymond                 07.02.1919,22:00    Agen, FR                      47   
+0436    PO       DARQUIER(de Pellepoix)Louis     19.12.1897,20:00    Cahors, FR                    46   
+0437    MUS      DARRÉ Jeanne Marie              30.07.1905,10:00    Givet, FR                     8    
+0438    AUT      DARRÉ Simone                    17.10.1919,15:00    Aubiet, FR                    32   
+0439    AC       DARRY-COWL (DARRICAU André)     27.08.1925,18:00    Vittel, FR                    88   
+0440    DAN      DARSONVAL Lycette (PERRON A.)   12.02.1912,01:00    Coutances, FR                 50   
+0441    PO     * DAUDET Léon                     16.11.1867,23:00    Parig 4 ième, FR              75   
+0442    AC       DAUMIER Sophie (HUGON Elis.)    24.11.1934,05:30    Boulogne sur Mer, FR          62   
+0443    PO       DAUTRESNE Lucien                21.05.1826,01:00    Elbeuf, FR                    76   
+0444    PO       DAUTRY Raoul                    16.09.1880,09:00    Montluçon, FR                 3    
+0445    AUT      DAVAL Roger                     10.05.1911,08:00    St Ouen L'Aumône, FR          95   
+0446    PO       DAVID Fernand                   18.10.1869,22:00    Annemasse, FR                 74   
+0447    PO       DAVID Robert                    05.11.1873,06:00    Fontainebleau, FR             77   
+0448    PO       DEAT Marcel                     07.03.1894,03:30    Guérigny, FR                  58   
+0449    JO       DESOUZY Roger                   12.09.1913,06:00    Etréaupont, FR                2    
+0450    PO       DEBRÉ Michel                    15.01.1912,23:00    Paris 7 ième, FR              75   
+0451    AUT      DECAUX Alain                    23.07.1925,02:15    Lille, FR                     59   
+0452    JO       DÉCOUT Robert                   13.08.1918,16:00    Valenciennes, FR              59   
+0453    PO       DECRAIS Albert                  18.09.1838,11:00    Bordeaux, FR                  33   
+0454    JO     * DEFFERRE Gaston                 14.09.1910,08:00    Marsillargues, FR             34   
+0455    PO       DEGRIS Robert                   22.01.1920,17:00    Périgueux, FR                 24   
+0456    AC       DEIDER Paul-Emile               01.01.1925,04:30    La Broque, FR                 67   
+0457    JO       DELABORDE Michel                20.01.1935,20:00    Dijon, FR                     21   
+0458    AUT      DELAMARE Georges                07.07.1881,04:00    Besançon, FR                  25   
+0459    JO       DELARUE Maurice                 26.07.1919,12:00    Antrain, FR                   35   
+0460    PO       DELBECQUE Léon                  25.08.1919,11:45    Tourcoing, FR                 59   
+0461    PO       DELCASSÉ Théophile              01.03.1852,08:00    Pamiers, FR                   9    
+0462    PO       DELCOS Francois                 25.03.1881,11:00    Perpignan, FR                 66   
+0463    JO       DELEPLANQUE Roger               05.08.1901,18:00    Chantilly, FR                 60   
+0464    MUS      DELERUE Georges                 12.03.1925,12:15    Roubaix, FR                   59   
+0465    PO       DELESALLE Charles               15.04.1886,10:00    Lille, FR                     59   
+0466    PAI      DELPLANQUE Georges              13.07.1903,13:00    Douai, FR                     59   
+0467    PO       DELOMBRE Paul                   18.03.1848,18:00    Maubeuge, FR                  59   
+0468    PO       DELOM-SORBÉ Maurice             17.09.1898,08:00    Mont de Marsan, FR            40   
+0469    AC       DELON Alain                     08.11.1935,03:25    Sceaux, FR                    92   
+0470    JO       DELPECHE René                   11.06.1897,07:30    Metz, FR                      57   
+0471    PO       DELPEUCH Jean-Baptiste          24.07.1860,23:00    Bort les Orgues, FR           19   
+0472    PO       DELUNS-MONTAUD Pierre           03.06.1845,15:00    Allemans du Drapt, FR         47   
+0473    PO       DEMOLE Charles                  22.03.1828,08:00    Charolles, FR                 71   
+0474    AC       DEMONGEOT Mylène (Marie-Hél.)   29.09.1935,22:00    Nice, FR                      6    
+0475    AC       DENEUVE Catherine (DORLÉAC)     22.10.1943,13:35    Paris 17 ième, FR             75   
+0476    AUT      DENOEU François                 22.07.1898,04:00    Estrée-Blanche, FR            62   
+0477    SIN      DENS Michel                     22.06.1911,16:30    Roubaix, FR                   59   
+0478    AC       DEPARDIEU Gérard                27.12.1948,08:00    Châteauroux, FR               36   
+0479    SIN      DEPRAZ Xavier (DELARUELLE)      22.04.1926,07:00    Albert, FR                    80   
+0480    JO       DERAIGNE Pierre                 11.06.1912,22:00    St Quentin, FR                2    
+0481    JO       DÉRON Jean-Paul                 28.06.1926,23:00    St Cast Le Guildo, FR         22   
+0482    PO     * DÉROUL~DE Paul                  02.09.1846,22:00    Parls, FR                     75   
+0483    PAI      DERREY Jacques                  22.09.1907,23:00    Toulouse, FR                  31   
+0484    MUS      DERVAUX Pierre                  03.01.1917,13:00    Juvisy sur Orge, FR           91   
+0485    PO       DESCAMPS Eugène                 17.03.1922,01:00    Lomme, FR                     59   
+0486    PO       DESCHAMPS Louis                 23.12.1878,16:00    Lamballe, FR                  22   
+0487    PO       DESCHANEL Paul                  13.02.1855,11:00    Bruxelles, Belgique           BRUX 
+0488    AC       DESCRIERES Georges (BER6É-D.)   15.04.1930,09:00    Bordeaux, FR                  33   
+0489    JO       DESGRAUPES Pierre               18.12.1918,13:45    Angoulême, FR                 16   
+0490    JO       DESGRÉES DU LOU François        26.06.1909,04:00    Rennes, FR                    35   
+0491    JO       DESJARDINS Claude               09.06.1920,14:30    Le Mans, FR                   72   
+0492    AC       DESMARETS Sophie (Jacqueline)   07.04.1922,11:00    Paris 16 ième, FR             75   
+0493    PO       DESPLAS Georges                 30.01.1856,06:00    Bagnères, FR                  65   
+0494    PAI      DESRUMAUX Pierre                22.03.1899,10:30    Lille, FR                     59   
+0495    JO       DESSON Guy                      07.04.1909,10:45    Chelles, FR                   77   
+0496    PO       DESSOYE Arthur                  23.08.1854,02:00    Auberive, FR                  52   
+0497    PO       DESTREMAU 8ernard               11.02.1917,17:30    Paris 16 ième, FR             75   
+0498    JO     * DEVAY Jean-François             15.10.1925,17:30    Lyon, FR                      69   
+0499    PO       DEVELLE Jules                   12.04.1845,06:30    Bar le Duc, FR                55   
+0500    AUT      DEVIN Josette                   03.02.1921,05:00    Bordeaux, FR                  33   
+0501    AC       DEVOS Raymond                   09.11.1922,07:15    Mouscron, Belgique            MOUS 
+0502    MUS      DEVRIES Ivan (Daniel)           17.09.1909,18:00    St-Lunaire, FR                35   
+0503    AC       DEWAERE Patrice (DOURDEAUX)     26.01.1947,10:30    St-Brieuc, FR                 22   
+0504    AC       DHERAN Bernard (POULAIN)        17.06.1926,11:15    Dieppe, FR                    76   
+0505    AC       DHERY Robert (FOURREY)          27.04.1921,23:30    St Denis, FR                  93   
+0506    JO       DHORDAIN Roland                 29.04.1924,21:30    St Denis, FR                  93   
+0507    AUT      DIESDACH Ghislain de            06.08.1931,04:15    Le Havre, FR                  76   
+0508    PO       DIGNAC Pierre                   13.01.1876,02:00    Gujan-Mestras, FR             33   
+0509    PO       DIJOUD Paul                     25.06.1938,14:00    Neuilly sur Seine, FR         92   
+0510    PO       DILIGENT André                  10.05.1919,19:00    Roubaix, FR                   59   
+0511    PO       DIOR Lucien                     04.07.1867,07:00    Granville, FR                 50   
+0512    AC       DISTEL Sacha                    29.01.1933,13:45    Paris 13 ième, FR             75   
+0513    AC       DOAT Anne                       16.09.1936,07:00    Neuilly sur Seine, FR         92   
+0514    PHO      DOISNEAU Robert                 14.04.1912,21:15    Gentilly, FR                  94   
+0515    JO       DOMENACH Jean-Marie             13.02.1922,05:10    Lyon 2 ième, FR               69   
+0516    JO       DOMENECH Gabriel                04.09.1920,23:00    Reynès, FR                    66   
+0517    JO       DOMENECH Pierre                 22.10.1940,22:00    Toulouse, FR                  31   
+0518    JO       DOMENGE Jean                    17.09.1926,10:30    Lille, FR                     59   
+0519    PO       DOMINATI Jacques                11.03.1927,02:00    Ajaccio, FR                   20   
+0520    JO       DONATI Françoi~                 05.06.1921,19:00    Nice, FR                      6    
+0521    PO       DORGERES Henri(D'HALLUIM)       06.02.1897,02:00    Wasquehal, FR                 59   
+0522    AUT      DORIN Françoise                 23.01.1928,05:00    Paris 17 ième, FR             75   
+0523    PO       DORIOT Jacques                  26.09.1898,18:00    Bresles, FR                   60   
+0524    AC       DORIS Pierre (TUGOT)            29.10.1919,02:00    Paris 11 ième, FR             75   
+0525    AC       DORLEAC Françoise               21.03.1942,18:10    Paris 17 ième, FR             75   
+0526    PO       DORLHAC Hélène (ROUJON)         04.10.1935,20:00    Sumène, FR                    30   
+0527    PO       DORMANN Maurice                 20.04.1881,15:00    Etréchy, FR                   91   
+0528    PO       DORMOY Marx                     01.08.1888,23:00    Montluçon, FR                 3    
+0529    AC       DORZIAT Gabrielle (SIGRIST)     25.01.1880,23:55    Epernay, FR                   51   
+0530    JO       DOUGIER Henry                   27.09.1936,17:15    Neuilly sur Seine, FR         92   
+0531    PO       DOUMER Paul                     22.03.1857,03:00    Aurillac, FR                  15   
+0532    PO       DOUMERGUE Gaston                01.08.1863,23:00    Aigue6-Vives, FR              30   
+0533    AUT      DOURNES Pierre                  31.01.1921,18:00    St Pol/Ternoise, FR           62   
+0534    MUS      DOYEN Ginette Geneviève)        10.07.1921,08:00    Montceau les Mines, FR        71   
+0535    JO       DRANCOURT Michel                09.05.1928,20:00    Cambrai, FR                   59   
+0536    JO       DROUIN Pierre                   10.02.1921,09:30    Sotteville les Rouen, FR      76   
+0537    JO       DRUCKER Michel                  12.09.1942,11:00    Vire, FR                      14   
+0538    PO     * DRUMONT Edouard                 03.05.1844,08:00    Paris, FR                     75   
+0539    AUT      DUBARLE Dominique               23.09.1907,10:00    Biviers, FR                   38   
+0540    PO       DUBIEF Fernand                  14.10.1850,22:00    Varenner les Mâcon, FR        71   
+0541    AC       DUDILLARD Roland                02.12.1923,18:00    Paris 7 ieme, FR              75   
+0542    PO       DUBOIN Jacques                  17.09.1878,03:30    St Julien en Genev, FR        74   
+0543    PAI      DUBOIS Jacques                  25.10.1912,15:30    Versailles, FR                78   
+0544    PO       DUBOIS Louis                    10.06.1859,22:00    Le Palais, FR                 56   
+0545    MUS      DUBOIS Pierre                   01.03.1930,03:00    Graulhet, FR                  81   
+0546    JO       DUBOIS-DUMEE Jean-Pierre        12.02.1918,02:00    Amiens, FR                    80   
+0547    CAR      DUBOUT Albert                   15.05.1905,16:00    Marseille, FR                 13   
+0548    PAI      DUBUfFET Jean                   31.07.1901,13:00    Le Havre, FR                  76   
+0549    AUT      DUCASSE André                   23.07.1894,23:00    Mouchamps, FR                 85   
+0550    AC       DUCHAUSSOY Michrl               29.11.1938,03:30    Valenciennes, FR              59   
+0551    AUT      DUCLA Louis                     23.04.1893,11:00    Sedan, FR                     8    
+0552    PO       DUCLERC Eugène                  09.11.1812,23:30    Bagnères de Bigorre, FR       65   
+0553    AUT      DUCLOS Henri                    19.08.1902,22:30    Limoux, FR                    11   
+0554    AUT      DUCOS Mireille (FIGARET)        20.08.1910,22:00    Sète, FR                      34   
+0555    PO       DUCRAY Gérard                   21.01.1942,20:00    Villefranche/Saône, FR        69   
+0556    AUT      DUCREUX Louis (DUCREUX-PICON)   22.09.1911,02:00    Marseille, FR                 13   
+0557    AUT      DUCROCQ Albert                  09.07.1921,10:15    Versailles, FR                78   
+0558    MUS      DUFOURCQ Norbert                21.09.1904,01:40    St Jean de Braye, FR          45   
+0559    AUT      DU GAST ROUILLÉ Michel          09.06.1919,23:40    Nantes, FR                    44   
+0560    JO       DUGUET Xavier                   27.08.1895,04:00    Bosdarros, FR                 64   
+0561    AUT      DUJARDIN Marie (CHENOU)         09.09.1893,19:00    St Clair sur Epte, FR         95   
+0562    JO       DUMAS Roland                    23.08.1922,01:00    Limoges, FR                   87   
+0563    JO       DUMAYET Pierre                  24.02.1923,04:30    Houdan, FR                    78   
+0564    PO       DUMONT Charlea                  31.08.1867,10:00    Ajactio, FR                   20   
+0565    AC       DUPERREY Annie (LEGRAS)         28.06.1947,08:55    Rouen, FR                     76   
+0566    PO       DUPUY Charles                   05.11.1851,09:00    Le Puy, FR                    43   
+0567    PO       DUPUY Jean                      01.10.1844,18:00    St Palais, FR                 33   
+0568    PO       DUPUY-DUTEMPS Ludovic           05.01.1847,13:00    Cabannes, FR                  81   
+0569    PO       DURAFOUR Antoine                12.08.1876,03:00    St Etienne, FR                42   
+0570    PO       DURAFOUR Michel                 11.04.1920,22:00    St Etienne, FR                42   
+0571    PO       DURAND Jean                     08.01.1865,05:00    Les Cammazes, FR              81   
+0572    AUT      DURAND Oswald                   09.02.1888,07:00    Montady, FR                   34   
+0573    MUS      DURAND Paul                     28.01.1907,10:00    Sète, FR                      34   
+0574    PAI      DUREL Auguste                   02.03.1904,02:00    Toulouse, FR                  31   
+0575    PO       DURUY Victor                    10.09.1811,07:00    Paris, FR                     75   
+0576    PO       DUSSEAULX Roger                 18.07.1913,20:00    Paris 6 ième, FR              75   
+0577    AC       DUTRONC Jacques                 28.04.1943,05:00    Paris17 ième, FR              75   
+0578    SIN      DUVAL Aimé                      30.06.1918,09:00    Val d'Ajol, FR                88   
+0579    MUS      DUVAUCHELLE Pierre              09.08.1906,07:00    Mesnil-Esnard, FR             76   
+0580    PO       DUVAUX Jules                    21.05.1827,12:00    Nancy, FR                     54   
+0581    AUT      DUVERGER Maurice                05.06.1917,08:00    Angoulême, FR                 16   
+0582    AUT      DUVIGNAC André                  26.11.1898,02:00    Rosny Sous Bois, FR           93   
+0583    AUT      DUVI6NAUD Jean (AUGER)          22.02.1921,07:00    La Rochelle, FR               17   
+0584    PO       DUVILLARD Henri                 03.11.1910,02:00    Luxeuil les Bains, FR         70   
+0585    JO       EBSTEIN Jean                    01.04.1921,05:50    Strasbourg, FR                67   
+0586    JO       EHRHARD Jean-Pierre             30.10.1928,23:00    Saverne, FR                   67   
+0587    PO       ELBEL Paul                      06.03.1875,01:00    Isches, FR                    88   
+0588    MUS      ENTREMONT Philippe              07.06.1934,19:00    Reims, FR                     51   
+0589    JO       EPARVIER Jean                   21.09.1903,07:25    Evreux, FR                    27   
+0590    AUT      ERNOUT Alfred                   30.10.1879,04:00    Lille, FR                     59   
+0591    AUT      ESCAICH René                    25.05.1909,23:00    Toulouse, FR                  31   
+0592    AUT      ESCARPIT Robert                 24.04.1918,21:00    St Macaire, FR                33   
+0593    AUT      ESPIL Pierre                    22.12.1918,10:00    Hasparren, FR                 64   
+0594    PO       ETIENNE Eugène                  15.12.1844,00:30    Oran, Algérie                 ORAN 
+0595    PAI      EUZET Jean-Marie                26.04.1905,13:00    Sète, FR                      34   
+0596    PAI      EVEN André                      16.05.1918,05:00    Pont-Aven, FR                 29   
+0597    JO       EXBRAYAT-DURIVAUX Charles       05.05.1906,20:00    St-Etienne, FR                42   
+0598    PO       EYDOUX Henri Paul               16.03.1907,23:20    Tarbes, FR                    65   
+0599    PO       EYNAC Laurent                   04.10.1886,05:00    Monastier/Gazellle, FR        43   
+0600    AC       EYSER Jacques(EYSERMANN)        29.08.1912,17:00    Deauville, FR                 14   
+0601    PAI      FABIEN Louis(POUILLOUX)         18.01.1924,15:00    L'Isle-Jourdain, FR           86   
+0602    JO       FABRE Denise                    05.09.1942,07:00    Nice, FR                      6    
+0603    PAI      FABRE Gilles                    07.10.1933,23:30    Blâmont, FR                   54   
+0604    PO       FABRE Robert                    21.12.1915,07:00    Villefranche de R, FR         12   
+0605    PAI      FABRI-CANTI José(FABRIKANT)     29.05.1916,22:00    Nice, FR                      6    
+0606    PO       FABRY Jean                      06.06.1876,03:30    Villefranche de R, FR         12   
+0607    PO       FAGLIANELLI Jacques             18.11.1901,08:00    Bastia, FR                    20   
+0608    JO       FAINE Jacques                   04.11.1927,22:00    Rambouillet, FR               78   
+0609    CAR      FAIZANT Jacques                 30.10.1918,04:00    Laroquebrou, FR               15   
+0610    AC       FALCON André                    28.11.1924,02:10    Lyon 2 ième, FR               69   
+0611    PAI      FALCOU Jacques                  09.05.1912,21:00    Neuilly sur Seine, FR         92   
+0612    PO       FALCOZ Henri                    06.05.1884,21:00    St Jean de Maurien, FR        73   
+0613    PO       FALLIERES André                 30.09.1875,20:00    Villeneuve de Mézin, FR       47   
+0614    PO       FALLIERES Armand                06.11.1841,14:00    Mézin, FR                     47   
+0615    PO       FANTON André                    31.03.1928,07:15    Gentilly, FR                  94   
+0616    JO       FATRAS André                    17.12.1913,13:00    Le Havre, FR                  76   
+0617    JO       FAUCHER Jean                    19.10.1921,08:00    Clichy, FR                    93   
+0618    AUT      FAURE Lucie (MEYER)             06.07.1908,22:00    Paris 10 ième, FR             75   
+0619    PO       FAURE Maurice                   19.01.1850,16:00    Saillans, FR                  26   
+0620    JO       FAURE Roland                    10.10.1926,01:00    Montélimar, FR                26   
+0621    JO       FAVALELLI Max                   23.01.1905,22:00    La Charité/Loire, FR          58   
+0622    MUS      FAVRE Georges                   26.07.1905,07:30    Saintes, FR                   17   
+0623    PO       FAVRE Jules                     21.03.1809,01:00    Lyon, FR                      69   
+0624    PO       FAYE Etienne                    16.11.1828,20:00    Marmande, FR                  47   
+0625    PO       FELICE Pierre de                13.12.1896,09:30    Enghien les Bains, FR         95   
+0626    AUT      FERNANDEZ Dominique             25.08.1929,18:00    Neuilly sur Seine, FR         92   
+0627    PAI      FERNIER Robert                  26.07.1895,08:00    Pontarlier, FR                25   
+0628    JO       FERNIOT Jean                    10.10.1918,22:15    Paris 14 ième, FR             75   
+0629    PO       FEROUILLAT Joannis J.B.         04.05.1820,06:00    Lyon, FR                      69   
+0630    MUS      FERRAS Christian                17.06.1933,08:15    Le Touquet, FR                62   
+0631    PO       FERRY Désiré                    25.10.1886,00:30    Metz, FR                      57   
+0632    PAI      FEUGEREUX Jean                  25.09.1923,10:30    Fresnay l'Evêque, FR          28   
+0633    PO       FEVRIER André                   30.11.1885,03:00    Le vigan, FR                  30   
+0634    JO       FEVRIER Georges                 26.11.1905,18:00    Vincennes, FR                 94   
+0635    MUS      FEVRIER Jacques                 27.07.1900,00:30    St Germain en Laye, FR        78   
+0636    AC       FEYDEAU Alain                   21.07.1934,15:45    Boulogne-Billt, FR            92   
+0637    PO       FILLIOUD Georges                07.07.1929,09:30    Lyon 4 ième, FR               69   
+0638    PO       FITERMAN Charles                28.12.1933,10:30    St Etienne, FR                42   
+0639    PO       FLOQUET Charles                 02.10.1828,06:30    St Jean Pied de P, FR         64   
+0640    JO       FLORIO René                     17.10.1921,11:00    Henin-Liétard, FR             62   
+0641    PO       FLOURENS Emile                  26.04.1841,16:00    Paris, FR                     75   
+0642    AUT      FOLLEREAU Raoul                 17.08.1903,07:00    Nevers, FR                    58   
+0643    AC       FONTANEL Geneviève              27.06.1936,16:50    Bordeaux, FR                  33   
+0644    PO       FONTANET Joseph                 09.02.1921,17:00    Frontenex, FR                 73   
+0645    JO       FONVIELLE ALQUIER François      10.02.1915,14:00    Carcassonne, FR               11   
+0646    PO       FORGEOT Pierre                  10.03.1888,02:00    Anglure, FR                   51   
+0647    PO       FORTOUL Hyppolyte               04.08.1811,03:00    Digne, FR                     4    
+0648    AC       FOSSEY Brigitte                 15.06.1946,09:30    Tourcoing, FR                 59   
+0649    AUT      FOUCAULT Michel                 15.10.1926,07:30    Poitiers, FR                  86   
+0650    AUT      FOUGERE Paule (JAMBU)           16.06.1916,10:00    Nantes, FR                    44   
+0651    PO       FOULD Achille                   19.09.1890,10:30    Condé sur Sarthe, FR          61   
+0652    PO       FOULON Maurice                  16.09.1886,03:00    Pantin, FR                    93   
+0653    AUT      FOURASTIÉ Jean                  15.04.1907,03:00    St-Bénin, FR                  58   
+0654    PO       FOURCADE Jean-Pierre            18.10.1929,01:00    Marmande, FR                  47   
+0655    MUS      FOURNET Jean                    14.04.1913,01:00    Rouen, FR                     76   
+0656    PO       FOURTOU Oscar (BARDI de)        03.01.1836,13:00    Ribérac, FR                   24   
+0657    PO       FOYER Jean                      27.04.1921,11:00    Contigné, FR                  49   
+0658    PO       FRACHON Benoît                  13.05.1893,19:00    Chambon-Feugero, FR           42   
+0659    MUS      FRANCESCATTI Zino (René)        09.08.1902,12:00    Marseille, FR                 13   
+0660    PO       FRANCOIS-PONCET André           13.06.1887,12:00    Provins, FR                   77   
+0661    PO       FREY Charles                    26.02.1888,14:00    Strasbourg, FR                67   
+0662    PO     * FREYCINET Charles de            14.11.1828,01:00    Foix, FR                      9    
+0663    AUT      FRISON-ROCHE Roger              10.02.1906,18:30    Paris 7 ième, FR              75   
+0664    MUS      FROMENT Louis de                05.12.1921,14:00    Toulouse, FR                  31   
+0665    JO       FROSSARD André                  14.01.1915,15:00    Colombier-Châtelot, FR        25   
+0666    PO       FROSSARD Ludovic Louis          05.03.1889,22:00    Foussemagne, FR               90   
+0667    PO       FROT Eugène                     02.10.1893,06:30    Montargis, FR                 45   
+0668    AUT      FUCHS Hélène                    04.01.1893,06:00    Bourges, FR                   18   
+0669    AC       GABIN Jean (MONCORGÉ)           17.05.1904,02:00    Paris 9 ième, FR              75   
+0670    PO       GADAUD Antoine                  26.04.1841,23:00    St Meyne, FR                  24   
+0671    PO       GAILLARD Félix                  05.11.1919,11:00    Paris 8 ième, FR              75   
+0672    AUT      GAILLARD Robert                 08.04.1909,21:00    Saintes, FR                   17   
+0673    MUS      GAINSBOURG Serge (GINSBURG)     02.04.1928,04:45    Paris 4 ième, FR              75   
+0674    JO       GAITS Jean                      29.02.1904,03:00    Tarbes, FR                    65   
+0675    JO       GALANTE Pierre                  22.11.1909,10:00    Nice, FR                      6    
+0676    JO       GALARD Daisy de (GOURCUFF)      04.11.1929,00:20    Tendron, FR                   18   
+0677    PO       GALLET Claudius                 12.11.1874,13:00    Annecy, FR                    70   
+0678    PO     * GALLEY Robert                   11.01.1921,01:00    Paris 5 ième, FR              75   
+0679    AUT      GALLO Max                       07.01.1932,09:00    Nice, FR                      6    
+0680    JO       GALLOIS Jean                    12.12.1914,04:00    Grenoble, FR                  38   
+0681    JO       GALZAIN Michel de               19.04.1918,03:00    Bordeaux, FR                  33   
+0682    PO       GAMDETTA Léon                   02.04.1838,20:00    Cahors, FR                    46   
+0683    PAI      GANDON Pierre                   20.01.1899,01:00    L'Hay les Roses, FR           94   
+0684    PO       GARAUD Marie-France (QUINTARD)  06.03.1934,19:00    Poitiers, FR                  86   
+0685    PO     * GARAUDY Roger                   17.07.1913,19:00    Marseille, FR                 13   
+0686    PO       GASNIER-DUPARC Alphonse         21.06.1879,15:00    Dol de Dretagne, FR           35   
+0687    JO       GAST Raymond                    27.06.1912,04:00    Villemonble, FR               93   
+0688    JO       GAULT Claude                    02.08.1934,13:30    St-Nazaire, FR                44   
+0689    PO       GAUTHIER Armand                 28.09.1850,03:00    Fitou, FR                     11   
+0690    JO       GAUTIER-CHAlJMET Louis          21.03.1895,04:00    Angers, FR                    49   
+0691    MUS      GENDRON Maurice                 26.12.1920,04:00    Nice, FR                      6    
+0692    AUT      GENET Jean                      19.12.1910,19:45    Paris 6 ième, FR              75   
+0693    PO       GENSOUS Pierre                  25.07.1925,04:00    Mont de Marsan, FR            40   
+0694    PO       GENTIN Fernand                  27.09.1876,09:00    Reims, FR                     51   
+0695    JO       GERARD André-Marie              02.09.1918,23:00    Epinal, FR                    88   
+0696    PO       GERARD Gaston                   30.04.1878,23:00    Dijon, FR                     21   
+0697    JO       GERARD Ivan                     24.02.1917,21:15    Rennes, FR                    35   
+0698    JO       GERAUD André                    11.07.1930,02:00    Rodez, FR                     12   
+0699    JO       GERBAUD François                10.04.1927,15:00    Châteauroux, FR               36   
+0700    PO       GERMAIN-MARTIN Louis            07.11.1872,16:00    Le Puy, FR                    43   
+0701    JO       GERNEZ Raymond                  27.11.1906,11:00    Avesnes les Aubert, FR        59   
+0702    PAI      GHIGLION-GREEN Maurice          08.11.1913,06:00    Cannes, FR                    6    
+0703    PO       GIAC0BBI François               19.07.1919,09:00    Venaco, FR                    20   
+0704    JO       GIANNOLI Paul                   17.03.1931,13:00    Marseille, FR                 13   
+0705    AUT      GIBEAU Yves                     03.01.1916,21:00    Bouzy, FR                     51   
+0706    JO       GICQUEL Roger                   22.02.1933,12:30    Thiers sur Thève, FR          60   
+0707    PO       GIGNOUX Claude Joseph           29.11.1890,05:00    Lyon 2 ième, FR               69   
+0708    JO       GILBERT Danièle                 20.03.1943,06:30    Clermont-Ferrand, FR          63   
+0709    PAI      GILI Marcel                     12.02.1914,02:00    Thuir, FR                     66   
+0710    AUT      GILLET Philippe                 13.07.1923,13:00    St Didier au Mt d'Or, FR      69   
+0711    PO       GILLOT Auguste                  07.02.1905,02:00    Dourdan, FR                   91   
+0712    PAI      GILOT Françoise                 26.11.1921,01:00    Neuilly sur Seine, FR         92   
+0713    PO       GIRARD Théodore                 14.01.1851,12:00    Montils, FR                   17   
+0714    AC       GIRARDOT Annie                  25.10.1931,02:00    Paris, FR                     75   
+0715    SIN      GIRAUDEAU Jean                  01.07.1916,16:00    Toulon, FR                    83   
+0716    PO     * GIRAUDOUX Jean                  29.10.1882,21:00    Bellac, FR                    87   
+0717    PO       GIRERD Cyprien                  01.05.1832,16:30    Nevers, FR                    58   
+0718    PO       GISCARD D'ESTAING Valéry        02.02.1926,21:30    Koblenz, Germany              KOBL 
+0719    JO       GIUGLARIS Marcel                19.06.1922,04:00    Nice, FR                      6    
+0720    PO       GOBLET René                     26.09.1828,21:00    Aire sur la Lys, FR           62   
+0721    PO     * GODART Justin                   26.11.1871,16:00    Lyon, FR                      69   
+0722    JO       GODDET Jacques                  21.06.1905,08:00    Paris, FR                     75   
+0723    PO       GODIN Jules                     14.03.1844,11:00    Versailles, FR                78   
+0724    JO       GORINI Jean Marc                20.10.1924,04:00    Lyon 2 ième, FR               69   
+0725    PO       GORSE Georges                   15.02.1915,05:00    Cahors, FR                    46   
+0726    PO       GOSNAT Georges                  03.12.1914,16:00    Bourges, FR                   18   
+0727    AUT      GOSSELIN-LENOTRE Therèse        20.06.1894,07:00    Avesnes sur Helpe, FR         59   
+0728    PO       GOURDEAU Gaston                 19.02.1883,01:00    St Cosme en Vairais, FR       72   
+0729    AUT      GRANCHER Marcel                 12.08.1897,23:30    Lons le Saunier, FR           39   
+0730    PO       GRANET Félix                    29.07.1849,20:00    Marseille, FR                 13   
+0731    JO       GRAVELLE André                  30.09.1925,01:00    Villechétif, FR               10   
+0732    JO       GREFFEUILLE Marcel              04.12.1907,21:00    Marseille, FR                 13   
+0733    JO       GRÉGOIRE Ménie (LAURENTIN)      15.08.1919,16:30    Cholet, FR                    49   
+0734    PO       GRÉVY Jules                     15.08.1807,23:00    Mont ss Vaudrey, FR           39   
+0735    PO       GRIFFUELHES Victor              14.03.1874,07:00    Nérac, FR                     47   
+0736    PO     * GRINDA Edouard                  20.12.1866,16:00    Nice, FR                      6    
+0737    PO       GRIUART Louis                   30.07.1829,03:00    Rennes, FR                    35   
+0738    JO       GROS Brigitte (SERVAN-SCHR.)    12.06.1925,23:50    St Germain en Laye, FR        78   
+0739    JO       GROSFILLEY Robert               23.05.1920,17:45    Belfort, FR                   90   
+0740    PO       GUENA Yves                      06.07.1922,22:45    Brest, FR                     29   
+0741    JO       GUERIN André                    01.12.1899,04:15    Flers, FR                     61   
+0742    PO       GUERIN Eugène                   27.07.1849,07:00    Carpentras, FR                84   
+0743    JO       GUERITHAULT Gilles              30.11.1918,03:00    Tours, FR                     37   
+0744    PO       GUERNIER Charles                26.04.1870,00:20    St Malo, FR                   35   
+0745    PO       GUERNUT Henri                   02.11.1876,07:00    Laroqueresse, FR              2    
+0746    AC       GUERS Paul (DUTRON)             19.12.1927,07:00    Tours, FR                     37   
+0747    PAI      GUIBOURET Fernand               30.05.1902,10:00    Moulins/ Allier, FR           3    
+0748    JO       GUICHARD Alain                  21.10.1917,22:00    St-Etienne, FR                42   
+0749    PO       GUICHARD Olivier                27.07.1920,10:00    Néac, FR                      33   
+0750    JO       GUICHARDAN Roger                16.10.1906,11:00    Chambéry, FR                  73   
+0751    PO       GUIEYSSE Pierre Paul            11.05.1841,07:00    Lorient, FR                   56   
+0752    JO       GUILLAIN Robert                 04.09.1908,04:00    Meudon, FR                    92   
+0753    JO       GUILLAUD Jean-Louis             05.03.1929,03:00    Caen, FR                      14   
+0754    AUT      GUILLAUME Louis                 18.12.1907,02:00    Paris 12 ième, FR             75   
+0755    JO       GUILLAUMIN Claude               22.10.1929,04:15    Courbevoie, FR                92   
+0756    PO       GUILLE Georges                  20.07.1909,20:00    Badens, FR                    11   
+0757    PO       GUINGOUIN Georges               02.02.1913,14:00    Magnac-Laval, FR              87   
+0758    PAI      GUIRAMAND Paul                  01.02.1926,03:30    St-Quentin, FR                2    
+0759    AUT      GUIREC Jean (CHARTON)           31.07.1898,10:00    Bordeaux, FR                  33   
+0760    PO       GUIRINGAUD Louis de             12.10.1911,04:30    Limoges, FR                   87   
+0761    AUT      GUTH Paul                       05.03.1910,05:00    Ossun, FR                     65   
+0762    PO       GUYOT Yves                      06.09.1843,17:00    Dinan, FR                     22   
+0763    PO       HABIB-DELONCLE Michel           26.11.1921,11:00    Neuilly sur Seine, FR         92   
+0764    PO       HABY René                       09.10.1919,01:00    Dombasle, FR                  54   
+0765    AC       HALLYDAY Johnny (de SMET J.P)   15.06.1943,13:00    Paris 9 ième, FR              75   
+0766    JO       HAMELET Michel (DANIEL Mario)   09.02.1908,05:00    La Ciotat, FR                 13   
+0767    AUT      HAMMAN Adalbert                 14.06.1910,09:00    Raling, FR                    57   
+0768    AC       HANIN Roger (LEVY)              20.10.1925,00:00    Alger, Algérie                ALG  
+0769    PO       HANOTAUX Gabriel                19.11.1853,14:00    Beaurevoir, FR                2    
+0770    JO       HANU José                       05.02.1925,09:00    Dunkerque, FR                 59   
+0771    MUS      HARTEMANN Jean Claude           18.12.1929,15:00    Vezet, FR                     70   
+0772    AUT      HARTOY Maurice de (HANOT d')    17.03.1892,10:00    Derneville, FR                62   
+0773    CAR      HARVEC (HERVÉ André)            03.07.1918,12:00    St Nicolas de Redon, FR       44   
+0774    MUS      HASQUENOPH Pierre               20.10.1922,11:15    Pantin, FR                    93   
+0775    PO       HAUSSMANN Georges Eugène        27.03.1809,06:00    Paris, FR                     75   
+0776    MUS      HEIDSIECK Eric                  21.08.1936,06:30    Reims, FR                     51   
+0777    PAI      HEITZ Robert                    03.08.1895,00:15    Saverne, FR                   67   
+0778    PO       HENNESSY Oean                   26.04.1874,08:00    Richemont/Lognac, FR          16   
+0779    PO       HE~RY André                     15.10.1934,18:00    Fontenoy le Chateau, FR       88   
+0780    PO       HERARD Jean                     06.07.1888,12:00    Le Vésinet, FR                93   
+0781    PO       HERAUD Marcel                   08.05.1883,01:00    Cérilly, FR                   3    
+0782    PO       HERAULT René                    27.08.1837,01:00    Châtellerault, FR             86   
+0783    AUT      HERIAT Philippe (PAYELLE)       15.09.1898,16:30    Paris 1er, FR                 75   
+0784    PO       HERISS0N Charles                12.10.1831,10:00    Surgy, FR                     58   
+0785    PO       HERNU Charles                   03.07.1923,21:00    Quimper, FR                   29   
+0786    JO       HEROLD-PAQUIS Jean (HEROLD)     04.02.1912,09:00    Arches, FR                    88   
+0787    PO     * HERZOG Maurice                  15.01.1919,03:30    Lyon, FR                      69   
+0788    JO       HEYMANN Philippe                21.10.1938,04:50    Lille, FR                     59   
+0789    JO       HIGGINS George-William          05.05.1916,18:00    Neuilly sur Seine, FR         92   
+0790    PAI      HILAIRE Camille                 02.08.1916,09:00    Metz, FR                      57   
+0791    AUT      HILLAIRET Jacques (COUSSILLAN)  31.07.1886,03:00    Commentry, FR                 3    
+0792    AC       HIRSCH Robert                   26.07.1925,05:00    L'Isle-Adam, FR               95   
+0793    AC       HOSSEIN Robert                  30.12.1927,02:30    Paris 12 ième, FR             75   
+0794    JO       HOUDART Jean                    01.02.1923,11:30    Melun, FR                     77   
+0795    PO       HOUDET Poger                    14.06.1899,12:00    Angers, FR                    49   
+0796    MUS      HOUDY Pierick                   18.01.1929,19:00    Rennes, FR                    35   
+0797    JO       HOUTEER Gérard                  18.10.1930,18:00    Douai, FR                     59   
+0798    PAI      HUEBER Jean-Jacques             26.02.1920,03:30    Strasbourg, FR                67   
+0799    PAI      HU6UES Patrice                  10.04.1930,07:55    Courbevoie, FR                92   
+0800    PO       HULIN Gaston                    24.07.1882,13:30    Poitiers, FR                  86   
+0801    PO       HUMBERT Gustave                 28.06.1822,11:00    Metz, FR                      57   
+0802    AUT      HUSSON Albert                   03.08.1912,21:45    Lyon 5 ième, FR               69   
+0803    JO       HUTEAU Jean                     21.04.1919,12:50    Orléans, FR                   45   
+0804    PO     * HYMANS Max                      02.03.1900,06:00    Paris 18 ième, FR             75   
+0805    PO       IGNACE Edouard                  04.01.1862,00:30    Baccarat, FR                  54   
+0806    JO       IMBERT Claude                   12.11.1929,22:30    Quins, FR                     12   
+0807    JO       IMBOURG Pierre                  26.08.1903,16:00    St Jeand'Angély, FR           17   
+0808    PO       INCHAUSPÉ Michel                05.11.1925,19:00    St Jean pied de Port, FR      64   
+0809    PAI      INNOCENT Frank                  20.11.1912,06:00    Sahurs, FR                    76   
+0810    PO       ISAAC Auguste                   06.09.1849,11:00    Roubaix, FR                   59   
+0811    AUT      IZARD Georges                   17.06.1903,02:00    Abeilhan, FR                  34   
+0812    MUS      JACOB Maxime                    13.01.1906,11:00    Bordeaux, FR                  33   
+0813    PAI      JACQUEMIN André                 03.09.1904,03:00    Eplnal, FR                    88   
+0814    PO       JACQUIER Paul                   26.03.1879,14:00    Bordeaux, FR                  33   
+0815    PAI      JACQUOT Pierre                  15.05.1929,04:15    Nancy, FR                     54   
+0816    JO       JAGER René                      08.03.1909,05:00    Richeling, FR                 57   
+0817    PO       JAMAIS Emile                    10.12.1856,22:00    Aigues-Vives, FR              30   
+0818    JO       JAMMOT Armand                   04.04.1922,18:00    Alforville, FR                94   
+0819    AUT      JANKELEVITCH Vladimir           31.08.1903,15:00    Bourges, FR                   18   
+0820    PO       JAQUET Gérard                   12.01.1916,16:30    Malakoff, FR                  92   
+0821    PO       JARDILLIER Robert               31.03.1890,13:00    Caen, FR                      14   
+0822    PO       JARROT André                    13.12.1909,16:00    Lux, FR                       71   
+0823    PO       JAUBERT Jean-Alexig             01.12.1879,11:00    Larche, FR                    19   
+0824    PO     * JAURES Jean                     03.09.1859,12:00    Castres, FR                   81   
+0825    AUT      JEAN-CHARLES (CHARLES Jean)     02.12.1922,04:40    St-Aulaye, FR                 24   
+0826    DAN      JEANMAIRE Zizi (Renée)          29.04.1924,09:00    Paris 14 ième, FR             75   
+0827    PO       JEANNENEY Jules                 06.07.1864,21:00    Besançon, FR                  25   
+0828    PAI      JEAN-ROBERT André (ROBERT J.)   25.10.1921,12:00    Chantemerle les Blés, FR      26   
+0829    PO       JEANSON André                   13.10.1911,16:00    Manois, FR                    52   
+0830    AUT      JEANSON Henri                   06.03.1900,21:00    Paris 13 ième, FR             75   
+0831    PAI      JEROME Pierre                   20.01.1905,01:00    Dunkerque, FR                 59   
+0832    AC       JOBERT Marlène                  04.11.1940,18:15    Alger, Algérie                ALG  
+0833    PO       JOBERT Michel                   11.09.1921,16:00    Meknes, Maroc                 MEKN 
+0834    PO       JOLIOT-CURIE Irène              12.09.1897,22:00    Paris 13 ième, FR             75   
+0835    PO       JONNART Célestin                27.12.1857,10:00    Fléchin, FR                   62   
+0836    PO       J05PIN Lionel                   12.07.1937,23:10    Meudon, FR                    92   
+0837    PO       JOURDAIN Paul                   28.10.1878,23:15    Altkirch, FR                  68   
+0838    PO       JOUVENEL Henry de               02.04.1876,13:30    Paris 8 ième, FR              75   
+0839    PO       JOXE Louis                      16.09.1901,13:00    Bourg la Reine, FR            92   
+0840    PO       JUGLAS Jean-Jacques             10.06.1904,19:00    Bergerac, FR                  24   
+0841    JO       JULIEN Claude                   17.05.1925,21:15    ST Rome de cernon, FR         12   
+0842    AUT      JULLIAN Marcel                  31.01.1922,12:00    Châteaurenard, FR             13   
+0843    JO       KERRAOUL Bernard (VITTU de)     17.02.1936,06:50    St-Brieuc, FR                 22   
+0844    JO       KOEFFLER Roger                  30.07.1914,21:30    Strasbourg, FR                67   
+0845    PO       KRANTZ Camille                  24.08.1848,22:00    Dinozé, FR                    88   
+0846    PO       LABBÉ Claude                    27.01.1920,03:00    Argenteuil, FR                95   
+0847    DAN      LABIS Attilio                   05.09.1936,07:00    Vincennes, FR                 94   
+0848    JO       LABORIE Pierre                  27.08.1907,19:00    Bordeaux, FR                  33   
+0849    JO       LABRO Philippe                  27.08.1936,20:00    Montauban, FR                 82   
+0850    AUT      LABURTHE-TOLRA Jean-Claude      18.05.1923,00:15    Levallois-Perret, FR          92   
+0851    PO       LACORE Suzanne                  30.05.1875,10:00    Le Glandier, FR               19   
+0852    JO       LACOUTURE Jean                  09.06.1921,06:00    Bordeaux, FR                  33   
+0853    JO       LACROIX Jean-Paul               22.03.1914,23:00    Colombes, FR                  92   
+0854    MUS      LAFARGE Guy                     05.05.1904,16:00    Périgueux, FR                 24   
+0855    PO       LAFAYE Gabriel                  14.10.1888,01:30    Eauze, FR                     32   
+0856    PO       LAFFERRE Louis                  10.05.1861,22:00    Pau, FR                       64   
+0857    PO       LAFFONT Paul                    25.04.1885,20:00    Le Mas d'Azil, FR             9    
+0858    PO       LAFONT Ernest                   26.07.1879,17:00    Lyon 3 ième, FR               69   
+0859    AUT      LAFUE Pierre                    18.09.1902,16:00    Pont de Montvert, FR          48   
+0860    JO       LAGARDE Pierre de               25.03.1932,02:30    Meudon, FR                    92   
+0861    PO       LAGARDELLLE Hubert              08.07.1874,14:00    Le Burgaud, FR                31   
+0862    PO       LAGRANGE Léo                    28.11.1900,23:00    Bourg sur Gironde, FR         33   
+0863    AC       LAGRANGE Valérie (CHARAUDEAU)   25.02.1942,13:00    Parls 18 ieme, FR             75   
+0864    PO       LAGUILLIER Arlette              18.03.1940,18:40    Paris 4 ième, FR              75   
+0865    AUT      LAHAYE Simone                   01.05.1908,09:30    Vouziers, FR                  8    
+0866    MUS      LAI francis                     26.04.1932,19:00    Nice, FR                      6    
+0867    AUT      LAINÉ Pascal                    10.05.1942,05:00    Anet, FR                      28   
+0868    JO       LALANNE Denis                   01.04.1926,02:00    Pau, FR                       64   
+0869    PO       LALONDE Brice                   10.02.1946,14:30    Neuilly sur Seine, FR         92   
+0870    JO       LALOU Etienne                   16.12.1918,01:00    Paris 14 ième, FR             75   
+0871    AC       LAMA Serge (CHAUVIER)           11.02.1943,14:00    Bordeaux, FR                  33   
+0872    PO       LA MALENE Christian de          05.12.1920,12:00    Nîmes, FR                     30   
+0873    PO       LAMBERT Charles                 16.12.1883,11:00    Châtillon en Diois, FR        26   
+0874    JO       LAMBERT Guy                     09.06.1918,15:15    St-Maur, FR                   94   
+0875    PAI      LAMBERT Pierrette               10.06.1928,15:30    Orches, FR                    86   
+0876    PO       LAMOUREUX Lucien                16.09.1888,22:00    Viplaix, FR                   3    
+0877    AC       LAMOUREUX Robert                04.01.1920,05:00    Paris 11 ième, FR             75   
+0878    JO       LANCELOT Michel                 17.01.1938,20:00    Lognes, FR                    77   
+0879    MUS      LANDOWSKI Françoise             03.03.1917,19:30    Boulogne-Billt, FR            92   
+0880    PO       LANDRY Michel Adolphe           29.09.1874,07:15    Ajaccio, FR                   20   
+0881    PO       LANESSAN Jean Marie de          13.07.1843,16:00    St André de Cubzac, FR        33   
+0882    JO       LANG Serge                      06.06.1920,01:00    Mulhouse, FR                  68   
+0883    JO       LANGEAIS Catherine (TERRASSE)   09.08.1923,12:00    Valence, FR                   26   
+0884    JO       LAPIERRE Dominique              30.07.1931,19:30    Châtelaillon, FR              17   
+0885    JO       LARCHÉ Georges                  09.11.1906,17:00    Niort, FR                     79   
+0886    PO       LAROZE Alfred                   05.04.1834,13:00    Bordeaux, FR                  33   
+0887    AUT      LARTÉGUY Jean (OSTY Lucien)     05.09.1920,10:15    Maisons-Alfort, FR            94   
+0888    PAI      LARTIGUE Jacques                13.06.1894,04:00    Courbevoie, FR                92   
+0889    MUS      LASKINE Lilly (Aimée)           31.08.1893,12:00    Paris 9 ième, FR              75   
+0890    PO       LASSALLE Robert                 02.06.1882,11:00    Soustons, FR                  40   
+0891    JO       LAUNAY Pierre-Jean              27.12.1900,08:30    Carrouges, FR                 61   
+0892    PO       LAURAIN Jean                    01.01.1921,04:00    Grigy, FR                     57   
+0893    PO       LAURAINE Jean-Octave            03.10.1864,19:00    Burie, FR                     17   
+0894    PO       LAURENS Emile                   29.01.1884,01:00    Réquista, FR                  12   
+0895    PO       LAURENT Augustin                09.09.1896,11:00    Wahagnies, FR                 59   
+0896    PO       LAURENT Paul                    01.05.1925,18:30    Génelard, FR                  71   
+0897    JO       LAURENT-DARNAR Pierre           31.05.1901,14:00    Fontenay, FR                  85   
+0898    PO       LAUTIER Eugène                  20.08.1867,14:00    Paulhan, FR                   34   
+0899    PAI      LAUZERO Albert                  16.08.1909,23:00    Fleurance, FR                 32   
+0900    PO       LAVAL Pierre                    28.06.1883,10:00    Châteldon, FR                 63   
+0901    PAI      LAVILLE Henri                   07.02.1916,08:00    Bordeaux, FR                  33   
+0902    JO       LAZAREFF Pierre                 16.04.1907,08:00    Paris 9 ième, FR              75   
+0903    JO       LESACQZ Albert                  29.07.1924,14:00    St Amand les Eaux, FR         59   
+0904    AUT      LEBAS Edouard                   18.11.1897,13:30    Octeville, FR                 50   
+0905    PO       LEBAS Jsan-Baptiste             24.10.1878,03:00    Roubaix, FR                   59   
+0906    JO       LE BIDOIS Robert                08.10.1897,06:00    Juilly, FR                    77   
+0907    PO       LEBON André                     26.06.1859,00:00    Dieppe, FR                    76   
+0908    PO       LE COURRE Raymond               10.11.1912,21:30    Arcueil, FR                   94   
+0909    AUT      LEBRAU Jean                     20.10.1891,11:00    Moux, FR                      11   
+0911    PO       LEBRUN Albert                   29.08.1871,14:00    Mercy le Haut, FR             54   
+0912    PO       LECANUET Jean                   04.03.1920,07:45    Rouen, FR                     76   
+0913    PO       LECAT Jean-Philippe             29.07.1935,17:20    Dijon, FR                     21   
+0914    JO       LECERF Jean                     01.06.1918,15:30    Maromme, FR                   76   
+0915    JO       LECHANTRE Jean                  13.03.1917,18:00    Roubaix, FR                   59   
+0916    PO       LE CHERPY Joseph                10.10.1874,23:30    Falaise, FR                   14   
+0917    PO       LECOIN Louis                    30.09.1888,02:00    St Amand-Montrond, FR         18   
+0918    PO       LE COUR GRANDMAISON Jean        15.03.1883,03:00    Nantes, FR                    44   
+0919    JO       LE CUNFF Louis                  27.07.1919,10:00    Lorient, FR                   56   
+0920    PO       LEFEBURE Léon                   31.03.1838,16:00    Wintzenheim, FR               68   
+0921    MUS      LEFÉBURE Yvonne                 29.06.1898,06:00    Ermont, FR                    95   
+0922    AUT      LEFEBVRE Henri                  16.06.1901,11:00    Hagetmau, FR                  40   
+0923    PO       LEFEBVRE DU PREY Edmond         16.10.1866,00:15    St Omer, FR                   62   
+0924    PO       LEFEVRE Auguste                 20.12.1828,03:00    Brest, FR                     29   
+0925    JO       LEFEVRE Jean                    08.03.1928,21:00    Châlons sur Marne, FR         51   
+0926    AUT      LE GENTIL Pierre                01.11.1906,05:00    Vertus, FR                    51   
+0927    PO     * LE GORGEU Victor                05.05.1881,10:00    Quimper, FR                   29   
+0928    PO       LEGRAND Pierre                  13.05.1834,15:00    Lille, FR                     59   
+0929    JO       LEGRIS Jacques                  22.02.1919,22:00    Versailles, FR                78   
+0930    AUT      LE HIR Yves                     02.07.1919,04:00    Gouesnou, FR                  29   
+0931    AUT      LEMAITRE Henri                  01.04.1912,19:00    St-Etienne, FR                42   
+0932    AUT      LEMARCHAND Henri                19.02.1911,15:00    Bordeaux, FR                  33   
+0933    AUT      LEMARCHAND Jacques              12.06.1908,18:00    Bordeaux, FR                  33   
+0934    AUT      LE MAROIS Jean                  21.12.1895,07:00    Lonray, FR                    61   
+0935    AC       LEMARQUE Francis (KORB)         25.11.1917,02:00    Paris, FR                     75   
+0936    PAI      LE MOLT Philippe                26.03.1895,13:10    Senlis, FR                    60   
+0937    MUS      LENFANT Maurice                 13.10.1902,01:00    Rouen, FR                     76   
+0938    PAI      LENORMAND Albert                15.05.1915,00:02    La Roche-Vineuse, FR          71   
+0939    PO       LE PEN Jean Marie               20.06.1928,03:00    La Trinite sur Mer, FR        56   
+0940    PO       LEPENSEC Louis                  08.01.1937,18:00    Mellac, FR                    29   
+0941    JO       LEPROHON Pierre                 03.09.1903,23:00    Avesnes sur Helpe, FR         59   
+0942    MUS      LEQUIEN Colette                 19.12.1920,12:30    Versailles, FR                78   
+0943    JO       LERÉEC Fernand                  06.03.1928,10:15    Le Havre, FR                  76   
+0944    JO       LERMINIER Georges               23.04.1915,02:00    Orléans, FR                   45   
+0945    JO       L'ERMITE Pierre (LOUTIL Ed.)    17.11.1863,07:30    Mohon, FR                     8    
+0946    JO       LEROY Georges(TOPAKlAN)         16.08.1931,08:45    Colombes, FR                  92   
+0947    AUT      LEROY Pierre                    24.08.1900,06:30    La Madeleine, FR              59   
+0948    MUS      LEROY René                      04.03.1898,11:00    Maisons-Laffitte, FR          78   
+0949    PO       LEROY Roland                    04.05.1926,11:00    St AuLin les Elbeuf, FR       76   
+0950    AUT      LE ROY LADURIE Emmanuel         19.07.1929,11:00    Les Moutiers en Cin, FR       14   
+0951    AUT      LESOURD Paul                    19.12.1897,08:00    Tours, FR                     37   
+0952    PO       LE THEULE Joël                  22.03.1930,10:30    Sablé, FR                     72   
+0953    PO       LE TROCQUER Yves                04.10.1877,02:00    Pontrieux, FR                 22   
+0954    PO       LEYGUES Georges                 29.10.1856,10:00    Villeneuve/Lot, FR            47   
+0955    PO       L'HOPITEAU Gustave              26.04.1860,21:30    Ecrosnes, FR                  28   
+0956    PO       LIAUTEY André                   09.03.1896,19:30    Port sur Saône, FR            70   
+0957    PO       LILLAZ Henri                    06.01.1881,02:00    Sts Colombe, FR               69   
+0958    AUT      LIME Maurice (KIRSCH)           25.06.1905,04:00    Montigny les Metz, FR         57   
+0959    PO       LIMOUZY Jacques                 29.08.1926,11:00    Castres, FR                   81   
+0960    JO       LIMUR Ivan de                   03.07.1937,16:48    Neuilly sur Seine, FR         92   
+0961    PO       LISBONNE Emile                  20.06.1876,16:00    Nyons, FR                     26   
+0962    PAI      LOIRE Gabriel                   21.04.1904,11:00    Pouancé, FR                   49   
+0963    PO       LONG Maurice                    15.03.1866,19:00    Crest, FR                     26   
+0964    MUS      LOPEZ Francis                   15.06.1916,03:30    Montbeliard, FR               25   
+0965    JO       LORANT Georges                  11.09.1909,11:30    Asnières, FR                  92   
+0966    PO       LORGERÉ André                   26.01.1891,08:00    Guingamp, FR                  22   
+0967    MUS      LORIOU Yvonne                   20.01.1924,11:00    Houilles, FR                  78   
+0968    JO       LOSTE Jacques                   27.12.1905,09:00    Neuilly sur Seine, FR         92   
+0969    PO       LOUBET Emile                    30.12.1838,17:00    Marsanne, FR                  26   
+0970    PO       LOUCHEUR Louis                  12.08.1872,18:00    Roubaix, FR                   59   
+0971    JO     * LOUIS Roger                     29.01.1925,16:30    Arras, FR                     62   
+0972    PO       LOURTIES Victor                 22.07.1844,03:00    Aire sur Adour, FR            40   
+0973    PO       LOUSTAU Kléber                  05.02.1915,19:00    Romorantin, FR                41   
+0974    AUT      LUBIN Georges                   24.01.1904,23:00    Ardentes, FR                  36   
+0975    SIN      LUCCIONI José                   14.10.1903,01:00    Bastia, FR                    20   
+0976    JO       LUCOTTE Marcel                  16.01.1922,14:15    Autun, FR                     71   
+0977    AUT      LUGNIER Robert                  12.12.1894,17:00    St Germaîn-Laval, FR          42   
+0978    PAI      LUKA Madeleine (BOTTET)         07.07.1894,18:00    Maffliers, FR                 95   
+0979    JO       LYON Raymond                    27.10.1908,14:00    Neuilly sur Seine, FR         92   
+0980    PAI      MAC'AVOY Edouard (MACARDY)      25.01.1905,09:00    Caudéran-Bordeaux, FR         33   
+0981    AC       MACIAS Enrico (GHRENASSIA)      11.12.1938,16:00    Constantine, Algérie          CONST
+0982    MUS      MAGNE Michel                    20.03.1930,20:00    Lisieux, FR                   14   
+0983    JO       MAHE René                       24.06.1926,02:00    Marseille, FR                 13   
+0984    PO       MAHIEU Albert                   02.02.1864,11:00    Cappelle-la-Grande, FR        59   
+0985    AC       MAILLAN Jacqueline              11.01.1923,20:00    Paray-le-Monial, FR           71   
+0986    PO       MAIRE Edmond                    24.01.1931,06:00    Epinay sur Seine, FR          93   
+0987    PO       MAITRE Henri                    26.11.1883,05:00    Louhans, FR                   71   
+0988    PO     * MALRAUX André                   03.11.1901,16:00    Paris 18 ième, FR             75   
+0989    PO       MALVY Louis Jean                30.11.1875,03:00    Figeac, FR                    46   
+0990    JO       MAMY Georges                    14.11.1921,09:00    Allassac, FR                  19   
+0991    PO       MANDEL Georges (ROTHSCHILD)     05.06.1885,22:30    Chatou, FR                    78   
+0992    PO       MANENT Gaston                   24.04.1884,17:00    Mauléon-Darousse, FR          65   
+0993    AC       MANUEL Robert                   07.09.1916,01:00    Paris 17 ieme, FR             75   
+0994    AUT      MARC-CAB (CABRIDENS Marcel)     11.12.1901,07:00    Nice, FR                      6    
+0995    PO       MARCELLIN Raymond               19.08.1914,14:00    Sézanne, FR                   51   
+0996    PO       MARCHAIS Georges                07.06.1920,04:00    La Hoguette, FR               14   
+0997    MUS      MARCHAL André                   06.02.1894,15:00    Paris 14 ième, FR             75   
+0998    PO       MARCHANDEAU Paul                10.08.1882,19:00    Gaillac, FR                   81   
+0999    JO       MARCILLAC Raymond               11.04.1917,14:20    Levallois-Perret, FR          92   
+1000    JO       MARCO Edmond                    17.04.1916,18:00    Strasbourg, FR                67   
+1001    PO       MARCOMBES Philippe              05.12.1877,09:00    Murat, FR                     15   
+1002    AUT      MARDORE Michel (GURAMANT)       22.10.1935,07:00    Bordeaux, FR                  33   
+1003    PO       MARGAINE Alfred                 18.01.1870,01:00    Ste Menehould, FR             51   
+1004    PAI      MARGOTTON René                  18.11.1915,15:00    Roanne, FR                    42   
+1005    AC       MARIELLE Jean-Pierre            12.04.1932,23:30    Paris 13 ième, FR             75   
+1006    JO       MARIN Jean (MORVAN Yves)        24.02.1909,17:00    Douarnenez, FR                29   
+1007    PO       MARIN Louis                     07.02.1871,10:00    Faulx, FR                     54   
+1008    AUT      MARINIER Paul                   10.08.1866,10:00    Rouen, FR                     76   
+1009    JO       MAROT Jacques                   01.12.1914,06:15    Niort, FR                     79   
+1010    PO       MARQUET Adrien                  06.10.1884,06:00    Bordeaux, FR                  33   
+1011    PO       MARRANE Georges                 20.01.1888,19:30    Louviers, FR                  27   
+1012    PO       MARRAUD Pierre                  08.01.1861,15:00    Port Ste Marie, FR            47   
+1013    PO       MARTEL Louis                    13.09.1813,22:30    St Omer, FR                   62   
+1014    MUS      MARTIN Emile                    07.05.1914,23:00    Cendras, FR                   30   
+1015    AUT      MARTIN Georges                  17.01.1905,06:00    Nîrnes, FR                    30   
+1016    AC       MARTIN Jacques                  22.06.1933,18:40    Lyon 4 ième, FR               69   
+1017    PAI      MARTIN Léopold                  30.03.1889,11:00    Toulon, FR                    83   
+1018    PO       MARTIN-FEUILLÉE Félix           25.11.1830,10:00    Rennes, FR                    35   
+1019    MUS      MARTINON Jean                   10.01.1910,00:15    Lyon 6 ième, FR               69   
+1020    JO       MARTRAY Joseph                  14.05.1914,10:00    Lamballe, FR                  22   
+1021    PO       MARTY Jean                      31.01.1838,19:30    Carcassonne, FR               11   
+1022    PAI      MARZÉ Emile                     04.08.1930,06:30    Menton, FR                    6    
+1023    PO       MASSE Pierre                    13.12.1879,09:30    Ribérac, FR                   24   
+1024    PO       MASSÉ Alfred                    02.06.1870,10:00    Pougues les Eaux, FR          58   
+1025    JO       MASSIP Roger                    06.11.1904,08:10    Montauban, FR                 82   
+1026    PAI      MASSON Marcel                   25.06.1911,01:30    Nangis, FR                    77   
+1027    PO       MATHEVET René                   10.03.1914,03:30    St-Etienne, FR                42   
+1028    PAI      MATHIEU Georges                 27.01.1921,10:45    Boulogne sur Mer, FR          62   
+1029    JO       MATHIEU Gilbert                 29.03.1928,20:00    La Garenne Colom, FR          92   
+1030    AC       MATHIEU Mireille                22.07.1946,22:00    Avignon, FR                   84   
+1031    JO       MAUDUIT Jean                    25.10.1921,20:00    Beauval, FR                   80   
+1032    JO       MAUGAIN Paul                    08.05.1920,23:00    Arc sous Cicon, FR            25   
+1033    PO       MAUJAN Adolphe                  03.06.1853,20:00    Pontanereaux, FR              71   
+1034    PO       MAUPOIL Henri                   11.07.1891,08:00    Dezize les Maranges, FR       71   
+1035    SIN      MAURANE Camille (MOREAU)        29.11.1911,09:00    Rouen, FR                     76   
+1036    JO       MAURIES René                    16.02.1921,09:00    Mirandol-Bourgno, FR          81   
+1037    PO       MAUROY Pierre                   05.07.1928,03:00    Cartignies, FR                59   
+1038    PO     * MAURRAS Charles                 20.04.1868,02:00    Martigues, FR                 13   
+1039    JO       MAX-PETIT Camille (PETIT)       21.07.1921,15:00    Gardanne, FR                  13   
+1040    AUT      MAYA Tristan (MATON Jean)       04.06.1926,12:00    Arnay le Duc, FR              21   
+1041    PO       MAYER René                      04.05.1895,22:00    Paris 5 ième, FR              75   
+1042    PAI      MAYET Dominique                 09.04.1925,21:00    Pratz, FR                     39   
+1043    JO       MAZAUDET Richard                17.09.1924,16:30    Odival, FR                    52   
+1044    PO       MAZÉ Pierre                     09.01.1893,01:00    Sizun, FR                     29   
+1045    PO       MAZEAU Charles                  01.09.1825,22:00    Dijon, FR                     21   
+1046    PO       MAZEAUD Léon                    07.03.1900,19:00    Limoges, FR                   87   
+1047    PO       MAZEAUD Pierre                  24.08.1929,06:30    Lyon, FR                      69   
+1048    JO       MAZIERES André                  18.05.1920,01:00    Mazamet, FR                   81   
+1049    PO       MAZIOL Jacques                  13.01.1918,02:00    Aurillac, FR                  15   
+1050    JO       MAZOYER Georges                 12.01.1931,01:00    Toulon, FR                    83   
+1051    PO       MEAUX Camille                   18.09.1830,05:00    Montbrison, FR                42   
+1052    JO       MÉDECIN Jacques                 05.05.1928,04:00    Nice, FR                      6    
+1053    PO       MÉHAIGNERIE Pierre              04.05.1939,19:00    Balazé, FR                    35   
+1054    PO       MELINE Jules                    20.05.1838,04:00    Remiremont, FR                88   
+1055    JO       MENANT Georges                  07.03.1924,22:30    Clamart, FR                   92   
+1056    PO       MENDES-FRANCE Pierre            11.01.1907,14:00    Paris 3 ième, FR              75   
+1057    JO       MENDITTE Jacques de             29.12.1906,07:00    Lannéjouls, FR                12   
+1058    JO       MENGIN Robert                   12.11.1907,11:00    Melun, FR                     77   
+1059    PAI      MERCIER Jean                    12.08.1899,23:55    Angers, FR                    49   
+1060    AC       MERCIER Michèle                 01.01.1939,04:30    Nice, FR                      6    
+1061    PAI      MERELLE René                    24.08.1903,14:00    St Germain en Laye, FR        78   
+1062    JO       MERITENS Paul                   16.07.1905,02:00    Nogent sur Marne, FR          94   
+1063    SIN      MERKES Marcel                   07.07.1920,02:00    Bordeaux, FR                  33   
+1064    PO       MERLOU Pierre                   18.02.1849,03:00    Deuguin, FR                   64   
+1065    SIN      MERVAL Paulette (RlFFAUD)       03.11.1920,20:00    La Roche-Chalais, FR          24   
+1066    AUT      MERY Fernand                    11.02.1897,09:00    Clermont, FR                  34   
+1067    SIN      MESPLÉ Mady (Magdeleine)        07.03.1931,02:00    Toulouse, FR                  31   
+1068    JO       MESSAC Ralph                    08.09.1924,05:30    Versailles, FR                78   
+1069    PO     * MESSIMY Adolphe                 31.01.1869,19:00    Lyon, FR                      69   
+1070    PO       MESUREUR Gustave                02.04.1847,04:00    Marcq en Baroeul, FR          59   
+1071    MUS      METÉHEN Jacques                 28.08.1903,01:00    Orléans, FR                   45   
+1072    PO       METIN Albert                    23.01.1871,20:00    Besançon, FR                  25   
+1073    MUS      MEUNIER Jean-René               31.01.1930,15:00    Deuil, FR                     95   
+1074    PO       MEXANDEAU Louis                 06.07.1931,17:30    Wanquetin, FR                 62   
+1075    JO       MEYER Gaston                    01.05.1905,11:00    Savignac les Eglises, FR      24   
+1076    PO       MEYER Léon                      11.09.1868,17:15    Le Havre, FR                  76   
+1077    AUT      MEZERETTE Jean                  15.07.1910,11:00    Mortrée, FR                   61   
+1078    PO       MICHALLON Albert                08.06.1912,18:00    Grenoble, FR                  38   
+1079    PO       MICHARD-PELISSIER Jean          03.10.1909,22:00    Gap, FR                       5    
+1080    AUT      MICHEL Henri                    28.04.1907,03:00    Vidauban, FR                  83   
+1081    PO       MIELLET Edmond                  01.11.1880,03:00    Montbouton, FR                90   
+1082    JO       MIGNON Paul-Louis               29.11.1920,03:00    Le Vésinet, FR                78   
+1083    PO       MILHAUD Albert                  10.06.1871,10:00    Nîmes, FR                     30   
+1084    PO       MILLAUD Edouard                 07.09.1834,15:00    Tarascon, FR                  13   
+1085    PO       MILLIARD Victor                 19.12.1844,02:00    Les Andelys, FR               27   
+1086    PO       MILLIES-LACROIX Raphaël         04.12.1850,23:50    Dax, FR                       40   
+1087    PO       MILLOT Léon                     07.10.1881,15:00    St Mihiel, FR                 55   
+1088    MUS      MIREILLE (HARTUCH Mireille)     30.09.1906,03:00    Paris 3 ième, FR              75   
+1089    PO       MISSOFFE François               13.10.1919,14:00    Toulon, FR                    83   
+1090    PO       MISTLER Jean                    01.09.1897,02:00    Sorèze, FR                    81   
+1091    AUT      MOHRT Pierre                    28.04.1914,22:00    Morlaix, FR                   29   
+1092    AUT    * MOINOT Pierre                   29.03.1920,22:00    Fressines, FR                 79   
+1093    JO       MOLLAT du JOURDIN Guy           15.12.1900,03:30    Laon, FR                      2    
+1094    AC       MONA-DOL (DELBART Amélie)       28.05.1901,09:00    Lille, FR                     59   
+1095    AC       MONDY Pierre (CUQ)              10.02.1925,10:00    Neuilly sur Seine, FR         92   
+1096    AC       MONFORT Silvia (FAVRE-BERTIN)   07.06.1923,22:00    Paris 3 ième, FR              75   
+1097    PO       MONIS Ernest                    23.05.1846,11:00    Châteauneuf/Char, FR          16   
+1098    JO       MONMARSON Raoul                 19.10.1895,21:00    St Maur des Fossés, FR        94   
+1099    PAI      MONNERET Jean                   27.11.1922,07:00    Chalon sur Saône, FR          71   
+1100    PO       MONNET Georges                  12.08.1898,19:00    Aurillac, FR                  15   
+1101    PO       MONORY René                     06.06.1923,19:30    Loudun, FR                    86   
+1102    PAI      MONTANÉ Roger                   21.02.1916,01:00    Bordeaux, FR                  33   
+1103    AUT      MONTAURIER Jean (FLEURY Ed.)    15.12.1906,20:00    Aulnat, FR                    63   
+1104    PO     * MONZIE Anatole de               22.11.1876,19:00    Bazas, FR                     33   
+1105    MUS      MORA Lucien                     15.09.1914,15:00    Bordeaux, FR                  33   
+1106    AUT      MOREAU Abel                     08.01.1893,13:00    Seignelay, FR                 89   
+1107    AC       MOREAU Jeanne                   23.01.1928,11:15    Paris 10 ième, FR             75   
+1108    PO       MOREL Jean                      10.10.1854,11:00    Nandax, FR                    42   
+1109    PO       MOREL Paul                      20.09.1869,06:00    Vesoul, FR                    70   
+1110    JO       MOREUX Christian                30.04.1902,16:15    Clermont, FR                  60   
+1111    PO       MORO-GIAFFERRI Vincent de       06.06.1878,23:00    Paris 15 ième, FR             75   
+1112    CAR      MOSE (DEPOND Moïse)             09.10.1917,06:00    St Jean de Boiseau, FR        44   
+1113    DAN      MOTTE Claire                    21.12.1937,06:30    Belfort, FR                   90   
+1114    PO       MOUGEOT Léon                    10.11.1857,02:00    Montiyny le Roy, FR           52   
+1115    JO       MOUGEOTTE Etienne               01.03.1940,19:00    La Rochefoucauld, FR          16   
+1116    JO       MOULIER Fernand                 22.11.1913,09:00    La Tour d'Auvergne, FR        63   
+1117    PO       MOULIN Jean                     20.06.1899,12:00    Béziers, FR                   34   
+1118    AC       MOULOUDJI Marcel                16.09.1922,18:15    Paris 4 ieme, FR              75   
+1119    PO       MOUNIÉ Auguste                  04.01.1873,16:00    Roumengoux, FR                9    
+1120    PO       MOURIER Louis                   08.10.1873,11:00    Vezenobres, FR                30   
+1121    JO       MOURLET Michel                  05.04.1935,12:00    Bois-Colombes, FR             92   
+1122    JO       MOUROUSI Yves                   20.07.1942,12:28    Suresnes, FR                  92   
+1123    JO       MOUSSEAU Jacques                24.06.1932,23:00    Joinville le Pont, FR         94   
+1124    AUT      MOUSSEL George                  10.06.1904,03:00    Béziers, FR                   34   
+1125    PO       MOUTET Marius                   19.04.1876,10:00    Nimes, FR                     30   
+1126    PAI      MUHL Roger                      20.12.1929,10:00    Strasbourg, FR                67   
+1127    AUT      MULLER Henri                    21.08.1902,22:00    Mulhbach, FR                  67   
+1128    MUS      MUNCH Charles                   26.09.1891,15:00    Strasbourg, FR                68   
+1129    MUS      MURGIER Jacques                 30.09.1912,15:00    Grenoble, FR                  38   
+1130    AUT      NÉDONCELLE Maurice              30.10.1905,17:00    Roubaix, FR                   59   
+1131    JO       NED RIVAL (RIVAL Edouard)       26.03.1924,22:00    Pau, FR                       64   
+1132    JO       NAEGELEN René                   27.08.1894,22:30    Belfort, FR                   90   
+1133    PO       NAIL Louis                      27.09.1864,21:00    Château-Gontier, FR           53   
+1134    PO       NAQUET Alfred                   06.10.1834,17:00    Carpentras, FR                84   
+1135    PO       NEUWIRTH Lucien                 18.05.1924,12:45    St-Etienne, FR                42   
+1136    AC       NICOLETTA (GRISONI Nicole)      11.04.1944,19:40    Thonon les Bains, FR          74   
+1137    PO       NICOLLE Louis                   16.06.1871,15:30    Lille, FR                     59   
+1138    JO       NIEDERGANG Marcel               14.09.1922,09:00    Evian, FR                     74   
+1139    JO       NOBÉCOURT Jacques               03.08.1923,14:00    Rouen, FR                     76   
+1140    PO       NOGARO Bertrand                 05.04.1880,18:00    La Chapelle la Reine, FR      77   
+1141    JO       NOGUERES Henri                  13.11.1916,17:00    Bages, FR                     66   
+1142    AC       NOGUERO José (NOGUERO-SIERRA)   08.03.1905,17:00    Bordeaux, FR                  33   
+1143    AC       NOIRET Philippe                 01.10.1930,21:30    Lille, FR                     59   
+1144    SIN      NOUGARO Pierre                  27.04.1904,09:00    Toulouse, FR                  31   
+1145    PO       NOULENS Joseph                  29.03.1864,04:00    Bordeaux, FR                  33   
+1146    PO       NUNGESSER Roland                09.10.1925,09:00    Nogent gur Marne, FR          94   
+1147    PO       OBERKICH Alfred                 01.01.1876,06:00    Selestat, FR                  67   
+1148    JO       OGLIASTRO Jacques               21.05.1910,18:25    Asnières, FR                  92   
+1149    PAI      OLIVER Pierre                   23.08.1919,03:00    Nancy, FR                     54   
+1150    JO       OLIVIER-LACAMP Max              02.03.1914,07:00    Le Havre, FR                  76   
+1151    JO       OLLIVIER Jean-Paul              19.05.1923,19:00    Vence, FR                     6    
+1152    AUT      ORAISON Marc                    29.07.1914,14:30    Ambarès, FR                   33   
+1153    JO       ORMESSON Olivier d'             05.08.1918,01:00    Biarritz, FR                  64   
+1154    PO       ORNANO Michel d'                12.07.1924,23:40    Paris 8 ième, FR              75   
+1155    PO       OSSOLA Jean                     24.01.1881,06:15    Grasse, FR                    6    
+1156    JO       OUDINOT Jean                    25.06.1913,23:30    Chelles, FR                   77   
+1157    AUT      OULMONT Charles                 01.11.1883,11:00    Mulhouse, FR                  68   
+1158    AC       PACOME Maria                    18.07.1923,10:40    Paris 14 ième, FR             75   
+1159    PO       PAGANON Joseph                  19.03.1880,22:00    Vourey, FR                    38   
+1160    MUS      PAILLARD Jean-Francois          12.04.1928,15:00    Vitry-le-François, FR         51   
+1161    JO       PAILLET Marc                    15.10.1918,15:00    Châlon sur Saône, FR          71   
+1162    PO     * PAINLEVE Paul                   05.12.1863,05:00    Paris 15 ième, FR             75   
+1163    PO       PAISANT André                   11.08.1868,21:00    Senlis, FR                    60   
+1164    JO       PALETOU Joseph                  19.03.1934,12:00    Bougarber, FR                 64   
+1165    PO       PALMADE Maurice                 04.10.1886,06:00    Rochefort sur Mer, FR         17   
+1166    PO       PAMS Jules                      14.08.1852,05:00    Perpignan, FR                 66   
+1167    AUT      PANGE Victor (THOMAS de)        12.07.1923,10:15    Saverne, FR                   67   
+1168    PAI      PAPART Max                      19.12.1911,11:00    Marseille, FR                 13   
+1169    JO       PAPELOUX Gaston                 10.01.1908,06:00    Bonnat, FR                    23   
+1170    PO       PAPON Maurice                   03.09.1910,19:00    Gretz-Armainvilliers, FR      77   
+1171    PO       PAQUET Aimé                     10.05.1913,20:00    St Vincent de Merc, FR        38   
+1172    MUS      PARES Philippe                  03.05.1901,04:00    Paris 4 ième, FR              75   
+1173    PO       PARIEU Louis Félix de           13.04.1815,02:00    Aurillac, FR                  15   
+1174    PO       PARIS Auguste                   12.11.1826,04:00    St Omer, FR                   62   
+1175    PO     * PARIS Henri de                  05.07.1908,08:30    Nouvion, FR                   2    
+1176    AUT      PARMELIN Hélène (JUNGELSON)     19.08.1915,06:00    Nancy, FR                     54   
+1177    JO       PARMENT Roger                   28.05.1919,17:20    Rouen, FR                     76   
+1178    AUT      PARRAIN Brice                   10.03.1897,17:30    Jouarre, FR                   77   
+1179    AC       PASCAL Jean-Claude (Villeminot) 24.10.1927,10:00    Paris 7 ième, FR              75   
+1180    PO       PASQUET Louis                   17.10.1867,20:00    Tarascon, FR                  13   
+1181    MUS      PASQUIER Pierre                 14.09.1902,15:30    Tours, FR                     37   
+1182    MUS      PASSANI Emile                   07.02.1905,18:00    Marseille, FR                 13   
+1183    JO       PASTEUR Joseph (ROCCHESANI)     17.10.1921,01:00    Bastia, FR                    20   
+1184    AC       PATACHOU (RAGON Henriette)      10.06.1918,23:00    Paris 12 ième, FR             75   
+1185    AUT      PATRIGOT Benoît                 21.09.1907,14:00    Sault-Brénaz, FR              1    
+1186    AC       PATUREL Dominique               03.04.1931,12:40    Le Havre, FR                  76   
+1187    PO       PAUL-BONCOUR Joseph             04.08.1873,21:00    St Aignan, FR                 41   
+1188    PO       PAYE Lucien                     28.06.1907,07:00    Vernoil le Fourrier, FR       49   
+1189    AUT      PAYOT Paul                      28.04.1912,19:00    Chamonix, FR                  74   
+1190    AUT      PAYSAN Catherine (ROULETTE)     04.08.1926,04:30    Aulaines, FR                  72   
+1191    PO       PECHIN Charles                  21.06.1871,18:00    Dampierre les Bois, FR        25   
+1192    AUT      PEILLARD Léonce                 25.11.1898,01:00    Toulon, FR                    83   
+1193    PO       PELLETAN Camille                23.06.1846,01:00    Paris, FR                     75   
+1194    PO       PELLETIER Emile                 11.02.1898,06:00    St-Brieuc, FR                 22   
+1195    JO       PELLOQUIN Roger                 28.07.1924,13:00    Levallois-Perret, FR          92   
+1196    PO       PENANCIER Eugène                04.02.1873,22:00    Bray sur Seine, FR            77   
+1197    PAI      PENGLAOU Michel                 31.03.1925,15:00    Nantes, FR                    44   
+1198    PO       PERET Raoul                     29.11.1870,19:30    Châtellerault, FR             86   
+1199    PO       PÉRI Gabriel                    09.02.1902,06:00    Toulon, FR                    83   
+1200    JO       PÉRICARD Michel                 15.09.1929,03:00    St Germain en Laye, FR        78   
+1201    AC       PERIER Francois (PILLU)         10.11.1919,06:00    Paris 16 ième, FR             75   
+1202    MUS      PERISSON Jean                   06.07.1924,20:00    Arcachon, FR                  33   
+1203    PO       PERNOT Georges                  06.11.1879,20:30    Besançon, FR                  25   
+1204    PO       PERONNET Gabriel                31.10.1919,07:00    Le Vernet, FR                 3    
+1205    AUT      PERREAU Robert                  22.03.1896,00:00    Coulommiers, FR               77   
+1206    PO       PERREAU-PRADIER Pierre          05.07.1885,10:00    Auxerre, FR                   89   
+1207    AUT      PERREIN Michèle (BARBE)         30.10.1929,00:05    La Réole, FR                  33   
+1208    PO       PERRIER Antoine                 15.04.1836,18:00    La Rochette, FR               73   
+1209    PO       PERRIER Léon                    01.02.1873,14:00    Tournon/Rhône, FR             7    
+1210    PO     * PERRIN Jean                     30.09.1870,19:30    Lille, FR                     59   
+1211    AUT      PERRY Jacques(TOUCHARD)         15.06.1921,20:15    Neuilly sur Seine, FR         92   
+1212    SIN      PERUGIA Noémie                  07.11.1903,14:00    Nice, FR                      6    
+1213    PO       PETSCHE Maurice                 01.12.1895,03:00    Paris 9 ième, FR              75   
+1214    PO       PEYREEFlTTE Alain               26.08.1925,10:00    Najac, FR                     12   
+1215    JO       PEYRET Henry                    30.04.1905,10:30    Auch, FR                      32   
+1216    PO     * PEYRON Alexandre                21.06.1823,04:00    Marines, FR                   95   
+1217    PO       PEYRONNET Albert                05.01.1862,05:00    Brest, FR                     29   
+1218    AC       PEYSSON Anne-Marie              24.07.1935,23:15    St Disdier en Dévol, FR       05   
+1219    PO       PEYTRAL Paul                    20.01.1842,17:00    Marseille, FR                 13   
+1220    PO       PEYTRAL Victor                  18.10.1874,19:00    Marseille, FR                 13   
+1221    AUT      PEZET Maurice                   24.02.1915,10:00    Salon de Provence, FR         13   
+1222    PO       PHILIP André                    28.06.1902,08:00    Pont St Esprit, FR            30   
+1223    MUS      PHILIPPOT Michel                02.02.1925,10:30    Verzy, FR                     51   
+1224    PO       PIC Maurice                     15.02.1913,01:00    St Christol, FR               84   
+1225    PO       PICARD Alfred                   21.12.1844,02:00    Strasbourg, FR                67   
+1226    PO       PICHON Stephen                  10.08.1857,23:00    Arnay le Duc, FR              21   
+1227    PO       PICOT Yves                      17.03.1862,23:25    Brest, FR                     29   
+1228    PO     * PICQUART Georges                06.09.1854,19:00    Strasbourg, FR                67   
+1229    CAR      PIEM (Pierre de MONTVALLON)     12.11.1923,12:30    St-Etienne, FR                42   
+1230    PO       PIETRI François                 08.08.1882,05:00    Bastia, FR                    20   
+1231    JO       PIGASSE Jean-Paul               26.07.1939,15:00    Toulouse, FR                  31   
+1232    AUT      PILLEMENT Georges               23.03.1898,02:00    Mayet, FR                     72   
+1233    PO       PINELLI Noel                    31.05.1881,05:00    Clermont-Ferrand, FR          63   
+1234    PO       PINTON Auguste                  25.08.1901,21:00    Lyon 1er, FR                  69   
+1235    JO       PIVOT Bernard                   05.05.1935,17:00    Lyon 5ieme, FR                69   
+1236    JO       PIZELLA Stéphane (Sylvestre)    15.04.1909,09:00    Corte, FR                     20   
+1237    JO       PLANCHAIS Jean                  30.01.1922,21:00    Mortagne au Perche, FR        61   
+1238    PAI      PLISSON Henri                   20.09.1908,15:00    St Gaultier, FR               36   
+1239    PO       PLOUX Suzanne (VALENTIN)        02.03.1908,09:00    Rochefort sur Mer, FR         17   
+1240    PO       POHER Alain                     17.04.1909,08:00    Ablon sur Seine, FR           94   
+1241    PO       POINCARÉ Raymond                20.08.1860,17:00    Bar-le-Duc, FR                55   
+1242    PO       POINSO-CHAPUIS Germaine         06.03.1901,08:00    Marseille, FR                 13   
+1243    AC       POIRET Jean (POIRÉ)             17.08.1926,15:20    Paris 14 ième, FR             75   
+1244    PAI      POIRIER Etienne                 27.09.1919,22:00    Bourg de Thizy, FR            69   
+1245    JO       POIVRE (D'ARVOR) Patrick        20.09.1947,19:50    Reims, FR                     51   
+1246    AC       POLNAREFF Michel                03.07.1944,00:15    Nérac, FR                     47   
+1247    PO       POMARET Charles                 16.08.1897,16:00    Montpellier, FR               34   
+1248    AUT      POMMIER Jean Joseph             11.12.1893,08:00    Niort, FR                     79   
+1249    JO       POMONTI Jean-Claude             27.04.1940,01:00    Neuilly sur Seine, FR         92   
+1250    PO       POMPIDOU Georges                05.07.1911,07:30    Montboudif, FR                15   
+1251    PO       PONCELET Christian              24.03.1928,15:00    Blaise, FR                    8    
+1252    AUT      PONGE Francis                   27.03.1899,15:00    Montpellier, FR               34   
+1253    SIN      PONS Lily (Alice)               12.04.1898,01:00    Draguignan, FR                83   
+1254    DAN      PONTOIS Noëla                   24.12.1943,12:30    Vendôme, FR                   41   
+1255    AUT      POPOT Jean                      30.04.1905,16:00    Charenton, FR                 94   
+1256    AUT      PORQUEROL Elisab. (POURCHEROL)  24.04.1905,01:00    Nîmes, FR                     30   
+1257    JO       POTIN Jean                      16.07.1931,10:30    Guilers, FR                   29   
+1258    JO       POTTECHER Frédéric              11.06.1905,05:00    Bussang, FR                   88   
+1259    PO       POUDONSON Roger                 14.12.1922,13:30    Arras, FR                     62   
+1260    PO     * POUJADE Pierre                  01.12.1920,01:00    St Céré, FR                   46   
+1261    PO       POUJADE Robert                  06.05.1928,04:00    Moulins, FR                   3    
+1262    MUS      POULET Gérard                   12.08.1938,07:00    Bayonne, FR                   64   
+1263    JO       POULLAIN Louis-Marie            13.03.1903,08:00    Pouancé, FR                   49   
+1264    AUT      POURTAL de LADEVEZE Jean        28.11.1898,02:30    Lorient, FR                   56   
+1265    AC       PRESLE Micheline (CHASSAGNE)    22.08.1922,13:15    Paris 5 ième, FR              75   
+1266    MUS      PRETRE Georges                  14.08.1924,10:00    Waziers, FR                   59   
+1267    PO       PRIGENT Robert                  24.11.1910,05:30    St Pol sur Mer, FR            59   
+1268    JO       PRIOURET Roger                  15.09.1913,14:30    Le Puy, FR                    43   
+1269    AUT      PRIVAT Bernard                  25.10.1914,01:00    Montpellier, FR               34   
+1270    MUS      PRODROMIDES Jean                03.07.1927,10:30    Neuilly sur Seine, FR         92   
+1271    AUT      PROU Suzanne (DOREAU)           11.07.1920,18:00    Grimaud, FR                   83   
+1272    PO       PROUST Antonin                  12.03.1832,14:30    Niort, FR                     79   
+1273    AUT      PROUTEAU Gilbert                14.06.1917,22:00    Nesmy, FR                     85   
+1274    PO     * PROUVOST Jean                   24.04.1885,01:00    Roubaix, FR                   59   
+1275    CAR      PRUVOST Jacques                 19.08.1901,20:00    Merville, FR                  59   
+1276    PO       PUCHEU Pierre                   27.06.1899,08:30    Beaumont sur Oise, FR         95   
+1277    PO       PUECH Louis                     01.05.1851,03:00    Bozouls, FR                   12   
+1278    MUS      PUIG-ROGET Henriette            09.01.1910,00:00    Bastia, FR                    20   
+1279    PO       PUIS Auguste                    05.04.1873,20:30    Paris 8 ième, FR              75   
+1280    PO     * PUJO Bertrand                   21.08.1878,14:00    Orignac, FR                   65   
+1281    PO       QUESTIAUX Nicole (VAYER)        19.12.1930,02:00    Nantes, FR                    44   
+1282    JO       QUILICI François                17.11.1905,03:00    Ajaccio, FR                   20   
+1283    AUT      RABINIAUX Roger (BELLION)       03.12.1914,06:00    Levallois-Perret, FR          92   
+1284    PO       RAFFARIN Jean                   23.03.1914,11:00    Vouzailles, FR                86   
+1285    PO       RALITE Jack                     14.05.1928,15:00    Châlons sur Marne, FR         51   
+1286    PO       RAMADIER Paul                   17.03.1888,19:00    La Rochelle, FR               17   
+1287    PO       RAMBAUD Alfred                  02.07.1842,15:30    Besançon, FR                  25   
+1288    PO       RAMONET Edouard                 14.06.1909,04:00    Cerbère, FR                   66   
+1289    MUS      RAMPAL Jean-Pierre              07.01.1922,09:00    Marseille, FR                 13   
+1290    PO       RATIER Antony                   29.06.1851,19:00    Buzançais, FR                 36   
+1291    MUS      RAUBER François-Marie           19.01.1933,13:45    Neufchâteau, FR               88   
+1292    MUS      RAUGEL Félix                    27.11.1881,04:30    St-Quentin, FR                2    
+1293    AUT      RAYNAL Paul                     25.07.1885,01:00    Narbonne, FR                  11   
+1294    PO       RAYNALDY Eugène                 23.12.1869,08:00    Rodez, FR                     12   
+1295    CAR      RAYNAUD Claude                  10.08.1918,05:30    Felletin, FR                  23   
+1296    PO       RAYNAUD Maurice                 05.11.1860,01:00    Marthon, FR                   16   
+1297    AC       RÉ Michel de (GALLIENI)         25.02.1925,04:00    Paris 7 ième, FR              75   
+1298    PO       RÉGNIER Marcel                  16.02.1867,17:00    Billy, FR                     3    
+1299    PO       REIBEL Charles                  29.12.1882,10:00    Vesoul, FR                    70   
+1300    PO       RENARD André                    14.06.1861,05:00    Nevers, FR                    58   
+1301    AUT      RENARD Jean-Claude              22.04.1922,17:00    Toulon, FR                    83   
+1302    AC       RENAUD Madeleine                21.02.1900,08:00    Paris 16 ième, FR             75   
+1303    JO       RENAUDIN André                  27.10.1900,15:30    Lons le Saunier, FR           39   
+1304    PAI      RENOU André                     24.05.1912,20:00    Périgny sur Yerres, FR        78   
+1305    AUT      RENOUARD Michel                 08.09.1942,03:15    Dinan, FR                     22   
+1306    AUT      REY Henri-François              31.07.1919,11:00    Toulouse, FR                  31   
+1307    PO       REY Henry                       02.11.1903,05:00    Pont-Aven, FR                 29   
+1308    PO       RIB0T Alexandre                 03.02.1842,01:00    St-Omer, FR                   62   
+1309    AC       RICH Claude                     08.02.1929,07:50    Strasbourg, FR                67   
+1310    PO       RICHÉ Etienne                   15.07.1883,23:00    Charleville, FR               8    
+1311    JO       RICHE Jean-Marie                15.03.1921,16:00    Soissons, FR                  2    
+1312    PO       RICOLFI Humbert                 01.09.1886,01:00    Contes, FR                    6    
+1313    JO       RIEUNAUD Edouard                15.12.1904,16:00    Valderiès, FR                 81   
+1314    PO     * RIEUNIER Adrien                 06.03.1833,06:00    Castelsarrazin, FR            82   
+1315    PAI      RIGAUD Jean                     15.06.1912,07:00    Bordeaux, FR                  33   
+1316    AC       RIGAUX Jean                     10.02.1909,18:00    Paris 9 ième, FR              75   
+1317    AUT      RINALDI Christiane (BION)       24.09.1907,12:30    Le Perreux/Marne, FR          94   
+1318    PO       RIO Alphonse                    28.10.1873,02:00    Carnac, FR                    56   
+1319    JO       RIOND Georges                   12.06.1909,07:30    Evian, FR                     74   
+1320    JO       RITTER Erwin                    14.11.1907,20:30    Strasbourg, FR                67   
+1321    AC       RIVA Emmanuèle(Paulette)        24.02.1927,16:00    Cheniménil, FR                88   
+1322    PAI      RIVEL Lucie (HARTENSTEIN)       24.04.1910,01:00    Metz, FR                      57   
+1323    PO       RIVIERE Albert                  24.04.1891,01:00    Grand Bourg, FR               23   
+1324    JO       RIVOYRE Christine (DENIS de)    29.11.1921,04:00    Tarbes, FR                    65   
+1325    PO       ROBAGLIA Barthélémy             08.07.1867,21:45    Sceaux, FR                    92   
+1326    PO       R0BERT Pierre                   17.05.1875,23:30    Montbrison, FR                42   
+1327    JO       ROBICHON Jacques                08.11.1920,07:00    Sevran, FR                    93   
+1328    AC       ROBINSON Madeleine (SVOBODA)    05.11.1917,00:15    Paris 6 ième, FR              75   
+1329    PO       ROCARD Michel                   23.08.1930,09:00    Courbevoie, FR                92   
+1330    JO       ROCHE France                    02.04.1921,09:00    St-Tropez, FR                 83   
+1331    PO       ROCHE Jules                     22.05.1841,16:00    St-Etienne, FR                42   
+1332    PO     * ROCHEBOUET Gaëtan de            16.03.1813,11:00    Angers, FR                    49   
+1333    PO     * ROCHEFORT Henri de              30.01.1831,03:00    Paris, FR                     75   
+1334    PO       ROCHEREAU Henri                 25.03.1908,22:00    Chantonay, FR                 85   
+1335    PO       RODEN Constant                  11.07.1852,19:00    Chelers, FR                   62   
+1336    PO       ROGER Emile                     05.05.1920,17:00    Lallaing, FR                  59   
+1337    AC       RONET Maurice                   13.04.1927,05:00    Nice, FR                      6    
+1338    PO       ROSSI André                     16.05.1921,14:30    Menton, FR                    6    
+1339    AUT      ROUANET Pierre                  12.05.1921,17:30    Fontenay sous bois, FR        94   
+1340    AUT      ROUAULT de la VIGNE René        18.12.1889,07:30    Dinan, FR                     22   
+1341    JO       ROUBAUD Pierre                  28.05.1931,23:00    Grasse, FR                    6    
+1342    JO       ROUGERON Camille (Pierre)       08.01.1893,08:00    Guéret, FR                    23   
+1343    PO       ROUHER Eugène                   30.11.1814,05:00    Riom, FR                      63   
+1344    AC       ROULAND Jean Paul               28.05.1928,18:00    St Sauveur le Vic, FR         50   
+1345    PO       ROUSSEAU Armand                 24.08.1835,05:00    Trefflez, FR                  29   
+1346    PO     * ROUSSIN Albert                  02.08.1821,22:00    Brest, FR                     29   
+1347    PO       ROUSTAN Mario                   20.02.1870,03:00    Sète, FR                      34   
+1348    PO       ROUVIER Mauriee                 17.04.1842,14:00    Aix en Provence, FR           13   
+1349    JO       ROUX Jean-Pierre                26.12.1930,11:00    Montpellier, FR               34   
+1350    PAI      ROUX Vincent                    01.12.1928,05:00    Marseille, FR                 13   
+1351    PO       ROY Henri                       17.02.1873,23:00    Le Bouchaud, FR               39   
+1352    PO       ROYER Jean                      31.10.1920,03:10    Nevers, FR                    58   
+1353    JO       RUBIN Francis                   04.10.1913,21:30    Strasbourg, FR                67   
+1354    PO       RUCART Marc                     24.07.1893,11:15    Coulommiers, FR               77   
+1355    AUT      RUDEL Yves Marie (MENORET)      01.10.1907,18:00    Etréchy, FR                   91   
+1356    AUT      SABATIER Robert                 17.08.1923,08:10    Paris 18 ième, FR             75   
+1357    JO       SABBAGH Pierre                  18.07.1918,01:30    Lannion, FR                   22   
+1358    AUT      SAINT LAURENT Cecil (LAURENT)   05.01.1919,09:15    Paris 9 ième, FR              75   
+1359    AUT      SAINT PIERRE Michel de          12.02.1916,20:00    Blois, FR                     41   
+1360    JO       SAINT SOLIEUX Guy               25.09.1929,21:30    Chartres, FR                  28   
+1361    AC       SAINVAL Claude (MAC CONNEL)     13.08.1911,05:45    Strasbourg, FR                67   
+1362    PO       SAINT-VALLIER Charles de        12.08.1833,22:30    Coucy lès Eppes, FR           2    
+1363    PO       SALENGRO Roger                  30.05.1890,09:00    Lille, FR                     59   
+1364    JO       SANDBERG-CHARPENTIER Marie      16.02.1905,06:50    Angers, FR                    49   
+1365    AUT      SANDY Isabelle (FOURCADE)       15.06.1884,07:00    Cos près Foix, FR             9    
+1366    PO       SANGNIER Marc                   03.04.1873,06:00    Paris 7 ième, FR              75   
+1367    PAI      SARABEN Julien                  12.07.1892,00:15    Le Havre, FR                  76   
+1368    AC       SARDOU Michel                   26.01.1947,14:00    Paris 17 ième, FR             75   
+1369    PO       SARRAUT Albert                  28.07.1872,23:00    Bordeaux, FR                  33   
+1370    PO       SARRIEN Ferdinand Jean          15.10.1840,06:00    Bourbon Lancy, FR             71   
+1371    SIN      SARROCA Suzanne                 21.04.1927,15:00    Carcassonnne, FR              11   
+1372    AUT      SARTIN Pierette                 10.11.1911,09:00    Guéret, FR                    23   
+1373    MUS      SAUGUET Henri (POUPARD)         18.05.1901,14:00    Bordeaux, FR                  33   
+1374    PO       SAUNIER-SEITÉ Alice             26.04.1925,07:00    St Jean le Centenier, FR      7    
+1375    PO       SAUVAGNARGUES Jean              02.04.1915,19:00    Paris 14 ième, FR             75   
+1376    PO       SAVARY Alain                    25.04.1918,00:30    Alger, Algérie                ALG  
+1377    AUT      SAVOY Bernard (SAVOYINI)        21.04.1942,07:15    La Roche sur Foron, FR        74   
+1378    PO       SCHLEITER François              15.09.1911,06:00    Verdun, FR                    55   
+1379    PO       SCHMIDT Benjamin Jammy          16.11.1872,15:00    Crèvecoeur le Grand, FR       60   
+1380    AUT      SCHNEIDER Marcel                11.08.1913,22:00    Levallois-Perret, FR          92   
+1381    PO       SCHNEITER Pierre                13.05.1905,04:00    Reims, FR                     51   
+1382    AUT      SCHOENDOERFFER Pierre           05.05.1928,20:50    Chamalières, FR               63   
+1383    PO       SCHRAMECK Abraham               26.11.1867,08:00    Salnt-Etienne, FR             42   
+1384    PO       SCHUMAN Robert                  29.06.1886,02:00    Luxembourg, Grand Duché       LUX  
+1385    PO       SCHWARTZENBERG Roger-Gérard     17.04.1943,19:00    Pau, FR                       64   
+1386    JO       SCHWOEBEL Jean                  10.07.1912,13:00    Mordelles, FR                 35   
+1387    AUT      SEDILLOT René                   02.11.1906,15:00    Orleans, FR                   45   
+1388    PO       SEGARD Norbert                  03.10.1922,04:00    Aniche, FR                    59   
+1389    AUT      SEGHERS Pierre                  05.01.1906,06:00    Paris 16 ième, FR             75   
+1390    PO       SEGUY Georges                   16.03.1927,12:30    Toulouse, FR                  31   
+1391    AUT      SELLERON du COURTILLET Jean     03.01.1893,04:00    Le Havre, FR                  76   
+1392    PO       SELLIER Henri Charles           22.12.1883,07:00    Dourges, FR                   18   
+1393    PO       SELLIER Louis                   06.11.1885,12:00    Dornes, FR                    58   
+1394    PO       SELVES Justin de                19.07.1848,15:00    Toulouse, FR                  31   
+1395    PO       SEMARD Pierre                   15.02.1887,20:00    Bragny sur Saône, FR          71   
+1396    PO       SEMBAT Marcel                   19.10.1862,13:00    Bonnières, FR                 78   
+1397    CAR      SEMPÉ Jean Jacques              17.08.1932,23:50    Bordeaux, FR                  33   
+1398    AC       SEREYS Jacques                  02.06.1928,15:25    St-Maurice, FR                94   
+1399    JO       SÉRIGNY Alain de                18.02.1912,23:00    Nantes, FR                    44   
+1400    PO       SÉROL Albert                    21.07.1877,16:00    Roanne, FR                    42   
+1401    PO       SEROT Robert                    18.02.1885,16:00    St Dizier, FR                 52   
+1402    PO       SERRE Louis                     17.08.1873,01:00    Lagnes, FR                    84   
+1403    MUS      SERRES Jacques                  12.12.1904,13:00    Tours, FR                     37   
+1404    JO       SERVAN-SCHREIBER Jean-Louis     31.10.1937,22:15    Boulogne-Billt, FR            92   
+1405    JO       SEVE André                      10.02.1913,11:00    Crest, FR                     26   
+1406    JO       SEVENO Maurice                  06.06.1925,11:00    Cherbourg, FR                 50   
+1407    AC       SHEILA (CHANCEL Annie)          16.08.1945,03:30    Créteil, FR                   94   
+1408    PO       SIEGFRIED Jules                 12.02.1837,12:00    Mulhouse, FR                  68   
+1409    PO       SIMON Henry                     20.05.1874,23:30    Labruguière, FR               81   
+1410    PO     * SIMON Jules (SUISSE)            27.12.1814,03:00    Lorient, FR                   56   
+1411    AUT      SIMON Pierre Henri              16.01.1903,13:00    St Fort sur Gironde, FR       17   
+1412    PAI      SIMON-AUGUSTE (AUGUSTE S.)      20.04.1909,07:00    Marseille, FR                 13   
+1413    AUT      SIMONIN Albert                  18.04.1905,06:00    Paris 18 ième, FR             75   
+1414    PO       SIMYAN Julien                   15.04.1850,20:30    Cluny, FR                     71   
+1415    CAR      SINÉ (SINET Maurice)            30.12.1928,03:30    Paris 20 ième, FR             75   
+1416    PO       SOISSON Jean-Pierre             09.11.1934,08:15    Auxerre, FR                   89   
+1417    JO       SOL Jacques                     08.03.1921,20:00    Arpajon, FR                   78   
+1418    DAN      SOLANE Janine (OURY)            07.01.1912,15:00    Bourg la Reine, FR            92   
+1419    PAI      SOULAGES Pierre                 24.12.1919,13:00    Rodez, FR                     12   
+1420    PO       SOULIÉ Michel                   10.02.1916,15:30    St-Etienne, FR                42   
+1421    AUT      SOURIAU Etienne                 26.04.1892,10:30    Lille, FR                     59   
+1422    JO       SPAR Francis (SPARWASSER)       03.09.1921,07:30    Strasbourg, FR                67   
+1423    AUT      SPENS D'ESTIGNOLS Willy de      17.02.1911,08:00    Bordeaux, FR                  33   
+1424    MUS      SPIERS Pierre                   17.10.1917,01:00    Boulogne sur Mer, FR          62   
+1425    PO       SPINASSE Charles                22.10.1893,16:00    Egletons, FR                  19   
+1426    PO       SPULLER Eugène Séraphin         08.12.1835,01:00    Seurre, FR                    21   
+1427    PO       STASI Bernard                   04.07.1930,07:20    Reims, FR                     51   
+1428    PO       STEEG Théodore                  19.12.1868,05:00    Libourne, FR                  33   
+1429    PAI      STEINLEN Aimé                   17.06.1923,15:00    St Amand les Eaux, FR         59   
+1430    AUT      STIL André                      01.04.1921,14:00    Hergnies, FR                  59   
+1431    JO       STILSON Germaine (LAURENT)      30.03.1914,01:00    Surbourg, FR                  67   
+1432    PO       STIRN Olivier                   24.02.1936,11:00    Boulogne-Billt, FR            92   
+1433    PO       STOLERU Lionel                  22.11.1937,07:00    Nantes, FR                    44   
+1434    AC       STONE (GAUTRAT Annie)           31.07.1947,15:05    Paris 12 ième, FR             75   
+1435    PO     * STRAUSS Paul                    23.09.1852,20:00    Ronchamps, FR                 70   
+1436    PO       SUDREAU Pierre                  13.05.1919,05:00    Paris 9 ième, FR              75   
+1437    JO       SULLEROT Evelyne (HAMMEL)       10.10.1924,11:00    Montrouge, FR                 92   
+1438    AUT      SUSINI Marie                    18.01.1916,03:00    Renno, FR                     20   
+1439    MUS      TAILLEFERRE Germaine            19.04.1892,01:00    St-Maur, FR                   94   
+1440    AUT      TAILLEMAGRE Jean (PESQUIDOUX)   25.08.1907,02:30    Houga, FR                     32   
+1441    AUT      TARDIEU Jean                    01.11.1903,23:30    St Germain de Joux, FR        1    
+1442    AC       TASSENCOURT Marcelle            28.05.1914,16:25    Neuilly sur Seine, FR         92   
+1443    PO       TASSO Henri                     08.10.1882,08:00    Marsellle, FR                 13   
+1444    PO       TEISSERENC de BORT Pierre       04.09.1814,23:00    Châteauroux, FR               36   
+1445    JO       TEITGEN Jean                    06.04.1913,03:00    Rennes, FR                    35   
+1446    PO       TERRENOIRE Louis                10.11.1908,02:00    Lyon 2 ième, FR               69   
+1447    PO       TERRIER Louis                   08.07.1854,01:00    Annecy, FR                    74   
+1448    AC       TERZIEFF Laurent (TERZIEV)      27.06.1935,02:00    Toulouse, FR                  31   
+1449    PO       TESSAN François de              16.02.1883,06:00    St Hilaire du Harc, FR        50   
+1450    JO       TESSIER Carmen                  24.06.1911,10:00    Allaines, FR                  28   
+1451    AC       TESSIER Valentine               05.08.1892,02:00    Paris 11 ième, FR             75   
+1452    JO     * TESSON Philippe                 01.03.1928,22:00    Wassigny sur Aisne, FR        2    
+1453    CAR      TETSU (TESTU Roger)             12.07.1913,13:00    Bourges, FR                   18   
+1454    PO       THELLIER Paul                   29.10.1899,17:00    Tangry, FR                    62   
+1455    JO       THÉROND Roger                   24.10.1924,18:30    Sète, FR                      34   
+1456    PAI      THEVENET Jacques                17.10.1891,13:30    Montquin-Dommartin, FR        58   
+1457    JO       THEVENIN Raymond                10.06.1915,20:00    Desertines, FR                3    
+1458    PO       THIBAULT Edouard                27.09.1912,19:35    Sablé, FR                     72   
+1459    AUT      THIDON Gustave                  02.09.1903,13:00    St Marcel d'Ardèche, FR       7    
+1460    PO       THOMAS Albert                   16.06.1878,04:30    Champigny sur M, FR           94   
+1461    JO       THOMAS Guy                      01.01.1924,03:30    Versailles, FR                78   
+1462    AUT      THOMAS Henri                    07.12.1912,21:00    Anglemont, FR                 88   
+1463    AUT      THOMAS Robert                   28.09.1927,02:30    Gap, FR                       5    
+1464    PO       THOME-PATENOTRE Jacqueline      03.02.1906,10:00    Paris 16 ième, FR             75   
+1465    PO       THOREZ-VERMEERSCH Jeannette     26.11.1910,19:45    Lille, FR                     59   
+1466    PO       THOUMYRE Robert                 16.02.1883,05:00    Dieppe, FR                    76   
+1467    PO       TILLAYE Louis Charles           31.05.1847,16:00    Vimoutiers, FR                61   
+1468    PAI      TIRMARCHE Maurice               30.05.1909,05:00    Clermont-Ferrand, FR          63   
+1469    PO       TlXIER Jean L. (VIGNANCOURT)    12.10.1907,06:00    Paris 7 ième, FR              75   
+1470    JO       TOCHÉ François                  01.11.1888,16:00    Nantes, FR                    44   
+1471    AC       TOJA Jacques                    01.09.1929,21:00    Nice, FR                      6    
+1472    JO       TOULAT Jean                     23.07.1915,05:30    Chauvigny, FR                 86   
+1473    PAI      TOURLIERE Michel                15.02.1925,01:00    Beaune, FR                    21   
+1474    JO       TOURNOUX Jean-Raymond           15.08.1914,01:00    Les Rousses, FR               39   
+1475    PO       TRARIEUX Ludovic Jacques        30.11.1840,12:00    Aubeterre, FR                 16   
+1476    JO       TRENO Robert (RAYNAUT Ernest)   09.02.1902,14:00    Vias, FR                      34   
+1477    PO       TRIBIÉ Pierre                   03.07.1910,13:00    Puteaux, FR                   93   
+1478    PO       TRICARD-GRAVERON Pierre         18.07.1901,23:45    St-Malo, FR                   35   
+1479    JO       TRINCHET Henri                  25.09.1915,21:00    Amélie les Bains, FR          66   
+1480    AC       TRINTIGNANT Jean-Louis          11.12.1930,19:00    Piolenc, FR                   84   
+1481    PO       TRORIAL Jacques                 08.02.1932,16:00    Saulnes, FR                   54   
+1482    PO       TROUILLOT Georges               07.05.1851,03:00    Champagnole, FR               39   
+1483    AUT      TRUC Gonzague                   15.11.1877,21:00    Flayosc, FR                   83   
+1484    JO       TURENNE Henri                   19.11.1921,12:00    Tours, FR                     37   
+1485    PO       TURQUET Edmond Henri            31.05.1836,16:00    Senlis, FR                    60   
+1486    PO       TURREL Adolphe                  28.05.1856,09:00    Ornaison, FR                  11   
+1487    CAR      UDERZO Albert                   25.04.1927,07:00    Fismes, FR                    51   
+1488    PAI      UTRILLO Maurice                 26.12.1883,13:00    Paris 18 ième, FR             75   
+1489    PO       VAILLANT Edouard                29.10.1840,03:00    Vierzon, FR                   18   
+1490    PO       VAILLANT-COLJTURIER Paul        08.01.1892,19:00    Paris 16 ième, FR             75   
+1491    AC       VALERE Simone (GONDOLF)         02.08.1921,18:00    Paris 10 ième, FR             75   
+1492    PO       VALLAT Xavier                   23.12.1891,21:00    Villedieu, FR                 84   
+1493    PO       VALLÉ Ernest                    19.09.1845,09:00    Avize, FR                     51   
+1494    SIN      VALLIN Ninon                    08.09.1886,15:00    Montalieu-Vercieu, FR         38   
+1495    MUS      VALMALETE Madeleine de          28.07.1899,04:00    Montreuil, FR                 93   
+1496    AC       VALTON Jean                     14.07.1921,20:30    Bry sur Marne, FR             94   
+1497    AUT      VALYNSEELE Joseph               11.05.1924,21:30    Tourcoing, FR                 59   
+1498    JO       VARENNES Jean Charles           18.03.1915,03:00    Le Brethon, FR                3    
+1499    AUT      VAUSSARD Maurice                08.09.1888,01:00    Ramburelles, FR               80   
+1500    JO       VÉE Gérard                      15.12.1912,21:00    Sainpuits, FR                 89   
+1501    PO       VEIL Simone (JACOB)             13.07.1927,08:15    Nice, FR                      6    
+1502    AUT      VERMOREL Claude                 18.07.1906,00:30    Villié-Morgon, FR             69   
+1503    AC       VERNIER Pierre (RAYER)          25.05.1931,05:00    St Jean d Angély, FR          17   
+1504    AC       VERSOIS Odile (de POLIAKOFF)    15.06.1930,11:20    Paris 5 ième, FR              75   
+1505    SIN      VEZZANI César                   08.08.1888,08:00    Bastia, FR                    20   
+1506    JO       VIANSSON-PONTÉ Pierre           02.08.1920,15:00    Clisson, FR                   44   
+1507    JO       VICHNEY Nicolas (VICHNEVETZ.)   21.12.1925,00:15    Neuilly sur Seine, FR         92   
+1508    PO       VIDAL Gaston                    19.10.1888,01:00    St-Etienne, FR                42   
+1509    JO       VIDAL Maurice                   28.05.1919,16:30    La Garenne-Col, FR            92   
+1510    JO       VIDALENCHE Gérard               08.01.1927,23:15    Versailles, FR                78   
+1511    SIN      VIENNE Marie L.de (GUÉLORGET)   16.08.1905,01:30    Colombes, FR                  92   
+1512    PO       VIENOT Pierre                   05.08.1897,04:00    Clermont, FR                  60   
+1513    PO       VIGER Albert                    19.10.1843,04:00    Jargeau, FR                   45   
+1514    AUT      VIGO René                       18.02.1914,05:00    Nancy, FR                     54   
+1515    PO       VILGRAIN Jean Ernest            29.10.1880,00:00    Frouard, FR                   54   
+1516    PAI      VILLEMOT Bernard                20.09.1911,09:00    Trouville, FR                 14   
+1517    PO       VINCENT Daniel                  31.03.1874,08:00    Bettrechies, FR               59   
+1518    JO       VIREBAYRE Charles               23.10.1920,13:00    Florac, FR                    48   
+1519    PO       VIVIEN Robert-André             24.02.1923,22:30    St-Mandé, FR                  94   
+1520    JO       VOLMERANGE Guy                  02.12.1926,04:00    Epinal, FR                    88   
+1521    JO       VOYENNE Bernard                 12.08.1920,09:00    Vichy, FR                     3    
+1522    AUT      VUILLEMIN Jules                 15.02.1920,07:00    Pierrefontaine, FR            25   
+1523    PO       WADDINGTON William              12.12.1826,22:00    St Rémy sur Avre, FR          28   
+1524    PO       WALDECK-ROUSSEAU Pierre         02.12.1846,04:00    Nantes, FR                    44   
+1525    PO       WALLON Henri                    23.12.1812,02:00    Valenciennes, FR              59   
+1526    JO       WAUTHIER Claude                 22.08.1923,22:00    Metz, FR                      57   
+1527    AC       WEBER André                     01.05.1928,08:00    Colmar, FR                    68   
+1528    PO       WEYGAND Maxime                  21.01.1867,08:00    Bruxelles, Belgique           BRUX 
+1529    JO       WIEHN Pierre                    26.04.1934,09:30    Saintes, FR                   17   
+1530    MUS      WIENER Jean                     19.03.1896,14:00    Paris 17 ième, FR             75   
+1531    PO       WILSON Daniel                   06.03.1840,12:00    Paris, FR                     75   
+1532    AC       WILSON Georges                  16.10.1921,08:00    Champigny sur M, FR           94   
+1533    JO       WIMPHEN Claude                  27.08.1918,21:30    Nemours, FR                   77   
+1534    JO       WOLF Pierre-René                19.02.1899,04:00    Rouen, FR                     76   
+1535    JO       WOLFF Robert                    15.03.1916,08:00    CherLourg, FR                 50   
+1536    AC       YANNE Jean (GOUYÉ)              18.07.1933,01:00    Les Lilas, FR                 93   
+1537    PO       YBARNEGARAY Jean                16.10.1883,01:00    Uhart-Cize, FR                64   
+1538    PO       ZAY Jean                        06.08.1904,21:25    Orléans, FR                   45   
+1539    AUT      ZÉRAFFA Michel                  29.01.1918,16:00    Nice, FR                      6    
+1540    PO     * ZOLA Emile                      02.04.1840,23:00    Paris, FR                     75
