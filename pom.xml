@@ -9,7 +9,7 @@
   </parent>
   <groupId>destiny</groupId>
   <artifactId>destiny-data</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.1</version>
   <name>destiny-data</name>
   <url>http://maven.apache.org</url>
   <dependencies>
@@ -21,7 +21,7 @@
     <dependency>
     	<groupId>destiny</groupId>
     	<artifactId>destiny-core</artifactId>
-    	<version>0.0.1-SNAPSHOT</version>
+    	<version>0.0.1</version>
     </dependency>
     <dependency>
     	<groupId>org.springframework</groupId>
@@ -47,7 +47,14 @@
     <dependency>
     	<groupId>destiny</groupId>
     	<artifactId>destiny-core-impl</artifactId>
-    	<version>0.0.1-SNAPSHOT</version>
+    	<version>0.0.1</version>
     </dependency>
   </dependencies>
+  <distributionManagement>
+  	<repository>
+  		<id>nexus</id>
+  		<name>nexus</name>
+  		<url>http://smallufo.com:8081/nexus/content/repositories/releases/</url>
+  	</repository>
+  </distributionManagement>  
 </project>
