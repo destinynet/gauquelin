@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd"
+>
+
+<!-- 
+  <bean id="dataSourceMining" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    <property name="driverClassName"><value>com.mysql.jdbc.Driver</value></property>
+    <property name="url"><value>jdbc:mysql://db/mining?useUnicode=true&amp;characterEncoding=UTF8</value></property>
+    <property name="username"><value>destiny</value></property>
+    <property name="password"><value>K4HVD</value></property>
+  </bean>
+ -->
+ 
+  <bean id="dataSourceMining" class="org.springframework.jndi.JndiObjectFactoryBean">
+    <property name="jndiName"><value>java:comp/env/jdbc/mining</value></property>
+  </bean>
+
+  <bean id="entityManagerFactoryMining" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+    <property name="persistenceUnitName" value="mining"/>
+    <property name="persistenceUnitPostProcessors">
+      <list>
+        <bean class="destiny.utils.MyPersistenceUnitPostProcessor">
+          <constructor-arg value="mining" />
+          <constructor-arg ref="dataSourceMining" />
+          <constructor-arg>
+            <props>
+              <prop key="hibernate.show_sql">true</prop>
+              <prop key="hibernate.format_sql">true</prop>
+            </props>
+          </constructor-arg>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  
+  <bean id="transactionManagerMining" class="org.springframework.orm.jpa.JpaTransactionManager">  
+    <property name="entityManagerFactory" ref="entityManagerFactoryMining" />  
+  </bean>
+
+  <tx:advice id="txAdviceMining" transaction-manager="transactionManagerMining">
+    <tx:attributes>
+      <tx:method name="get*"    read-only="true"/>
+      <tx:method name="save*"   propagation="REQUIRED"/>
+      <tx:method name="update*" propagation="REQUIRED"/>
+      <tx:method name="delete*" propagation="REQUIRED"/>
+      <tx:method name="*" propagation="SUPPORTS" read-only="true"/>
+    </tx:attributes>
+  </tx:advice>
+  
+  <aop:config>
+    <aop:pointcut id="methods" expression="execution(* destiny.utils.AbstractDao+.*(..))"/>
+    <aop:advisor advice-ref="txAdviceMining" pointcut-ref="methods"/>
+  </aop:config>
+ 
+<!-- 
+  <tx:annotation-driven transaction-manager="transactionManagerMining"/> 
+-->
+ 
+  <!-- 為了讓 @PersistenceUnit 或是 @PersistenceContext 可以順利被注入 --> 
+  <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>
+  
+  <!-- 完全乾淨的 JPA 實作，使用 AbstractDao Pattern，沒有與 Spring 相關
+       需要 <tx:advice> , <aop:config> 以及 PersistenceAnnotationBeanPostProcessor 的支援 , 「不」需使用 annotation-driven -->
+  <bean id="miningPersonDao" class="destiny.data.mining.MiningPersonDaoImpl"/>
+  
+  <!-- 完全乾淨的 JPA 實作，沒有與 Spring 相關 , 透過 @PersistenceContext(unitName="mining") 注入 EntityManager 
+       需要 <tx:advice> , <aop:config> 以及 PersistenceAnnotationBeanPostProcessor 的支援 , 「不」需使用 annotation-driven -->
+  <bean id="miningPersonDao2" class="destiny.data.mining.MiningPersonDaoJpaImpl"/>
+  
+  <!-- 使用 Spring 的 JpaSupport 來實作的 DAO , 如果不用 <tx:advice> 及 <aop:config> , 
+       但得「同時」設 @Transactional , <tx:annotation-driven> -->
+  <bean id="miningPersonDao3" class="destiny.data.mining.MiningPersonDaoJpaSpringImpl">
+    <property name="entityManagerFactory" ref="entityManagerFactoryMining"/>
+  </bean>
+  
+  <!-- 
+  <bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
+  -->
+
+</beans>

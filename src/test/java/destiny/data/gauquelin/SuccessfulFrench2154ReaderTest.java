@@ -4,9 +4,9 @@
 package destiny.data.gauquelin;
 
 import destiny.data.GeolocationFinder;
-import destiny.utils.AbstractSpringTest;
+import destiny.utils.AbstractSpringDestinyCoreTest;
 
-public class SuccessfulFrench2154ReaderTest extends AbstractSpringTest
+public class SuccessfulFrench2154ReaderTest extends AbstractSpringDestinyCoreTest
 {
   protected GeolocationFinder geolocationFinder;
 

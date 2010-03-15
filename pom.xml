@@ -49,6 +49,13 @@
     	<artifactId>destiny-core-impl</artifactId>
     	<version>0.0.1</version>
     </dependency>
+    <dependency>
+    	<groupId>destiny</groupId>
+    	<artifactId>destiny-core-impl</artifactId>
+    	<version>0.0.1</version>
+    	<type>jar</type>
+    	<scope>compile</scope>
+    </dependency>
   </dependencies>
   <distributionManagement>
   	<repository>
