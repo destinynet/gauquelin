@@ -3,17 +3,39 @@
  */
 package destiny.data.gauquelin;
 
-import destiny.data.GeolocationFinder;
-import destiny.utils.AbstractSpringDestinyCoreTest;
+import java.util.ArrayList;
+import java.util.List;
 
-public class SuccessfulFrench2154ReaderTest extends AbstractSpringDestinyCoreTest
+import junit.framework.TestCase;
+import destiny.data.GeolocationFinder;
+import destiny.data.GeolocationFinderYahooImpl;
+import destiny.utils.location.TimeZoneGisgraphyImpl;
+import destiny.utils.location.TimeZoneIF;
+import destiny.utils.location.TimeZoneService;
+import destiny.web.yahoo.AppData;
+
+public class SuccessfulFrench2154ReaderTest extends TestCase
 {
   protected GeolocationFinder geolocationFinder;
 
+  @Override
+  protected void setUp() throws Exception
+  {
+    AppData yahooAppData = new AppData("nK_pLKTIkYXVXPGU4I26K_SDQ1PRSP2q" , "614990115076948b0825ec2dbb9a4530");
+    TimeZoneGisgraphyImpl timeZoneGisgraphyImpl = new TimeZoneGisgraphyImpl("http://db.xfiles.to:9090/geoloc/findnearbylocation");
+    List<TimeZoneIF> timeZoneImpls = new ArrayList<TimeZoneIF>();
+    timeZoneImpls.add(timeZoneGisgraphyImpl);
+    TimeZoneService timeZoneService = new TimeZoneService(timeZoneImpls);
+    
+    geolocationFinder = new GeolocationFinderYahooImpl(yahooAppData, timeZoneService);
+  }
+
+  
   public void testSuccessfulFrench2154Reader()
   {
     TextDataReader reader = new SuccessfulFrench2154Reader(geolocationFinder);
     reader.getPersons();
   }
 
+  
 }
