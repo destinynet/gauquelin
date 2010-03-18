@@ -20,9 +20,8 @@ import destiny.astrology.Planet;
 import destiny.astrology.Aspect.Importance;
 import destiny.core.calendar.Location;
 import destiny.data.GeolocationFinder;
-import destiny.utils.AbstractSpringTest;
 
-public class GPersonDaoImplTest extends AbstractSpringTest
+public class GPersonDaoImplTest extends AbstractGauquelinTest
 {
   protected GDao gDao;
   protected GeolocationFinder geolocationFinder;
@@ -78,7 +77,7 @@ public class GPersonDaoImplTest extends AbstractSpringTest
     }
   }
   
-  public void testProcessAll()
+  public void _testProcessAll()
   {
     int start = 0;
     int pageSize = 200;
@@ -137,7 +136,7 @@ public class GPersonDaoImplTest extends AbstractSpringTest
     p.setAnglePower(anglePower);
   }
 
-  public void _testGet()
+  public void testGet()
   {
     int pageSize = 10;
     

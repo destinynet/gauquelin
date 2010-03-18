@@ -49,6 +49,40 @@
     	<type>test-jar</type>
     	<scope>test</scope>
     </dependency>
+    <dependency>
+    	<groupId>destiny</groupId>
+    	<artifactId>swisseph</artifactId>
+    	<version>1.75.00</version>
+    	<scope>compile</scope>
+    </dependency>
+    <dependency>
+    	<groupId>org.slf4j</groupId>
+    	<artifactId>slf4j-api</artifactId>
+    	<version>${slf4j.version}</version>
+    	<type>jar</type>
+    	<scope>test</scope>
+    </dependency>
+    <dependency>
+    	<groupId>org.slf4j</groupId>
+    	<artifactId>slf4j-log4j12</artifactId>
+    	<version>${slf4j.version}</version>
+    	<type>jar</type>
+    	<scope>test</scope>
+    </dependency>
+    <dependency>
+    	<groupId>org.hibernate</groupId>
+    	<artifactId>hibernate-ehcache</artifactId>
+    	<version>3.3.2.GA</version>
+    	<type>jar</type>
+    	<scope>test</scope>
+    </dependency>
+    <dependency>
+    	<groupId>javassist</groupId>
+    	<artifactId>javassist</artifactId>
+    	<version>3.8.0.GA</version>
+    	<type>jar</type>
+    	<scope>test</scope>
+    </dependency>
   </dependencies>
   <distributionManagement>
   	<repository>
