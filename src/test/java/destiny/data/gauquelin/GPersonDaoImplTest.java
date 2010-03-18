@@ -159,7 +159,7 @@ public class GPersonDaoImplTest extends AbstractGauquelinTest
         p.setAspect(aspect);
         processHouses(p , hc);
         
-        gDao.update(p);
+        //gDao.update(p);
       }
     }//for
   }
