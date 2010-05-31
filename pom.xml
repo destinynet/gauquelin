@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<project
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+  xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <artifactId>destinyMaven</artifactId>
@@ -11,84 +12,109 @@
   <name>destiny-data</name>
   <dependencies>
     <dependency>
-    	<groupId>${project.groupId}</groupId>
-    	<artifactId>destiny-core</artifactId>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>destiny-core</artifactId>
     </dependency>
     <dependency>
-    	<groupId>org.springframework</groupId>
-    	<artifactId>spring-test</artifactId>
-    	<scope>test</scope>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-test</artifactId>
+      <scope>test</scope>
     </dependency>
     <dependency>
-    	<groupId>org.springframework</groupId>
-    	<artifactId>spring-orm</artifactId>
+      <groupId>weka</groupId>
+      <artifactId>weka</artifactId>
+      <version>3.6.2</version>
     </dependency>
     <dependency>
-    	<groupId>org.hibernate</groupId>
-    	<artifactId>hibernate-core</artifactId>
-    	<version>3.3.2.GA</version>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>destiny-core-impl</artifactId>
     </dependency>
     <dependency>
-    	<groupId>org.hibernate</groupId>
-    	<artifactId>hibernate-annotations</artifactId>
-    	<version>3.4.0.GA</version>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>destiny-core-impl</artifactId>
+      <version>${project.version}</version>
+      <type>test-jar</type>
+      <scope>test</scope>
     </dependency>
     <dependency>
-    	<groupId>weka</groupId>
-    	<artifactId>weka</artifactId>
-    	<version>3.6.2</version>
+      <groupId>destiny</groupId>
+      <artifactId>swisseph</artifactId>
+      <version>1.75.00</version>
+      <scope>compile</scope>
     </dependency>
     <dependency>
-    	<groupId>${project.groupId}</groupId>
-    	<artifactId>destiny-core-impl</artifactId>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>${slf4j.version}</version>
+      <type>jar</type>
+      <scope>test</scope>
     </dependency>
     <dependency>
-    	<groupId>${project.groupId}</groupId>
-    	<artifactId>destiny-core-impl</artifactId>
-    	<version>${project.version}</version>
-    	<type>test-jar</type>
-    	<scope>test</scope>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
+      <version>${slf4j.version}</version>
+      <type>jar</type>
+      <scope>test</scope>
     </dependency>
     <dependency>
-    	<groupId>destiny</groupId>
-    	<artifactId>swisseph</artifactId>
-    	<version>1.75.00</version>
-    	<scope>compile</scope>
+      <groupId>javassist</groupId>
+      <artifactId>javassist</artifactId>
+      <version>3.9.0.GA</version>
+      <type>jar</type>
+      <scope>test</scope>
     </dependency>
     <dependency>
-    	<groupId>org.slf4j</groupId>
-    	<artifactId>slf4j-api</artifactId>
-    	<version>${slf4j.version}</version>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-core</artifactId>
+      <version>${hibernate.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-annotations</artifactId>
+      <version>${hibernate.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-entitymanager</artifactId>
+      <version>${hibernate.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-ehcache</artifactId>
+      <version>${hibernate.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-orm</artifactId>
+      <version>${spring.version}</version>
+      <type>jar</type>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.hibernate.javax.persistence</groupId>
+      <artifactId>hibernate-jpa-2.0-api</artifactId>
+      <version>1.0.0-CR-1</version>
+    </dependency>
+    <dependency>
+    	<groupId>javax</groupId>
+    	<artifactId>javaee-api</artifactId>
+    	<version>6.0</version>
     	<type>jar</type>
-    	<scope>test</scope>
+    	<scope>provided</scope>
     </dependency>
     <dependency>
-    	<groupId>org.slf4j</groupId>
-    	<artifactId>slf4j-log4j12</artifactId>
-    	<version>${slf4j.version}</version>
-    	<type>jar</type>
-    	<scope>test</scope>
-    </dependency>
-    <dependency>
-    	<groupId>org.hibernate</groupId>
-    	<artifactId>hibernate-ehcache</artifactId>
-    	<version>3.3.2.GA</version>
-    	<type>jar</type>
-    	<scope>test</scope>
-    </dependency>
-    <dependency>
-    	<groupId>javassist</groupId>
-    	<artifactId>javassist</artifactId>
-    	<version>3.8.0.GA</version>
-    	<type>jar</type>
-    	<scope>test</scope>
+      <groupId>com.bm</groupId>
+      <artifactId>ejb3unit</artifactId>
+      <version>2.0.0-RC-1</version>
+      <scope>provided</scope>
     </dependency>
   </dependencies>
   <distributionManagement>
-  	<repository>
-  		<id>nexus</id>
-  		<name>nexus</name>
-  		<url>http://smallufo.com:8081/nexus/content/repositories/releases/</url>
-  	</repository>
-  </distributionManagement>  
+    <repository>
+      <id>nexus</id>
+      <name>nexus</name>
+      <url>http://smallufo.com:8081/nexus/content/repositories/releases/</url>
+    </repository>
+  </distributionManagement>
 </project>

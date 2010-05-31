@@ -5,11 +5,29 @@ package destiny.data.gauquelin;
 
 import java.io.Serializable;
 
+import javax.persistence.Cacheable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="house")
+@Cacheable
 public class GPersonHouse implements Serializable
 {
   /** 資料庫的 id */
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  @Column(name = "id")
   private long    id;
 
+  @ManyToOne
+  @JoinColumn(name="personId" , insertable=false , updatable=false)
   private GPerson gperson;
 
   private String  house;
@@ -222,6 +240,12 @@ public class GPersonHouse implements Serializable
     if (venus != other.venus)
       return false;
     return true;
+  }
+
+  @Override
+  public String toString()
+  {
+    return "GPersonHouse [sun=" + sun + ", moon=" + moon + ", mercury=" + mercury + ", venus=" + venus + ", mars=" + mars + ", jupiter=" + jupiter + ", saturn=" + saturn + ", neptune=" + neptune + ", uranus=" + uranus + ", pluto=" + pluto + "]";
   }
 
 

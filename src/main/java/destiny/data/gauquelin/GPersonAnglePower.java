@@ -7,12 +7,28 @@ package destiny.data.gauquelin;
 import java.io.Serializable;
 import java.util.Locale;
 
+import javax.persistence.Cacheable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.Table;
+
 import destiny.astrology.Planet;
 
 /** 計算星體在四個角點的力量 */
+@Entity
+@Table(name="anglePower")
+@Cacheable
 public class GPersonAnglePower implements Serializable
 {
+  @Id
+  @Column(name = "personId")
   private long    personId;
+  
+  @OneToOne
+  @PrimaryKeyJoinColumn
   private GPerson gperson;
 
   private String  sun;

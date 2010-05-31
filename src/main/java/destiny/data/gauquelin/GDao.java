@@ -7,6 +7,9 @@ package destiny.data.gauquelin;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.ejb.Remote;
+
+@Remote
 public interface GDao
 {
   public Serializable create(GPerson p);

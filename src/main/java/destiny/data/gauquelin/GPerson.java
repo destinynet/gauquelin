@@ -11,12 +11,32 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.persistence.Cacheable;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.MapKey;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
 import destiny.core.calendar.Location;
 import destiny.core.calendar.Time;
 
+@Entity
+@Table(name="person")
+@Cacheable
 public class GPerson implements Serializable
 {
   /** 資料庫的 id */
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  @Column(name = "id")
   private long id;
   
   private String category;
@@ -41,12 +61,18 @@ public class GPerson implements Serializable
   private String raw;
   
   /** 星體位於什麼宮 */
+  @OneToMany(mappedBy="gperson" ,  cascade=CascadeType.ALL , fetch=FetchType.LAZY , orphanRemoval=true)
+  @MapKey(name="house")
   private Map<String , GPersonHouse> houseMap = Collections.synchronizedMap(new HashMap<String , GPersonHouse>());
   
   /** 星體交角資料 */
+  @OneToOne(mappedBy="gperson")
+  @JoinColumn(name="personId")
   private GPersonAspect aspect;
   
   /** 交角強度 */
+  @OneToOne(mappedBy="gperson")
+  @JoinColumn(name="personId")
   private GPersonAnglePower anglePower;
   
   public GPerson()

@@ -7,13 +7,29 @@ import java.io.Serializable;
 import java.util.Locale;
 import java.util.Set;
 
+import javax.persistence.Cacheable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.Table;
+
 import destiny.astrology.HoroscopeAspectData;
 import destiny.astrology.Planet;
 import destiny.astrology.Point;
 
+@Entity
+@Table(name="aspect")
+@Cacheable
 public class GPersonAspect implements Serializable
 {
+  @Id
+  @Column(name = "personId")
   private long personId;
+  
+  @OneToOne
+  @PrimaryKeyJoinColumn
   private GPerson gperson;
 
   private String  sunMoon;
