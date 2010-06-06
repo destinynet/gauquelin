@@ -8,7 +8,6 @@ import junit.framework.TestCase;
 
 public class GDaoImpl2Test extends TestCase
 {
-
   public void testGetById()
   {
     GDaoImpl2 gdao = new GDaoImpl2();
