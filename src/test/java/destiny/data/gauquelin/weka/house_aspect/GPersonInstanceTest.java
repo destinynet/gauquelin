@@ -15,7 +15,7 @@ public class GPersonInstanceTest extends AbstractSpringTest
 
   public void testGetInstance() throws Exception
   {
-    GPerson gperson = gDao.getById(8943L);
+    GPerson gperson = gDao.get(8943L);
     System.out.println("gperson = " + gperson);
     GPersonInstance inst = new GPersonInstance(gperson);
     Instance instance = inst.getInstance();

@@ -41,5 +41,19 @@ public class MiningPersonDaoJpaImpl implements MiningPersonDao
     em.remove(em.merge(p));
   }
 
+  @Override
+  public MiningPerson flush(MiningPerson t)
+  {
+    // TODO Auto-generated method stub
+    return null;
+  }
+
+  @Override
+  public void refresh(MiningPerson t)
+  {
+    // TODO Auto-generated method stub
+    
+  }
+
 }
 

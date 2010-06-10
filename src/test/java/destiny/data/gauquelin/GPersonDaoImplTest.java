@@ -63,7 +63,7 @@ public class GPersonDaoImplTest extends AbstractGauquelinTest
     {
       for(GPerson person : reader.getPersons())
       {
-        gDao.create(person);
+        gDao.save(person);
       }
     }
   }

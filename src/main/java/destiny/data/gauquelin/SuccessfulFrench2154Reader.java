@@ -46,6 +46,7 @@ public class SuccessfulFrench2154Reader implements TextDataReader
     URL url = getClass().getResource("successfulFrench2154.txt");
     File file;
     BufferedReader bReader = null;
+    
     CityLocation city = new CityLocation();
     try
     {

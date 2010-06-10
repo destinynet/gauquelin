@@ -18,20 +18,19 @@ public class SuccessfulFrench2154ReaderTest extends TestCase
 {
   protected GeolocationFinder geolocationFinder;
 
-  @Override
-  protected void setUp() throws Exception
+  protected void _setUp() throws Exception
   {
     AppData yahooAppData = new AppData("nK_pLKTIkYXVXPGU4I26K_SDQ1PRSP2q" , "614990115076948b0825ec2dbb9a4530");
     TimeZoneGisgraphyImpl timeZoneGisgraphyImpl = new TimeZoneGisgraphyImpl("http://db.xfiles.to:9090/geoloc/findnearbylocation");
     List<TimeZoneIF> timeZoneImpls = new ArrayList<TimeZoneIF>();
     timeZoneImpls.add(timeZoneGisgraphyImpl);
     TimeZoneService timeZoneService = new TimeZoneService(timeZoneImpls);
-    
+
     geolocationFinder = new GeolocationFinderYahooImpl(yahooAppData, timeZoneService);
   }
 
   
-  public void testSuccessfulFrench2154Reader()
+  public void _testSuccessfulFrench2154Reader()
   {
     TextDataReader reader = new SuccessfulFrench2154Reader(geolocationFinder);
     reader.getPersons();

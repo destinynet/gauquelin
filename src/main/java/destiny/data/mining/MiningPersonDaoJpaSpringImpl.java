@@ -10,7 +10,7 @@ public class MiningPersonDaoJpaSpringImpl extends AbstractDaoJpaSpringImpl<Minin
 {
   public MiningPersonDaoJpaSpringImpl()
   {
-    super(MiningPerson.class);
+    //super(MiningPerson.class);
   }
 
 /*

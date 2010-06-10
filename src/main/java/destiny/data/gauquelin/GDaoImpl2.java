@@ -7,25 +7,25 @@ package destiny.data.gauquelin;
 import java.io.Serializable;
 import java.util.List;
 
-import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceContextType;
 
-@Stateless(name="GDao")
+//@Stateless(name="GDao")
+//@Repository(value="gDao")
 public class GDaoImpl2 implements GDao , Serializable
 {
   @PersistenceContext(unitName = "gauquelin", type = PersistenceContextType.EXTENDED)
   protected EntityManager em;
   
   @Override
-  public GPerson getById(Serializable key)
+  public GPerson get(Serializable key)
   {
     return em.find(GPerson.class , key);
   }
   
   @Override
-  public Serializable create(GPerson p)
+  public GPerson save(GPerson p)
   {
     // TODO Auto-generated method stub
     return null;
@@ -89,10 +89,24 @@ public class GDaoImpl2 implements GDao , Serializable
   }
 
   @Override
-  public void update(GPerson p)
+  public GPerson update(GPerson p)
   {
     // TODO Auto-generated method stub
+    return p;
+  }
 
+  @Override
+  public GPerson flush(GPerson t)
+  {
+    // TODO Auto-generated method stub
+    return null;
+  }
+
+  @Override
+  public void refresh(GPerson t)
+  {
+    // TODO Auto-generated method stub
+    
   }
 
 }

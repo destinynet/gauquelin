@@ -4,21 +4,19 @@
  */ 
 package destiny.data.gauquelin;
 
-import java.io.Serializable;
 import java.util.List;
 
 import javax.ejb.Remote;
 
+import destiny.utils.AbstractDao;
+
 @Remote
-public interface GDao
+public interface GDao extends AbstractDao<GPerson>
 {
-  public Serializable create(GPerson p);
+  //public Serializable create(GPerson p);
   
-  public GPerson getById(Serializable key);
+  //public GPerson getById(Serializable key);
   
-  public void update(GPerson p);
-  
-  public void delete(GPerson p);
   public void delete(GPersonHouse h);
   
   

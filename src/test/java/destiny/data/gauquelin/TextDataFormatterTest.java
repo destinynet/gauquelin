@@ -10,8 +10,8 @@ public class TextDataFormatterTest extends TestCase
 
   public void testTextDataFormatter()
   {
-    new TextDataFormatter(new SportReader() , "sport_new.txt");
-    new TextDataFormatter(new ScientistReader() , "scientist_new.txt");
+    new TextDataFormatter(new SportReader() , "sport_new.txtx");
+    new TextDataFormatter(new ScientistReader() , "scientist_new.txtx");
     new TextDataFormatter(new MilitaryReader() , "military_new.txt");
     new TextDataFormatter(new PainterReader() , "painter_new.txt");
     new TextDataFormatter(new MusicianReader() , "musician_new.txt");
