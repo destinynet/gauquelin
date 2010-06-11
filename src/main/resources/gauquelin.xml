@@ -11,17 +11,32 @@
            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
 
+  <import resource="classpath:calendar.xml"/>
+
   <context:component-scan base-package="destiny.data.gauquelin"/>
 
   <context:annotation-config/>
   
-  <bean id="gauquelinEntityManagerFactory"
-    class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+  <bean id="gauquelinEntityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
     <property name="persistenceUnitName" value="gauquelin"/>
   </bean>
     
-  <bean id="gauquelinTransactionManager" class="org.springframework.orm.jpa.JpaTransactionManager" >
+  <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager" >
     <property name="entityManagerFactory" ref="gauquelinEntityManagerFactory"/>
   </bean>
 
+  <bean id="yahooAppData" class="destiny.web.yahoo.AppData">
+    <property name="appid"> <value>nK_pLKTIkYXVXPGU4I26K_SDQ1PRSP2q</value></property>
+    <property name="secret"><value>614990115076948b0825ec2dbb9a4530</value></property>
+  </bean>
+
+
+  <bean id="geolocationFinder" class="destiny.data.GeolocationFinderYahooImpl">
+    <constructor-arg>
+      <ref bean="yahooAppData"/>
+    </constructor-arg>
+    <constructor-arg>
+      <ref bean="timeZoneService"/>
+    </constructor-arg>
+  </bean>
 </beans>

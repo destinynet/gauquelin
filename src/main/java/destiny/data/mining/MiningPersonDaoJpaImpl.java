@@ -2,6 +2,7 @@
 package destiny.data.mining;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -53,6 +54,27 @@ public class MiningPersonDaoJpaImpl implements MiningPersonDao
   {
     // TODO Auto-generated method stub
     
+  }
+
+  @Override
+  public long getCount()
+  {
+    // TODO Auto-generated method stub
+    return 0;
+  }
+
+  @Override
+  public List<MiningPerson> findAll(int start, int count)
+  {
+    // TODO Auto-generated method stub
+    return null;
+  }
+
+  @Override
+  public List<MiningPerson> findAll()
+  {
+    // TODO Auto-generated method stub
+    return null;
   }
 
 }

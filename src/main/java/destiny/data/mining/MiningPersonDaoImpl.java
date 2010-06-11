@@ -17,5 +17,4 @@ public class MiningPersonDaoImpl extends AbstractDaoJpaImpl<MiningPerson> implem
   {
     this.em = em;
   }
-  
 }

@@ -4,10 +4,18 @@
  */ 
 package destiny.data.gauquelin;
 
+import static org.junit.Assert.assertNotNull;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+
+import javax.inject.Inject;
+
+import org.junit.runner.RunWith;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import destiny.astrology.Aspect;
 import destiny.astrology.HoroscopeAspectData;
@@ -21,14 +29,19 @@ import destiny.astrology.Aspect.Importance;
 import destiny.core.calendar.Location;
 import destiny.data.GeolocationFinder;
 
-public class GPersonDaoImplTest extends AbstractGauquelinTest
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations={"classpath:gauquelin.xml"})
+public class GPersonDaoImplTest// extends AbstractGauquelinTest
 {
+  @Inject
   protected GDao gDao;
+  
+  @Inject
   protected GeolocationFinder geolocationFinder;
   
   protected List<TextDataReader> readers = Collections.synchronizedList(new ArrayList<TextDataReader>());
   
-  @Override
+  //@Override
   protected void onSetUp() throws Exception
   {
     /*
@@ -68,13 +81,12 @@ public class GPersonDaoImplTest extends AbstractGauquelinTest
     }
   }
   
-  public void _testFindNoAspectData()
+  // @Test //太耗時，別測
+  public void testFindNoAspectData()
   {
+    System.err.println("gDao = " + gDao);
     for(GPerson p : gDao.findAll())
-    {
-      if (p.getAspect() == null)
-        System.err.println(p);
-    }
+      assertNotNull(p.getAspect());
   }
   
   public void _testProcessAll()

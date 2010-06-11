@@ -76,9 +76,11 @@
   
   <!-- 使用 Spring 的 JpaSupport 來實作的 DAO , 如果不用 <tx:advice> 及 <aop:config> , 
        但得「同時」設 @Transactional , <tx:annotation-driven> -->
+  <!-- 
   <bean id="miningPersonDao3" class="destiny.data.mining.MiningPersonDaoJpaSpringImpl">
     <property name="entityManagerFactory" ref="entityManagerFactoryMining"/>
   </bean>
+  -->
   
   <!-- 
   <bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>

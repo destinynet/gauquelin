@@ -6,6 +6,7 @@ package destiny.data.gauquelin;
 
 import org.springframework.test.jpa.AbstractJpaTests;
 
+@Deprecated
 public class AbstractGauquelinTest extends AbstractJpaTests
 {
   public AbstractGauquelinTest()
