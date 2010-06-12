@@ -3,8 +3,11 @@ package destiny.data.mining;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import org.springframework.stereotype.Repository;
+
 import destiny.utils.AbstractDaoJpaImpl;
 
+@Repository(value="miningPersonDao")
 public class MiningPersonDaoImpl extends AbstractDaoJpaImpl<MiningPerson> implements MiningPersonDao
 {
   public MiningPersonDaoImpl()
