@@ -45,14 +45,12 @@
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
-      <version>${slf4j.version}</version>
       <type>jar</type>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-log4j12</artifactId>
-      <version>${slf4j.version}</version>
       <type>jar</type>
       <scope>test</scope>
     </dependency>
@@ -78,6 +76,12 @@
       <scope>test</scope>
     </dependency>
     <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-validator</artifactId>
+      <type>jar</type>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-orm</artifactId>
       <version>${spring.version}</version>
@@ -87,21 +91,12 @@
     <dependency>
     	<groupId>junit</groupId>
     	<artifactId>junit</artifactId>
-    	<version>4.8.1</version>
-    	<type>jar</type>
-    	<scope>test</scope>
-    </dependency>
-    <dependency>
-    	<groupId>org.hibernate</groupId>
-    	<artifactId>hibernate-validator</artifactId>
-    	<version>4.0.0.GA</version>
     	<type>jar</type>
     	<scope>test</scope>
     </dependency>
     <dependency>
       <groupId>javax.validation</groupId>
       <artifactId>validation-api</artifactId>
-      <version>1.0.0.GA</version>
       <type>jar</type>
       <scope>test</scope>
     </dependency>
@@ -187,7 +182,6 @@
     <dependency>
     	<groupId>org.aspectj</groupId>
     	<artifactId>aspectjweaver</artifactId>
-    	<version>1.6.8</version>
     	<scope>test</scope>
     </dependency>
   </dependencies>

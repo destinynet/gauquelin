@@ -21,7 +21,7 @@ public class GDaoJpaImpl extends AbstractDaoJpaImpl<GPerson> implements GDao , S
   @Override
   public void setEntityManager(EntityManager em)
   {
-    System.err.println("setEntityManager , em = " + em);
+    //System.err.println("setEntityManager , em = " + em);
     this.em = em;
   }
   

@@ -17,11 +17,13 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"classpath:gauquelin.xml"})
-public class GDaoImplSpringTest// extends AbstractJUnit4SpringContextTests // , 若繼承， txManager 會出問題 !
+@TransactionConfiguration(transactionManager="transactionManagerGauquelin")
+public class GDaoImplTest
 {
   @Inject
   private EntityManagerFactory gauquelinEntityManagerFactory;

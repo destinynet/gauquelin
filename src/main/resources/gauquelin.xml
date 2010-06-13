@@ -17,12 +17,12 @@
 
   <context:annotation-config/>
   
-  <bean id="gauquelinEntityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+  <bean id="entityManagerFactoryGauquelin" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
     <property name="persistenceUnitName" value="gauquelin"/>
   </bean>
     
-  <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager" >
-    <property name="entityManagerFactory" ref="gauquelinEntityManagerFactory"/>
+  <bean id="transactionManagerGauquelin" class="org.springframework.orm.jpa.JpaTransactionManager" >
+    <property name="entityManagerFactory" ref="entityManagerFactoryGauquelin"/>
   </bean>
 
   <bean id="yahooAppData" class="destiny.web.yahoo.AppData">
