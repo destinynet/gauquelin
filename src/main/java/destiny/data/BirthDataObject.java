@@ -12,5 +12,4 @@ import java.io.Serializable;
  * */
 public class BirthDataObject implements Serializable
 {
-
 }

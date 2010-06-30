@@ -22,24 +22,27 @@
   <bean id="transactionManagerMining" class="org.springframework.orm.jpa.JpaTransactionManager" >
     <property name="entityManagerFactory" ref="entityManagerFactoryMining"/>
   </bean>
+
+  <tx:annotation-driven transaction-manager="transactionManagerMining" />
   
+<!--   
   <tx:advice id="txAdviceMining" transaction-manager="transactionManagerMining">
     <tx:attributes>
       <tx:method name="get*"    read-only="true"/>
       <tx:method name="save*"   propagation="REQUIRED"/>
       <tx:method name="update*" propagation="REQUIRED"/>
       <tx:method name="delete*" propagation="REQUIRED"/>
-      <tx:method name="*" propagation="SUPPORTS" read-only="true"/>
+      <tx:method name="*"       propagation="SUPPORTS" read-only="true"/>
     </tx:attributes>
-  </tx:advice>  
+  </tx:advice>
   
   <aop:config>
     <aop:pointcut id="methods" expression="execution(* destiny.utils.AbstractDao+.*(..))"/>
     <aop:advisor advice-ref="txAdviceMining" pointcut-ref="methods"/>
   </aop:config>
+-->
 
-  <tx:annotation-driven transaction-manager="transactionManagerMining"/>  
- 
+
   <!-- 為了讓 @PersistenceUnit 或是 @PersistenceContext 可以順利被注入 --> 
   <!-- <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>  -->
   

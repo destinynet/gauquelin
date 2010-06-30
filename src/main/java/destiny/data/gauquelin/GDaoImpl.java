@@ -15,7 +15,7 @@ import org.springframework.stereotype.Repository;
 import destiny.utils.AbstractDaoJpaImpl;
 
 @Repository(value="gDao")
-public class GDaoJpaImpl extends AbstractDaoJpaImpl<GPerson> implements GDao , Serializable
+public class GDaoImpl extends AbstractDaoJpaImpl<GPerson> implements GDao , Serializable
 {
   @PersistenceContext(unitName = "gauquelin")
   @Override

@@ -18,43 +18,44 @@ import destiny.core.calendar.Time;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"classpath:mining.xml"})
-@TransactionConfiguration(transactionManager="transactionManagerMining")
+@TransactionConfiguration(transactionManager="transactionManagerMining" , defaultRollback=false)
 public class MiningPersonDaoTest
 {
   @Inject
   private MiningPersonDao miningPersonDao;
   
-  //如果加上 @Transactional , 會被 roll back
+  //若不加 @Transactional , 就不會被 commit
   @Transactional
-  //@Test
+  @Test
   public void testUpdate()
   {
     MiningPerson p = miningPersonDao.get(42L);
-    p.setLocationName("做愛的小窩");
+    p.setLocationName("愛的小窩");
     miningPersonDao.update(p);
-    System.out.println(p);
+    System.out.println(miningPersonDao.get(42L));
   }
   
-  //@Test
+  @Test
   public void testGet()
   {
     MiningPerson p = miningPersonDao.get(1L);
     assertNotNull(p);
   }
   
-  //如果加上 @Transactional , 會被 roll back
-  //@Test
+  //如果不加 @Transactional , 就不會刪除
+  @Transactional
+  @Test
   public void testDelete()
   {
-    MiningPerson p = miningPersonDao.get(56L);
+    MiningPerson p = miningPersonDao.get(7L);
     miningPersonDao.delete(p);
     
-    MiningPerson p2 = miningPersonDao.get(56L);
+    MiningPerson p2 = miningPersonDao.get(7L);
     assertNull(p2);
   }
   
   /** 測試儲存使用者，撈出來檢查，再刪除 */
-  //@Transactional
+  @Transactional
   @Test
   public void testSaveAndDelete()
   {
