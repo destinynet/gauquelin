@@ -7,9 +7,9 @@ import weka.classifiers.Classifier;
 import weka.core.Instance;
 import destiny.data.gauquelin.GDao;
 import destiny.data.gauquelin.GPerson;
-import destiny.utils.AbstractSpringTest;
 
-public class GPersonInstanceTest extends AbstractSpringTest
+//TODO : JUnit4
+public class GPersonInstanceTest
 {
   protected GDao gDao;
 

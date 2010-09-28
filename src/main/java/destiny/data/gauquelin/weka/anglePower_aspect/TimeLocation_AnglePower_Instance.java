@@ -4,9 +4,9 @@
  */ 
 package destiny.data.gauquelin.weka.anglePower_aspect;
 
-import java.io.File;
-import java.io.FileReader;
-import java.net.URL;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Locale;
@@ -17,6 +17,7 @@ import weka.core.Attribute;
 import weka.core.Instance;
 import weka.core.Instances;
 import destiny.astrology.Aspect;
+import destiny.astrology.Aspect.Importance;
 import destiny.astrology.HoroscopeAspectData;
 import destiny.astrology.HoroscopeAspectsCalculator;
 import destiny.astrology.HoroscopeAspectsCalculatorModern;
@@ -25,7 +26,6 @@ import destiny.astrology.HoroscopeContextBean;
 import destiny.astrology.HouseSystem;
 import destiny.astrology.Planet;
 import destiny.astrology.Point;
-import destiny.astrology.Aspect.Importance;
 import destiny.core.calendar.Location;
 import destiny.core.calendar.Time;
 import destiny.data.gauquelin.GPersonAnglePower;
@@ -49,15 +49,12 @@ public class TimeLocation_AnglePower_Instance implements InstanceIF
   
   private void parseInstances()
   {
-    //URL url = getClass().getResource("house_aspect.arff");
-    URL url = getClass().getResource("anglePower_aspect.arff");
-    File file;
+    InputStream is = getClass().getResourceAsStream("anglePower_aspect.arff");
+    Reader reader = new InputStreamReader(is);
     
     try
     {
-      file = new File(url.toURI());
-      FileReader fReader = new FileReader(file);
-      instances = new Instances(fReader);
+      instances = new Instances(reader);
       instances.setClassIndex(instances.numAttributes()-1);
       
       /*
@@ -70,6 +67,7 @@ public class TimeLocation_AnglePower_Instance implements InstanceIF
     }
     catch (Exception e)
     {
+      System.out.println("Exception : " + e);
     }
   }
 
@@ -80,7 +78,6 @@ public class TimeLocation_AnglePower_Instance implements InstanceIF
   {
     Instance instance = new Instance(instances.numAttributes());
     instance.setDataset(instances);
-    
     
     // ================ AnglePower =================
     context.setHouseSystem(HouseSystem.PLACIDUS);

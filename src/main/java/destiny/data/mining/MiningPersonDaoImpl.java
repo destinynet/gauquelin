@@ -7,17 +7,17 @@ import org.springframework.stereotype.Repository;
 
 import destiny.utils.AbstractDaoJpaImpl;
 
-@Repository(value="miningPersonDao")
+@Repository
 public class MiningPersonDaoImpl extends AbstractDaoJpaImpl<MiningPerson> implements MiningPersonDao
 {
-  public MiningPersonDaoImpl()
-  {
-  }
-
   @PersistenceContext(unitName="mining")
   @Override
   public void setEntityManager(EntityManager em)
   {
     this.em = em;
+  }
+  
+  public MiningPersonDaoImpl()
+  {
   }
 }

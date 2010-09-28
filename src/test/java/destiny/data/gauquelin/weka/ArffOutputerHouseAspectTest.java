@@ -9,9 +9,9 @@ import java.util.List;
 
 import destiny.data.gauquelin.GDao;
 import destiny.data.gauquelin.GPerson;
-import destiny.utils.AbstractSpringTest;
 
-public class ArffOutputerHouseAspectTest extends AbstractSpringTest
+//TODO : JUnit4
+public class ArffOutputerHouseAspectTest
 {
   protected GDao gDao;
   

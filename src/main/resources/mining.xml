@@ -12,7 +12,6 @@
 >
 
   <context:component-scan base-package="destiny.data.mining"/>
-
   <context:annotation-config/>
   
   <bean id="entityManagerFactoryMining" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">

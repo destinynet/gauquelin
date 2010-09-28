@@ -37,6 +37,7 @@ public class GDaoImplTest
     assertNotNull(gauquelinEntityManagerFactory);
   }
   
+  /** 若不加上 @Transactional() , 則無法抓到 collections */
   @Transactional()
   @Test
   public void testGetHouseMap()
@@ -45,6 +46,7 @@ public class GDaoImplTest
     assertEquals(7,gperson.getHouseMap().size());
   }
   
+  /** 若不加上 @Transactional() , 則無法抓到 collections */
   @Transactional()
   @Test
   public void testFindAll()
