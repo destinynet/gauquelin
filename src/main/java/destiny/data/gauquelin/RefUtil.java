@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-@SuppressWarnings("unchecked")
 public class RefUtil
 {
   private Object o;
@@ -19,6 +18,7 @@ public class RefUtil
     this.o = o;
   }
   
+  @SuppressWarnings("rawtypes")
   public static List<String> getProperties(Class clazz)
   {
     List<String> properties = Collections.synchronizedList(new ArrayList<String>());

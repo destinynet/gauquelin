@@ -17,6 +17,7 @@ import weka.core.Attribute;
 import weka.core.Instance;
 import weka.core.Instances;
 import destiny.astrology.Aspect;
+import destiny.astrology.Aspect.Importance;
 import destiny.astrology.HoroscopeAspectData;
 import destiny.astrology.HoroscopeAspectsCalculator;
 import destiny.astrology.HoroscopeAspectsCalculatorModern;
@@ -25,7 +26,6 @@ import destiny.astrology.HoroscopeContextBean;
 import destiny.astrology.HouseSystem;
 import destiny.astrology.Planet;
 import destiny.astrology.Point;
-import destiny.astrology.Aspect.Importance;
 import destiny.core.calendar.Location;
 import destiny.core.calendar.Time;
 import destiny.data.gauquelin.weka.InstanceIF;
@@ -45,7 +45,7 @@ public class TimeLocation_House_Aspect_Instance implements InstanceIF
     this.context = bean.getHoroscopeContext(time, location);
   }
   
-  @SuppressWarnings("unchecked")
+  @SuppressWarnings("rawtypes" )
   private void parseInstances()
   {
     //URL url = getClass().getResource("house_aspect.arff");
