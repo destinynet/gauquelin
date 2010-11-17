@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="destiny.data.gauquelin">
+	<class name="GPerson" table="person" batch-size="100">
+		<cache usage="nonstrict-read-write" />
+		<id name="id" type="long">
+			<generator class="identity" />
+		</id>
+		<property name="category" />
+		<property name="number" />
+		<property name="name" />
+		<property name="gender" />
+		<property name="gmtTimestamp" />
+		<property name="location" />
+		<property name="place" />
+		<property name="raw" />
+		<map name="houseMap" cascade="delete" lazy="false"
+			fetch="select" batch-size="100" >
+			<key column="personId" not-null="true" />
+			<map-key type="string" column="house" />
+			<one-to-many class="GPersonHouse" />
+		</map>
+		<one-to-one name="aspect" class="GPersonAspect" cascade="all" fetch="join" />
+		<one-to-one name="anglePower" class="GPersonAnglePower" cascade="all" fetch="join" />
+	</class>
+	<class name="GPersonHouse" table="house" batch-size="100">
+		<cache usage="nonstrict-read-write" />
+		<id name="id" type="long">
+			<generator class="identity" />
+		</id>
+		<property name="sun" />
+		<property name="moon" />
+		<property name="mercury" />
+		<property name="venus" />
+		<property name="mars" />
+		<property name="jupiter" />
+		<property name="saturn" />
+		<property name="uranus" />
+		<property name="neptune" />
+		<property name="pluto" />
+	</class>
+	<class name="GPersonAspect" table="aspect" batch-size="100">
+		<cache usage="nonstrict-read-write" />
+		<id name="personId" column="personId" unsaved-value="0">
+			<generator class="foreign">
+				<param name="property">gperson</param>
+			</generator>
+		</id>
+		<one-to-one name="gperson" class="GPerson" constrained="true" />
+		<property name="sunMoon" />
+		<property name="sunMercury" />
+		<property name="sunVenus" />
+		<property name="sunMars" />
+		<property name="sunJupiter" />
+		<property name="sunSaturn" />
+		<property name="sunUranus" />
+		<property name="sunNeptune" />
+		<property name="sunPluto" />
+		<property name="moonMercury" />
+		<property name="moonVenus" />
+		<property name="moonMars" />
+		<property name="moonJupiter" />
+		<property name="moonSaturn" />
+		<property name="moonUranus" />
+		<property name="moonNeptune" />
+		<property name="moonPluto" />
+		<property name="mercuryVenus" />
+		<property name="mercuryMars" />
+		<property name="mercuryJupiter" />
+		<property name="mercurySaturn" />
+		<property name="mercuryUranus" />
+		<property name="mercuryNeptune" />
+		<property name="mercuryPluto" />
+		<property name="venusMars" />
+		<property name="venusJupiter" />
+		<property name="venusSaturn" />
+		<property name="venusUranus" />
+		<property name="venusNeptune" />
+		<property name="venusPluto" />
+		<property name="marsJupiter" />
+		<property name="marsSaturn" />
+		<property name="marsUranus" />
+		<property name="marsNeptune" />
+		<property name="marsPluto" />
+		<property name="jupiterSaturn" />
+		<property name="jupiterUranus" />
+		<property name="jupiterNeptune" />
+		<property name="jupiterPluto" />
+		<property name="saturnUranus" />
+		<property name="saturnNeptune" />
+		<property name="saturnPluto" />
+		<property name="uranusNeptune" />
+		<property name="uranusPluto" />
+		<property name="neptunrPluto" />
+	</class>
+	
+	<class name="GPersonAnglePower" table="anglePower" batch-size="100">
+		<cache usage="nonstrict-read-write" />
+		<id name="personId" column="personId" unsaved-value="0">
+			<generator class="foreign">
+				<param name="property">gperson</param>
+			</generator>
+		</id>
+		<one-to-one name="gperson" class="GPerson" constrained="true" />
+		<property name="sun" />
+		<property name="sunPower" />
+		<property name="moon" />
+		<property name="moonPower" />
+		<property name="mercury" />
+		<property name="mercuryPower" />
+		<property name="venus" />
+		<property name="venusPower" />
+		<property name="mars" />
+		<property name="marsPower" />
+		<property name="jupiter" />
+		<property name="jupiterPower" />
+		<property name="saturn" />
+		<property name="saturnPower" />
+		<property name="uranus" />
+		<property name="uranusPower" />
+		<property name="neptune" />
+		<property name="neptunePower" />
+		<property name="pluto" />
+		<property name="plutoPower" />
+	</class>
+</hibernate-mapping>
