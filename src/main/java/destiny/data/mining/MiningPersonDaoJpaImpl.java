@@ -77,5 +77,11 @@ public class MiningPersonDaoJpaImpl implements MiningPersonDao
     return null;
   }
 
+  @Override
+  public Class<MiningPerson> getClassType()
+  {
+    return MiningPerson.class;
+  }
+
 }
 
