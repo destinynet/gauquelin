@@ -50,6 +50,12 @@ public class MiningPersonDaoJpaImpl implements MiningPersonDao
   }
 
   @Override
+  public MiningPerson merge(MiningPerson t)
+  {
+    return em.merge(t);
+  }
+  
+  @Override
   public void refresh(MiningPerson t)
   {
     // TODO Auto-generated method stub
