@@ -89,5 +89,11 @@ public class MiningPersonDaoJpaImpl implements MiningPersonDao
     return MiningPerson.class;
   }
 
+  @Override
+  public void evict(Serializable id)
+  {
+    // TODO Auto-generated method stub
+  }
+
 }
 
