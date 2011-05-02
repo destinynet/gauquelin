@@ -21,38 +21,32 @@ public class GDaoImpl extends AbstractDaoJpaImpl<GPerson> implements GDao , Seri
   @Override
   public void setEntityManager(EntityManager em)
   {
-    //System.err.println("setEntityManager , em = " + em);
     this.em = em;
   }
   
   @Override
   public void delete(GPersonHouse h)
   {
-    // TODO Auto-generated method stub
-
   }
 
+  @SuppressWarnings("unchecked")
   @Override
   public List<GPerson> findAllByCategory(String category)
   {
-    // TODO Auto-generated method stub
-    return null;
+    return em.createQuery("from GPerson gp where gp.category = :category").setParameter("category", category).getResultList();
   }
 
+  @SuppressWarnings("unchecked")
   @Override
   public List<GPerson> findAllByCategory(String category, int start, int count)
   {
-    // TODO Auto-generated method stub
-    return null;
+    return em.createQuery("from GPerson gp where gp.category = :category").setParameter("category", category).setFirstResult(start).setMaxResults(count).getResultList();
   }
 
   @Override
   public long getCount(String category)
   {
-    // TODO Auto-generated method stub
-    return 0;
+    Number n = (Number) em.createQuery("select count(*) from GPerson gp where gp.category = :category").setParameter("category", category).getSingleResult();
+    return n.longValue();
   }
-
-
-
 }

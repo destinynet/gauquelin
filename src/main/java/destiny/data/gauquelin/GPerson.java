@@ -25,12 +25,18 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.BatchSize;
+
 import destiny.core.calendar.Location;
 import destiny.core.calendar.Time;
 
+/**
+ * 高格林的一筆資料
+ */
 @Entity
 @Table(name="person")
 @Cacheable
+@BatchSize(size=10)
 public class GPerson implements Serializable
 {
   /** 資料庫的 id */
@@ -61,22 +67,123 @@ public class GPerson implements Serializable
   private String raw;
   
   /** 星體位於什麼宮 */
-  @OneToMany(mappedBy="gperson" ,  cascade=CascadeType.ALL , fetch=FetchType.LAZY , orphanRemoval=true)
+  @BatchSize(size=100)
+  @OneToMany(mappedBy="gperson" ,  cascade=CascadeType.ALL , fetch=FetchType.EAGER , orphanRemoval=true)
   @MapKey(name="house")
   private Map<String , GPersonHouse> houseMap = Collections.synchronizedMap(new HashMap<String , GPersonHouse>());
   
   /** 星體交角資料 */
+  @BatchSize(size=100)
   @OneToOne(mappedBy="gperson")
   @JoinColumn(name="personId")
   private GPersonAspect aspect;
   
   /** 交角強度 */
+  @BatchSize(size=100)
   @OneToOne(mappedBy="gperson")
   @JoinColumn(name="personId")
   private GPersonAnglePower anglePower;
   
   public GPerson()
   {
+  }
+  
+  /** 輸出成 CSV 格式 */ 
+  public String getCSV()
+  {
+    StringBuffer sb = new StringBuffer();
+    //sb.append(getId() + " : ");
+    sb.append("\"");
+    sb.append(getCategory());
+    sb.append("\",");
+    
+    //何星體位於哪一宮
+    GPersonHouse house = houseMap.get("placidus");
+    sb.append(house.getSun() + ",");
+    sb.append(house.getMoon() + ",");
+    sb.append(house.getMercury() + ",");
+    sb.append(house.getVenus() + ",");
+    sb.append(house.getMars() + ",");
+    sb.append(house.getJupiter() + ",");
+    sb.append(house.getSaturn() + ",");
+    sb.append(house.getUranus() + ",");
+    sb.append(house.getNeptune() + ",");
+    sb.append(house.getNeptune() + ",");
+    
+    //任兩顆星是否呈現交角，或哪種交角
+    sb.append("\"" + getShrinkAspect(aspect.getSunMoon()) + "\",");
+    sb.append("\"" + getShrinkAspect(aspect.getSunMercury()) + "\",");
+    sb.append("\"" + getShrinkAspect(aspect.getSunVenus())+ "\",");
+    sb.append("\"" + getShrinkAspect(aspect.getSunMars()) + "\",");
+    sb.append("\"" + getShrinkAspect(aspect.getSunJupiter()) + "\",");
+    sb.append("\"" + getShrinkAspect(aspect.getSunSaturn()) + "\",");
+    sb.append("\"" + getShrinkAspect(aspect.getSunUranus()) + "\",");
+    sb.append("\"" + getShrinkAspect(aspect.getSunNeptune())+ "\",");
+    sb.append("\"" + getShrinkAspect(aspect.getSunPluto())+ "\",");
+    sb.append("\"" + getShrinkAspect(aspect.getMoonMercury()) + "\",");
+    sb.append("\"" + getShrinkAspect(aspect.getMoonVenus()) + "\",");
+    sb.append("\"" + getShrinkAspect(aspect.getMoonMars()) + "\",");
+    sb.append("\"" + getShrinkAspect(aspect.getMoonJupiter())+ "\",");
+    sb.append("\"" + getShrinkAspect(aspect.getMoonSaturn())+ "\",");
+    sb.append("\"" + getShrinkAspect(aspect.getMoonUranus())+ "\",");
+    sb.append("\"" + getShrinkAspect(aspect.getMoonNeptune())+ "\",");
+    sb.append("\"" + getShrinkAspect(aspect.getMoonPluto())+ "\",");
+    sb.append("\"" + getShrinkAspect(aspect.getMercuryVenus())+ "\",");
+    sb.append("\"" + getShrinkAspect(aspect.getMercuryMars())+ "\",");
+    sb.append("\"" + getShrinkAspect(aspect.getMercuryJupiter())+ "\",");
+    sb.append("\"" + getShrinkAspect(aspect.getMercurySaturn())+ "\",");
+    sb.append("\"" + getShrinkAspect(aspect.getMercuryUranus())+ "\",");
+    sb.append("\"" + getShrinkAspect(aspect.getMercuryNeptune())+ "\",");
+    sb.append("\"" + getShrinkAspect(aspect.getMercuryPluto())+ "\",");
+    sb.append("\"" + getShrinkAspect(aspect.getVenusMars())+ "\",");
+    sb.append("\"" + getShrinkAspect(aspect.getVenusJupiter())+ "\",");
+    sb.append("\"" + getShrinkAspect(aspect.getVenusSaturn())+ "\",");
+    sb.append("\"" + getShrinkAspect(aspect.getVenusUranus())+ "\",");
+    sb.append("\"" + getShrinkAspect(aspect.getVenusNeptune())+ "\",");
+    sb.append("\"" + getShrinkAspect(aspect.getVenusPluto())+ "\",");
+    sb.append("\"" + getShrinkAspect(aspect.getMarsJupiter())+ "\",");
+    sb.append("\"" + getShrinkAspect(aspect.getMarsSaturn())+ "\",");
+    sb.append("\"" + getShrinkAspect(aspect.getMarsUranus())+ "\",");
+    sb.append("\"" + getShrinkAspect(aspect.getMarsNeptune())+ "\",");
+    sb.append("\"" + getShrinkAspect(aspect.getMarsPluto())+ "\",");
+    sb.append("\"" + getShrinkAspect(aspect.getJupiterSaturn()) + "\",");
+    sb.append("\"" + getShrinkAspect(aspect.getJupiterUranus()) + "\",");
+    sb.append("\"" + getShrinkAspect(aspect.getJupiterNeptune()) + "\",");
+    sb.append("\"" + getShrinkAspect(aspect.getJupiterPluto()) + "\",");
+    sb.append("\"" + getShrinkAspect(aspect.getSaturnUranus()) + "\",");
+    sb.append("\"" + getShrinkAspect(aspect.getSaturnNeptune()) + "\",");
+    sb.append("\"" + getShrinkAspect(aspect.getSaturnPluto()) + "\",");
+    sb.append("\"" + getShrinkAspect(aspect.getUranusNeptune()) + "\",");
+    sb.append("\"" + getShrinkAspect(aspect.getUranusPluto()) + "\",");
+    sb.append("\"" + getShrinkAspect(aspect.getNeptunrPluto())+ "\",");
+    
+    //交角強度
+    sb.append("\"" + anglePower.getSun()+ "\",");
+    sb.append(anglePower.getSunPower().toString().substring(0, 5) + ",");
+    sb.append("\"" + anglePower.getMoon()+ "\",");
+    sb.append(anglePower.getMoonPower().toString().substring(0, 5) + ",");
+    sb.append("\"" + anglePower.getMars()+ "\",");
+    sb.append(anglePower.getMarsPower().toString().substring(0, 5) + ",");
+    sb.append("\"" + anglePower.getJupiter()+ "\",");
+    sb.append(anglePower.getJupiterPower().toString().substring(0, 5) + ",");
+    sb.append("\"" + anglePower.getSaturn()+ "\",");
+    sb.append(anglePower.getSaturnPower().toString().substring(0, 5) + ",");
+    sb.append("\"" + anglePower.getUranus()+ "\",");
+    sb.append(anglePower.getUranusPower().toString().substring(0, 5) + ",");
+    sb.append("\"" + anglePower.getNeptune()+ "\",");
+    sb.append(anglePower.getNeptunePower().toString().substring(0, 5) + ",");
+    sb.append("\"" + anglePower.getPluto()+ "\",");
+    sb.append(anglePower.getPlutoPower().toString().substring(0, 5));
+    return sb.toString();
+  }
+  
+  /** 為了節省空間 , 將 Opposition , Trine ... 等 Aspect , 只取前面兩個字元 , 而 null 則傳回 "n" */
+  private String getShrinkAspect(String s)
+  {
+    if (s == null)
+      return "n";
+    else
+      return s.substring(0,2);
   }
 
   public void setId(long id)

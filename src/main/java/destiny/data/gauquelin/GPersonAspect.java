@@ -22,6 +22,7 @@ import destiny.astrology.Point;
 @Entity
 @Table(name="aspect")
 @Cacheable
+/** 一個命盤的任兩顆星呈現什麼交角 */
 public class GPersonAspect implements Serializable
 {
   @Id
