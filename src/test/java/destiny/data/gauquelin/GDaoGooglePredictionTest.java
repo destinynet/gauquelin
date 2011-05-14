@@ -31,9 +31,36 @@ public class GDaoGooglePredictionTest
   @Transactional(readOnly=true)
   public void testPredict() throws IOException
   {
-    GPerson p = dao.get(13916L);
+    GPerson p = dao.get(3L);
     System.out.println(p.getCSV());
   }
+  
+  /** 2011/5/4 ，輸出「工作」，每類工作上限 500人 , 全部 5000 人*/
+  @Test
+  @Transactional(readOnly=true)
+  public void testExportJobEach5500() throws IOException
+  {
+    long t = System.currentTimeMillis();
+    FileOutputStream fos = new FileOutputStream(new File("jobs5500.csv") );
+    PrintStream ps = new PrintStream(fos);
+    int max=550;
+    
+    this.processJob(fos, ps, "actor" , max , false);
+    this.processJob(fos, ps, "executive" , max, false);
+    this.processJob(fos, ps, "journalist" , max, false);
+    this.processJob(fos, ps, "military" , max, false);
+    this.processJob(fos, ps, "musician" , max, false);
+    this.processJob(fos, ps, "painter" , max, false);
+    this.processJob(fos, ps, "politician" , max, false);
+    this.processJob(fos, ps, "scientist" , max, false);
+    this.processJob(fos, ps, "sport" , max, false);
+    this.processJob(fos, ps, "writer" , max, false);
+    
+    ps.close();
+    fos.close();
+    System.out.println("全部費時 " + (System.currentTimeMillis() - t)/1000L + " 秒");
+  }
+  
   
   /** 2011/5/1 只輸出「工作」「奇數」的資料  。作為初步的成品。跑起來全部費時 2.6 小時 
    * 一半的資料就有 9271 rows */
@@ -44,39 +71,46 @@ public class GDaoGooglePredictionTest
     long t = System.currentTimeMillis();
     FileOutputStream fos = new FileOutputStream(new File("gauquelinJobOdd.csv") );
     PrintStream ps = new PrintStream(fos);
-    this.processJob(fos, ps, "actor");
-    this.processJob(fos, ps, "executive");
-    this.processJob(fos, ps, "journalist");
-    this.processJob(fos, ps, "military");
-    this.processJob(fos, ps, "musician");
-    this.processJob(fos, ps, "painter");
-    this.processJob(fos, ps, "politician");
-    this.processJob(fos, ps, "scientist");
-    this.processJob(fos, ps, "sport");
-    this.processJob(fos, ps, "writer");
+    this.processJob(fos, ps, "actor" , Integer.MAX_VALUE , true);
+    this.processJob(fos, ps, "executive", Integer.MAX_VALUE, true);
+    this.processJob(fos, ps, "journalist", Integer.MAX_VALUE, true);
+    this.processJob(fos, ps, "military", Integer.MAX_VALUE, true);
+    this.processJob(fos, ps, "musician", Integer.MAX_VALUE, true);
+    this.processJob(fos, ps, "painter", Integer.MAX_VALUE, true);
+    this.processJob(fos, ps, "politician", Integer.MAX_VALUE, true);
+    this.processJob(fos, ps, "scientist", Integer.MAX_VALUE, true);
+    this.processJob(fos, ps, "sport", Integer.MAX_VALUE, true);
+    this.processJob(fos, ps, "writer", Integer.MAX_VALUE, true);
     
     ps.close();
     fos.close();
     System.out.println("全部費時 " + (System.currentTimeMillis() - t)/1000L + " 秒");
   }
   
-  private void processJob(FileOutputStream fos , PrintStream ps , String job) throws IOException
+  private void processJob(FileOutputStream fos , PrintStream ps , String job , int max , boolean half) throws IOException
   {
     long total = dao.getCount(job);
+    if (total > max)
+      total = max;
     int size = 10;
     long pages = total / size +1;
+    if (total % size == 0)
+      pages--;
+    
     System.out.println("job = " + job + " , total = " + total + " , pages = " + pages);
     long t = System.currentTimeMillis();
     
-    for(int page = 0 ; page <= pages ; page++)
+    for(int page = 0 ; page < pages ; page++)
     {
       for(GPerson p : dao.findAllByCategory(job, page*size , size))
       {
-        if (p.getId() % 2 == 1)
+        if (half)
         {
-          ps.println(p.getCSV());
-          //System.out.println(p.getCSV());          
+          if (p.getId() % 2 == 1)
+            ps.println(p.getCSV());
         }
+        else
+          ps.println(p.getCSV());
       }
       fos.flush();
     }
