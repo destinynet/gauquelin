@@ -9,20 +9,33 @@ import java.io.File;
 import java.io.FileReader;
 import java.net.URL;
 
+import javax.inject.Inject;
+
+import junit.framework.TestCase;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
 import destiny.core.calendar.Location;
-import destiny.core.calendar.Time;
 import destiny.core.calendar.Location.EastWest;
 import destiny.core.calendar.Location.NorthSouth;
+import destiny.core.calendar.Time;
 import destiny.core.calendar.eightwords.EightWords;
-import destiny.core.calendar.eightwords.EightWordsContextBean;
+import destiny.core.calendar.eightwords.EightWordsContext;
 import destiny.utils.location.TimeZoneUtils;
 
-public class BirthAndDeathReader
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations={"classpath:core.xml"})
+public class BirthAndDeathReader extends TestCase
 {
-  public BirthAndDeathReader()
+  @Inject
+  EightWordsContext eightWordsContext;
+  
+  @Test
+  public void testPrint8words()
   {
-    EightWordsContextBean bean;
-    
     URL url = getClass().getResource("BirthAndDeath.txt");
     File file;
     BufferedReader bReader = null;
@@ -71,13 +84,11 @@ public class BirthAndDeathReader
             if (deathTime.diffSeconds(birthTime) < 60*60*24*365)
             {
               i++;
-              bean = new EightWordsContextBean();
-              EightWords ew1 = bean.getEightWords(birthTime , location);
+              EightWords ew1 = eightWordsContext.getEightWords(birthTime , location);
               System.out.println("======"+i+"=====");
               System.out.print("出生於 : " + ew1);
 
-              bean = new EightWordsContextBean();
-              EightWords ew2 = bean.getEightWords(deathTime , location);
+              EightWords ew2 = eightWordsContext.getEightWords(deathTime , location);
               System.out.println("\n卒於 : " + ew2);
             }
           }
@@ -90,8 +101,4 @@ public class BirthAndDeathReader
     }
   }
   
-  public static void main(String[] args)
-  {
-    new BirthAndDeathReader();
-  }
 }

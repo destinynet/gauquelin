@@ -13,6 +13,15 @@ import java.io.IOException;
 import java.util.StringTokenizer;
 import java.util.TimeZone;
 
+import javax.inject.Inject;
+
+import junit.framework.TestCase;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
 import destiny.astrology.StarPositionIF;
 import destiny.astrology.StarTransitIF;
 import destiny.astrology.swissephImpl.RiseTransImpl;
@@ -26,7 +35,7 @@ import destiny.core.calendar.Time;
 import destiny.core.calendar.eightwords.DayIF;
 import destiny.core.calendar.eightwords.DayImpl;
 import destiny.core.calendar.eightwords.EightWords;
-import destiny.core.calendar.eightwords.EightWordsContextBean;
+import destiny.core.calendar.eightwords.EightWordsContext;
 import destiny.core.calendar.eightwords.HourIF;
 import destiny.core.calendar.eightwords.HourSolarTransImpl;
 import destiny.core.calendar.eightwords.MidnightIF;
@@ -43,8 +52,13 @@ import destiny.core.chinese.StemBranch;
  * 1,1,1949,6,26,2007,10,10,1
  * 編號1 , 男性 ,1949/6/26 出生。肇事日期 2007/10/1 清晨1點
  */
-public class CauserReader
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations={"classpath:core.xml"})
+public class CauserReader extends TestCase
 {
+  @Inject
+  EightWordsContext eightWordsContext;
+  
   private StarPositionIF starPositionImpl = new StarPositionImpl();
   private StarTransitIF starTransitImpl = new StarTransitImpl();
   private SolarTermsIF solarTermsImpl = new SolarTermsBean(starTransitImpl , starPositionImpl);
@@ -59,7 +73,8 @@ public class CauserReader
   private Location location;
   private Time lmt;
   
-  public CauserReader()
+  @Test
+  public void testCauserReader()
   {
     location = new Location(Location.EastWest.EAST , 120 , 0 , 0 , Location.NorthSouth.NORTH , 25, 03 , 0 , 0 , TimeZone.getTimeZone("Asia/Taipei") );
     
@@ -78,7 +93,6 @@ public class CauserReader
       String line = null;
       EightWordsPersonContext context;
       StemBranch eventStemBranch;
-      EightWordsContextBean bean;
       while ((line = bReader.readLine()) != null)
       {
         StringTokenizer st = new StringTokenizer(line , ", \n");
@@ -131,8 +145,7 @@ public class CauserReader
         sb.append(eventStemBranch.getStem()+",");
         sb.append(eventStemBranch.getBranch()+",");
         
-        bean = new EightWordsContextBean(); 
-        EightWords ew2 = bean.getEightWords(new Time(eventYear , eventMonth , eventDay , eventHour , eventMinute , eventSecond) , location);
+        EightWords ew2 = eightWordsContext.getEightWords(new Time(eventYear , eventMonth , eventDay , eventHour , eventMinute , eventSecond) , location);
         long l2 = System.currentTimeMillis();
         
         //出事時辰的八字
@@ -166,10 +179,5 @@ public class CauserReader
         e.printStackTrace();
       }
     }
-  }
-  
-  public static void main(String[] args)
-  {
-    new CauserReader();
   }
 }
