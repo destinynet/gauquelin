@@ -13,9 +13,10 @@ import java.util.StringTokenizer;
 import java.util.TimeZone;
 
 import destiny.core.calendar.Location;
-import destiny.core.calendar.Time;
 import destiny.core.calendar.Location.EastWest;
 import destiny.core.calendar.Location.NorthSouth;
+import destiny.core.calendar.Time;
+import destiny.utils.location.TimeZoneUtils;
 
 @SuppressWarnings("unused")
 public class ParseUtils implements Serializable
@@ -45,6 +46,7 @@ public class ParseUtils implements Serializable
     int minute = Integer.parseInt(st.nextToken());
     int second = Integer.parseInt(st.nextToken());
     int tz = Integer.parseInt(st.nextToken()); // -1 的話，代表「東一區」
+    tz = 0-tz;
     
     String LAT = st.nextToken();
     StringTokenizer st2 = new StringTokenizer(LAT , "NS");
@@ -64,7 +66,10 @@ public class ParseUtils implements Serializable
     Time time = new Time(year , month , day , hour , minute , second);
     Calendar cal = new GregorianCalendar(time.getYear() , time.getMonth()-1 , time.getDay() , time.getHour() , time.getMinute() , (int)time.getSecond());
     Timestamp ts = new Timestamp(cal.getTimeInMillis());
-    Location location = new Location( (EW == 'E' ? EastWest.EAST : EastWest.WEST) , longDeg , longMin , 0 , (NS == 'N' ? NorthSouth.NORTH : NorthSouth.SOUTH) , latDeg , latMin , 0 , 0 , TimeZone.getTimeZone("GMT") );
+    Location location = new Location(
+        (EW == 'E' ? EastWest.EAST : EastWest.WEST) , longDeg , longMin , 0 , 
+        (NS == 'N' ? NorthSouth.NORTH : NorthSouth.SOUTH) , latDeg , latMin , 0 , 0 , 
+        TimeZoneUtils.getTimeZone(tz*60));
     
     
     GPerson person = new GPerson();
@@ -177,7 +182,10 @@ public class ParseUtils implements Serializable
     Time time = new Time(year , month , day , hour , minute , second);
     Calendar cal = new GregorianCalendar(time.getYear() , time.getMonth()-1 , time.getDay() , time.getHour() , time.getMinute() , (int)time.getSecond());
     Timestamp ts = new Timestamp(cal.getTimeInMillis());
-    Location location = new Location( (EW == 'E' ? EastWest.EAST : EastWest.WEST) , longDeg , longMin , 0 , (NS == 'N' ? NorthSouth.NORTH : NorthSouth.SOUTH) , latDeg , latMin , 0 , 0 , TimeZone.getTimeZone("GMT") );
+    Location location = new Location( 
+        (EW == 'E' ? EastWest.EAST : EastWest.WEST) , longDeg , longMin , 0 , 
+        (NS == 'N' ? NorthSouth.NORTH : NorthSouth.SOUTH) , latDeg , latMin , 0 , 0 , 
+        TimeZone.getTimeZone("GMT") );
     
     GPerson person = new GPerson();
     person.setNumber(number);

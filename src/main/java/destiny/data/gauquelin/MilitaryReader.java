@@ -4,7 +4,7 @@
  */
 package destiny.data.gauquelin;
 
-/** 軍人 3046 位 */
+/** 軍人 3046 位 (編號到 3047 , 但缺 312) */
 public class MilitaryReader extends AbstractReader
 {
   public MilitaryReader()
@@ -15,9 +15,11 @@ public class MilitaryReader extends AbstractReader
   public static void main(String[] args)
   {
     TextDataReader r = new MilitaryReader();
+    int i=0;
     for(GPerson person : r.getPersons())
     {
-      System.out.println(person);
+      i++;
+      System.out.println("["+i+"] : " + person);
     }
   }
 

@@ -1,3 +1,8 @@
+# 此為舊版格式，
+# 新版 : http://cura.free.fr/gauq/902gdE1.html
+# 2154 French Physicians, Military Men and Executives. Serie E, volume 1 : from 1901 to 1963 
+
+
 0001    PH       ABELY Xavier                    24.03.1890,08:00    Verdun sur Garonne, FR        82   
 0002    EX       ABILE-GAL Jean Baptiste         10.02.1901,11:00    Carmaux, FR                   81   
 2bis    PH       ABONNEUC Louis André            14.10.1883,18:00    St Sébastien, FR              38   

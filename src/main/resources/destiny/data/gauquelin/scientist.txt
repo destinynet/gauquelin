@@ -1,6 +1,10 @@
 # 新版 http://cura.free.fr/gauq/902gdA2y.html
 # 舊版 http://cura.free.fr/gauq/11gdA2.txt
-# Scientist 科學家 and Medical Doctors 醫生 , 共 3643 位
+# 
+# Scientist 科學家 and Medical Doctors 醫生
+# 1~3647 , 但缺 2652 , 2683(同262) , 3315 , 3335
+# 故總共只有 3643位
+
 
 # YEA	MON	DAY	PRO	NUM	COU	H	MN	SEC	TZ	LAT	LON	COD	CITY	
 

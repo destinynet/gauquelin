@@ -1,6 +1,6 @@
 # 新版 (by number ) http://cura.free.fr/gauq/902gdA3.html 
 # 新版 (by date   ) http://cura.free.fr/gauq/902gdA3y.html
-# 舊版 http://cura.free.fr/gauq/11gdA3.txt
+# 舊版 http://cura.free.fr/gauq/11gdA3.txt (missing)
 # 軍人 , 3046 位
 
 # PRO	NUM	COU	DAY	MON	YEA	H	MN	SEC	TZ	LAT	LON	COD	CITY	

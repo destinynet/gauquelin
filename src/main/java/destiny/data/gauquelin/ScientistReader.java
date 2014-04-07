@@ -17,9 +17,11 @@ public class ScientistReader extends AbstractReader
   public static void main(String[] args)
   {
     TextDataReader r = new ScientistReader();
+    int i=0;
     for(GPerson person : r.getPersons())
     {
-      System.out.println(person);
+      i++;
+      System.out.println("["+i+"] " + person);
     }
   }
   

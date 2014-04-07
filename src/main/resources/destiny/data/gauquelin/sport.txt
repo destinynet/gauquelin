@@ -1,6 +1,8 @@
+# 2009版本 : http://cura.free.fr/gauq/902gdA1.html
 # 新 http://cura.free.fr/gauq/902gdA1y.html
 # 舊 http://cura.free.fr/gauq/11gdA1.txt
 # SPORTS CHAMPIONS 運動冠軍 , 2087 位
+# 513 與 1153重複，故刪除 1153
 
 # PRO	NUM	COU	DAY	MON	YEA	H	MN	SEC	TZ	LAT	LON	COD	CITY	
 

@@ -68,9 +68,11 @@ public class Sport450Reader implements TextDataReader , Serializable
   public static void main(String[] args)
   {
     TextDataReader r = new Sport450Reader();
+    int i=0;
     for(GPerson person : r.getPersons())
     {
-      System.out.println(person);
+      i++;
+      System.out.println("["+i+"] : " +person);
     }
   }
 }
