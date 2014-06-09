@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import destiny.data.GeolocationFinder;
+import destiny.utils.location.GeolocationFinder;
 import destiny.data.GeolocationFinderYahooImpl;
 import destiny.utils.location.TimeZoneService;
 import destiny.web.yahoo.AppData;

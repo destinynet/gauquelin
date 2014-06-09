@@ -22,7 +22,7 @@ import java.util.TimeZone;
 
 import destiny.core.calendar.Location;
 import destiny.core.calendar.Time;
-import destiny.data.GeolocationFinder;
+import destiny.utils.location.GeolocationFinder;
 
 /**
  * <pre>

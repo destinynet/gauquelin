@@ -4,30 +4,21 @@
  */ 
 package destiny.data.gauquelin;
 
-import static org.junit.Assert.assertNotNull;
+import destiny.astrology.*;
+import destiny.astrology.Aspect.Importance;
+import destiny.core.calendar.Location;
+import destiny.utils.location.GeolocationFinder;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import javax.inject.Inject;
-
-import org.junit.runner.RunWith;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
-import destiny.astrology.Aspect;
-import destiny.astrology.HoroscopeAspectData;
-import destiny.astrology.HoroscopeAspectsCalculator;
-import destiny.astrology.HoroscopeAspectsCalculatorModern;
-import destiny.astrology.HoroscopeContext;
-import destiny.astrology.HoroscopeContextBean;
-import destiny.astrology.HouseSystem;
-import destiny.astrology.Planet;
-import destiny.astrology.Aspect.Importance;
-import destiny.core.calendar.Location;
-import destiny.data.GeolocationFinder;
+import static org.junit.Assert.assertNotNull;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"classpath:gauquelin.xml"})
