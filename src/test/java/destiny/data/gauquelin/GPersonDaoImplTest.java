@@ -8,6 +8,7 @@ import destiny.astrology.*;
 import destiny.astrology.Aspect.Importance;
 import destiny.core.calendar.Location;
 import destiny.utils.location.GeolocationFinder;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -29,6 +30,9 @@ public class GPersonDaoImplTest// extends AbstractGauquelinTest
   
   @Inject
   protected GeolocationFinder geolocationFinder;
+
+  @Inject
+  private HoroscopeContextBean horoscopeContextBean;
   
   protected List<TextDataReader> readers = Collections.synchronizedList(new ArrayList<TextDataReader>());
   
@@ -88,14 +92,13 @@ public class GPersonDaoImplTest// extends AbstractGauquelinTest
     System.out.println("總共 " +count + "  筆資料");
     
     HoroscopeContext hc;
-    HoroscopeContextBean bean = new HoroscopeContextBean();
     for (int i=0 ; i <= count/pageSize ; i++)
     {
       List<GPerson> persons = gDao.findAll(i*pageSize + start , pageSize);
       
       for(GPerson p : persons)
       {
-        hc = bean.getHoroscopeContext(p.getGmtTime(), Location.get(p.getLocation()));
+        hc = horoscopeContextBean.getHoroscopeContext(p.getGmtTime(), Location.get(p.getLocation()));
 
         boolean updated = false;
         if (p.getAspect() == null)
@@ -139,6 +142,7 @@ public class GPersonDaoImplTest// extends AbstractGauquelinTest
     p.setAnglePower(anglePower);
   }
 
+  @Test
   public void testGet()
   {
     int pageSize = 10;
@@ -149,13 +153,13 @@ public class GPersonDaoImplTest// extends AbstractGauquelinTest
     System.out.println("總共 " +count + "  筆資料");
     
     HoroscopeContext hc;
-    HoroscopeContextBean bean = new HoroscopeContextBean();
+    //HoroscopeContextBean bean = new HoroscopeContextBean();
     for (int i=0 ; i <= count/pageSize ; i++)
     {
       List<GPerson> persons = gDao.findAllByCategory(cat , i*pageSize , pageSize);
       for(GPerson p : persons)
       {
-        hc = bean.getHoroscopeContext(p.getGmtTime(), Location.get(p.getLocation()));
+        hc = horoscopeContextBean.getHoroscopeContext(p.getGmtTime(), Location.get(p.getLocation()));
         System.err.println(p);
         GPersonAspect aspect = processAspect(hc);
         aspect.setGperson(p);

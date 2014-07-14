@@ -3,15 +3,15 @@
  */
 package destiny.data.gauquelin.weka.house_aspect;
 
-import junit.framework.TestCase;
-import weka.classifiers.Classifier;
-import weka.core.Instance;
 import destiny.core.calendar.Location;
 import destiny.core.calendar.Time;
+import org.junit.Test;
+import weka.classifiers.Classifier;
+import weka.core.Instance;
 
-public class TimeLocation_House_Aspect_InstanceTest extends TestCase
+public class TimeLocation_House_Aspect_InstanceTest
 {
-
+  @Test
   public void testGetInstance() throws Exception
   {
     for (int i = 1 ; i <=1 ; i++)
