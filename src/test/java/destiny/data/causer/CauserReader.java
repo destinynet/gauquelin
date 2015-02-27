@@ -15,6 +15,7 @@ import java.util.TimeZone;
 
 import javax.inject.Inject;
 
+import destiny.core.calendar.eightwords.personal.PersonContext;
 import junit.framework.TestCase;
 
 import org.junit.Test;
@@ -42,7 +43,6 @@ import destiny.core.calendar.eightwords.MidnightIF;
 import destiny.core.calendar.eightwords.MidnightSolarTransImpl;
 import destiny.core.calendar.eightwords.YearMonthIF;
 import destiny.core.calendar.eightwords.YearMonthSolarTermsStarPositionImpl;
-import destiny.core.calendar.eightwords.personal.EightWordsPersonContext;
 import destiny.core.calendar.eightwords.personal.FortuneDirectionDefaultImpl;
 import destiny.core.calendar.eightwords.personal.FortuneDirectionIF;
 import destiny.core.chinese.StemBranch;
@@ -91,7 +91,7 @@ public class CauserReader extends TestCase
       bReader = new BufferedReader(fReader);
 
       String line = null;
-      EightWordsPersonContext context;
+      PersonContext context;
       StemBranch eventStemBranch;
       while ((line = bReader.readLine()) != null)
       {
@@ -106,7 +106,7 @@ public class CauserReader extends TestCase
         int day = Integer.valueOf(st.nextToken()).intValue();
         int hour = 12;
         lmt = new Time(year , month , day , hour);
-        context = new EightWordsPersonContext(yearMonthImpl , dayImpl , hourImpl, midnightImpl , true ,solarTermsImpl , starTransitImpl , lmt , location , gender , 120.0 , fortuneDirectionImpl);
+        context = new PersonContext(yearMonthImpl , dayImpl , hourImpl, midnightImpl , true ,solarTermsImpl , starTransitImpl , lmt , location , gender , 120.0 , fortuneDirectionImpl);
         
         StringBuffer sb = new StringBuffer();
         sb.append(index+",");
