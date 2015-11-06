@@ -3,11 +3,12 @@
  */
 package destiny.data.gauquelin;
 
-import junit.framework.TestCase;
+import org.junit.Test;
 
-public class TextDataFormatterTest extends TestCase
+public class TextDataFormatterTest
 {
 
+  @Test
   public void testTextDataFormatter()
   {
     new TextDataFormatter(new SportReader() , "sport_new.txtx");

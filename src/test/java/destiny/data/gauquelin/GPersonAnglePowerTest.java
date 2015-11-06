@@ -4,12 +4,13 @@
  */ 
 package destiny.data.gauquelin;
 
-import junit.framework.TestCase;
 import destiny.astrology.Planet;
+import org.junit.Test;
 
-public class GPersonAnglePowerTest extends TestCase
+public class GPersonAnglePowerTest
 {
 
+  @Test
   public void testSetValue()
   {
     GPersonAnglePower g = new GPersonAnglePower();

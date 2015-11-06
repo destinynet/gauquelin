@@ -22,7 +22,7 @@ import destiny.core.calendar.Location.EastWest;
 import destiny.core.calendar.Location.NorthSouth;
 import destiny.core.calendar.Time;
 import destiny.core.calendar.eightwords.EightWordsContext;
-import destiny.utils.location.TimeZoneUtils;
+import destiny.tools.location.TimeZoneUtils;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"classpath:core.xml"})

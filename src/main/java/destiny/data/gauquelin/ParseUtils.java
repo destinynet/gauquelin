@@ -16,7 +16,7 @@ import destiny.core.calendar.Location;
 import destiny.core.calendar.Location.EastWest;
 import destiny.core.calendar.Location.NorthSouth;
 import destiny.core.calendar.Time;
-import destiny.utils.location.TimeZoneUtils;
+import destiny.tools.location.TimeZoneUtils;
 
 @SuppressWarnings("unused")
 public class ParseUtils implements Serializable

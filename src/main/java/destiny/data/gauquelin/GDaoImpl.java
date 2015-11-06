@@ -4,15 +4,13 @@
  */
 package destiny.data.gauquelin;
 
-import java.io.Serializable;
-import java.util.List;
+import destiny.utils.AbstractDaoJpaImpl;
+import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-
-import org.springframework.stereotype.Repository;
-
-import destiny.utils.AbstractDaoJpaImpl;
+import java.io.Serializable;
+import java.util.List;
 
 @Repository(value="gDao")
 public class GDaoImpl extends AbstractDaoJpaImpl<GPerson> implements GDao , Serializable

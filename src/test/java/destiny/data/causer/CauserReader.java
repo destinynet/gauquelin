@@ -4,48 +4,29 @@
  */ 
 package destiny.data.causer;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.StringTokenizer;
-import java.util.TimeZone;
-
-import javax.inject.Inject;
-
-import destiny.core.calendar.eightwords.personal.PersonContext;
-import junit.framework.TestCase;
-
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
 import destiny.astrology.StarPositionIF;
 import destiny.astrology.StarTransitIF;
 import destiny.astrology.swissephImpl.RiseTransImpl;
-import destiny.astrology.swissephImpl.StarPositionImpl;
-import destiny.astrology.swissephImpl.StarTransitImpl;
 import destiny.core.Gender;
 import destiny.core.calendar.Location;
-import destiny.core.calendar.SolarTermsBean;
 import destiny.core.calendar.SolarTermsIF;
 import destiny.core.calendar.Time;
-import destiny.core.calendar.eightwords.DayIF;
-import destiny.core.calendar.eightwords.DayImpl;
-import destiny.core.calendar.eightwords.EightWords;
-import destiny.core.calendar.eightwords.EightWordsContext;
-import destiny.core.calendar.eightwords.HourIF;
-import destiny.core.calendar.eightwords.HourSolarTransImpl;
-import destiny.core.calendar.eightwords.MidnightIF;
-import destiny.core.calendar.eightwords.MidnightSolarTransImpl;
-import destiny.core.calendar.eightwords.YearMonthIF;
-import destiny.core.calendar.eightwords.YearMonthSolarTermsStarPositionImpl;
+import destiny.core.calendar.chinese.ChineseDateIF;
+import destiny.core.calendar.eightwords.*;
 import destiny.core.calendar.eightwords.personal.FortuneDirectionDefaultImpl;
 import destiny.core.calendar.eightwords.personal.FortuneDirectionIF;
+import destiny.core.calendar.eightwords.personal.PersonContext;
 import destiny.core.chinese.StemBranch;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import javax.inject.Inject;
+import java.io.*;
+import java.util.StringTokenizer;
+import java.util.TimeZone;
 
 /**
  * 車禍肇事者
@@ -54,15 +35,28 @@ import destiny.core.chinese.StemBranch;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"classpath:core.xml"})
-public class CauserReader extends TestCase
+public class CauserReader
 {
   @Inject
-  EightWordsContext eightWordsContext;
-  
-  private StarPositionIF starPositionImpl = new StarPositionImpl();
-  private StarTransitIF starTransitImpl = new StarTransitImpl();
-  private SolarTermsIF solarTermsImpl = new SolarTermsBean(starTransitImpl , starPositionImpl);
+  private EightWordsContext eightWordsContext;
+
+  @Inject
+  private StarPositionIF starPositionImpl;
+
+  @Inject
+  private StarTransitIF starTransitImpl;
+
+  @Inject
+  private SolarTermsIF solarTermsBean;
+
+  @Inject @Qualifier("houseCuspImpl")
+  protected RisingSignIF risingSignImpl;
+
+  @Inject
+  private ChineseDateIF chineseDateImpl;
+
   private YearMonthIF yearMonthImpl = new YearMonthSolarTermsStarPositionImpl(315 , starPositionImpl , starTransitImpl);
+
   private DayIF dayImpl = new DayImpl();
   private HourIF hourImpl = new HourSolarTransImpl(new RiseTransImpl());
   private MidnightIF midnightImpl = new MidnightSolarTransImpl(new RiseTransImpl());
@@ -106,7 +100,7 @@ public class CauserReader extends TestCase
         int day = Integer.valueOf(st.nextToken()).intValue();
         int hour = 12;
         lmt = new Time(year , month , day , hour);
-        context = new PersonContext(yearMonthImpl , dayImpl , hourImpl, midnightImpl , true ,solarTermsImpl , starTransitImpl , lmt , location , gender , 120.0 , fortuneDirectionImpl);
+        context = new PersonContext(chineseDateImpl, yearMonthImpl , dayImpl , hourImpl, midnightImpl , true , solarTermsBean, starTransitImpl , lmt , location , gender , 120.0 , fortuneDirectionImpl, risingSignImpl);
         
         StringBuffer sb = new StringBuffer();
         sb.append(index+",");
@@ -139,7 +133,7 @@ public class CauserReader extends TestCase
         
         Time targetGmt;
         targetGmt = new Time(eventYear,eventMonth,eventDay , eventHour-8 , eventMinute , eventSecond);
-        eventStemBranch = context.getStemBranchOfFortunrMonth(targetGmt);
+        eventStemBranch = context.getStemBranchOfFortuneMonth(targetGmt);
         
         //出事大運的干支
         sb.append(eventStemBranch.getStem()+",");

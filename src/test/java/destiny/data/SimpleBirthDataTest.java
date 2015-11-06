@@ -4,14 +4,17 @@
  */ 
 package destiny.data;
 
-import junit.framework.TestCase;
 import destiny.core.Gender;
+import org.junit.Test;
 
-public class SimpleBirthDataTest extends TestCase
+import static org.junit.Assert.assertEquals;
+
+public class SimpleBirthDataTest
 {
+  @Test
   public void testSimpleBirthData2()
   {
     SimpleBirthData data1 = new SimpleBirthData(Gender.男 , 2008 , 7 , 26);
-    assertEquals("男/2008/7/26" , data1.toString());
+    assertEquals("男/2008-07-26" , data1.toString());
   }
 }

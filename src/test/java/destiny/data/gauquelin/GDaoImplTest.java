@@ -4,21 +4,18 @@
  */
 package destiny.data.gauquelin;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertSame;
-
-import java.util.List;
-
-import javax.inject.Inject;
-import javax.persistence.EntityManagerFactory;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
-import org.springframework.transaction.annotation.Transactional;
+
+import javax.inject.Inject;
+import javax.persistence.EntityManagerFactory;
+import javax.transaction.Transactional;
+import java.util.List;
+
+import static org.junit.Assert.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"classpath:gauquelin.xml"})
@@ -42,7 +39,7 @@ public class GDaoImplTest
   @Test
   public void testGetHouseMap()
   {
-    GPerson gperson = gDao.get(1L);
+    GPerson gperson = gDao.get(1L).get();
     assertEquals(7,gperson.getHouseMap().size());
   }
   
@@ -63,7 +60,7 @@ public class GDaoImplTest
   public void testGetById()
   {
     assertNotNull(gDao);
-    GPerson gperson = gDao.get(1L);
+    GPerson gperson = gDao.get(1L).get();
     assertSame(1 , gperson.getNumber());
     assertEquals("Alard Pierre",gperson.getName());
     assertSame(-1 , gperson.getGender());

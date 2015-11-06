@@ -15,7 +15,7 @@ public class GPersonInstanceTest
 
   public void testGetInstance() throws Exception
   {
-    GPerson gperson = gDao.get(8943L);
+    GPerson gperson = gDao.get(8943L).get();
     System.out.println("gperson = " + gperson);
     GPersonInstance inst = new GPersonInstance(gperson);
     Instance instance = inst.getInstance();

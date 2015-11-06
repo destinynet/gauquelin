@@ -4,19 +4,17 @@
  */
 package destiny.data.gauquelin;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.PrintStream;
-
-import javax.inject.Inject;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
-import org.springframework.transaction.annotation.Transactional;
+
+import javax.inject.Inject;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.PrintStream;
 
 /** 將資料庫中的 GPerson , 輸出成 Google Prediction API 所需的 CSV 格式檔 */
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -28,16 +26,16 @@ public class GDaoGooglePredictionTest
   private GDao dao;
 
   @Test
-  @Transactional(readOnly=true)
+  @javax.transaction.Transactional
   public void testPredict() throws IOException
   {
-    GPerson p = dao.get(3L);
+    GPerson p = dao.get(3L).get();
     System.out.println(p.getCSV());
   }
   
   /** 2011/5/4 ，輸出「工作」，每類工作上限 500人 , 全部 5000 人*/
   @Test
-  @Transactional(readOnly=true)
+  @javax.transaction.Transactional
   public void testExportJobEach5500() throws IOException
   {
     long t = System.currentTimeMillis();
@@ -65,7 +63,7 @@ public class GDaoGooglePredictionTest
   /** 2011/5/1 只輸出「工作」「奇數」的資料  。作為初步的成品。跑起來全部費時 2.6 小時 
    * 一半的資料就有 9271 rows */
   @Test
-  @Transactional(readOnly=true)
+  @javax.transaction.Transactional
   public void testExportJobCsvOdd() throws IOException
   {
     long t = System.currentTimeMillis();
@@ -119,7 +117,7 @@ public class GDaoGooglePredictionTest
   
   /** (useless) 輸出所有 25478 筆資料，成 csv 格式。 跑起來很慢，花費  4.84 小時 */ 
   @Test
-  @Transactional(readOnly=true)
+  @javax.transaction.Transactional
   public void testExportCSV() throws IOException
   {
     FileOutputStream fos = new FileOutputStream(new File("gauquelinAll.csv"));
@@ -148,7 +146,7 @@ public class GDaoGooglePredictionTest
   
   /** (useless) 輸出「奇數」的資料，成 CSV 格式 。就算只輸出一半，也花費 4.98 小時 */
   @Test
-  @Transactional(readOnly=true)
+  @javax.transaction.Transactional
   public void testExportCsvOdd() throws IOException
   {
     FileOutputStream fos = new FileOutputStream(new File("gauquelinOdd.csv"));

@@ -7,7 +7,7 @@ package destiny.data.gauquelin;
 import destiny.astrology.*;
 import destiny.astrology.Aspect.Importance;
 import destiny.core.calendar.Location;
-import destiny.utils.location.GeolocationFinder;
+import destiny.tools.location.GeolocationFinder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
