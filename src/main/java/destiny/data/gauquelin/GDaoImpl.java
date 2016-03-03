@@ -4,7 +4,7 @@
  */
 package destiny.data.gauquelin;
 
-import destiny.utils.AbstractDaoJpaImpl;
+import destiny.tools.AbstractDaoJpaImpl;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;

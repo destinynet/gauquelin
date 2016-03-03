@@ -6,7 +6,7 @@ package destiny.data.gauquelin;
 
 import java.util.List;
 
-import destiny.utils.AbstractDao;
+import destiny.tools.AbstractDao;
 
 public interface GDao extends AbstractDao<GPerson>
 {
