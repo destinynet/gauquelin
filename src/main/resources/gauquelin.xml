@@ -30,13 +30,4 @@
     <property name="secret"><value>614990115076948b0825ec2dbb9a4530</value></property>
   </bean>
 
-
-  <bean id="geolocationFinder" class="destiny.data.GeolocationFinderYahooImpl">
-    <constructor-arg>
-      <ref bean="yahooAppData"/>
-    </constructor-arg>
-    <constructor-arg>
-      <ref bean="timeZoneService"/>
-    </constructor-arg>
-  </bean>
 </beans>

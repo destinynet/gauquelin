@@ -3,38 +3,29 @@
  */
 package destiny.data.gauquelin;
 
-import javax.inject.Inject;
-
+import destiny.tools.location.GeocodingIF;
+import destiny.tools.location.TimeZoneService;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import destiny.tools.location.GeolocationFinder;
-import destiny.data.GeolocationFinderYahooImpl;
-import destiny.tools.location.TimeZoneService;
-import destiny.web.yahoo.AppData;
+import javax.inject.Inject;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations={"classpath:core.xml"})
-public class SuccessfulFrench2154ReaderTest 
-{
-  protected GeolocationFinder geolocationFinder;
+@ContextConfiguration(locations = {"classpath:core.xml"})
+public class SuccessfulFrench2154ReaderTest {
+
+  @Inject
+  private GeocodingIF geocodingGoogleImpl;
 
   @Inject
   private TimeZoneService timeZoneService;
-  
-  protected void _setUp() throws Exception
-  {
-    AppData yahooAppData = new AppData("nK_pLKTIkYXVXPGU4I26K_SDQ1PRSP2q" , "614990115076948b0825ec2dbb9a4530");
-    geolocationFinder = new GeolocationFinderYahooImpl(yahooAppData, timeZoneService);
-  }
 
-  
-  public void _testSuccessfulFrench2154Reader()
-  {
-    TextDataReader reader = new SuccessfulFrench2154Reader(geolocationFinder);
+
+  @Test
+  public void testSuccessfulFrench2154Reader() {
+    TextDataReader reader = new SuccessfulFrench2154Reader(geocodingGoogleImpl, timeZoneService);
     reader.getPersons();
   }
-
-  
 }
