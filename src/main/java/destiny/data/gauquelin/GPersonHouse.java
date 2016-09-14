@@ -22,7 +22,7 @@ public class GPersonHouse implements Serializable
 {
   /** 資料庫的 id */
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "id")
   private long    id;
 
