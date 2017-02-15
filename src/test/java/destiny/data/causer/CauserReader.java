@@ -95,9 +95,9 @@ public class CauserReader
         int index = Integer.valueOf(st.nextToken());
         String man = st.nextToken();
         Gender gender = man.equals("1")? Gender.男 : Gender.女;
-        int year = Integer.valueOf(st.nextToken()).intValue();
-        int month = Integer.valueOf(st.nextToken()).intValue();
-        int day = Integer.valueOf(st.nextToken()).intValue();
+        int year = Integer.valueOf(st.nextToken());
+        int month = Integer.valueOf(st.nextToken());
+        int day = Integer.valueOf(st.nextToken());
         int hour = 12;
         lmt = new Time(year , month , day , hour);
         context = new PersonContext(chineseDateImpl, yearMonthImpl , dayImpl , hourImpl, midnightImpl , true , solarTermsBean, starTransitImpl , lmt , location , gender , 120.0 , fortuneDirectionImpl, risingSignImpl);
@@ -119,10 +119,10 @@ public class CauserReader
         sb.append(ew.getHourBranch() + ",");
         
         
-        int eventYear = Integer.valueOf(st.nextToken()).intValue();
-        int eventMonth = Integer.valueOf(st.nextToken()).intValue();
-        int eventDay = Integer.valueOf(st.nextToken()).intValue();
-        int eventHour = Integer.valueOf(st.nextToken()).intValue();
+        int eventYear = Integer.valueOf(st.nextToken());
+        int eventMonth = Integer.valueOf(st.nextToken());
+        int eventDay = Integer.valueOf(st.nextToken());
+        int eventHour = Integer.valueOf(st.nextToken());
         int eventMinute = 0;
         int eventSecond = 0;
         //出事日期及時間
@@ -139,7 +139,7 @@ public class CauserReader
         sb.append(eventStemBranch.getStem()+",");
         sb.append(eventStemBranch.getBranch()+",");
         
-        EightWords ew2 = eightWordsContext.getEightWords(new Time(eventYear , eventMonth , eventDay , eventHour , eventMinute , eventSecond) , location);
+        EightWords ew2 = eightWordsContext.getEightWords(new Time(eventYear , eventMonth , eventDay , eventHour , eventMinute , eventSecond).toLocalDateTime() , location);
         long l2 = System.currentTimeMillis();
         
         //出事時辰的八字
