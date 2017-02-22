@@ -98,7 +98,7 @@ public class GPersonDaoImplTest// extends AbstractGauquelinTest
       
       for(GPerson p : persons)
       {
-        hc = horoscopeContextBean.getHoroscopeContext(p.getGmtTime(), Location.get(p.getLocation()));
+        hc = horoscopeContextBean.getHoroscopeContextPlacidus(p.getGmtTime().toLocalDateTime(), Location.get(p.getLocation()));
 
         boolean updated = false;
         if (p.getAspect() == null)
@@ -159,7 +159,7 @@ public class GPersonDaoImplTest// extends AbstractGauquelinTest
       List<GPerson> persons = gDao.findAllByCategory(cat , i*pageSize , pageSize);
       for(GPerson p : persons)
       {
-        hc = horoscopeContextBean.getHoroscopeContext(p.getGmtTime(), Location.get(p.getLocation()));
+        hc = horoscopeContextBean.getHoroscopeContextPlacidus(p.getGmtTime().toLocalDateTime(), Location.get(p.getLocation()));
         System.err.println(p);
         GPersonAspect aspect = processAspect(hc);
         aspect.setGperson(p);

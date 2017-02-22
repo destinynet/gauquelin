@@ -3,32 +3,19 @@
  */
 package destiny.data.gauquelin.weka.house_aspect;
 
-import java.io.File;
-import java.io.FileReader;
-import java.net.URL;
-import java.util.Arrays;
-import java.util.Enumeration;
-import java.util.Iterator;
-import java.util.Locale;
-import java.util.Set;
-import java.util.TreeSet;
-
-import weka.core.Attribute;
-import weka.core.Instance;
-import weka.core.Instances;
-import destiny.astrology.Aspect;
+import destiny.astrology.*;
 import destiny.astrology.Aspect.Importance;
-import destiny.astrology.HoroscopeAspectData;
-import destiny.astrology.HoroscopeAspectsCalculator;
-import destiny.astrology.HoroscopeAspectsCalculatorModern;
-import destiny.astrology.HoroscopeContext;
-import destiny.astrology.HoroscopeContextBean;
-import destiny.astrology.HouseSystem;
-import destiny.astrology.Planet;
-import destiny.astrology.Point;
 import destiny.core.calendar.Location;
 import destiny.core.calendar.Time;
 import destiny.data.gauquelin.weka.InstanceIF;
+import weka.core.Attribute;
+import weka.core.Instance;
+import weka.core.Instances;
+
+import java.io.File;
+import java.io.FileReader;
+import java.net.URL;
+import java.util.*;
 
 /** 從 time , location 取得 instance */
 public class TimeLocation_House_Aspect_Instance implements InstanceIF
@@ -42,7 +29,7 @@ public class TimeLocation_House_Aspect_Instance implements InstanceIF
       parseInstances();
     
     HoroscopeContextBean bean = new HoroscopeContextBean();
-    this.context = bean.getHoroscopeContext(time, location);
+    this.context = bean.getHoroscopeContextPlacidus(time.toLocalDateTime(), location);
   }
   
   @SuppressWarnings("rawtypes" )

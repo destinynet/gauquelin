@@ -133,7 +133,7 @@ public class CauserReader
         
         Time targetGmt;
         targetGmt = new Time(eventYear,eventMonth,eventDay , eventHour-8 , eventMinute , eventSecond);
-        eventStemBranch = context.getStemBranchOfFortuneMonth(targetGmt);
+        eventStemBranch = context.getStemBranchOfFortuneMonth(targetGmt.toLocalDateTime());
         
         //出事大運的干支
         sb.append(eventStemBranch.getStem()+",");

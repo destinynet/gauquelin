@@ -4,34 +4,22 @@
  */ 
 package destiny.data.gauquelin.weka.anglePower_aspect;
 
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.Locale;
-import java.util.Set;
-import java.util.TreeSet;
-
-import weka.core.Attribute;
-import weka.core.Instance;
-import weka.core.Instances;
-import destiny.astrology.Aspect;
+import destiny.astrology.*;
 import destiny.astrology.Aspect.Importance;
-import destiny.astrology.HoroscopeAspectData;
-import destiny.astrology.HoroscopeAspectsCalculator;
-import destiny.astrology.HoroscopeAspectsCalculatorModern;
-import destiny.astrology.HoroscopeContext;
-import destiny.astrology.HoroscopeContextBean;
-import destiny.astrology.HouseSystem;
-import destiny.astrology.Planet;
-import destiny.astrology.Point;
 import destiny.core.calendar.Location;
 import destiny.core.calendar.Time;
 import destiny.data.gauquelin.GPersonAnglePower;
 import destiny.data.gauquelin.RefUtil;
 import destiny.data.gauquelin.UtilHoroscopeAnglePower;
 import destiny.data.gauquelin.weka.InstanceIF;
+import weka.core.Attribute;
+import weka.core.Instance;
+import weka.core.Instances;
+
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.util.*;
 
 public class TimeLocation_AnglePower_Instance implements InstanceIF
 {
@@ -44,7 +32,7 @@ public class TimeLocation_AnglePower_Instance implements InstanceIF
       parseInstances();
     
     HoroscopeContextBean bean = new HoroscopeContextBean();
-    this.context = bean.getHoroscopeContext(time , location);
+    this.context = bean.getHoroscopeContextPlacidus(time.toLocalDateTime() , location);
   }
   
   private void parseInstances()
