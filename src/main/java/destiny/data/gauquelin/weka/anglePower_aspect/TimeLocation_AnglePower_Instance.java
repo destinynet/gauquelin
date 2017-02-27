@@ -7,7 +7,6 @@ package destiny.data.gauquelin.weka.anglePower_aspect;
 import destiny.astrology.*;
 import destiny.astrology.Aspect.Importance;
 import destiny.core.calendar.Location;
-import destiny.core.calendar.Time;
 import destiny.data.gauquelin.GPersonAnglePower;
 import destiny.data.gauquelin.RefUtil;
 import destiny.data.gauquelin.UtilHoroscopeAnglePower;
@@ -19,6 +18,7 @@ import weka.core.Instances;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
+import java.time.LocalDateTime;
 import java.util.*;
 
 public class TimeLocation_AnglePower_Instance implements InstanceIF
@@ -26,13 +26,13 @@ public class TimeLocation_AnglePower_Instance implements InstanceIF
   private static Instances instances;
   private HoroscopeContext context;
   
-  public TimeLocation_AnglePower_Instance(Time time , Location location)
+  public TimeLocation_AnglePower_Instance(LocalDateTime time , Location location)
   {
     if (instances == null)
       parseInstances();
     
     HoroscopeContextBean bean = new HoroscopeContextBean();
-    this.context = bean.getHoroscopeContextPlacidus(time.toLocalDateTime() , location);
+    this.context = bean.getHoroscopeContextPlacidus(time , location);
   }
   
   private void parseInstances()

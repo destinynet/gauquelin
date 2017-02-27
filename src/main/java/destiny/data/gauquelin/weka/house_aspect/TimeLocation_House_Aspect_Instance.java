@@ -6,7 +6,6 @@ package destiny.data.gauquelin.weka.house_aspect;
 import destiny.astrology.*;
 import destiny.astrology.Aspect.Importance;
 import destiny.core.calendar.Location;
-import destiny.core.calendar.Time;
 import destiny.data.gauquelin.weka.InstanceIF;
 import weka.core.Attribute;
 import weka.core.Instance;
@@ -15,6 +14,7 @@ import weka.core.Instances;
 import java.io.File;
 import java.io.FileReader;
 import java.net.URL;
+import java.time.LocalDateTime;
 import java.util.*;
 
 /** 從 time , location 取得 instance */
@@ -23,13 +23,13 @@ public class TimeLocation_House_Aspect_Instance implements InstanceIF
   private static Instances instances;
   private HoroscopeContext context;
   
-  public TimeLocation_House_Aspect_Instance(Time time , Location location)
+  public TimeLocation_House_Aspect_Instance(LocalDateTime time , Location location)
   {
     if (instances == null)
       parseInstances();
     
     HoroscopeContextBean bean = new HoroscopeContextBean();
-    this.context = bean.getHoroscopeContextPlacidus(time.toLocalDateTime(), location);
+    this.context = bean.getHoroscopeContextPlacidus(time, location);
   }
   
   @SuppressWarnings("rawtypes" )

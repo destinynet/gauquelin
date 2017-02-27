@@ -7,9 +7,9 @@ import weka.core.Instance;
 
 /**
  * @author smallufo
- * 取得 Weka Instance 
+ *         取得 Weka Instance
  */
-public interface InstanceIF 
-{
-  public Instance getInstance();
+public interface InstanceIF {
+
+  Instance getInstance();
 }

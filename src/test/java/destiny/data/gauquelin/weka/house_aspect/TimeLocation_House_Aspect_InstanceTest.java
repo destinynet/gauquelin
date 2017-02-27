@@ -4,10 +4,11 @@
 package destiny.data.gauquelin.weka.house_aspect;
 
 import destiny.core.calendar.Location;
-import destiny.core.calendar.Time;
 import org.junit.Test;
 import weka.classifiers.Classifier;
 import weka.core.Instance;
+
+import java.time.LocalDateTime;
 
 public class TimeLocation_House_Aspect_InstanceTest
 {
@@ -16,7 +17,7 @@ public class TimeLocation_House_Aspect_InstanceTest
   {
     for (int i = 1 ; i <=1 ; i++)
     {
-      TimeLocation_House_Aspect_Instance tli = new TimeLocation_House_Aspect_Instance(new Time(2000,9,i,0,0,0) , new Location());
+      TimeLocation_House_Aspect_Instance tli = new TimeLocation_House_Aspect_Instance(LocalDateTime.of(2000,9,i,0,0,0) , new Location());
       Instance instance = tli.getInstance();
       System.out.println(instance);
       

@@ -5,19 +5,19 @@
 package destiny.data.gauquelin.weka.anglePower_aspect;
 
 import destiny.core.calendar.Location;
-import destiny.core.calendar.Time;
 import org.junit.Test;
 import weka.classifiers.Classifier;
 import weka.core.Instance;
+
+import java.time.LocalDateTime;
 
 public class TimeLocation_AnglePower_InstanceTest
 {
   @Test
   public void testGetInstance() throws Exception
   {
-    for (int i=0 ; i<=100 ; i++)
-    {
-      TimeLocation_AnglePower_Instance tli = new TimeLocation_AnglePower_Instance(new Time(1900, 7, i, i, 0, 0), new Location());
+    for (int i=0 ; i<=100 ; i++) {
+      TimeLocation_AnglePower_Instance tli = new TimeLocation_AnglePower_Instance(LocalDateTime.of(1900, 7, i, i, 0, 0), new Location());
       Instance instance = tli.getInstance();
       //System.out.println(instance);
 
