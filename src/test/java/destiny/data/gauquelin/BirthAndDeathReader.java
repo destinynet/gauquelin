@@ -4,25 +4,23 @@
  */
 package destiny.data.gauquelin;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.net.URL;
-import java.util.StringTokenizer;
-
-import javax.inject.Inject;
-
+import destiny.core.calendar.Location;
+import destiny.core.calendar.Location.EastWest;
+import destiny.core.calendar.Location.NorthSouth;
+import destiny.core.calendar.eightwords.EightWordsContext;
+import destiny.tools.location.TimeZoneUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import destiny.core.calendar.Location;
-import destiny.core.calendar.Location.EastWest;
-import destiny.core.calendar.Location.NorthSouth;
-import destiny.core.calendar.Time;
-import destiny.core.calendar.eightwords.EightWordsContext;
-import destiny.tools.location.TimeZoneUtils;
+import javax.inject.Inject;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.net.URL;
+import java.time.LocalDateTime;
+import java.util.StringTokenizer;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"classpath:core.xml"})
@@ -45,8 +43,8 @@ public class BirthAndDeathReader
     FileReader fReader = new FileReader(file);
     bReader = new BufferedReader(fReader);
     String line = null;
-    Time birthTime = null;
-    Time deathTime = null;
+    LocalDateTime birthTime = null;
+    LocalDateTime deathTime = null;
     
     int i=0;
     while ((line = bReader.readLine()) != null)
@@ -80,9 +78,9 @@ public class BirthAndDeathReader
         int longDeg = Integer.valueOf(stEW.nextToken().trim());
         char EW = lon.charAt(1);
         int longMin = Integer.valueOf(stEW.nextToken().trim());
-        
-        
-        Time time = new Time(year , month , day , hour , minute , second);
+
+
+        LocalDateTime time = LocalDateTime.of(year , month , day , hour , minute , second);
         Location location = new Location( (EW == 'E' ? EastWest.EAST : EastWest.WEST) , longDeg , longMin , 0 , (NS == 'N' ? NorthSouth.NORTH : NorthSouth.SOUTH) , latDeg , latMin , 0 , 0 , TimeZoneUtils.getTimeZone(tz*60) );
         
         if (birthOrDeath == 'B')
