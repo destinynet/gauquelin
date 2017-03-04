@@ -4,19 +4,17 @@
  */ 
 package destiny.data.gauquelin;
 
-import java.io.Serializable;
-import java.sql.Timestamp;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-import java.util.NoSuchElementException;
-import java.util.StringTokenizer;
-import java.util.TimeZone;
-
 import destiny.core.calendar.Location;
 import destiny.core.calendar.Location.EastWest;
 import destiny.core.calendar.Location.NorthSouth;
-import destiny.core.calendar.Time;
 import destiny.tools.location.TimeZoneUtils;
+
+import java.io.Serializable;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.util.NoSuchElementException;
+import java.util.StringTokenizer;
+import java.util.TimeZone;
 
 @SuppressWarnings("unused")
 public class ParseUtils implements Serializable
@@ -63,9 +61,8 @@ public class ParseUtils implements Serializable
     
     
     // 都是 GMT 時間
-    Time time = new Time(year , month , day , hour , minute , second);
-    Calendar cal = new GregorianCalendar(time.getYear() , time.getMonth()-1 , time.getDay() , time.getHour() , time.getMinute() , (int)time.getSecond());
-    Timestamp ts = new Timestamp(cal.getTimeInMillis());
+    LocalDateTime time = LocalDateTime.of(year , month , day , hour , minute , second);
+    Timestamp ts = Timestamp.valueOf(time);
     Location location = new Location(
         (EW == 'E' ? EastWest.EAST : EastWest.WEST) , longDeg , longMin , 0 , 
         (NS == 'N' ? NorthSouth.NORTH : NorthSouth.SOUTH) , latDeg , latMin , 0 , 0 , 
@@ -131,9 +128,9 @@ public class ParseUtils implements Serializable
     char EW = LON.charAt(longDeg < 10 ? 1 : 2);
     
     // 都是 GMT 時間
-    Time time = new Time(year , month , day , hour , minute , second);
-    Calendar cal = new GregorianCalendar(time.getYear() , time.getMonth()-1 , time.getDay() , time.getHour() , time.getMinute() , (int)time.getSecond());
-    Timestamp ts = new Timestamp(cal.getTimeInMillis());
+    LocalDateTime  time = LocalDateTime.of(year , month , day , hour , minute , second);
+    //Calendar cal = new GregorianCalendar(time.getYear() , time.getMonth()-1 , time.getDay() , time.getHour() , time.getMinute() , (int)time.getSecond());
+    Timestamp ts = Timestamp.valueOf(time);
     Location location = new Location( (EW == 'E' ? EastWest.EAST : EastWest.WEST) , longDeg , longMin , 0 , (NS == 'N' ? NorthSouth.NORTH : NorthSouth.SOUTH) , latDeg , latMin , 0 , 0 , TimeZone.getTimeZone("GMT") );
     
     GPerson person = new GPerson();
@@ -179,9 +176,8 @@ public class ParseUtils implements Serializable
     String name = st.nextToken();
     
     // 時間都是 GMT , 因為沒有時區這欄，所以推測都是 GMT 
-    Time time = new Time(year , month , day , hour , minute , second);
-    Calendar cal = new GregorianCalendar(time.getYear() , time.getMonth()-1 , time.getDay() , time.getHour() , time.getMinute() , (int)time.getSecond());
-    Timestamp ts = new Timestamp(cal.getTimeInMillis());
+    LocalDateTime time = LocalDateTime.of(year , month , day , hour , minute , second);
+    Timestamp ts = Timestamp.valueOf(time);
     Location location = new Location( 
         (EW == 'E' ? EastWest.EAST : EastWest.WEST) , longDeg , longMin , 0 , 
         (NS == 'N' ? NorthSouth.NORTH : NorthSouth.SOUTH) , latDeg , latMin , 0 , 0 , 
@@ -256,9 +252,8 @@ public class ParseUtils implements Serializable
     char EW = LON.charAt(longDeg < 10 ? 1 : 2);
 
     // 都是 GMT 時間
-    Time time = new Time(year , month , day , hour , minute , second);
-    Calendar cal = new GregorianCalendar(time.getYear() , time.getMonth()-1 , time.getDay() , time.getHour() , time.getMinute() , (int)time.getSecond());
-    Timestamp ts = new Timestamp(cal.getTimeInMillis());
+    LocalDateTime time = LocalDateTime.of(year , month , day , hour , minute , second);
+    Timestamp ts = Timestamp.valueOf(time);
     Location location = new Location( (EW == 'E' ? EastWest.EAST : EastWest.WEST) , longDeg , longMin , 0 , (NS == 'N' ? NorthSouth.NORTH : NorthSouth.SOUTH) , latDeg , latMin , 0 , 0 , TimeZone.getTimeZone("GMT") );
     
     String COD = st.nextToken();

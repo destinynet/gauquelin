@@ -6,6 +6,7 @@ package destiny.data.gauquelin;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.HashMap;
@@ -227,18 +228,8 @@ public class GPerson implements Serializable
   }
 
   /** 資料都是 gmt 的 */
-  public Time getGmtTime()
-  {
-    Calendar cal = Calendar.getInstance();
-    cal.setTime(gmtTimestamp);
-    int year = cal.get(Calendar.YEAR);
-    int month = cal.get(Calendar.MONTH)+1;
-    int day = cal.get(Calendar.DAY_OF_MONTH);
-    int hour = cal.get(Calendar.HOUR_OF_DAY);
-    int min = cal.get(Calendar.MINUTE);
-    int sec = cal.get(Calendar.SECOND);
-    
-    return new Time(year , month , day , hour , min , sec);
+  public LocalDateTime getGmtTime() {
+    return gmtTimestamp.toLocalDateTime();
   }
   
   public Timestamp getGmtTimestamp()

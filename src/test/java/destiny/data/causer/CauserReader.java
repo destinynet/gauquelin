@@ -10,7 +10,6 @@ import destiny.astrology.swissephImpl.RiseTransImpl;
 import destiny.core.Gender;
 import destiny.core.calendar.Location;
 import destiny.core.calendar.SolarTermsIF;
-import destiny.core.calendar.Time;
 import destiny.core.calendar.chinese.ChineseDateIF;
 import destiny.core.calendar.eightwords.*;
 import destiny.core.calendar.eightwords.personal.FortuneDirectionDefaultImpl;
@@ -25,6 +24,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.inject.Inject;
 import java.io.*;
+import java.time.LocalDateTime;
 import java.util.StringTokenizer;
 import java.util.TimeZone;
 
@@ -65,7 +65,7 @@ public class CauserReader
   private FortuneDirectionIF fortuneDirectionImpl = new FortuneDirectionDefaultImpl();
 
   private Location location;
-  private Time lmt;
+  private LocalDateTime lmt;
   
   @Test
   public void testCauserReader()
@@ -99,8 +99,9 @@ public class CauserReader
         int month = Integer.valueOf(st.nextToken());
         int day = Integer.valueOf(st.nextToken());
         int hour = 12;
-        lmt = new Time(year , month , day , hour);
-        context = new PersonContext(chineseDateImpl, yearMonthImpl , dayImpl , hourImpl, midnightImpl , true , solarTermsBean, starTransitImpl , lmt.toLocalDateTime() , location , gender , 120.0 , fortuneDirectionImpl, risingSignImpl);
+        lmt = LocalDateTime.of(year , month , day , hour , 0);
+        context = new PersonContext(chineseDateImpl, yearMonthImpl , dayImpl , hourImpl, midnightImpl , true , solarTermsBean, starTransitImpl ,
+          lmt , location , gender , 120.0 , fortuneDirectionImpl, risingSignImpl);
         
         StringBuffer sb = new StringBuffer();
         sb.append(index+",");
@@ -131,15 +132,15 @@ public class CauserReader
         sb.append(eventDay + ",");
         sb.append(eventHour + ",");
         
-        Time targetGmt;
-        targetGmt = new Time(eventYear,eventMonth,eventDay , eventHour-8 , eventMinute , eventSecond);
-        eventStemBranch = context.getStemBranchOfFortuneMonth(targetGmt.toLocalDateTime());
+        LocalDateTime targetGmt = LocalDateTime.of(eventYear , eventMonth , eventDay , eventHour , eventMinute , eventSecond).minusHours(8);
+        eventStemBranch = context.getStemBranchOfFortuneMonth(targetGmt);
         
         //出事大運的干支
         sb.append(eventStemBranch.getStem()+",");
         sb.append(eventStemBranch.getBranch()+",");
-        
-        EightWords ew2 = eightWordsContext.getEightWords(new Time(eventYear , eventMonth , eventDay , eventHour , eventMinute , eventSecond).toLocalDateTime() , location);
+
+        LocalDateTime time = LocalDateTime.of(eventYear , eventMonth , eventDay , eventHour , eventMinute , eventSecond);
+        EightWords ew2 = eightWordsContext.getEightWords(time , location);
         long l2 = System.currentTimeMillis();
         
         //出事時辰的八字

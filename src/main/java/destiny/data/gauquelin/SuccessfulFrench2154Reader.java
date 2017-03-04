@@ -4,7 +4,6 @@
 package destiny.data.gauquelin;
 
 import destiny.core.calendar.Location;
-import destiny.core.calendar.Time;
 import destiny.tools.location.GeocodingIF;
 import destiny.tools.location.TimeZoneService;
 
@@ -12,6 +11,7 @@ import java.io.*;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.*;
 
 /**
@@ -77,9 +77,8 @@ public class SuccessfulFrench2154Reader implements TextDataReader {
             //System.out.println(year + " / " + month + " / " + day + " " + hour+":"+min);
 
             // 都是 GMT 時間
-            Time time = new Time(year, month, day, hour, min, 0);
-            Calendar cal = new GregorianCalendar(time.getYear(), time.getMonth() - 1, time.getDay(), time.getHour(), time.getMinute(), (int) time.getSecond());
-            Timestamp ts = new Timestamp(cal.getTimeInMillis());
+            LocalDateTime time = LocalDateTime.of(year, month, day, hour, min, 0);
+            Timestamp ts =  Timestamp.valueOf(time);
             person.setGmtTimestamp(ts);
 
 
