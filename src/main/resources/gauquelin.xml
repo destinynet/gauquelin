@@ -25,9 +25,6 @@
     <property name="entityManagerFactory" ref="entityManagerFactoryGauquelin"/>
   </bean>
 
-  <bean id="yahooAppData" class="destiny.web.yahoo.AppData">
-    <property name="appid"> <value>nK_pLKTIkYXVXPGU4I26K_SDQ1PRSP2q</value></property>
-    <property name="secret"><value>614990115076948b0825ec2dbb9a4530</value></property>
-  </bean>
+
 
 </beans>
