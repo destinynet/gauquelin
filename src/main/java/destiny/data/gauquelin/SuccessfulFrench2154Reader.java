@@ -101,8 +101,9 @@ public class SuccessfulFrench2154Reader implements TextDataReader {
                 else
                   System.out.println("city = " + place + " ,  location = " + location);
                 //當時資料應該都是 GMT0
-                location.setTimeZone(TimeZone.getTimeZone("GMT"));
-                person.setLocation(location.getDebugString());
+
+                Location newLoc = new Location(location.getLongitude() , location.getLatitude() , location.getAltitudeMeter() , "GMT" , location.getMinuteOffset());
+                person.setLocation(newLoc.getDebugString());
               }
               else {
                 System.err.println("Cannot find location for city : " + place);

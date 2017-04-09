@@ -26,7 +26,6 @@ import javax.inject.Inject;
 import java.io.*;
 import java.time.LocalDateTime;
 import java.util.StringTokenizer;
-import java.util.TimeZone;
 
 /**
  * 車禍肇事者
@@ -70,7 +69,7 @@ public class CauserReader
   @Test
   public void testCauserReader()
   {
-    location = new Location(Location.EastWest.EAST , 120 , 0 , 0 , Location.NorthSouth.NORTH , 25, 03 , 0 , 0 , TimeZone.getTimeZone("Asia/Taipei") );
+    location = new Location(Location.EastWest.EAST , 120 , 0 , 0 , Location.NorthSouth.NORTH , 25, 03 , 0 , 0 , "Asia/Taipei" );
     
     File file;
     BufferedReader bReader = null;
