@@ -100,7 +100,7 @@ public class CauserReader
         int hour = 12;
         lmt = LocalDateTime.of(year , month , day , hour , 0);
         context = new PersonContext(chineseDateImpl, yearMonthImpl , dayImpl , hourImpl, midnightImpl , true , solarTermsBean, starTransitImpl ,
-          lmt , location , gender , 120.0 , fortuneDirectionImpl, risingSignImpl);
+          lmt , location , gender , 120.0 , fortuneDirectionImpl, risingSignImpl, starPositionImpl);
         
         StringBuffer sb = new StringBuffer();
         sb.append(index+",");
