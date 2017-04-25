@@ -12,7 +12,6 @@ import destiny.core.calendar.Location;
 import destiny.core.calendar.SolarTermsIF;
 import destiny.core.calendar.chinese.ChineseDateIF;
 import destiny.core.calendar.eightwords.*;
-import destiny.core.calendar.eightwords.personal.FortuneDirectionDefaultImpl;
 import destiny.core.calendar.eightwords.personal.FortuneDirectionIF;
 import destiny.core.calendar.eightwords.personal.PersonContext;
 import destiny.core.chinese.FortuneOutput;
@@ -35,10 +34,10 @@ import java.util.StringTokenizer;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"classpath:core.xml"})
-public class CauserReader
-{
-  @Inject
-  private EightWordsContext eightWordsContext;
+public class CauserReader {
+
+//  @Inject
+//  private EightWordsContext eightWordsContext;
 
   @Inject
   private StarPositionIF starPositionImpl;
@@ -62,7 +61,11 @@ public class CauserReader
   private MidnightIF midnightImpl = new MidnightSolarTransImpl(new RiseTransImpl());
   
   /** 大運順逆演算法，內定採用「陽男陰女順排；陰男陽女逆排」的演算法 */
-  private FortuneDirectionIF fortuneDirectionImpl = new FortuneDirectionDefaultImpl();
+  @Inject
+  private FortuneDirectionIF fortuneDirectionImpl;
+
+  @Inject
+  private EightWordsIF eightWordsImpl;
 
   private Location location;
   private LocalDateTime lmt;
@@ -100,7 +103,7 @@ public class CauserReader
         int day = Integer.valueOf(st.nextToken());
         int hour = 12;
         lmt = LocalDateTime.of(year , month , day , hour , 0);
-        context = new PersonContext(chineseDateImpl, yearMonthImpl , dayImpl , hourImpl, midnightImpl , true , solarTermsBean, starTransitImpl ,
+        context = new PersonContext(eightWordsImpl , chineseDateImpl, yearMonthImpl , dayImpl , hourImpl, midnightImpl , true , solarTermsBean, starTransitImpl ,
           lmt , location , null, gender , 120.0 , fortuneDirectionImpl, risingSignImpl, starPositionImpl, FortuneOutput.西元);
         
         StringBuffer sb = new StringBuffer();
@@ -109,7 +112,7 @@ public class CauserReader
         sb.append(year+",");
         sb.append(month+",");
         sb.append(day+",");
-        EightWords ew = context.getEightWords(lmt , location);
+        EightWords ew = context.getEightWords();
         sb.append(ew.getYearStem() + ",");
         sb.append(ew.getYearBranch() + ",");
         sb.append(ew.getMonthStem() + ",");
@@ -140,7 +143,7 @@ public class CauserReader
         sb.append(eventStemBranch.getBranch()+",");
 
         LocalDateTime time = LocalDateTime.of(eventYear , eventMonth , eventDay , eventHour , eventMinute , eventSecond);
-        EightWords ew2 = eightWordsContext.getEightWords(time , location);
+        EightWords ew2 = eightWordsImpl.getEightWords(time , location);
         long l2 = System.currentTimeMillis();
         
         //出事時辰的八字
