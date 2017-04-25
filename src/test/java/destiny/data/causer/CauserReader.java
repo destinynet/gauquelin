@@ -15,6 +15,7 @@ import destiny.core.calendar.eightwords.*;
 import destiny.core.calendar.eightwords.personal.FortuneDirectionDefaultImpl;
 import destiny.core.calendar.eightwords.personal.FortuneDirectionIF;
 import destiny.core.calendar.eightwords.personal.PersonContext;
+import destiny.core.chinese.FortuneOutput;
 import destiny.core.chinese.StemBranch;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -100,7 +101,7 @@ public class CauserReader
         int hour = 12;
         lmt = LocalDateTime.of(year , month , day , hour , 0);
         context = new PersonContext(chineseDateImpl, yearMonthImpl , dayImpl , hourImpl, midnightImpl , true , solarTermsBean, starTransitImpl ,
-          lmt , location , gender , 120.0 , fortuneDirectionImpl, risingSignImpl, starPositionImpl);
+          lmt , location , null, gender , 120.0 , fortuneDirectionImpl, risingSignImpl, starPositionImpl, FortuneOutput.西元);
         
         StringBuffer sb = new StringBuffer();
         sb.append(index+",");
