@@ -96,7 +96,7 @@ public class SuccessfulFrench2154Reader implements TextDataReader {
               Optional<Location> locOpt = geocodingImpl.getLocation(place, timeZoneService);
               if (locOpt.isPresent()) {
                 Location location = locOpt.get();
-                if (location.getMinuteOffset() < 0 || location.getMinuteOffset() > 60 || location.getLongitudeDegree() > 10)
+                if (location.getMinuteOffset() < 0 || location.getMinuteOffset() > 60 || location.getLngDeg() > 10)
                   System.err.println("city = " + place + " ,  location = " + location); //地點警告
                 else
                   System.out.println("city = " + place + " ,  location = " + location);
