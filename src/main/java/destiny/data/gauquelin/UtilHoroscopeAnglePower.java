@@ -28,26 +28,26 @@ public class UtilHoroscopeAnglePower implements Serializable
       //與四個頂點，哪個點最近
       String nearestAngle = null;
       double tempError = 360.0;
-      double planetDeg = hc.getPosition(planet).getLongitude();
+      double planetDeg = hc.getPosition(planet).getLng();
       // ========================= 方向 ===========================
       if (Horoscope.getAngle(planetDeg , degEast) < tempError)
       {
-        tempError = Horoscope.getAngle(hc.getPosition(planet).getLongitude(), degEast);
+        tempError = Horoscope.getAngle(hc.getPosition(planet).getLng(), degEast);
         nearestAngle = "east";
       }
       if (Horoscope.getAngle(planetDeg , degTop) < tempError)
       {
-        tempError = Horoscope.getAngle(hc.getPosition(planet).getLongitude(), degTop);
+        tempError = Horoscope.getAngle(hc.getPosition(planet).getLng(), degTop);
         nearestAngle = "top";
       }
       if (Horoscope.getAngle(planetDeg, degWest) < tempError)
       {
-        tempError = Horoscope.getAngle(hc.getPosition(planet).getLongitude(), degWest);
+        tempError = Horoscope.getAngle(hc.getPosition(planet).getLng(), degWest);
         nearestAngle = "west";
       }
       if (Horoscope.getAngle(planetDeg, degBottom) < tempError)
       {
-        tempError = Horoscope.getAngle(hc.getPosition(planet).getLongitude(), degBottom);
+        tempError = Horoscope.getAngle(hc.getPosition(planet).getLng(), degBottom);
         nearestAngle = "bottom";
       }
 
