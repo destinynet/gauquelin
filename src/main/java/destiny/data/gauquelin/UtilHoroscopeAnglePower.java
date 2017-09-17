@@ -4,12 +4,9 @@
  */ 
 package destiny.data.gauquelin;
 
-import java.io.Serializable;
+import destiny.astrology.*;
 
-import destiny.astrology.Horoscope;
-import destiny.astrology.HoroscopeContext;
-import destiny.astrology.Planet;
-import destiny.astrology.Utils;
+import java.io.Serializable;
 
 public class UtilHoroscopeAnglePower implements Serializable
 {
@@ -30,24 +27,24 @@ public class UtilHoroscopeAnglePower implements Serializable
       double tempError = 360.0;
       double planetDeg = hc.getPosition(planet).getLng();
       // ========================= 方向 ===========================
-      if (Horoscope.getAngle(planetDeg , degEast) < tempError)
+      if (Horoscope2.getAngle(planetDeg , degEast) < tempError)
       {
-        tempError = Horoscope.getAngle(hc.getPosition(planet).getLng(), degEast);
+        tempError = Horoscope2.getAngle(hc.getPosition(planet).getLng(), degEast);
         nearestAngle = "east";
       }
-      if (Horoscope.getAngle(planetDeg , degTop) < tempError)
+      if (Horoscope2.getAngle(planetDeg , degTop) < tempError)
       {
-        tempError = Horoscope.getAngle(hc.getPosition(planet).getLng(), degTop);
+        tempError = Horoscope2.getAngle(hc.getPosition(planet).getLng(), degTop);
         nearestAngle = "top";
       }
-      if (Horoscope.getAngle(planetDeg, degWest) < tempError)
+      if (Horoscope2.getAngle(planetDeg, degWest) < tempError)
       {
-        tempError = Horoscope.getAngle(hc.getPosition(planet).getLng(), degWest);
+        tempError = Horoscope2.getAngle(hc.getPosition(planet).getLng(), degWest);
         nearestAngle = "west";
       }
-      if (Horoscope.getAngle(planetDeg, degBottom) < tempError)
+      if (Horoscope2.getAngle(planetDeg, degBottom) < tempError)
       {
-        tempError = Horoscope.getAngle(hc.getPosition(planet).getLng(), degBottom);
+        tempError = Horoscope2.getAngle(hc.getPosition(planet).getLng(), degBottom);
         nearestAngle = "bottom";
       }
 
@@ -99,22 +96,22 @@ public class UtilHoroscopeAnglePower implements Serializable
   private double getPower(double orientalCusp , double smaller , double cuspDeg , double larger , double occidentalCusp , double degree)
   {
     // 先求出中心度數（最強點)
-    double center = Utils.getNormalizeDegree((Horoscope.getAngle(smaller, larger) / 2 ) + smaller);
+    double center = Utils.getNormalizeDegree((Horoscope2.getAngle(smaller, larger) / 2 ) + smaller);
     // 離中心點幾度
-    double distance = Horoscope.getAngle(center , degree);
+    double distance = Horoscope2.getAngle(center , degree);
     // 再算影響範圍的半徑 ( smaller 到 larger 除以 2)
-    double radius = Horoscope.getAngle(smaller , larger) / 2;
+    double radius = Horoscope2.getAngle(smaller , larger) / 2;
 
-    if (Horoscope.isOccidental(degree, larger))
+    if (Horoscope2.isOccidental(degree, larger))
     {
       //比「大」更大
-      double half = Horoscope.getAngle(occidentalCusp, cuspDeg);
+      double half = Horoscope2.getAngle(occidentalCusp, cuspDeg);
       return - (distance - radius) / (half - radius);
     }
-    else if (Horoscope.isOriental(degree , smaller))
+    else if (Horoscope2.isOriental(degree , smaller))
     {
       //比「小」更小
-      double half = Horoscope.getAngle(orientalCusp, cuspDeg)/2;
+      double half = Horoscope2.getAngle(orientalCusp, cuspDeg)/2;
       return - (distance - radius) / (half - radius);
     }
     else
