@@ -35,17 +35,10 @@ public class GPersonDaoImplTest// extends AbstractGauquelinTest
 //  @Inject
 //  private HoroscopeContextBean horoscopeContextBean;
 
-  Set<Point> pointSet = new HashSet<>();
-  
   protected List<TextDataReader> readers = Collections.synchronizedList(new ArrayList<TextDataReader>());
   
   @Before
   protected void onSetUp() throws Exception {
-    pointSet.addAll(Arrays.asList(Planet.values));
-    pointSet.addAll(Arrays.asList(Asteroid.values));
-    pointSet.addAll(Arrays.asList(Hamburger.values));
-    pointSet.addAll(Arrays.asList(FixedStar.values));
-    pointSet.addAll(Arrays.asList(LunarNode.mean_values));
     /*
     readers.add(new SportReader());
     readers.add(new Sport450Reader());
@@ -105,7 +98,7 @@ public class GPersonDaoImplTest// extends AbstractGauquelinTest
       
       for(GPerson p : persons)
       {
-        hc = horoscopeImpl.getHoroscope(p.getGmtTime() , Location.get(p.getLocation()) , pointSet , HouseSystem.PLACIDUS , Centric.GEO , Coordinate.ECLIPTIC);
+        hc = horoscopeImpl.getHoroscope(p.getGmtTime() , Location.get(p.getLocation()) , HouseSystem.PLACIDUS , Centric.GEO , Coordinate.ECLIPTIC);
         //hc = horoscopeContextBean.getHoroscopeContextPlacidus(p.getGmtTime(), Location.get(p.getLocation()));
 
         boolean updated = false;
@@ -167,7 +160,7 @@ public class GPersonDaoImplTest// extends AbstractGauquelinTest
       List<GPerson> persons = gDao.findAllByCategory(cat , i*pageSize , pageSize);
       for(GPerson p : persons)
       {
-        hc = horoscopeImpl.getHoroscope(p.getGmtTime() , Location.get(p.getLocation()) , pointSet , HouseSystem.PLACIDUS , Centric.GEO , Coordinate.ECLIPTIC);
+        hc = horoscopeImpl.getHoroscope(p.getGmtTime() , Location.get(p.getLocation()) , HouseSystem.PLACIDUS , Centric.GEO , Coordinate.ECLIPTIC);
         //hc = horoscopeContextBean.getHoroscopeContextPlacidus(p.getGmtTime(), Location.get(p.getLocation()));
         System.err.println(p);
         GPersonAspect aspect = processAspect(hc);
@@ -197,42 +190,42 @@ public class GPersonDaoImplTest// extends AbstractGauquelinTest
   {
     GPersonHouse housePlacidus = new GPersonHouse();
 
-    Horoscope2 horoscopePlacidus = horoscopeImpl.getHoroscope(hc.getLmt() , hc.getLocation() , pointSet , HouseSystem.PLACIDUS , Centric.GEO , Coordinate.ECLIPTIC);
+    Horoscope2 horoscopePlacidus = horoscopeImpl.getHoroscope(hc.getLmt() , hc.getLocation() , HouseSystem.PLACIDUS , Centric.GEO , Coordinate.ECLIPTIC);
     //hc.setHouseSystem(HouseSystem.PLACIDUS);
     p.getHouseMap().put("placidus", processHouse(housePlacidus , horoscopePlacidus));
     
     GPersonHouse houseKoch = new GPersonHouse();
-    Horoscope2 horoscopeKoch = horoscopeImpl.getHoroscope(hc.getLmt() , hc.getLocation() , pointSet , HouseSystem.KOCH , Centric.GEO , Coordinate.ECLIPTIC);
+    Horoscope2 horoscopeKoch = horoscopeImpl.getHoroscope(hc.getLmt() , hc.getLocation() , HouseSystem.KOCH , Centric.GEO , Coordinate.ECLIPTIC);
     //hc.setHouseSystem(HouseSystem.KOCH);
     p.getHouseMap().put("Koch", processHouse(houseKoch , horoscopeKoch));
     
     
     GPersonHouse houseRegiomontanus = new GPersonHouse();
-    Horoscope2 horoscopeReg = horoscopeImpl.getHoroscope(hc.getLmt() , hc.getLocation() , pointSet , HouseSystem.REGIOMONTANUS , Centric.GEO , Coordinate.ECLIPTIC);
+    Horoscope2 horoscopeReg = horoscopeImpl.getHoroscope(hc.getLmt() , hc.getLocation() , HouseSystem.REGIOMONTANUS , Centric.GEO , Coordinate.ECLIPTIC);
     //hc.setHouseSystem(HouseSystem.REGIOMONTANUS);
     p.getHouseMap().put("Regiomontanus", processHouse(houseRegiomontanus , horoscopeReg));
     
     
     GPersonHouse housePorphyrius = new GPersonHouse();
-    Horoscope2 horoscopePor = horoscopeImpl.getHoroscope(hc.getLmt() , hc.getLocation() , pointSet , HouseSystem.PORPHYRIUS , Centric.GEO , Coordinate.ECLIPTIC);
+    Horoscope2 horoscopePor = horoscopeImpl.getHoroscope(hc.getLmt() , hc.getLocation() , HouseSystem.PORPHYRIUS , Centric.GEO , Coordinate.ECLIPTIC);
     //hc.setHouseSystem(HouseSystem.PORPHYRIUS);
     p.getHouseMap().put("Porphyrius", processHouse(housePorphyrius , horoscopePor));
     
     
     GPersonHouse houseCampanus = new GPersonHouse();
-    Horoscope2 horoscopeCampanus = horoscopeImpl.getHoroscope(hc.getLmt() , hc.getLocation() , pointSet , HouseSystem.CAMPANUS , Centric.GEO , Coordinate.ECLIPTIC);
+    Horoscope2 horoscopeCampanus = horoscopeImpl.getHoroscope(hc.getLmt() , hc.getLocation() , HouseSystem.CAMPANUS , Centric.GEO , Coordinate.ECLIPTIC);
     //hc.setHouseSystem(HouseSystem.CAMPANUS);
     p.getHouseMap().put("Campanus", processHouse(houseCampanus , horoscopeCampanus));
     
     
     GPersonHouse houseEqual = new GPersonHouse();
-    Horoscope2 horoscopeEqual = horoscopeImpl.getHoroscope(hc.getLmt() , hc.getLocation() , pointSet , HouseSystem.EQUAL , Centric.GEO , Coordinate.ECLIPTIC);
+    Horoscope2 horoscopeEqual = horoscopeImpl.getHoroscope(hc.getLmt() , hc.getLocation() , HouseSystem.EQUAL , Centric.GEO , Coordinate.ECLIPTIC);
     //hc.setHouseSystem(HouseSystem.EQUAL);
     p.getHouseMap().put("Equal", processHouse(houseEqual , horoscopeEqual));
     
     
     GPersonHouse houseAlcabitius = new GPersonHouse();
-    Horoscope2 horoscopeAlc = horoscopeImpl.getHoroscope(hc.getLmt() , hc.getLocation() , pointSet , HouseSystem.ALCABITIUS , Centric.GEO , Coordinate.ECLIPTIC);
+    Horoscope2 horoscopeAlc = horoscopeImpl.getHoroscope(hc.getLmt() , hc.getLocation() , HouseSystem.ALCABITIUS , Centric.GEO , Coordinate.ECLIPTIC);
     //hc.setHouseSystem(HouseSystem.ALCABITIUS);
     p.getHouseMap().put("Alcabitius", processHouse(houseAlcabitius , horoscopeAlc));
   }
