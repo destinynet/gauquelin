@@ -12,7 +12,7 @@ public class UtilHoroscopeAnglePower implements Serializable
 {
   private GPersonAnglePower anglePower;
   
-  public UtilHoroscopeAnglePower(HoroscopeContext hc)
+  public UtilHoroscopeAnglePower(HoroscopeContextIF hc)
   {
     anglePower = new GPersonAnglePower();
     

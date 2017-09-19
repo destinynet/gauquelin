@@ -18,18 +18,26 @@ import java.time.LocalDateTime;
 import java.util.*;
 
 /** 從 time , location 取得 instance */
-public class TimeLocation_House_Aspect_Instance implements InstanceIF
-{
+public class TimeLocation_House_Aspect_Instance implements InstanceIF {
+
   private static Instances instances;
-  private HoroscopeContext context;
-  
-  public TimeLocation_House_Aspect_Instance(LocalDateTime time , Location location)
+  private HoroscopeContextIF horoscopeContext;
+
+  public TimeLocation_House_Aspect_Instance(IHoroscope horoscopeImpl, LocalDateTime time, Location location)
   {
     if (instances == null)
       parseInstances();
     
-    HoroscopeContextBean bean = new HoroscopeContextBean();
-    this.context = bean.getHoroscopeContextPlacidus(time, location);
+    //HoroscopeContextBean bean = new HoroscopeContextBean();
+    //this.horoscopeContext = bean.getHoroscopeContextPlacidus(time, location);
+
+    Set<Point> pointSet = new HashSet<>();
+    pointSet.addAll(Arrays.asList(Planet.values));
+    pointSet.addAll(Arrays.asList(Asteroid.values));
+    pointSet.addAll(Arrays.asList(Hamburger.values));
+    pointSet.addAll(Arrays.asList(FixedStar.values));
+    pointSet.addAll(Arrays.asList(LunarNode.mean_values));
+    this.horoscopeContext = horoscopeImpl.getHoroscope(time , location , pointSet , HouseSystem.PLACIDUS , Centric.GEO , Coordinate.ECLIPTIC);
   }
   
   @SuppressWarnings("rawtypes" )
@@ -68,16 +76,16 @@ public class TimeLocation_House_Aspect_Instance implements InstanceIF
     
     
     // ============ House =============
-    context.setHouseSystem(HouseSystem.PLACIDUS);
+    //horoscopeContext.setHouseSystem(HouseSystem.PLACIDUS);
     for(Planet p : Planet.values)
     {
       String attrString = p.toString(Locale.ENGLISH).toLowerCase();
       Attribute attr = instances.attribute(attrString);
-      instance.setValue(attr, String.valueOf(context.getHouse(p)));
+      instance.setValue(attr, String.valueOf(horoscopeContext.getHouse(p)));
     }
     
     // ============ Aspect ============
-    HoroscopeAspectsCalculator aspectCalculator = new HoroscopeAspectsCalculator(context.getHoroscope() , new HoroscopeAspectsCalculatorModern());
+    HoroscopeAspectsCalculator aspectCalculator = new HoroscopeAspectsCalculator(horoscopeContext.getHoroscope() , new HoroscopeAspectsCalculatorModern());
     
     for(HoroscopeAspectData data : aspectCalculator.getAspectDataSet(Arrays.asList(Planet.values) , Aspect.getAngles(Importance.HIGH)))
     {
