@@ -21,7 +21,7 @@ import java.util.*;
 public class TimeLocation_House_Aspect_Instance implements InstanceIF {
 
   private static Instances instances;
-  private HoroscopeContextIF horoscopeContext;
+  private Horoscope horoscope;
 
   public TimeLocation_House_Aspect_Instance(IHoroscope horoscopeImpl, LocalDateTime time, Location location)
   {
@@ -37,7 +37,7 @@ public class TimeLocation_House_Aspect_Instance implements InstanceIF {
     pointSet.addAll(Arrays.asList(Hamburger.values));
     pointSet.addAll(Arrays.asList(FixedStar.values));
     pointSet.addAll(Arrays.asList(LunarNode.mean_values));
-    this.horoscopeContext = horoscopeImpl.getHoroscope(time , location , pointSet , HouseSystem.PLACIDUS , Centric.GEO , Coordinate.ECLIPTIC);
+    this.horoscope = horoscopeImpl.getHoroscope(time , location , pointSet , HouseSystem.PLACIDUS , Centric.GEO , Coordinate.ECLIPTIC);
   }
   
   @SuppressWarnings("rawtypes" )
@@ -81,11 +81,11 @@ public class TimeLocation_House_Aspect_Instance implements InstanceIF {
     {
       String attrString = p.toString(Locale.ENGLISH).toLowerCase();
       Attribute attr = instances.attribute(attrString);
-      instance.setValue(attr, String.valueOf(horoscopeContext.getHouse(p)));
+      instance.setValue(attr, String.valueOf(horoscope.getHouse(p)));
     }
     
     // ============ Aspect ============
-    HoroscopeAspectsCalculator aspectCalculator = new HoroscopeAspectsCalculator(horoscopeContext.getHoroscope() , new HoroscopeAspectsCalculatorModern());
+    HoroscopeAspectsCalculator aspectCalculator = new HoroscopeAspectsCalculator(horoscope , new HoroscopeAspectsCalculatorModern());
     
     for(HoroscopeAspectData data : aspectCalculator.getAspectDataSet(Arrays.asList(Planet.values) , Aspect.getAngles(Importance.HIGH)))
     {

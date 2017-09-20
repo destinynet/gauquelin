@@ -24,7 +24,7 @@ import java.util.*;
 public class TimeLocation_AnglePower_Instance implements InstanceIF
 {
   private static Instances instances;
-  private HoroscopeContextIF horoscopeContext;
+  private Horoscope horoscope;
 
   public TimeLocation_AnglePower_Instance(IHoroscope horoscopeImpl, LocalDateTime time, Location location)
   {
@@ -40,7 +40,7 @@ public class TimeLocation_AnglePower_Instance implements InstanceIF
     pointSet.addAll(Arrays.asList(Hamburger.values));
     pointSet.addAll(Arrays.asList(FixedStar.values));
     pointSet.addAll(Arrays.asList(LunarNode.mean_values));
-    this.horoscopeContext = horoscopeImpl.getHoroscope(time , location , pointSet , HouseSystem.PLACIDUS , Centric.GEO , Coordinate.ECLIPTIC);
+    this.horoscope = horoscopeImpl.getHoroscope(time , location , pointSet , HouseSystem.PLACIDUS , Centric.GEO , Coordinate.ECLIPTIC);
   }
   
   private void parseInstances()
@@ -77,7 +77,7 @@ public class TimeLocation_AnglePower_Instance implements InstanceIF
     
     // ================ AnglePower =================
     //horoscopeContext.setHouseSystem(HouseSystem.PLACIDUS);
-    UtilHoroscopeAnglePower util = new UtilHoroscopeAnglePower(horoscopeContext);
+    UtilHoroscopeAnglePower util = new UtilHoroscopeAnglePower(horoscope);
     GPersonAnglePower anglePower = util.getAnglePower();
     RefUtil refUtil = new RefUtil(anglePower);
     for(Planet p : Planet.values)
@@ -92,7 +92,7 @@ public class TimeLocation_AnglePower_Instance implements InstanceIF
     }
     
     // ============ Aspect ============
-    HoroscopeAspectsCalculator aspectCalculator = new HoroscopeAspectsCalculator(horoscopeContext.getHoroscope() , new HoroscopeAspectsCalculatorModern());
+    HoroscopeAspectsCalculator aspectCalculator = new HoroscopeAspectsCalculator(horoscope , new HoroscopeAspectsCalculatorModern());
     
     for(HoroscopeAspectData data : aspectCalculator.getAspectDataSet(Arrays.asList(Planet.values) , Aspect.getAngles(Importance.HIGH)))
     {

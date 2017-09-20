@@ -12,39 +12,39 @@ public class UtilHoroscopeAnglePower implements Serializable
 {
   private GPersonAnglePower anglePower;
   
-  public UtilHoroscopeAnglePower(HoroscopeContextIF hc)
+  public UtilHoroscopeAnglePower(Horoscope h)
   {
     anglePower = new GPersonAnglePower();
     
-    double degEast = hc.getHoroscope().getCuspDegree(1);
-    double degTop = hc.getHoroscope().getCuspDegree(10);
-    double degWest = hc.getHoroscope().getCuspDegree(7);
-    double degBottom = hc.getHoroscope().getCuspDegree(4);
+    double degEast = h.getCuspDegree(1);
+    double degTop = h.getCuspDegree(10);
+    double degWest = h.getCuspDegree(7);
+    double degBottom = h.getCuspDegree(4);
     for(Planet planet : Planet.values)
     {
       //與四個頂點，哪個點最近
       String nearestAngle = null;
       double tempError = 360.0;
-      double planetDeg = hc.getPosition(planet).getLng();
+      double planetDeg = h.getPosition(planet).getLng();
       // ========================= 方向 ===========================
-      if (Horoscope2.getAngle(planetDeg , degEast) < tempError)
+      if (Horoscope.getAngle(planetDeg , degEast) < tempError)
       {
-        tempError = Horoscope2.getAngle(hc.getPosition(planet).getLng(), degEast);
+        tempError = Horoscope.getAngle(h.getPosition(planet).getLng(), degEast);
         nearestAngle = "east";
       }
-      if (Horoscope2.getAngle(planetDeg , degTop) < tempError)
+      if (Horoscope.getAngle(planetDeg , degTop) < tempError)
       {
-        tempError = Horoscope2.getAngle(hc.getPosition(planet).getLng(), degTop);
+        tempError = Horoscope.getAngle(h.getPosition(planet).getLng(), degTop);
         nearestAngle = "top";
       }
-      if (Horoscope2.getAngle(planetDeg, degWest) < tempError)
+      if (Horoscope.getAngle(planetDeg, degWest) < tempError)
       {
-        tempError = Horoscope2.getAngle(hc.getPosition(planet).getLng(), degWest);
+        tempError = Horoscope.getAngle(h.getPosition(planet).getLng(), degWest);
         nearestAngle = "west";
       }
-      if (Horoscope2.getAngle(planetDeg, degBottom) < tempError)
+      if (Horoscope.getAngle(planetDeg, degBottom) < tempError)
       {
-        tempError = Horoscope2.getAngle(hc.getPosition(planet).getLng(), degBottom);
+        tempError = Horoscope.getAngle(h.getPosition(planet).getLng(), degBottom);
         nearestAngle = "bottom";
       }
 
@@ -96,22 +96,22 @@ public class UtilHoroscopeAnglePower implements Serializable
   private double getPower(double orientalCusp , double smaller , double cuspDeg , double larger , double occidentalCusp , double degree)
   {
     // 先求出中心度數（最強點)
-    double center = Utils.getNormalizeDegree((Horoscope2.getAngle(smaller, larger) / 2 ) + smaller);
+    double center = Utils.getNormalizeDegree((Horoscope.getAngle(smaller, larger) / 2 ) + smaller);
     // 離中心點幾度
-    double distance = Horoscope2.getAngle(center , degree);
+    double distance = Horoscope.getAngle(center , degree);
     // 再算影響範圍的半徑 ( smaller 到 larger 除以 2)
-    double radius = Horoscope2.getAngle(smaller , larger) / 2;
+    double radius = Horoscope.getAngle(smaller , larger) / 2;
 
-    if (Horoscope2.isOccidental(degree, larger))
+    if (Horoscope.isOccidental(degree, larger))
     {
       //比「大」更大
-      double half = Horoscope2.getAngle(occidentalCusp, cuspDeg);
+      double half = Horoscope.getAngle(occidentalCusp, cuspDeg);
       return - (distance - radius) / (half - radius);
     }
-    else if (Horoscope2.isOriental(degree , smaller))
+    else if (Horoscope.isOriental(degree , smaller))
     {
       //比「小」更小
-      double half = Horoscope2.getAngle(orientalCusp, cuspDeg)/2;
+      double half = Horoscope.getAngle(orientalCusp, cuspDeg)/2;
       return - (distance - radius) / (half - radius);
     }
     else
