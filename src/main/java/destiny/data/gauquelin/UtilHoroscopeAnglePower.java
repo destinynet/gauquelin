@@ -4,9 +4,13 @@
  */ 
 package destiny.data.gauquelin;
 
-import destiny.astrology.*;
+import destiny.astrology.Horoscope;
+import destiny.astrology.Planet;
+import destiny.astrology.Position;
+import destiny.astrology.Utils;
 
 import java.io.Serializable;
+import java.util.Optional;
 
 public class UtilHoroscopeAnglePower implements Serializable
 {
@@ -25,26 +29,27 @@ public class UtilHoroscopeAnglePower implements Serializable
       //與四個頂點，哪個點最近
       String nearestAngle = null;
       double tempError = 360.0;
-      double planetDeg = h.getPosition(planet).getLng();
+
+      Optional<Double> optionalPlanetDeg = h.getPosition(planet).map(Position::getLng);
+      assert optionalPlanetDeg.isPresent();
+
+      double planetDeg = optionalPlanetDeg.get(); //h.getPosition(planet).getLng();
       // ========================= 方向 ===========================
-      if (Horoscope.getAngle(planetDeg , degEast) < tempError)
-      {
-        tempError = Horoscope.getAngle(h.getPosition(planet).getLng(), degEast);
+      if (Horoscope.getAngle(planetDeg , degEast) < tempError) {
+        tempError = Horoscope.getAngle(planetDeg, degEast);
         nearestAngle = "east";
       }
-      if (Horoscope.getAngle(planetDeg , degTop) < tempError)
-      {
-        tempError = Horoscope.getAngle(h.getPosition(planet).getLng(), degTop);
+      if (Horoscope.getAngle(planetDeg , degTop) < tempError) {
+        tempError = Horoscope.getAngle(planetDeg, degTop);
         nearestAngle = "top";
       }
-      if (Horoscope.getAngle(planetDeg, degWest) < tempError)
-      {
-        tempError = Horoscope.getAngle(h.getPosition(planet).getLng(), degWest);
+
+      if (Horoscope.getAngle(planetDeg, degWest) < tempError) {
+        tempError = Horoscope.getAngle(planetDeg, degWest);
         nearestAngle = "west";
       }
-      if (Horoscope.getAngle(planetDeg, degBottom) < tempError)
-      {
-        tempError = Horoscope.getAngle(h.getPosition(planet).getLng(), degBottom);
+      if (Horoscope.getAngle(planetDeg, degBottom) < tempError) {
+        tempError = Horoscope.getAngle(planetDeg, degBottom);
         nearestAngle = "bottom";
       }
 
