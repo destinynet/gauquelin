@@ -15,6 +15,7 @@ import weka.classifiers.Classifier;
 import weka.core.Instance;
 
 import java.time.LocalDateTime;
+import java.util.Locale;
 
 public class TimeLocation_AnglePower_InstanceTest
 {
@@ -36,7 +37,7 @@ public class TimeLocation_AnglePower_InstanceTest
   public void testGetInstance() throws Exception
   {
     for (int i=0 ; i<=100 ; i++) {
-      TimeLocation_AnglePower_Instance tli = new TimeLocation_AnglePower_Instance(horoscopeImpl, LocalDateTime.of(1900, 7, i, i, 0, 0), new Location());
+      TimeLocation_AnglePower_Instance tli = new TimeLocation_AnglePower_Instance(horoscopeImpl, LocalDateTime.of(1900, 7, i, i, 0, 0), Location.of(Locale.TAIWAN));
       Instance instance = tli.getInstance();
       //System.out.println(instance);
 

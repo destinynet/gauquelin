@@ -55,6 +55,7 @@ public class UtilHoroscopeAnglePower implements Serializable
 
       // =================== 力量 ======================
       double smaller=0,larger=0,orientalCusp=0,occidentalCusp=0,cuspDeg=0,power=0;
+      assert nearestAngle != null;
       if (nearestAngle.equals("east"))
       {
         larger = Utils.getNormalizeDegree(degEast + 10);
