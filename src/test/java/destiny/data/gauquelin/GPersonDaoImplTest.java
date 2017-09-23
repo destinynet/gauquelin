@@ -230,19 +230,18 @@ public class GPersonDaoImplTest// extends AbstractGauquelinTest
     p.getHouseMap().put("Alcabitius", processHouse(houseAlcabitius , horoscopeAlc));
   }
   
-  private GPersonHouse processHouse(GPersonHouse house, Horoscope hc)
-  {
-    house.setSun(hc.getHouse(Planet.SUN));
-    house.setMoon(hc.getHouse(Planet.MOON));
-    house.setMercury(hc.getHouse(Planet.MERCURY));
-    house.setVenus(hc.getHouse(Planet.VENUS));
-    house.setMars(hc.getHouse(Planet.MARS));
-    house.setJupiter(hc.getHouse(Planet.JUPITER));
-    house.setSaturn(hc.getHouse(Planet.SATURN));
-    house.setUranus(hc.getHouse(Planet.URANUS));
-    house.setNeptune(hc.getHouse(Planet.NEPTUNE));
-    house.setPluto(hc.getHouse(Planet.PLUTO));
-    
+  private GPersonHouse processHouse(GPersonHouse house, Horoscope hc) {
+    hc.getHouse(Planet.SUN).ifPresent(house::setSun);
+    hc.getHouse(Planet.MOON).ifPresent(house::setMoon);
+    hc.getHouse(Planet.MERCURY).ifPresent(house::setMercury);
+    hc.getHouse(Planet.VENUS).ifPresent(house::setVenus);
+    hc.getHouse(Planet.MARS).ifPresent(house::setMars);
+    hc.getHouse(Planet.JUPITER).ifPresent(house::setJupiter);
+    hc.getHouse(Planet.SATURN).ifPresent(house::setSaturn);
+    hc.getHouse(Planet.URANUS).ifPresent(house::setUranus);
+    hc.getHouse(Planet.NEPTUNE).ifPresent(house::setNeptune);
+    hc.getHouse(Planet.PLUTO).ifPresent(house::setPluto);
+
     return house;
   }
 }
