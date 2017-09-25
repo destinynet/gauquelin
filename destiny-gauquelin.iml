@@ -37,7 +37,7 @@
     <orderEntry type="module" module-name="destiny-core" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.8.0-alpha2" level="project" />
     <orderEntry type="library" name="Maven: javax.inject:javax.inject:1" level="project" />
-    <orderEntry type="library" name="Maven: org.threeten:threeten-extra:1.0" level="project" />
+    <orderEntry type="library" name="Maven: org.threeten:threeten-extra:1.2" level="project" />
     <orderEntry type="module" module-name="destiny-core-impl" />
     <orderEntry type="module" module-name="destiny-tools" />
     <orderEntry type="library" name="Maven: net.java.dev.jets3t:jets3t:0.9.4" level="project" />
