@@ -7,7 +7,6 @@ package destiny.data.gauquelin;
 import java.io.Serializable;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
-import java.util.Calendar;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -29,7 +28,6 @@ import javax.persistence.Table;
 import org.hibernate.annotations.BatchSize;
 
 import destiny.core.calendar.Location;
-import destiny.core.calendar.Time;
 
 /**
  * 高格林的一筆資料
