@@ -18,7 +18,7 @@ import weka.core.Instances;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
-import java.time.LocalDateTime;
+import java.time.chrono.ChronoLocalDateTime;
 import java.util.*;
 
 public class TimeLocation_AnglePower_Instance implements InstanceIF
@@ -26,7 +26,7 @@ public class TimeLocation_AnglePower_Instance implements InstanceIF
   private static Instances instances;
   private Horoscope horoscope;
 
-  public TimeLocation_AnglePower_Instance(IHoroscope horoscopeImpl, LocalDateTime time, Location location)
+  public TimeLocation_AnglePower_Instance(IHoroscope horoscopeImpl, ChronoLocalDateTime time, Location location)
   {
     if (instances == null)
       parseInstances();
@@ -40,7 +40,7 @@ public class TimeLocation_AnglePower_Instance implements InstanceIF
     pointSet.addAll(Arrays.asList(Hamburger.values));
     pointSet.addAll(Arrays.asList(FixedStar.values));
     pointSet.addAll(Arrays.asList(LunarNode.mean_values));
-    this.horoscope = horoscopeImpl.getHoroscope(time , location , pointSet , HouseSystem.PLACIDUS , Centric.GEO , Coordinate.ECLIPTIC);
+    this.horoscope = horoscopeImpl.getHoroscope(time , location , pointSet , HouseSystem.PLACIDUS , Centric.GEO , Coordinate.ECLIPTIC , 0 , 1013.25);
   }
   
   private void parseInstances()

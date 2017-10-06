@@ -37,7 +37,7 @@ public class TimeLocation_House_Aspect_Instance implements InstanceIF {
     pointSet.addAll(Arrays.asList(Hamburger.values));
     pointSet.addAll(Arrays.asList(FixedStar.values));
     pointSet.addAll(Arrays.asList(LunarNode.mean_values));
-    this.horoscope = horoscopeImpl.getHoroscope(time , location , pointSet , HouseSystem.PLACIDUS , Centric.GEO , Coordinate.ECLIPTIC);
+    this.horoscope = horoscopeImpl.getHoroscope(time , location , pointSet , HouseSystem.PLACIDUS , Centric.GEO , Coordinate.ECLIPTIC , 0 , 1013.25);
   }
   
   @SuppressWarnings("rawtypes" )
