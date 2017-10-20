@@ -8,6 +8,7 @@ import destiny.astrology.StarPositionIF;
 import destiny.astrology.StarTransitIF;
 import destiny.astrology.swissephImpl.RiseTransImpl;
 import destiny.core.Gender;
+import destiny.core.IntAge;
 import destiny.core.calendar.Location;
 import destiny.core.calendar.SolarTermsIF;
 import destiny.core.calendar.chinese.ChineseDateIF;
@@ -67,12 +68,14 @@ public class CauserReader {
   @Inject
   private EightWordsIF eightWordsImpl;
 
+  @Inject
+  private IntAge intAge8wImpl;
+
   private Location location;
   private LocalDateTime lmt;
   
   @Test
-  public void testCauserReader()
-  {
+  public void testCauserReader() {
     location = new Location(Location.EastWest.EAST , 120 , 0 , 0 , Location.NorthSouth.NORTH , 25, 03 , 0 , 0 , "Asia/Taipei" );
     
     File file;
@@ -103,8 +106,8 @@ public class CauserReader {
         int day = Integer.valueOf(st.nextToken());
         int hour = 12;
         lmt = LocalDateTime.of(year , month , day , hour , 0);
-        context = new PersonContext(eightWordsImpl , chineseDateImpl, yearMonthImpl , dayImpl , hourImpl, midnightImpl , true , solarTermsBean, starTransitImpl ,
-          lmt , location , null, gender , 120.0 , fortuneDirectionImpl, risingSignImpl, starPositionImpl, FortuneOutput.西元);
+        context = new PersonContext(eightWordsImpl , chineseDateImpl, yearMonthImpl , dayImpl , hourImpl, midnightImpl , true ,
+          solarTermsBean, starTransitImpl , intAge8wImpl, lmt , location , null, gender , 120.0 , fortuneDirectionImpl, risingSignImpl, starPositionImpl, FortuneOutput.西元);
         
         StringBuffer sb = new StringBuffer();
         sb.append(index+",");
