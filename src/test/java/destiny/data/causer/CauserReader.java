@@ -7,15 +7,13 @@ package destiny.data.causer;
 import destiny.astrology.StarPositionIF;
 import destiny.astrology.StarTransitIF;
 import destiny.astrology.swissephImpl.RiseTransImpl;
-import destiny.core.Gender;
-import destiny.core.IntAge;
+import destiny.core.*;
 import destiny.core.calendar.Location;
 import destiny.core.calendar.SolarTermsIF;
 import destiny.core.calendar.chinese.ChineseDateIF;
 import destiny.core.calendar.eightwords.*;
 import destiny.core.calendar.eightwords.personal.FortuneDirectionIF;
 import destiny.core.calendar.eightwords.personal.PersonContext;
-import destiny.core.chinese.FortuneOutput;
 import destiny.core.chinese.StemBranch;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -26,6 +24,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import javax.inject.Inject;
 import java.io.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.StringTokenizer;
 
 /**
@@ -73,7 +73,12 @@ public class CauserReader {
 
   private Location location;
   private LocalDateTime lmt;
-  
+
+  private final List<IntAgeNote> intAgeNoteImpls = new ArrayList<IntAgeNote>() {{
+    add(new IntAgeNoteWestYearImpl());
+    add(new IntAgeNoteMinguoYearImpl());
+  }};
+
   @Test
   public void testCauserReader() {
     location = new Location(Location.EastWest.EAST , 120 , 0 , 0 , Location.NorthSouth.NORTH , 25, 03 , 0 , 0 , "Asia/Taipei" );
@@ -107,7 +112,7 @@ public class CauserReader {
         int hour = 12;
         lmt = LocalDateTime.of(year , month , day , hour , 0);
         context = new PersonContext(eightWordsImpl , chineseDateImpl, yearMonthImpl , dayImpl , hourImpl, midnightImpl , true ,
-          solarTermsBean, starTransitImpl , intAge8wImpl, lmt , location , null, gender , 120.0 , fortuneDirectionImpl, risingSignImpl, starPositionImpl, FortuneOutput.西元);
+          solarTermsBean, starTransitImpl , intAge8wImpl, lmt , location , null, gender , 120.0 , fortuneDirectionImpl, risingSignImpl, starPositionImpl, intAgeNoteImpls);
         
         StringBuffer sb = new StringBuffer();
         sb.append(index+",");
