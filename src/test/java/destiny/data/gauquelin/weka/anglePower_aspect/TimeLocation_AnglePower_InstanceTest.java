@@ -21,11 +21,11 @@ public class TimeLocation_AnglePower_InstanceTest
 {
   private IHoroscope horoscopeImpl;
 
-  private AzimuthIF azimuthImpl = new AzimuthImpl();
+  private IAzimuth azimuthImpl = new AzimuthImpl();
 
-  private StarPositionWithAzimuthIF starPositionImpl = new StarPositionWithAzimuthImpl(azimuthImpl);
+  private IStarPositionWithAzimuth starPositionImpl = new StarPositionWithAzimuthImpl(azimuthImpl);
 
-  private HouseCuspIF houseCuspImpl = new HouseCuspImpl();
+  private IHouseCusp houseCuspImpl = new HouseCuspImpl();
 
   @Before
   public void init() {

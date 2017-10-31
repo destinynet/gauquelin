@@ -4,8 +4,8 @@
  */ 
 package destiny.data.causer;
 
-import destiny.astrology.StarPositionIF;
-import destiny.astrology.StarTransitIF;
+import destiny.astrology.IStarPosition;
+import destiny.astrology.IStarTransit;
 import destiny.astrology.swissephImpl.RiseTransImpl;
 import destiny.core.*;
 import destiny.core.calendar.Location;
@@ -41,16 +41,16 @@ public class CauserReader {
 //  private EightWordsContext eightWordsContext;
 
   @Inject
-  private StarPositionIF starPositionImpl;
+  private IStarPosition starPositionImpl;
 
   @Inject
-  private StarTransitIF starTransitImpl;
+  private IStarTransit starTransitImpl;
 
   @Inject
   private SolarTermsIF solarTermsBean;
 
   @Inject @Qualifier("houseCuspImpl")
-  protected RisingSignIF risingSignImpl;
+  protected IRisingSign risingSignImpl;
 
   @Inject
   private ChineseDateIF chineseDateImpl;

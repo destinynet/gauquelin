@@ -4,9 +4,9 @@
 package destiny.data.gauquelin.weka.house_aspect;
 
 import destiny.astrology.HoroscopeImpl;
-import destiny.astrology.HouseCuspIF;
+import destiny.astrology.IHouseCusp;
 import destiny.astrology.IHoroscope;
-import destiny.astrology.StarPositionWithAzimuthIF;
+import destiny.astrology.IStarPositionWithAzimuth;
 import destiny.astrology.swissephImpl.AzimuthImpl;
 import destiny.astrology.swissephImpl.HouseCuspImpl;
 import destiny.astrology.swissephImpl.StarPositionWithAzimuthImpl;
@@ -25,8 +25,8 @@ public class TimeLocation_House_Aspect_InstanceTest
   @Test
   public void testGetInstance() throws Exception {
 
-    StarPositionWithAzimuthIF starPositionWithAzimuthImpl = new StarPositionWithAzimuthImpl(new AzimuthImpl());
-    HouseCuspIF houseCuspImpl = new HouseCuspImpl();
+    IStarPositionWithAzimuth starPositionWithAzimuthImpl = new StarPositionWithAzimuthImpl(new AzimuthImpl());
+    IHouseCusp houseCuspImpl = new HouseCuspImpl();
     horoscopeImpl = new HoroscopeImpl(starPositionWithAzimuthImpl , houseCuspImpl);
 
     for (int i = 1 ; i <=1 ; i++)
