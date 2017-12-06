@@ -30,7 +30,7 @@ public class UtilHoroscopeAnglePower implements Serializable
       String nearestAngle = null;
       double tempError = 360.0;
 
-      Optional<Double> optionalPlanetDeg = h.getPosition(planet).map(Position::getLng);
+      Optional<Double> optionalPlanetDeg = h.getPositionOpt(planet).map(Position::getLng);
       assert optionalPlanetDeg.isPresent();
 
       double planetDeg = optionalPlanetDeg.get(); //h.getPosition(planet).getLng();
