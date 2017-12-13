@@ -80,7 +80,7 @@ public class TimeLocation_House_Aspect_Instance implements InstanceIF {
     for(Planet p : Planet.values) {
       String attrString = p.toString(Locale.ENGLISH).toLowerCase();
       Attribute attr = instances.attribute(attrString);
-      horoscope.getHouse(p).ifPresent(house -> instance.setValue(attr, String.valueOf(house)));
+      horoscope.getHouseOpt(p).ifPresent(house -> instance.setValue(attr, String.valueOf(house)));
     }
     
     // ============ Aspect ============

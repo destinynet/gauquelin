@@ -38,7 +38,7 @@ public class GPersonDaoImplTest// extends AbstractGauquelinTest
   protected List<TextDataReader> readers = Collections.synchronizedList(new ArrayList<TextDataReader>());
   
   @Before
-  protected void onSetUp() throws Exception {
+  protected void onSetUp() {
     /*
     readers.add(new SportReader());
     readers.add(new Sport450Reader());
@@ -231,16 +231,16 @@ public class GPersonDaoImplTest// extends AbstractGauquelinTest
   }
   
   private GPersonHouse processHouse(GPersonHouse house, Horoscope hc) {
-    hc.getHouse(Planet.SUN).ifPresent(house::setSun);
-    hc.getHouse(Planet.MOON).ifPresent(house::setMoon);
-    hc.getHouse(Planet.MERCURY).ifPresent(house::setMercury);
-    hc.getHouse(Planet.VENUS).ifPresent(house::setVenus);
-    hc.getHouse(Planet.MARS).ifPresent(house::setMars);
-    hc.getHouse(Planet.JUPITER).ifPresent(house::setJupiter);
-    hc.getHouse(Planet.SATURN).ifPresent(house::setSaturn);
-    hc.getHouse(Planet.URANUS).ifPresent(house::setUranus);
-    hc.getHouse(Planet.NEPTUNE).ifPresent(house::setNeptune);
-    hc.getHouse(Planet.PLUTO).ifPresent(house::setPluto);
+    hc.getHouseOpt(Planet.SUN).ifPresent(house::setSun);
+    hc.getHouseOpt(Planet.MOON).ifPresent(house::setMoon);
+    hc.getHouseOpt(Planet.MERCURY).ifPresent(house::setMercury);
+    hc.getHouseOpt(Planet.VENUS).ifPresent(house::setVenus);
+    hc.getHouseOpt(Planet.MARS).ifPresent(house::setMars);
+    hc.getHouseOpt(Planet.JUPITER).ifPresent(house::setJupiter);
+    hc.getHouseOpt(Planet.SATURN).ifPresent(house::setSaturn);
+    hc.getHouseOpt(Planet.URANUS).ifPresent(house::setUranus);
+    hc.getHouseOpt(Planet.NEPTUNE).ifPresent(house::setNeptune);
+    hc.getHouseOpt(Planet.PLUTO).ifPresent(house::setPluto);
 
     return house;
   }
