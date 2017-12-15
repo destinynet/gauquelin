@@ -86,7 +86,7 @@ public class TimeLocation_House_Aspect_Instance implements InstanceIF {
     // ============ Aspect ============
     HoroscopeAspectsCalculator aspectCalculator = new HoroscopeAspectsCalculator(horoscope , new HoroscopeAspectsCalculatorModern());
     
-    for(HoroscopeAspectData data : aspectCalculator.getAspectDataSet(Arrays.asList(Planet.values) , Aspect.getAngles(Importance.HIGH)))
+    for(HoroscopeAspectData data : aspectCalculator.getAspectDataSet(Arrays.asList(Planet.values) , Aspect.Companion.getAngles(Importance.HIGH)))
     {
       String aspectString = data.getAspect().toString(Locale.ENGLISH);
       Set<Point> twoPoints = new TreeSet<Point>(data.getTwoPoints());

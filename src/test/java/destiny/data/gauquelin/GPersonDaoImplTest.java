@@ -179,7 +179,7 @@ public class GPersonDaoImplTest// extends AbstractGauquelinTest
     GPersonAspect gpa = new GPersonAspect();
     HoroscopeAspectsCalculator aspectCalculator = new HoroscopeAspectsCalculator(hc , new HoroscopeAspectsCalculatorModern());
     
-    for(HoroscopeAspectData data : aspectCalculator.getAspectDataSet(Arrays.asList(Planet.values) , Aspect.getAngles(Importance.HIGH)))
+    for(HoroscopeAspectData data : aspectCalculator.getAspectDataSet(Arrays.asList(Planet.values) , Aspect.Companion.getAngles(Importance.HIGH)))
     {
       gpa.setAspect(data);
     } // each aspect data
