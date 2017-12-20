@@ -6,11 +6,10 @@ package destiny.data.gauquelin;
 
 import destiny.astrology.Horoscope;
 import destiny.astrology.Planet;
-import destiny.astrology.Position;
+import destiny.astrology.PositionWithAzimuth;
 import destiny.astrology.Utils;
 
 import java.io.Serializable;
-import java.util.Optional;
 
 public class UtilHoroscopeAnglePower implements Serializable
 {
@@ -30,26 +29,26 @@ public class UtilHoroscopeAnglePower implements Serializable
       String nearestAngle = null;
       double tempError = 360.0;
 
-      Optional<Double> optionalPlanetDeg = h.getPositionOpt(planet).map(Position::getLng);
-      assert optionalPlanetDeg.isPresent();
+      PositionWithAzimuth positionWithAzimuth = h.getPosition(planet);
+      assert positionWithAzimuth!= null;
 
-      double planetDeg = optionalPlanetDeg.get(); //h.getPosition(planet).getLng();
+      double planetDeg = positionWithAzimuth.getLng();
       // ========================= 方向 ===========================
-      if (Horoscope.getAngle(planetDeg , degEast) < tempError) {
-        tempError = Horoscope.getAngle(planetDeg, degEast);
+      if (Horoscope.Companion.getAngle(planetDeg , degEast) < tempError) {
+        tempError = Horoscope.Companion.getAngle(planetDeg, degEast);
         nearestAngle = "east";
       }
-      if (Horoscope.getAngle(planetDeg , degTop) < tempError) {
-        tempError = Horoscope.getAngle(planetDeg, degTop);
+      if (Horoscope.Companion.getAngle(planetDeg , degTop) < tempError) {
+        tempError = Horoscope.Companion.getAngle(planetDeg, degTop);
         nearestAngle = "top";
       }
 
-      if (Horoscope.getAngle(planetDeg, degWest) < tempError) {
-        tempError = Horoscope.getAngle(planetDeg, degWest);
+      if (Horoscope.Companion.getAngle(planetDeg, degWest) < tempError) {
+        tempError = Horoscope.Companion.getAngle(planetDeg, degWest);
         nearestAngle = "west";
       }
-      if (Horoscope.getAngle(planetDeg, degBottom) < tempError) {
-        tempError = Horoscope.getAngle(planetDeg, degBottom);
+      if (Horoscope.Companion.getAngle(planetDeg, degBottom) < tempError) {
+        tempError = Horoscope.Companion.getAngle(planetDeg, degBottom);
         nearestAngle = "bottom";
       }
 
@@ -102,22 +101,22 @@ public class UtilHoroscopeAnglePower implements Serializable
   private double getPower(double orientalCusp , double smaller , double cuspDeg , double larger , double occidentalCusp , double degree)
   {
     // 先求出中心度數（最強點)
-    double center = Utils.getNormalizeDegree((Horoscope.getAngle(smaller, larger) / 2 ) + smaller);
+    double center = Utils.getNormalizeDegree((Horoscope.Companion.getAngle(smaller, larger) / 2 ) + smaller);
     // 離中心點幾度
-    double distance = Horoscope.getAngle(center , degree);
+    double distance = Horoscope.Companion.getAngle(center , degree);
     // 再算影響範圍的半徑 ( smaller 到 larger 除以 2)
-    double radius = Horoscope.getAngle(smaller , larger) / 2;
+    double radius = Horoscope.Companion.getAngle(smaller , larger) / 2;
 
-    if (Horoscope.isOccidental(degree, larger))
+    if (Horoscope.Companion.isOccidental(degree, larger))
     {
       //比「大」更大
-      double half = Horoscope.getAngle(occidentalCusp, cuspDeg);
+      double half = Horoscope.Companion.getAngle(occidentalCusp, cuspDeg);
       return - (distance - radius) / (half - radius);
     }
-    else if (Horoscope.isOriental(degree , smaller))
+    else if (Horoscope.Companion.isOriental(degree , smaller))
     {
       //比「小」更小
-      double half = Horoscope.getAngle(orientalCusp, cuspDeg)/2;
+      double half = Horoscope.Companion.getAngle(orientalCusp, cuspDeg)/2;
       return - (distance - radius) / (half - radius);
     }
     else

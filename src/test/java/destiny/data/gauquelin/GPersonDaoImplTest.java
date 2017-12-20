@@ -231,16 +231,17 @@ public class GPersonDaoImplTest// extends AbstractGauquelinTest
   }
   
   private GPersonHouse processHouse(GPersonHouse house, Horoscope hc) {
-    hc.getHouseOpt(Planet.SUN).ifPresent(house::setSun);
-    hc.getHouseOpt(Planet.MOON).ifPresent(house::setMoon);
-    hc.getHouseOpt(Planet.MERCURY).ifPresent(house::setMercury);
-    hc.getHouseOpt(Planet.VENUS).ifPresent(house::setVenus);
-    hc.getHouseOpt(Planet.MARS).ifPresent(house::setMars);
-    hc.getHouseOpt(Planet.JUPITER).ifPresent(house::setJupiter);
-    hc.getHouseOpt(Planet.SATURN).ifPresent(house::setSaturn);
-    hc.getHouseOpt(Planet.URANUS).ifPresent(house::setUranus);
-    hc.getHouseOpt(Planet.NEPTUNE).ifPresent(house::setNeptune);
-    hc.getHouseOpt(Planet.PLUTO).ifPresent(house::setPluto);
+
+//    hc.getHouseOpt(Planet.SUN).ifPresent(house::setSun);
+//    hc.getHouseOpt(Planet.MOON).ifPresent(house::setMoon);
+//    hc.getHouseOpt(Planet.MERCURY).ifPresent(house::setMercury);
+//    hc.getHouseOpt(Planet.VENUS).ifPresent(house::setVenus);
+//    hc.getHouseOpt(Planet.MARS).ifPresent(house::setMars);
+//    hc.getHouseOpt(Planet.JUPITER).ifPresent(house::setJupiter);
+//    hc.getHouseOpt(Planet.SATURN).ifPresent(house::setSaturn);
+//    hc.getHouseOpt(Planet.URANUS).ifPresent(house::setUranus);
+//    hc.getHouseOpt(Planet.NEPTUNE).ifPresent(house::setNeptune);
+//    hc.getHouseOpt(Planet.PLUTO).ifPresent(house::setPluto);
 
     return house;
   }
