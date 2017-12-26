@@ -57,32 +57,32 @@ public class UtilHoroscopeAnglePower implements Serializable
       assert nearestAngle != null;
       if (nearestAngle.equals("east"))
       {
-        larger = Utils.getNormalizeDegree(degEast + 10);
-        smaller = Utils.getNormalizeDegree(degEast - 20);
+        larger = Utils.INSTANCE.getNormalizeDegree(degEast + 10);
+        smaller = Utils.INSTANCE.getNormalizeDegree(degEast - 20);
         cuspDeg = degEast;
         orientalCusp = degTop;
         occidentalCusp = degBottom;
       }
       else if (nearestAngle.equals("top"))
       {
-        larger = Utils.getNormalizeDegree(degTop + 10);
-        smaller = Utils.getNormalizeDegree(degTop -20);
+        larger = Utils.INSTANCE.getNormalizeDegree(degTop + 10);
+        smaller = Utils.INSTANCE.getNormalizeDegree(degTop -20);
         cuspDeg = degTop;
         orientalCusp = degWest;
         occidentalCusp = degEast;
       }
       else if (nearestAngle.equals("west"))
       {
-        larger = Utils.getNormalizeDegree(degWest );
-        smaller = Utils.getNormalizeDegree(degWest -20);
+        larger = Utils.INSTANCE.getNormalizeDegree(degWest );
+        smaller = Utils.INSTANCE.getNormalizeDegree(degWest -20);
         cuspDeg = degWest;
         orientalCusp = degBottom;
         occidentalCusp = degTop;
       }
       else if (nearestAngle.equals("bottom"))
       {
-        larger = Utils.getNormalizeDegree(degBottom);
-        smaller = Utils.getNormalizeDegree(degBottom -20);
+        larger = Utils.INSTANCE.getNormalizeDegree(degBottom);
+        smaller = Utils.INSTANCE.getNormalizeDegree(degBottom -20);
         cuspDeg = degBottom;
         orientalCusp = degEast;
         occidentalCusp = degWest;
@@ -101,7 +101,7 @@ public class UtilHoroscopeAnglePower implements Serializable
   private double getPower(double orientalCusp , double smaller , double cuspDeg , double larger , double occidentalCusp , double degree)
   {
     // 先求出中心度數（最強點)
-    double center = Utils.getNormalizeDegree((Horoscope.Companion.getAngle(smaller, larger) / 2 ) + smaller);
+    double center = Utils.INSTANCE.getNormalizeDegree((Horoscope.Companion.getAngle(smaller, larger) / 2 ) + smaller);
     // 離中心點幾度
     double distance = Horoscope.Companion.getAngle(center , degree);
     // 再算影響範圍的半徑 ( smaller 到 larger 除以 2)
