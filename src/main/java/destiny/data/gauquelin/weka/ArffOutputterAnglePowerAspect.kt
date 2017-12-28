@@ -4,7 +4,7 @@
  */
 package destiny.data.gauquelin.weka
 
-import destiny.astrology.Planet
+import destiny.astrology.Planets
 import destiny.data.gauquelin.GPerson
 import destiny.data.gauquelin.RefUtil
 import java.io.BufferedWriter
@@ -116,7 +116,7 @@ class ArffOutputterAnglePowerAspect(private val gpersons: List<GPerson>, private
         val anglePower = person.anglePower
 
         refUtil = RefUtil(anglePower)
-        for (planet in Planet.values) {
+        for (planet in Planets.values) {
           val dir = refUtil.getValue(planet.toString(Locale.ENGLISH).toLowerCase()) as String
           sb.append(dir)
           sb.append(",")

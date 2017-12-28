@@ -25,7 +25,7 @@ class TimeLocation_House_Aspect_Instance(horoscopeImpl: IHoroscope, time: LocalD
     //HoroscopeContextBean bean = new HoroscopeContextBean();
     //this.horoscopeContext = bean.getHoroscopeContextPlacidus(time, location);
 
-    val pointSet = setOf<Point>(*Planet.values , *Asteroid.values , *Hamburger.values , *FixedStar.values , *LunarNode.mean_values)
+    val pointSet = setOf<Point>(*Planets.values , *Asteroid.values , *Hamburger.values , *FixedStar.values , *LunarNode.mean_values)
 
     this.horoscope = horoscopeImpl.getHoroscope(time, location, pointSet, HouseSystem.PLACIDUS, Centric.GEO, Coordinate.ECLIPTIC, 0.0, 1013.25)
   }
@@ -61,7 +61,7 @@ class TimeLocation_House_Aspect_Instance(horoscopeImpl: IHoroscope, time: LocalD
 
     // ============ House =============
     //horoscopeContext.setHouseSystem(HouseSystem.PLACIDUS);
-    for (p in Planet.values) {
+    for (p in Planets.values) {
       val attrString = p.toString(Locale.ENGLISH).toLowerCase()
       val attr = instances!!.attribute(attrString)
       val house = horoscope.getHouse(p)
@@ -73,7 +73,7 @@ class TimeLocation_House_Aspect_Instance(horoscopeImpl: IHoroscope, time: LocalD
     // ============ Aspect ============
     val aspectCalculator = HoroscopeAspectsCalculator(horoscope, HoroscopeAspectsCalculatorModern())
 
-    for (data in aspectCalculator.getAspectDataSet(Arrays.asList(*Planet.values), Aspect.getAngles(Importance.HIGH))) {
+    for (data in aspectCalculator.getAspectDataSet(Arrays.asList(*Planets.values), Aspect.getAngles(Importance.HIGH))) {
       var aspectString = data.aspect.toString(Locale.ENGLISH)
       val twoPoints = TreeSet(data.twoPoints)
       val it = twoPoints.iterator()
