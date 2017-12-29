@@ -70,7 +70,7 @@ class GPersonAspect : Serializable {
 
   fun setAspect(data: HoroscopeAspectData) {
     val twoPoints = data.twoPoints
-    val localeString = data.aspect.toString(Locale.ENGLISH)
+    val localeString = data.aspect!!.toString(Locale.ENGLISH)
 
     if (twoPoints.contains(Planet.SUN) && twoPoints.contains(Planet.MOON))
       sunMoon = localeString

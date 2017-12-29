@@ -74,7 +74,7 @@ class TimeLocation_House_Aspect_Instance(horoscopeImpl: IHoroscope, time: LocalD
     val aspectCalculator = HoroscopeAspectsCalculator(horoscope, HoroscopeAspectsCalculatorModern())
 
     for (data in aspectCalculator.getAspectDataSet(Arrays.asList(*Planets.values), Aspect.getAngles(Importance.HIGH))) {
-      var aspectString = data.aspect.toString(Locale.ENGLISH)
+      var aspectString = data.aspect!!.toString(Locale.ENGLISH)
       val twoPoints = TreeSet(data.twoPoints)
       val it = twoPoints.iterator()
       val p1 = it.next()
