@@ -10,7 +10,7 @@ import destiny.astrology.swissephImpl.RiseTransImpl;
 import destiny.core.*;
 import destiny.core.calendar.Location;
 import destiny.core.calendar.SolarTermsIF;
-import destiny.core.calendar.chinese.ChineseDateIF;
+import destiny.core.calendar.chinese.IChineseDate;
 import destiny.core.calendar.eightwords.*;
 import destiny.core.calendar.eightwords.personal.FortuneDirectionIF;
 import destiny.core.calendar.eightwords.personal.PersonContext;
@@ -53,7 +53,7 @@ public class CauserReader {
   protected IRisingSign risingSignImpl;
 
   @Inject
-  private ChineseDateIF chineseDateImpl;
+  private IChineseDate chineseDateImpl;
 
   private YearMonthIF yearMonthImpl = new YearMonthSolarTermsStarPositionImpl(315 , starPositionImpl , starTransitImpl);
 
