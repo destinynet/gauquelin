@@ -5,7 +5,6 @@
 package destiny.data.gauquelin
 
 import destiny.astrology.Horoscope
-import destiny.astrology.Planet
 import destiny.astrology.Planets
 import destiny.astrology.Utils
 import java.io.Serializable
@@ -20,7 +19,7 @@ class UtilHoroscopeAnglePower(h: Horoscope) : Serializable {
     val degTop = h.getCuspDegree(10)
     val degWest = h.getCuspDegree(7)
     val degBottom = h.getCuspDegree(4)
-    for (planet in Planets.values) {
+    for (planet in Planets.array) {
       //與四個頂點，哪個點最近
       var nearestAngle: String? = null
       var tempError = 360.0

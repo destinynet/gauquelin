@@ -55,9 +55,9 @@ public class CauserReader {
   @Inject
   private IChineseDate chineseDateImpl;
 
-  private YearMonthIF yearMonthImpl = new YearMonthSolarTermsStarPositionImpl(315 , starPositionImpl , starTransitImpl);
+  private IYearMonth yearMonthImpl = new YearMonthSolarTermsStarPositionImpl(315 , starPositionImpl , starTransitImpl);
 
-  private DayIF dayImpl = new DayImpl();
+  private IDay dayImpl = new DayImpl();
   private IHour hourImpl = new HourSolarTransImpl(new RiseTransImpl());
   private IMidnight midnightImpl = new MidnightSolarTransImpl(new RiseTransImpl());
   
@@ -66,7 +66,7 @@ public class CauserReader {
   private FortuneDirectionIF fortuneDirectionImpl;
 
   @Inject
-  private EightWordsIF eightWordsImpl;
+  private IEightWords eightWordsImpl;
 
   @Inject
   private IntAge intAge8wImpl;
