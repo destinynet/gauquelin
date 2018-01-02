@@ -58,8 +58,8 @@ public class CauserReader {
   private YearMonthIF yearMonthImpl = new YearMonthSolarTermsStarPositionImpl(315 , starPositionImpl , starTransitImpl);
 
   private DayIF dayImpl = new DayImpl();
-  private HourIF hourImpl = new HourSolarTransImpl(new RiseTransImpl());
-  private MidnightIF midnightImpl = new MidnightSolarTransImpl(new RiseTransImpl());
+  private IHour hourImpl = new HourSolarTransImpl(new RiseTransImpl());
+  private IMidnight midnightImpl = new MidnightSolarTransImpl(new RiseTransImpl());
   
   /** 大運順逆演算法，內定採用「陽男陰女順排；陰男陽女逆排」的演算法 */
   @Inject
