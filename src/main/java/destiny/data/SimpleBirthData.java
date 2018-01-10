@@ -6,10 +6,10 @@ package destiny.data;
 
 import destiny.core.Gender;
 import destiny.core.GenderIF;
-import destiny.core.calendar.DateIF;
+import destiny.core.calendar.IDate;
 
 /** 只有性別 , 生日 */
-public class SimpleBirthData extends BirthDataObject implements GenderIF, DateIF
+public class SimpleBirthData extends BirthDataObject implements GenderIF, IDate
 {
   /** 性別 */
   protected Gender  gender;
