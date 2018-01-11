@@ -3,7 +3,7 @@
  */
 package destiny.data.gauquelin;
 
-import destiny.tools.location.GeocodingIF;
+import destiny.tools.location.IGeocoding;
 import destiny.tools.location.TimeZoneService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,7 +17,7 @@ import javax.inject.Inject;
 public class SuccessfulFrench2154ReaderTest {
 
   @Inject
-  private GeocodingIF geocodingGoogleImpl;
+  private IGeocoding geocodingGoogleImpl;
 
   @Inject
   private TimeZoneService timeZoneService;

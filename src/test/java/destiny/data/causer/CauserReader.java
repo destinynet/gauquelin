@@ -12,7 +12,7 @@ import destiny.core.calendar.Location;
 import destiny.core.calendar.SolarTermsIF;
 import destiny.core.calendar.chinese.IChineseDate;
 import destiny.core.calendar.eightwords.*;
-import destiny.core.calendar.eightwords.personal.FortuneDirectionIF;
+import destiny.core.calendar.eightwords.personal.IFortuneDirection;
 import destiny.core.calendar.eightwords.personal.PersonContext;
 import destiny.core.chinese.StemBranch;
 import org.junit.Test;
@@ -63,7 +63,7 @@ public class CauserReader {
   
   /** 大運順逆演算法，內定採用「陽男陰女順排；陰男陽女逆排」的演算法 */
   @Inject
-  private FortuneDirectionIF fortuneDirectionImpl;
+  private IFortuneDirection fortuneDirectionImpl;
 
   @Inject
   private IEightWords eightWordsImpl;

@@ -4,7 +4,7 @@
 package destiny.data.gauquelin;
 
 import destiny.core.calendar.Location;
-import destiny.tools.location.GeocodingIF;
+import destiny.tools.location.IGeocoding;
 import destiny.tools.location.TimeZoneService;
 
 import java.io.*;
@@ -25,11 +25,11 @@ public class SuccessfulFrench2154Reader implements TextDataReader {
 
   private List<GPerson> persons = Collections.synchronizedList(new ArrayList<GPerson>());
 
-  private final GeocodingIF geocodingImpl;
+  private final IGeocoding geocodingImpl;
 
   private final TimeZoneService timeZoneService;
 
-  public SuccessfulFrench2154Reader(GeocodingIF geocodingImpl, TimeZoneService timeZoneService) {
+  public SuccessfulFrench2154Reader(IGeocoding geocodingImpl, TimeZoneService timeZoneService) {
     this.geocodingImpl = geocodingImpl;
     this.timeZoneService = timeZoneService;
   }
