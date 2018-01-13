@@ -66,7 +66,7 @@ public class ParseUtils implements Serializable
     Location location = new Location(
         (EW == 'E' ? EastWest.EAST : EastWest.WEST) , longDeg , longMin , 0 , 
         (NS == 'N' ? NorthSouth.NORTH : NorthSouth.SOUTH) , latDeg , latMin , 0 , 0 , 
-        TimeZoneUtils.getTimeZone(tz*60));
+        TimeZoneUtils.Companion.getTimeZone(tz*60));
     
     
     GPerson person = new GPerson();
