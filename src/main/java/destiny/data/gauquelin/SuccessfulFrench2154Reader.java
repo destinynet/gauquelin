@@ -93,9 +93,8 @@ public class SuccessfulFrench2154Reader implements TextDataReader {
             }
             else {
               //利用 yahoo api 尋找
-              Optional<Location> locOpt = geocodingImpl.getLocation(place, timeZoneService);
-              if (locOpt.isPresent()) {
-                Location location = locOpt.get();
+              Location location = geocodingImpl.getLocation(place, timeZoneService);
+              if (location != null) {
                 if (location.getMinuteOffset() < 0 || location.getMinuteOffset() > 60 || location.getLngDeg() > 10)
                   System.err.println("city = " + place + " ,  location = " + location); //地點警告
                 else
