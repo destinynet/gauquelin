@@ -121,14 +121,15 @@ public class CauserReader {
         sb.append(month+",");
         sb.append(day+",");
         EightWords ew = context.getEightWords();
-        sb.append(ew.getYearStem() + ",");
-        sb.append(ew.getYearBranch() + ",");
-        sb.append(ew.getMonthStem() + ",");
-        sb.append(ew.getMonthBranch() + ",");
-        sb.append(ew.getDayStem() + ",");
-        sb.append(ew.getDayBranch() + ",");
-        sb.append(ew.getHourStem() + ",");
-        sb.append(ew.getHourBranch() + ",");
+
+        sb.append(ew.getYear().getStem() + ",");
+        sb.append(ew.getYear().getBranch() + ",");
+        sb.append(ew.getMonth().getStem() + ",");
+        sb.append(ew.getMonth().getBranch() + ",");
+        sb.append(ew.getDay().getStem() + ",");
+        sb.append(ew.getDay().getBranch() + ",");
+        sb.append(ew.getHour().getStem() + ",");
+        sb.append(ew.getHour().getBranch() + ",");
         
         
         int eventYear = Integer.valueOf(st.nextToken());
@@ -155,14 +156,14 @@ public class CauserReader {
         long l2 = System.currentTimeMillis();
         
         //出事時辰的八字
-        sb.append(ew2.getYearStem() + ",");
-        sb.append(ew2.getYearBranch() + ",");
-        sb.append(ew2.getMonthStem() + ",");
-        sb.append(ew2.getMonthBranch() + ",");
-        sb.append(ew2.getDayStem() + ",");
-        sb.append(ew2.getDayBranch() + ",");
-        sb.append(ew2.getHourStem() + ",");
-        sb.append(ew2.getHourBranch());
+        sb.append(ew2.getYear().getStem() + ",");
+        sb.append(ew2.getYear().getBranch() + ",");
+        sb.append(ew2.getMonth().getStem() + ",");
+        sb.append(ew2.getMonth().getBranch() + ",");
+        sb.append(ew2.getDay().getStem() + ",");
+        sb.append(ew2.getDay().getBranch() + ",");
+        sb.append(ew2.getHour().getStem() + ",");
+        sb.append(ew2.getHour().getBranch());
         
         System.out.println(sb.toString()+"\n費時 " + (l2-l1)/1000 + " 秒");
         bWriter.append(sb+"\n");
