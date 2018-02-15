@@ -9,7 +9,7 @@ import destiny.astrology.IStarTransit;
 import destiny.astrology.swissephImpl.RiseTransImpl;
 import destiny.core.*;
 import destiny.core.calendar.Location;
-import destiny.core.calendar.SolarTermsIF;
+import destiny.core.calendar.ISolarTerms;
 import destiny.core.calendar.chinese.IChineseDate;
 import destiny.core.calendar.eightwords.*;
 import destiny.core.calendar.eightwords.personal.IFortuneDirection;
@@ -47,7 +47,7 @@ public class CauserReader {
   private IStarTransit starTransitImpl;
 
   @Inject
-  private SolarTermsIF solarTermsBean;
+  private ISolarTerms solarTermsBean;
 
   @Inject @Qualifier("houseCuspImpl")
   protected IRisingSign risingSignImpl;
