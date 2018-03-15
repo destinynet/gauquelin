@@ -95,13 +95,13 @@ public class SuccessfulFrench2154Reader implements TextDataReader {
               //利用 yahoo api 尋找
               Location location = geocodingImpl.getLocation(place, timeZoneService);
               if (location != null) {
-                if (location.getMinuteOffset() < 0 || location.getMinuteOffset() > 60 || location.getLngDeg() > 10)
+                if (location.getFinalMinuteOffset() < 0 || location.getFinalMinuteOffset() > 60 || location.getLngDeg() > 10)
                   System.err.println("city = " + place + " ,  location = " + location); //地點警告
                 else
                   System.out.println("city = " + place + " ,  location = " + location);
                 //當時資料應該都是 GMT0
 
-                Location newLoc = new Location(location.getLongitude() , location.getLatitude() , location.getAltitudeMeter() , "GMT" , location.getMinuteOffset());
+                Location newLoc = new Location(location.getLongitude() , location.getLatitude() , location.getAltitudeMeter() , "GMT" , location.getFinalMinuteOffset());
                 person.setLocation(newLoc.getDebugString());
               }
               else {

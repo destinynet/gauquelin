@@ -5,8 +5,8 @@
 package destiny.data.gauquelin;
 
 import destiny.core.calendar.Location;
-import destiny.core.calendar.Location.EastWest;
-import destiny.core.calendar.Location.NorthSouth;
+import destiny.core.calendar.EastWest;
+import destiny.core.calendar.NorthSouth;
 import destiny.tools.location.TimeZoneUtils;
 
 import java.io.Serializable;
