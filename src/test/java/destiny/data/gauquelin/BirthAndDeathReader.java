@@ -81,7 +81,7 @@ public class BirthAndDeathReader
 
 
         LocalDateTime time = LocalDateTime.of(year , month , day , hour , minute , second);
-        Location location = new Location( (EW == 'E' ? EastWest.EAST : EastWest.WEST) , longDeg , longMin , 0 , (NS == 'N' ? NorthSouth.NORTH : NorthSouth.SOUTH) , latDeg , latMin , 0 , 0 , TimeZoneUtils.Companion.getTimeZone(tz*60) );
+        Location location = new Location( (EW == 'E' ? EastWest.EAST : EastWest.WEST) , longDeg , longMin , 0 , (NS == 'N' ? NorthSouth.NORTH : NorthSouth.SOUTH) , latDeg , latMin , 0 , TimeZoneUtils.Companion.getTimeZone(tz*60), 0);
         
         if (birthOrDeath == 'B')
           birthTime = time;

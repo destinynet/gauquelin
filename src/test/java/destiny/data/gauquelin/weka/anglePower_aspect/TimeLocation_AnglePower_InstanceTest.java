@@ -37,7 +37,7 @@ public class TimeLocation_AnglePower_InstanceTest
   public void testGetInstance() throws Exception
   {
     for (int i=1 ; i<=30 ; i++) {
-      TimeLocation_AnglePower_Instance tli = new TimeLocation_AnglePower_Instance(horoscopeImpl, LocalDateTime.of(1900, 7, i, i, 0, 0), Location.of(Locale.TAIWAN));
+      TimeLocation_AnglePower_Instance tli = new TimeLocation_AnglePower_Instance(horoscopeImpl, LocalDateTime.of(1900, 7, i, i, 0, 0), Location.Companion.of(Locale.TAIWAN));
       Instance instance = tli.getInstance();
       //System.out.println(instance);
 

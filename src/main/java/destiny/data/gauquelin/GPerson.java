@@ -301,7 +301,7 @@ public class GPerson implements Serializable
     sb.append("gmt = " + gmtTimestamp);
     sb.append(" ");
     
-    Location loc = Location.get(location);
+    Location loc = Location.Companion.fromDebugString(location);
     sb.append("loc = " + loc);
     
     sb.append(" ");
@@ -348,12 +348,10 @@ public class GPerson implements Serializable
       return false;
     if (gmtTimestamp == null)
     {
-      if (other.gmtTimestamp != null)
-        return false;
+      return other.gmtTimestamp == null;
     }
-    else if (!gmtTimestamp.equals(other.gmtTimestamp))
-      return false;
-    return true;
+    else
+      return gmtTimestamp.equals(other.gmtTimestamp);
   }
 
   public Map<String, GPersonHouse> getHouseMap()

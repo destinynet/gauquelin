@@ -31,7 +31,7 @@ public class TimeLocation_House_Aspect_InstanceTest
 
     for (int i = 1 ; i <=1 ; i++)
     {
-      TimeLocation_House_Aspect_Instance tli = new TimeLocation_House_Aspect_Instance(horoscopeImpl, LocalDateTime.of(2000,9,i,0,0,0) , Location.of(Locale.TAIWAN));
+      TimeLocation_House_Aspect_Instance tli = new TimeLocation_House_Aspect_Instance(horoscopeImpl, LocalDateTime.of(2000,9,i,0,0,0) , Location.Companion.of(Locale.TAIWAN));
       Instance instance = tli.getInstance();
       System.out.println(instance);
       

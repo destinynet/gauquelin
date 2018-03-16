@@ -1,0 +1,189 @@
+/**
+ * @author smallufo
+ * Created on 2008/11/15 at 上午 12:41:38
+ */
+package destiny.data.causer
+
+import destiny.astrology.IStarPosition
+import destiny.astrology.IStarTransit
+import destiny.astrology.swissephImpl.RiseTransImpl
+import destiny.core.*
+import destiny.core.calendar.EastWest
+import destiny.core.calendar.Location
+import destiny.core.calendar.ISolarTerms
+import destiny.core.calendar.NorthSouth
+import destiny.core.calendar.chinese.IChineseDate
+import destiny.core.calendar.eightwords.*
+import destiny.core.calendar.eightwords.personal.IFortuneDirection
+import destiny.core.calendar.eightwords.personal.PersonContext
+import destiny.core.chinese.StemBranch
+import org.junit.runner.RunWith
+import org.springframework.beans.factory.annotation.Qualifier
+import org.springframework.test.context.ContextConfiguration
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner
+
+import javax.inject.Inject
+import java.io.*
+import java.time.LocalDateTime
+import java.util.ArrayList
+import java.util.StringTokenizer
+import kotlin.test.Test
+
+/**
+ * 車禍肇事者
+ * 1,1,1949,6,26,2007,10,10,1
+ * 編號1 , 男性 ,1949/6/26 出生。肇事日期 2007/10/1 清晨1點
+ */
+@RunWith(SpringJUnit4ClassRunner::class)
+@ContextConfiguration(locations = arrayOf("classpath:core.xml"))
+class CauserReader {
+
+  //  @Inject
+  //  private EightWordsContext eightWordsContext;
+
+  @Inject
+  private val starPositionImpl: IStarPosition<*>? = null
+
+  @Inject
+  private val starTransitImpl: IStarTransit? = null
+
+  @Inject
+  private val solarTermsBean: ISolarTerms? = null
+
+  @Inject
+  @Qualifier("houseCuspImpl")
+  protected var risingSignImpl: IRisingSign? = null
+
+  @Inject
+  private val chineseDateImpl: IChineseDate? = null
+
+  private val yearMonthImpl = YearMonthSolarTermsStarPositionImpl(315.0, starPositionImpl!!, starTransitImpl!!)
+
+  private val dayImpl = DayImpl()
+  private val hourImpl = HourSolarTransImpl(RiseTransImpl())
+  private val midnightImpl = MidnightSolarTransImpl(RiseTransImpl())
+
+  /** 大運順逆演算法，內定採用「陽男陰女順排；陰男陽女逆排」的演算法  */
+  @Inject
+  private val fortuneDirectionImpl: IFortuneDirection? = null
+
+  @Inject
+  private val eightWordsImpl: IEightWords? = null
+
+  @Inject
+  private val intAge8wImpl: IntAge? = null
+
+  private var location: Location? = null
+  private var lmt: LocalDateTime? = null
+
+  private val intAgeNoteImpls = object : ArrayList<IntAgeNote>() {
+    init {
+      add(IntAgeNoteWestYearImpl())
+      add(IntAgeNoteMinguoYearImpl())
+    }
+  }
+
+  @Test
+  fun testCauserReader() {
+    location = Location(EastWest.EAST, 120, 0, 0.0, NorthSouth.NORTH, 25, 3, 0.0, "Asia/Taipei", 0.0)
+
+    val file: File
+    var bReader: BufferedReader? = null
+    var bWriter: BufferedWriter? = null
+    try {
+      val fstream = FileWriter("www/WEB-INF/out.txt")
+      bWriter = BufferedWriter(fstream)
+
+      file = File("www/WEB-INF/97010.sort")
+      val fReader = FileReader(file)
+      bReader = BufferedReader(fReader)
+
+      var line: String? = null
+      var context: PersonContext
+      var eventStemBranch: StemBranch
+      while ((line = bReader.readLine()) != null) {
+        val st = StringTokenizer(line!!, ", \n")
+
+        val l1 = System.currentTimeMillis()
+        val index = Integer.valueOf(st.nextToken())
+        val man = st.nextToken()
+        val gender = if (man == "1") Gender.男 else Gender.女
+        val year = Integer.valueOf(st.nextToken())
+        val month = Integer.valueOf(st.nextToken())
+        val day = Integer.valueOf(st.nextToken())
+        val hour = 12
+        lmt = LocalDateTime.of(year, month, day, hour, 0)
+        context =
+          PersonContext(eightWordsImpl!!, chineseDateImpl!!, yearMonthImpl, dayImpl, hourImpl, midnightImpl, true,
+                        solarTermsBean!!, starTransitImpl!!, intAge8wImpl!!, lmt!!, location!!, null, gender, 120.0,
+                        fortuneDirectionImpl, risingSignImpl!!, starPositionImpl!!, intAgeNoteImpls)
+
+        val sb = StringBuffer()
+        sb.append(index.toString() + ",")
+        sb.append((if (gender === Gender.男) "1" else "0") + ",")
+        sb.append(year.toString() + ",")
+        sb.append(month.toString() + ",")
+        sb.append(day.toString() + ",")
+        val (year1, month1, day1, hour1) = context.eightWords
+
+        sb.append(year1.stem.toString() + ",")
+        sb.append(year1.branch.toString() + ",")
+        sb.append(month1.stem.toString() + ",")
+        sb.append(month1.branch.toString() + ",")
+        sb.append(day1.stem.toString() + ",")
+        sb.append(day1.branch.toString() + ",")
+        sb.append(hour1.stem.toString() + ",")
+        sb.append(hour1.branch.toString() + ",")
+
+
+        val eventYear = Integer.valueOf(st.nextToken())
+        val eventMonth = Integer.valueOf(st.nextToken())
+        val eventDay = Integer.valueOf(st.nextToken())
+        val eventHour = Integer.valueOf(st.nextToken())
+        val eventMinute = 0
+        val eventSecond = 0
+        //出事日期及時間
+        sb.append(eventYear.toString() + ",")
+        sb.append(eventMonth.toString() + ",")
+        sb.append(eventDay.toString() + ",")
+        sb.append(eventHour.toString() + ",")
+
+        val targetGmt =
+          LocalDateTime.of(eventYear, eventMonth, eventDay, eventHour, eventMinute, eventSecond).minusHours(8)
+        eventStemBranch = context.getStemBranchOfFortuneMonth(targetGmt)
+
+        //出事大運的干支
+        sb.append(eventStemBranch.stem.toString() + ",")
+        sb.append(eventStemBranch.branch.toString() + ",")
+
+        val time = LocalDateTime.of(eventYear, eventMonth, eventDay, eventHour, eventMinute, eventSecond)
+        val (year2, month2, day2, hour2) = eightWordsImpl.getEightWords(time, location!!)
+        val l2 = System.currentTimeMillis()
+
+        //出事時辰的八字
+        sb.append(year2.stem.toString() + ",")
+        sb.append(year2.branch.toString() + ",")
+        sb.append(month2.stem.toString() + ",")
+        sb.append(month2.branch.toString() + ",")
+        sb.append(day2.stem.toString() + ",")
+        sb.append(day2.branch.toString() + ",")
+        sb.append(hour2.stem.toString() + ",")
+        sb.append(hour2.branch)
+
+        println(sb.toString() + "\n費時 " + (l2 - l1) / 1000 + " 秒")
+        bWriter.append(sb.toString() + "\n")
+        bWriter.flush()
+      }
+    } catch (e: Exception) {
+      e.printStackTrace()
+    } finally {
+      try {
+        bWriter!!.close()
+        bReader!!.close()
+      } catch (e: IOException) {
+        e.printStackTrace()
+      }
+
+    }
+  }
+}

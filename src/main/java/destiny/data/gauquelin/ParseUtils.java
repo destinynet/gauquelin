@@ -65,8 +65,7 @@ public class ParseUtils implements Serializable
     Timestamp ts = Timestamp.valueOf(time);
     Location location = new Location(
         (EW == 'E' ? EastWest.EAST : EastWest.WEST) , longDeg , longMin , 0 , 
-        (NS == 'N' ? NorthSouth.NORTH : NorthSouth.SOUTH) , latDeg , latMin , 0 , 0 , 
-        TimeZoneUtils.Companion.getTimeZone(tz*60));
+        (NS == 'N' ? NorthSouth.NORTH : NorthSouth.SOUTH) , latDeg , latMin , 0 , TimeZoneUtils.Companion.getTimeZone(tz*60), 0);
     
     
     GPerson person = new GPerson();
@@ -131,7 +130,7 @@ public class ParseUtils implements Serializable
     LocalDateTime  time = LocalDateTime.of(year , month , day , hour , minute , second);
     //Calendar cal = new GregorianCalendar(time.getYear() , time.getMonth()-1 , time.getDay() , time.getHour() , time.getMinute() , (int)time.getSecond());
     Timestamp ts = Timestamp.valueOf(time);
-    Location location = new Location( (EW == 'E' ? EastWest.EAST : EastWest.WEST) , longDeg , longMin , 0 , (NS == 'N' ? NorthSouth.NORTH : NorthSouth.SOUTH) , latDeg , latMin , 0 , 0 , TimeZone.getTimeZone("GMT") );
+    Location location = new Location( (EW == 'E' ? EastWest.EAST : EastWest.WEST) , longDeg , longMin , 0 , (NS == 'N' ? NorthSouth.NORTH : NorthSouth.SOUTH) , latDeg , latMin , 0 , TimeZone.getTimeZone("GMT"), 0);
     
     GPerson person = new GPerson();
     person.setNumber(number);
@@ -180,8 +179,7 @@ public class ParseUtils implements Serializable
     Timestamp ts = Timestamp.valueOf(time);
     Location location = new Location( 
         (EW == 'E' ? EastWest.EAST : EastWest.WEST) , longDeg , longMin , 0 , 
-        (NS == 'N' ? NorthSouth.NORTH : NorthSouth.SOUTH) , latDeg , latMin , 0 , 0 , 
-        TimeZone.getTimeZone("GMT") );
+        (NS == 'N' ? NorthSouth.NORTH : NorthSouth.SOUTH) , latDeg , latMin , 0 , TimeZone.getTimeZone("GMT"), 0);
     
     GPerson person = new GPerson();
     person.setNumber(number);
@@ -254,7 +252,7 @@ public class ParseUtils implements Serializable
     // 都是 GMT 時間
     LocalDateTime time = LocalDateTime.of(year , month , day , hour , minute , second);
     Timestamp ts = Timestamp.valueOf(time);
-    Location location = new Location( (EW == 'E' ? EastWest.EAST : EastWest.WEST) , longDeg , longMin , 0 , (NS == 'N' ? NorthSouth.NORTH : NorthSouth.SOUTH) , latDeg , latMin , 0 , 0 , TimeZone.getTimeZone("GMT") );
+    Location location = new Location( (EW == 'E' ? EastWest.EAST : EastWest.WEST) , longDeg , longMin , 0 , (NS == 'N' ? NorthSouth.NORTH : NorthSouth.SOUTH) , latDeg , latMin , 0 , TimeZone.getTimeZone("GMT"), 0);
     
     String COD = st.nextToken();
     
