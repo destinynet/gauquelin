@@ -47,7 +47,7 @@ public abstract class AbstractMentalReader implements TextDataReader
       {
         if (!line.equals("") && line.charAt(0) != '#')
         {
-          GPerson gp = ParseUtils.parseMental(line);
+          GPerson gp = ParseUtils.Companion.parseMental(line);
           gp.setCategory(category);
           this.persons.add(gp);
         }

@@ -43,7 +43,7 @@ public abstract class AbstractMurderAlcoholicReader implements TextDataReader , 
       {
         if (!line.equals("") && line.charAt(0) != '#')
         {
-          GPerson gp = ParseUtils.parseMurderAlcoholic(line);
+          GPerson gp = ParseUtils.Companion.parseMurderAlcoholic(line);
           gp.setCategory(category);
           persons.add(gp);
         }

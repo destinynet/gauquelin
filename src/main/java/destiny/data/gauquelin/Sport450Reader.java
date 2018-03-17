@@ -36,7 +36,7 @@ public class Sport450Reader implements TextDataReader , Serializable
       {
         if (!line.equals("") && line.charAt(0) != '#')
         {
-          GPerson gp = ParseUtils.parseType3(line);
+          GPerson gp = ParseUtils.Companion.parseType3(line);
           gp.setCategory("sport");
           this.persons.add(gp);
         }

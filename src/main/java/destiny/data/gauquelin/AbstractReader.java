@@ -58,7 +58,7 @@ public abstract class AbstractReader implements TextDataReader , Serializable
       {
         if (!line.equals("") && line.charAt(0) != '#')
         {
-          GPerson gp = ParseUtils.parseByNumber(line);
+          GPerson gp = ParseUtils.Companion.parseByNumber(line);
           gp.setCategory(category);
           gp.setGender(gender);
           this.persons.add(gp);
