@@ -3,6 +3,8 @@
  */
 package destiny.data.gauquelin;
 
+import destiny.core.calendar.Location;
+
 import java.io.File;
 import java.io.FileReader;
 import java.io.Serializable;
@@ -10,8 +12,6 @@ import java.net.URL;
 import java.util.Properties;
 import java.util.StringTokenizer;
 import java.util.TimeZone;
-
-import destiny.core.calendar.Location;
 
 public class CityLocation implements Serializable
 {
@@ -45,7 +45,7 @@ public class CityLocation implements Serializable
     double lon = Double.parseDouble(st.nextToken());
 
     //TODO : 目前資料都是 gmt，時差為 0 
-    Location loc = new Location(lon , lat , TimeZone.getTimeZone("GMT"));
+    Location loc = new Location(lon , lat , TimeZone.getTimeZone("GMT").getID() , null);
     return loc;
   }
 
