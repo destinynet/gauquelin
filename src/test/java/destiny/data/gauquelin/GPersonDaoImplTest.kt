@@ -6,7 +6,7 @@ package destiny.data.gauquelin
 
 import destiny.astrology.*
 import destiny.astrology.Aspect.Importance
-import destiny.core.calendar.Location
+import destiny.core.calendar.LocationTools
 import org.junit.Assert.assertNotNull
 import org.junit.Before
 import org.junit.Test
@@ -86,7 +86,7 @@ class GPersonDaoImplTest// extends AbstractGauquelinTest
       val persons = gDao.findAll((i * pageSize + start).toInt(), pageSize)
 
       for (p in persons) {
-        h = horoscopeImpl!!.getHoroscope(p.gmtTime, Location.fromDebugString(p.location), HouseSystem.PLACIDUS, Centric.GEO, Coordinate.ECLIPTIC)
+        h = horoscopeImpl!!.getHoroscope(p.gmtTime, LocationTools.fromDebugString(p.location), HouseSystem.PLACIDUS, Centric.GEO, Coordinate.ECLIPTIC)
         //hc = horoscopeContextBean.getHoroscopeContextPlacidus(p.getGmtTime(), Location.get(p.getLocation()));
 
         var updated = false
@@ -141,7 +141,7 @@ class GPersonDaoImplTest// extends AbstractGauquelinTest
     for (i in 0..count / pageSize) {
       val persons = gDao.findAllByCategory(cat, (i * pageSize).toInt(), pageSize)
       for (p in persons) {
-        h = horoscopeImpl!!.getHoroscope(p.gmtTime, Location.fromDebugString(p.location), HouseSystem.PLACIDUS, Centric.GEO, Coordinate.ECLIPTIC)
+        h = horoscopeImpl!!.getHoroscope(p.gmtTime, LocationTools.fromDebugString(p.location), HouseSystem.PLACIDUS, Centric.GEO, Coordinate.ECLIPTIC)
         //hc = horoscopeContextBean.getHoroscopeContextPlacidus(p.getGmtTime(), Location.get(p.getLocation()));
         System.err.println(p)
         val aspect = processAspect(h)
