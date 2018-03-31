@@ -4,7 +4,7 @@
  */ 
 package destiny.data.gauquelin;
 
-import destiny.core.calendar.Location;
+import destiny.core.calendar.ILocation;
 import destiny.core.calendar.LocationTools;
 import org.hibernate.annotations.BatchSize;
 
@@ -288,7 +288,7 @@ public class GPerson implements Serializable
     sb.append("gmt = " + gmtTimestamp);
     sb.append(" ");
     
-    Location loc = LocationTools.INSTANCE.fromDebugString(location);
+    ILocation loc = LocationTools.INSTANCE.decode(location);
     sb.append("loc = " + loc);
     
     sb.append(" ");

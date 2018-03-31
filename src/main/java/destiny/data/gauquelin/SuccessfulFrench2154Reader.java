@@ -4,6 +4,7 @@
 package destiny.data.gauquelin;
 
 import destiny.core.calendar.Location;
+import destiny.core.calendar.LocationTools;
 import destiny.tools.location.IGeocoding;
 import destiny.tools.location.TimeZoneService;
 
@@ -88,7 +89,8 @@ public class SuccessfulFrench2154Reader implements TextDataReader {
             // 經緯度
             Location loc = city.getLocation(place);
             if (loc != null) {
-              person.setLocation(loc.getDebugString());
+              //person.setLocation(loc.getDebugString());
+              person.setLocation(LocationTools.INSTANCE.encode(loc));
               System.out.println("Found location (from properties file) for city : " + place);
             }
             else {
@@ -102,11 +104,13 @@ public class SuccessfulFrench2154Reader implements TextDataReader {
                 //當時資料應該都是 GMT0
 
                 Location newLoc = new Location(location.getLng() , location.getLat() , "GMT" , location.getFinalMinuteOffset() , location.getAltitudeMeter());
-                person.setLocation(newLoc.getDebugString());
+                //person.setLocation(newLoc.getDebugString());
+                person.setLocation(LocationTools.INSTANCE.encode(newLoc));
               }
               else {
                 System.err.println("Cannot find location for city : " + place);
-                person.setLocation(city.getLocation("Paris").getDebugString());
+                //person.setLocation(city.getLocation("Paris").getDebugString());
+                person.setLocation( LocationTools.INSTANCE.encode(city.getLocation("Paris")));
               }
             }
 

@@ -6,7 +6,7 @@ package destiny.data.gauquelin.weka.anglePower_aspect
 
 import destiny.astrology.*
 import destiny.astrology.Aspect.Importance
-import destiny.core.calendar.Location
+import destiny.core.calendar.ILocation
 import destiny.data.gauquelin.RefUtil
 import destiny.data.gauquelin.UtilHoroscopeAnglePower
 import destiny.data.gauquelin.weka.InstanceIF
@@ -16,7 +16,7 @@ import java.io.InputStreamReader
 import java.time.chrono.ChronoLocalDateTime
 import java.util.*
 
-class TimeLocation_AnglePower_Instance(horoscopeImpl: IHoroscope, time: ChronoLocalDateTime<*>, location: Location) : InstanceIF {
+class TimeLocation_AnglePower_Instance(horoscopeImpl: IHoroscope, time: ChronoLocalDateTime<*>, location: ILocation) : InstanceIF {
   private val horoscope: Horoscope
 
   init {

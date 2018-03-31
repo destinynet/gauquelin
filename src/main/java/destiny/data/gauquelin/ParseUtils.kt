@@ -6,6 +6,7 @@ package destiny.data.gauquelin
 
 import destiny.core.calendar.EastWest
 import destiny.core.calendar.Location
+import destiny.core.calendar.LocationTools
 import destiny.core.calendar.NorthSouth
 import destiny.tools.location.TimeZoneUtils
 import java.io.Serializable
@@ -67,7 +68,7 @@ class ParseUtils : Serializable {
       person.number = number
       person.gender = -1
       person.gmtTimestamp = ts
-      person.location = location.debugString
+      person.location = LocationTools.encode(location)
 
       val COD = st.nextToken()
       var CITY = ""
@@ -129,7 +130,7 @@ class ParseUtils : Serializable {
       person.number = number
       person.gender = -1
       person.gmtTimestamp = ts
-      person.location = location.debugString
+      person.location = LocationTools.encode(location)
 
       val COD = st.nextToken()
       val CITY = st.nextToken()
@@ -177,7 +178,7 @@ class ParseUtils : Serializable {
       person.number = number
       person.gender = -1
       person.gmtTimestamp = ts
-      person.location = location.debugString
+      person.location = LocationTools.encode(location)
       person.name = name
       person.raw = line
 
@@ -252,7 +253,7 @@ class ParseUtils : Serializable {
       person.number = number
       person.gender = gender
       person.gmtTimestamp = ts
-      person.location = location.debugString
+      person.location = LocationTools.encode(location)
       person.raw = line
 
       return person
