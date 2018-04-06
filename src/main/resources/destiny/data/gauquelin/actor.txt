@@ -2,6 +2,7 @@
 # 舊版 http://cura.free.fr/gauq/11gdA5a.txt
 # Actor 演員 , 1408位
 
+#  0   1   2   3   4   5  6  7   8   9   10  11  12  13
 # PRO	NUM	COU	DAY	MON	YEA	H	MN	SEC	TZ	LAT	LON	COD	CITY	
 
 A	1	F	4	10	1848	8	50	40	0	48N50	2E20	75	PARIS

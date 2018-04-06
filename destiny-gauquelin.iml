@@ -14,7 +14,7 @@
         <setting name="provider-name" value="" />
         <datasource-mapping>
           <factory-entry name="destinyapp" />
-          <factory-entry name="gauquelin" />
+          <factory-entry name="gauquelin" value="df1800ed-aca0-4e0e-94e9-cb836a01fd44" />
           <factory-entry name="iching" />
           <factory-entry name="ubbthreads" />
         </datasource-mapping>
