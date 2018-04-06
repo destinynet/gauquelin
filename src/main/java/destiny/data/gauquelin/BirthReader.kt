@@ -10,6 +10,11 @@ import java.time.LocalDateTime
 import kotlin.coroutines.experimental.buildSequence
 
 
+data class Family(
+  val father: GPerson2?,
+  val mother: GPerson2?,
+  val children: List<GPerson2>)
+
 class BirthReader(val hospital: Hospital) {
 
   enum class Hospital {
@@ -18,14 +23,17 @@ class BirthReader(val hospital: Hospital) {
     /** 硝石庫慈善醫院 */
     Pitie,
     /** 皇家港婦產醫院 */
-    PortRoyal
+    PortRoyal,
+    /** 巴迪洛克醫院 */
+    Baudelocque,
   }
 
   /** 先緯度、再精度 */
   private val hospitalMap = mapOf(
     Hospital.SaintAntoine to Pair(48.849062, 2.382695),
     Hospital.Pitie to Pair(48.837283, 2.365342),
-    Hospital.PortRoyal to Pair(48.838743, 2.337471)
+    Hospital.PortRoyal to Pair(48.838743, 2.337471),
+    Hospital.Baudelocque to Pair(48.50 , 2.3333)
                                  )
 
   fun read(filename: String) {
@@ -60,10 +68,6 @@ class BirthReader(val hospital: Hospital) {
       }
   } // read
 
-  data class Family(
-    val father: GPerson2?,
-    val mother: GPerson2?,
-    val children: List<GPerson2>)
 
   private fun chunkByFamily(lines: Sequence<String>): Sequence<Family> = buildSequence {
     var father: GPerson2? = null
