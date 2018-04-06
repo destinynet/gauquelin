@@ -1,7 +1,10 @@
 # http://cura.free.fr/gauq/902gdE2a.html
-# 8219 New Birth Data (PARIS 12). Series E, volume 2a : Children born in the years 1931 to 1939.
+# 8219 New Birth Data (PARIS 12). Series E, volume 2a
+# Children born in the years 1931 to 1939.
+# Series E: Planetary Heredity. A Reappraisal on 50,000 subjects (Volume 2a)
+# by Michel et Françoise GAUQUELIN
 # [3rd CURA's edition, revised by Patrice Guinard : February 2009]
-
+# Saint-Antoine Hospital , 聖安東尼奧醫院
 
 # Notice
 
@@ -23,7 +26,6 @@
 
 # 0    1   2       3   4   5  6  7   8   9  10       11      12  13
 #NUM	SEX	PL      DAY	MON	YEA	H	MN	SEC	Ci	TZ      LAT     LON	COD
-
 
 1	F		24	06	1879	05	50	40		0	48N50	2E20	75
 2	M		06	04	1892	07	50	40	05	0	48N50	2E20	75

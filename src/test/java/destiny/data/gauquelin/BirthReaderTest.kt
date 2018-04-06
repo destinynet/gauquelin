@@ -11,8 +11,13 @@ class BirthReaderTest {
   @Test
   fun read() {
 
-    val reader = BirthReader()
-    reader.read("Birth_A.txt" , BirthReader.Hospital.SaintAntoine)
+    val readerA = BirthReader(BirthReader.Hospital.SaintAntoine)
+    readerA.read("Birth_A.txt")
 
+    val readerB = BirthReader(BirthReader.Hospital.Pitie)
+    readerB.read("Birth_B.txt")
+
+    val readerC = BirthReader(BirthReader.Hospital.PortRoyal)
+    readerC.read("Birth_C.txt")
   }
 }

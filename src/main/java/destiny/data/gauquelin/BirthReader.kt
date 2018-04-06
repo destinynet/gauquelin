@@ -10,22 +10,25 @@ import java.time.LocalDateTime
 import kotlin.coroutines.experimental.buildSequence
 
 
-class BirthReader {
+class BirthReader(val hospital: Hospital) {
 
   enum class Hospital {
     /** 聖安東尼奧醫院 */
     SaintAntoine,
     /** 硝石庫慈善醫院 */
     Pitie,
+    /** 皇家港婦產醫院 */
+    PortRoyal
   }
 
   /** 先緯度、再精度 */
   private val hospitalMap = mapOf(
     Hospital.SaintAntoine to Pair(48.849062, 2.382695),
-    Hospital.Pitie to Pair(48.837283, 2.365342)
+    Hospital.Pitie to Pair(48.837283, 2.365342),
+    Hospital.PortRoyal to Pair(48.838743, 2.337471)
                                  )
 
-  fun read(filename: String, hospital: Hospital) {
+  fun read(filename: String) {
     val iStream: InputStream = javaClass.getResourceAsStream(filename)
 
     iStream.bufferedReader(Charsets.UTF_8)
@@ -34,27 +37,35 @@ class BirthReader {
           .filterNot { it.startsWith("#") }
           .filterNot { it.isEmpty() }
 
-        chunkByFamily(seq2, hospital).forEach { f ->
-          println("父 : ${f.father?.raw}")
-          println("母 : ${f.mother?.raw}")
+        chunkByFamily(seq2).forEach { f ->
+          val father: GPerson2? = f.father
+          val mother: GPerson2? = f.mother
+          println("父 : ${father?.raw}")
+          println("母 : ${mother?.raw}")
           f.children.forEach { c ->
+
             c.gender?.also {
               when (it) {
-                Gender.男 -> println("\t子 : $c")
-                Gender.女 -> println("\t女 : $c")
+                Gender.男 -> println("\t兒 : ${c}")
+                Gender.女 -> println("\t女 : ${c}")
               }
+            }
+
+            c.lmt.also { cLMT ->
+              father?.lmt?.also { require(cLMT.isAfter(it)) }
+              mother?.lmt?.also { require(cLMT.isAfter(it)) }
             }
           }
         }
       }
-  }
+  } // read
 
   data class Family(
     val father: GPerson2?,
     val mother: GPerson2?,
     val children: List<GPerson2>)
 
-  private fun chunkByFamily(lines: Sequence<String>, hospital: Hospital): Sequence<Family> = buildSequence {
+  private fun chunkByFamily(lines: Sequence<String>): Sequence<Family> = buildSequence {
     var father: GPerson2? = null
     var mother: GPerson2? = null
     val children = mutableListOf<GPerson2>()
@@ -70,9 +81,9 @@ class BirthReader {
       }
 
       when (token1) {
-        "F" -> father = parseLine(line, hospital)
-        "M" -> mother = parseLine(line, hospital)
-        "S", "D" -> children.add(parseLine(line, hospital))
+        "F" -> father = parseLine(line)
+        "M" -> mother = parseLine(line)
+        "S", "D" -> children.add(parseLine(line))
       }
     }
 
@@ -83,20 +94,22 @@ class BirthReader {
   enum class BirthPlace {
     HOS, // 醫院
     MAT, // private Maternity , 私人婦產科
-    H     // 家裡
+    H    // 家裡
   }
 
-  fun parseLine(line: String, hospital: Hospital): GPerson2 {
-    //println("$line")
+  private fun parseLine(line: String): GPerson2 {
+    println(line)
     val tokens = line.split("\t").toList()
-    val num = tokens[0].toInt()
-    val gender = tokens[1].let {
-      return@let when (it) {
-        "F", "S" -> Gender.男
-        "M", "D" -> Gender.女
-        else -> throw RuntimeException("unknown gender $it")
-      }
+    return when (tokens.size) {
+      14 -> parseLineWithPL(line, tokens)
+      13 -> parseLineWithoutPL(line, tokens)
+      else -> throw RuntimeException("tokens size = ${tokens.size}")
     }
+  }
+
+  private fun parseLineWithPL(line: String, tokens: List<String>): GPerson2 {
+    val num = tokens[0].toInt()
+    val gender = parseGender(tokens[1])
     val pl: Pair<BirthPlace, Pair<Double, Double>?>? = tokens[2].let {
       when (it) {
         "HOS" -> BirthPlace.HOS to hospitalMap[hospital]!!
@@ -118,13 +131,41 @@ class BirthReader {
       it.first to it.second
     } ?: (ParseTools.parseLat(tokens[11]) to ParseTools.parseLng(tokens[12]))
 
-    //    val lat = ParseTools.parseLat(tokens[11])
-    //    val lng = ParseTools.parseLng(tokens[12])
     val cod = tokens[13]
 
     val lmt = LocalDateTime.of(year, month, day, hour, min, sec)
     val loc = Location(lng, lat, tzid, minuteOffset)
 
     return GPerson2(null, num, null, gender, lmt, loc, null, line)
+  }
+
+  private fun parseLineWithoutPL(line: String, tokens: List<String>): GPerson2 {
+    val num = tokens[0].toInt()
+    val gender = parseGender(tokens[1])
+    val day = tokens[2].toInt()
+    val month = tokens[3].toInt()
+    val year = tokens[4].toInt()
+    val hour = tokens[5].toInt()
+    val min = tokens[6].toInt()
+    val sec = tokens[7].toInt()
+    val ciCode = tokens[8]
+    val (tzid, minuteOffset) = ParseTools.getTzidAndMinuteOffset(tokens[9].toInt())
+
+    val (lat, lng) =
+      if (tokens[1] == "S" || tokens[1] == "D") hospitalMap[hospital]!!
+      else ParseTools.parseLat(tokens[10]) to ParseTools.parseLng(tokens[11])
+
+    val cod = tokens[12]
+
+    val lmt = LocalDateTime.of(year, month, day, hour, min, sec)
+    val loc = Location(lng, lat, tzid, minuteOffset)
+
+    return GPerson2(null, num, null, gender, lmt, loc, null, line)
+  }
+
+  private fun parseGender(token: String): Gender = when (token) {
+    "F", "S" -> Gender.男
+    "M", "D" -> Gender.女
+    else -> throw RuntimeException("unknown gender $token")
   }
 }
