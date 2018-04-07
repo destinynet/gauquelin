@@ -20,7 +20,10 @@ class BirthReaderTest {
 //    val readerC = BirthReader(BirthReader.Hospital.PortRoyal)
 //    readerC.read("Birth_C.txt")
 
-    val readerD = BirthReader(BirthReader.Hospital.Baudelocque)
-    readerD.read("Birth_D.txt")
+//    val readerD = BirthReader(BirthReader.Hospital.Baudelocque)
+//    readerD.read("Birth_D.txt")
+
+    val readerE = BirthReader(null)
+    readerE.read("Birth_E.txt")
   }
 }

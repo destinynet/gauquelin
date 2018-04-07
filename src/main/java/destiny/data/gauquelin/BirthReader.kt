@@ -15,7 +15,7 @@ data class Family(
   val mother: GPerson2?,
   val children: List<GPerson2>)
 
-class BirthReader(val hospital: Hospital) {
+class BirthReader(val hospital: Hospital?) {
 
   enum class Hospital {
     /** 聖安東尼奧醫院 */
@@ -33,7 +33,7 @@ class BirthReader(val hospital: Hospital) {
     Hospital.SaintAntoine to Pair(48.849062, 2.382695),
     Hospital.Pitie to Pair(48.837283, 2.365342),
     Hospital.PortRoyal to Pair(48.838743, 2.337471),
-    Hospital.Baudelocque to Pair(48.50 , 2.3333)
+    Hospital.Baudelocque to Pair(48.50, 2.3333)
                                  )
 
   fun read(filename: String) {
@@ -156,7 +156,7 @@ class BirthReader(val hospital: Hospital) {
     val (tzid, minuteOffset) = ParseTools.getTzidAndMinuteOffset(tokens[9].toInt())
 
     val (lat, lng) =
-      if (tokens[1] == "S" || tokens[1] == "D") hospitalMap[hospital]!!
+      if ((tokens[1] == "S" || tokens[1] == "D") && hospital != null) hospitalMap[hospital]!!
       else ParseTools.parseLat(tokens[10]) to ParseTools.parseLng(tokens[11])
 
     val cod = tokens[12]
