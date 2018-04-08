@@ -15,21 +15,21 @@ data class Family(
   val mother: GPerson2?,
   val children: List<GPerson2>)
 
-class BirthReader(val hospital: Hospital?, val city: City) {
+class BirthReader(val filename: String , val hospital: Hospital?, val city: City) {
 
   enum class City {
     Paris,
     /** 里爾 */
     Lille,
     /** 布爾日 */
-    Bourges
+    Bourges,
+    Seine
   }
 
   private val cityMap = mapOf(
     City.Paris to Pair(48.50, 2.3333),
     City.Lille to Pair(50.62925, 3.057256),
-    City.Bourges to Pair(47.082508, 2.399341)
-                             )
+    City.Bourges to Pair(47.082508, 2.399341))
 
   enum class Hospital {
     /** 聖安東尼奧醫院 */
@@ -50,33 +50,24 @@ class BirthReader(val hospital: Hospital?, val city: City) {
     Hospital.Baudelocque to Pair(48.50, 2.3333)
                                  )
 
-  fun read(filename: String) {
+  fun read(): Sequence<Family> {
     val iStream: InputStream = javaClass.getResourceAsStream(filename)
 
-    iStream.bufferedReader(Charsets.UTF_8)
-      .useLines { sequence ->
-        val seq2 = sequence
-          .filterNot { it.startsWith("#") }
-          .filterNot { it.isEmpty() }
+    return iStream.bufferedReader(Charsets.UTF_8)
+      .lineSequence()
+      .filterNot { it.startsWith("#") }
+      .filterNot { it.isEmpty() }
+      .let { seq -> chunkByFamily(seq) }
+      .filter { family ->
 
-        chunkByFamily(seq2).forEach { f ->
-          val father: GPerson2? = f.father
-          val mother: GPerson2? = f.mother
-          println("父 : ${father?.raw}")
-          println("母 : ${mother?.raw}")
-          f.children.forEach { c ->
-
-            c.gender?.also {
-              when (it) {
-                Gender.男 -> println("\t兒 : ${c}")
-                Gender.女 -> println("\t女 : ${c}")
-              }
-            }
-
-            c.lmt.also { cLMT ->
-              father?.lmt?.also { require(cLMT.isAfter(it)) }
-              mother?.lmt?.also { require(cLMT.isAfter(it)) }
-            }
+        return@filter family.children.all { child ->
+          val childAfterFather: Boolean = family.father?.lmt?.let { child.lmt.isAfter(it) }?:true
+          val childAfterMother: Boolean = family.mother?.lmt?.let { child.lmt.isAfter(it) }?:true
+          return@all if (childAfterFather && childAfterMother) {
+            true
+          } else {
+            println("warning : age check error : $family")
+            false
           }
         }
       }
@@ -90,7 +81,7 @@ class BirthReader(val hospital: Hospital?, val city: City) {
 
     for (line in lines) {
       val token1 = line.split("\t")[1]
-      if ((token1 == "F" || token1 == "M") && children.size > 0) {
+      if ((token1 == "F" || token1 == "M") && (children.size > 0 || (father!=null && mother!= null))) {
         val cloned = children.toList()
         children.clear()
         yield(Family(father, mother, cloned))
@@ -116,7 +107,7 @@ class BirthReader(val hospital: Hospital?, val city: City) {
   }
 
   private fun parseLine(line: String): GPerson2 {
-    println(line)
+    //println(line)
     val tokens = line.split("\t").toList()
     return when (tokens.size) {
       14 -> parseLineWithPL(line, tokens)
@@ -147,7 +138,7 @@ class BirthReader(val hospital: Hospital?, val city: City) {
 
     val (lat, lng) = pl?.second?.let {
       it.first to it.second
-    } ?:  cityMap[city]!! // (ParseTools.parseLat(tokens[11]) to ParseTools.parseLng(tokens[12]))
+    } ?: (ParseTools.parseLat(tokens[11]) to ParseTools.parseLng(tokens[12]))
 
     val cod = tokens[13]
 
@@ -171,7 +162,7 @@ class BirthReader(val hospital: Hospital?, val city: City) {
 
     val (lat, lng) =
       if ((tokens[1] == "S" || tokens[1] == "D") && hospital != null) hospitalMap[hospital]!!
-      else cityMap[city]!!// ParseTools.parseLat(tokens[10]) to ParseTools.parseLng(tokens[11])
+      else ParseTools.parseLat(tokens[10]) to ParseTools.parseLng(tokens[11])
 
     val cod = tokens[12]
 
