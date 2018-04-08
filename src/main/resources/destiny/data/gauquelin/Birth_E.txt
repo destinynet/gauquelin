@@ -4,7 +4,7 @@
 # Series E: Planetary Heredity. A Reappraisal on 50,000 subjects (Volume 2e)
 # by Michel et Françoise GAUQUELIN
 # [3rd CURA's edition, revised by Patrice Guinard : February 2009]
-# 沒有醫院資料
+# 沒有醫院資料 , 地點都在巴黎
 
 # Notice , 8224沒有NUM ,手動補上
 

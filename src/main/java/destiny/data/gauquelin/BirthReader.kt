@@ -15,7 +15,21 @@ data class Family(
   val mother: GPerson2?,
   val children: List<GPerson2>)
 
-class BirthReader(val hospital: Hospital?) {
+class BirthReader(val hospital: Hospital?, val city: City) {
+
+  enum class City {
+    Paris,
+    /** 里爾 */
+    Lille,
+    /** 布爾日 */
+    Bourges
+  }
+
+  private val cityMap = mapOf(
+    City.Paris to Pair(48.50, 2.3333),
+    City.Lille to Pair(50.62925, 3.057256),
+    City.Bourges to Pair(47.082508, 2.399341)
+                             )
 
   enum class Hospital {
     /** 聖安東尼奧醫院 */
@@ -24,7 +38,7 @@ class BirthReader(val hospital: Hospital?) {
     Pitie,
     /** 皇家港婦產醫院 */
     PortRoyal,
-    /** 巴迪洛克醫院 */
+    /** 巴迪洛克醫院 , 經緯度不詳，設定為巴黎 */
     Baudelocque,
   }
 
@@ -133,7 +147,7 @@ class BirthReader(val hospital: Hospital?) {
 
     val (lat, lng) = pl?.second?.let {
       it.first to it.second
-    } ?: (ParseTools.parseLat(tokens[11]) to ParseTools.parseLng(tokens[12]))
+    } ?:  cityMap[city]!! // (ParseTools.parseLat(tokens[11]) to ParseTools.parseLng(tokens[12]))
 
     val cod = tokens[13]
 
@@ -157,7 +171,7 @@ class BirthReader(val hospital: Hospital?) {
 
     val (lat, lng) =
       if ((tokens[1] == "S" || tokens[1] == "D") && hospital != null) hospitalMap[hospital]!!
-      else ParseTools.parseLat(tokens[10]) to ParseTools.parseLng(tokens[11])
+      else cityMap[city]!!// ParseTools.parseLat(tokens[10]) to ParseTools.parseLng(tokens[11])
 
     val cod = tokens[12]
 
