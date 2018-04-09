@@ -22,6 +22,20 @@ class BirthReaderTest {
   private val readerB5 = BirthReader("BirthB5.txt", null, BirthReader.City.Seine)
   private val readerB6 = BirthReader("BirthB6.txt", null, BirthReader.City.Seine)
 
+  private val allFamilies = readerA.read()
+    .plus(readerB.read())
+    .plus(readerC.read())
+    .plus(readerD.read())
+    .plus(readerE.read())
+    .plus(readerF.read())
+    .plus(readerG.read())
+    .plus(readerB1.read())
+    .plus(readerB2.read())
+    .plus(readerB3.read())
+    .plus(readerB4.read())
+    .plus(readerB5.read())
+    .plus(readerB6.read())
+
   @Test
   fun read() {
 
@@ -104,20 +118,16 @@ class BirthReaderTest {
   @Test
   fun chainAllFamilies() {
     // total 13 groups
-    val seq = readerA.read()
-      .plus(readerB.read())
-      .plus(readerC.read())
-      .plus(readerD.read())
-      .plus(readerE.read())
-      .plus(readerF.read())
-      .plus(readerG.read())
-      .plus(readerB1.read())
-      .plus(readerB2.read())
-      .plus(readerB3.read())
-      .plus(readerB4.read())
-      .plus(readerB5.read())
-      .plus(readerB6.read())
 
-    println("count = ${seq.count()}")
+    println("count = ${allFamilies.count()}")
+  }
+
+  @Test
+  fun findEmptyChildren() {
+    allFamilies.filter { family ->
+      family.father != null && family.mother != null && family.children.size == 0
+    }.forEach { family ->
+      println(family)
+    }
   }
 }
