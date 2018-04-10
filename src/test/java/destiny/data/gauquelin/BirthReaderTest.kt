@@ -125,9 +125,29 @@ class BirthReaderTest {
   @Test
   fun findEmptyChildren() {
     allFamilies.filter { family ->
-      family.father != null && family.mother != null && family.children.size == 0
+      family.father != null && family.mother != null && family.children.isEmpty()
     }.forEach { family ->
       println(family)
     }
+  }
+
+  @Test
+  fun findFamiliesWithFatherAndMother() {
+    val count = allFamilies.filter { family ->
+      family.father != null && family.mother != null
+    }.count()
+
+    println("count = $count") // 20902
+  }
+
+  @Test
+  fun countAll() {
+    var count = 0
+    allFamilies.forEach { family ->
+      family.father?.also { count++ }
+      family.mother?.also { count++ }
+      count+=family.children.size
+    }
+    println("total $count persons") // 106251
   }
 }
