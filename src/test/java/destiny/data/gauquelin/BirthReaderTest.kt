@@ -119,7 +119,7 @@ class BirthReaderTest {
   fun chainAllFamilies() {
     // total 13 groups
 
-    println("count = ${allFamilies.count()}")
+    println("count = ${allFamilies.count()}") // 39572
   }
 
   @Test
