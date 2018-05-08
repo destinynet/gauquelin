@@ -17,7 +17,7 @@ import java.time.chrono.ChronoLocalDateTime
 import java.util.*
 
 class TimeLocation_AnglePower_Instance(horoscopeImpl: IHoroscope, time: ChronoLocalDateTime<*>, location: ILocation) : InstanceIF {
-  private val horoscope: Horoscope
+  private val horoscope: IHoro
 
   init {
     if (instances == null)

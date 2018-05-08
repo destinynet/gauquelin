@@ -81,7 +81,7 @@ class GPersonDaoImplTest// extends AbstractGauquelinTest
     val count = gDao.count - start
     println("總共 $count  筆資料")
 
-    var h: Horoscope
+    var h: IHoro
     for (i in 0..count / pageSize) {
       val persons = gDao.findAll((i * pageSize + start).toInt(), pageSize)
 
@@ -115,7 +115,7 @@ class GPersonDaoImplTest// extends AbstractGauquelinTest
   }
 
   /** 處理高格林星體強勢度數  */
-  private fun processAnglePower(p: GPerson, hc: Horoscope) {
+  private fun processAnglePower(p: GPerson, hc: IHoro) {
     var anglePower: GPersonAnglePower? = p.anglePower
     if (anglePower == null)
       anglePower = GPersonAnglePower()
@@ -136,7 +136,7 @@ class GPersonDaoImplTest// extends AbstractGauquelinTest
     val count = gDao.getCount(cat)
     println("總共 $count  筆資料")
 
-    var h: Horoscope
+    var h: IHoro
     //HoroscopeContextBean bean = new HoroscopeContextBean();
     for (i in 0..count / pageSize) {
       val persons = gDao.findAllByCategory(cat, (i * pageSize).toInt(), pageSize)
@@ -155,7 +155,7 @@ class GPersonDaoImplTest// extends AbstractGauquelinTest
   }
 
 
-  private fun processAspect(hc: Horoscope): GPersonAspect {
+  private fun processAspect(hc: IHoro): GPersonAspect {
     val gpa = GPersonAspect()
     val aspectCalculator = HoroscopeAspectsCalculator(hc, HoroscopeAspectsCalculatorModern())
 
@@ -165,7 +165,7 @@ class GPersonDaoImplTest// extends AbstractGauquelinTest
     return gpa
   }
 
-  private fun processHouses(p: GPerson, hc: Horoscope) {
+  private fun processHouses(p: GPerson, hc: IHoro) {
     val housePlacidus = GPersonHouse()
 
     val horoscopePlacidus = horoscopeImpl!!.getHoroscope(hc.lmt, hc.location, HouseSystem.PLACIDUS, Centric.GEO, Coordinate.ECLIPTIC)
@@ -208,7 +208,7 @@ class GPersonDaoImplTest// extends AbstractGauquelinTest
     p.houseMap["Alcabitius"] = processHouse(houseAlcabitius, horoscopeAlc)
   }
 
-  private fun processHouse(house: GPersonHouse, hc: Horoscope): GPersonHouse {
+  private fun processHouse(house: GPersonHouse, hc: IHoro): GPersonHouse {
 
     //    hc.getHouseOpt(Planet.SUN).ifPresent(house::setSun);
     //    hc.getHouseOpt(Planet.MOON).ifPresent(house::setMoon);

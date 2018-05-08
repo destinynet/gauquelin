@@ -16,7 +16,7 @@ import java.util.*
 
 /** 從 time , location 取得 instance  */
 class TimeLocation_House_Aspect_Instance(horoscopeImpl: IHoroscope, time: LocalDateTime, location: Location) : InstanceIF {
-  private val horoscope: Horoscope
+  private val horoscope: IHoro
 
   init {
     if (instances == null)
