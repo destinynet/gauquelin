@@ -16,20 +16,22 @@ import java.io.InputStreamReader
 import java.time.chrono.ChronoLocalDateTime
 import java.util.*
 
-class TimeLocation_AnglePower_Instance(horoscopeImpl: IHoroscope, time: ChronoLocalDateTime<*>, location: ILocation) : InstanceIF {
+class TimeLocation_AnglePower_Instance(
+
+  time: ChronoLocalDateTime<*>,
+  location: ILocation ,
+  starPositionWithAzimuthImpl : IStarPositionWithAzimuth ,
+  houseCuspImpl: IHouseCusp) : InstanceIF {
   private val horoscope: IHoroscopeModel
+
 
   init {
     if (instances == null)
       parseInstances()
 
-    //    HoroscopeContextBean bean = new HoroscopeContextBean();
-    //    this.horoscopeContext = bean.getHoroscopeContextPlacidus(time , location);
-
     val pointSet = setOf<Point>(*Planets.array,*Asteroids.array,*Hamburgers.array,*FixedStars.array,*LunarNodes.meanArray)
-
-    this.horoscope = horoscopeImpl.getHoroscope(time, location, null, pointSet as Collection<Point>,
-                                                HouseSystem.PLACIDUS, Centric.GEO, Coordinate.ECLIPTIC, 0.0, 1013.25)
+    val context = HoroscopeContext(pointSet , HouseSystem.PLACIDUS , Centric.GEO , Coordinate.ECLIPTIC , starPositionWithAzimuthImpl , houseCuspImpl)
+    this.horoscope = context.getHoroscope(time , location)
   }
 
   private fun parseInstances() {
@@ -48,7 +50,7 @@ class TimeLocation_AnglePower_Instance(horoscopeImpl: IHoroscope, time: ChronoLo
       }
       */
     } catch (e: Exception) {
-      println("Exception : " + e)
+      println("Exception : $e")
     }
 
   }
