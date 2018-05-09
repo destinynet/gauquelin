@@ -81,12 +81,14 @@ class GPersonDaoImplTest// extends AbstractGauquelinTest
     val count = gDao.count - start
     println("總共 $count  筆資料")
 
-    var h: IHoro
+    var h: IHoroscopeModel
     for (i in 0..count / pageSize) {
       val persons = gDao.findAll((i * pageSize + start).toInt(), pageSize)
 
       for (p in persons) {
-        h = horoscopeImpl!!.getHoroscope(p.gmtTime, LocationTools.decode(p.location), HouseSystem.PLACIDUS, Centric.GEO, Coordinate.ECLIPTIC)
+
+        h = horoscopeImpl!!.getHoroscope(p.gmtTime, LocationTools.decode(p.location), null, HouseSystem.PLACIDUS,
+                                         Centric.GEO, Coordinate.ECLIPTIC)
         //hc = horoscopeContextBean.getHoroscopeContextPlacidus(p.getGmtTime(), Location.get(p.getLocation()));
 
         var updated = false
@@ -115,7 +117,7 @@ class GPersonDaoImplTest// extends AbstractGauquelinTest
   }
 
   /** 處理高格林星體強勢度數  */
-  private fun processAnglePower(p: GPerson, hc: IHoro) {
+  private fun processAnglePower(p: GPerson, hc: IHoroscopeModel) {
     var anglePower: GPersonAnglePower? = p.anglePower
     if (anglePower == null)
       anglePower = GPersonAnglePower()
@@ -136,12 +138,13 @@ class GPersonDaoImplTest// extends AbstractGauquelinTest
     val count = gDao.getCount(cat)
     println("總共 $count  筆資料")
 
-    var h: IHoro
+    var h: IHoroscopeModel
     //HoroscopeContextBean bean = new HoroscopeContextBean();
     for (i in 0..count / pageSize) {
       val persons = gDao.findAllByCategory(cat, (i * pageSize).toInt(), pageSize)
       for (p in persons) {
-        h = horoscopeImpl!!.getHoroscope(p.gmtTime, LocationTools.decode(p.location), HouseSystem.PLACIDUS, Centric.GEO, Coordinate.ECLIPTIC)
+        h = horoscopeImpl!!.getHoroscope(p.gmtTime, LocationTools.decode(p.location), null, HouseSystem.PLACIDUS,
+                                         Centric.GEO, Coordinate.ECLIPTIC)
         //hc = horoscopeContextBean.getHoroscopeContextPlacidus(p.getGmtTime(), Location.get(p.getLocation()));
         System.err.println(p)
         val aspect = processAspect(h)
@@ -155,7 +158,7 @@ class GPersonDaoImplTest// extends AbstractGauquelinTest
   }
 
 
-  private fun processAspect(hc: IHoro): GPersonAspect {
+  private fun processAspect(hc: IHoroscopeModel): GPersonAspect {
     val gpa = GPersonAspect()
     val aspectCalculator = HoroscopeAspectsCalculator(hc, HoroscopeAspectsCalculatorModern())
 
@@ -165,50 +168,57 @@ class GPersonDaoImplTest// extends AbstractGauquelinTest
     return gpa
   }
 
-  private fun processHouses(p: GPerson, hc: IHoro) {
+  private fun processHouses(p: GPerson, hc: IHoroscopeModel) {
     val housePlacidus = GPersonHouse()
 
-    val horoscopePlacidus = horoscopeImpl!!.getHoroscope(hc.lmt, hc.location, HouseSystem.PLACIDUS, Centric.GEO, Coordinate.ECLIPTIC)
+    val horoscopePlacidus = horoscopeImpl!!.getHoroscope(hc.lmt, hc.location, null, HouseSystem.PLACIDUS, Centric.GEO,
+                                                         Coordinate.ECLIPTIC)
     //hc.setHouseSystem(HouseSystem.PLACIDUS);
     p.houseMap["placidus"] = processHouse(housePlacidus, horoscopePlacidus)
 
     val houseKoch = GPersonHouse()
-    val horoscopeKoch = horoscopeImpl.getHoroscope(hc.lmt, hc.location, HouseSystem.KOCH, Centric.GEO, Coordinate.ECLIPTIC)
+    val horoscopeKoch = horoscopeImpl.getHoroscope(hc.lmt, hc.location, null, HouseSystem.KOCH, Centric.GEO,
+                                                   Coordinate.ECLIPTIC)
     //hc.setHouseSystem(HouseSystem.KOCH);
     p.houseMap["Koch"] = processHouse(houseKoch, horoscopeKoch)
 
 
     val houseRegiomontanus = GPersonHouse()
-    val horoscopeReg = horoscopeImpl.getHoroscope(hc.lmt, hc.location, HouseSystem.REGIOMONTANUS, Centric.GEO, Coordinate.ECLIPTIC)
+    val horoscopeReg = horoscopeImpl.getHoroscope(hc.lmt, hc.location, null, HouseSystem.REGIOMONTANUS, Centric.GEO,
+                                                  Coordinate.ECLIPTIC)
     //hc.setHouseSystem(HouseSystem.REGIOMONTANUS);
     p.houseMap["Regiomontanus"] = processHouse(houseRegiomontanus, horoscopeReg)
 
 
     val housePorphyrius = GPersonHouse()
-    val horoscopePor = horoscopeImpl.getHoroscope(hc.lmt, hc.location, HouseSystem.PORPHYRIUS, Centric.GEO, Coordinate.ECLIPTIC)
+    val horoscopePor = horoscopeImpl.getHoroscope(hc.lmt, hc.location, null, HouseSystem.PORPHYRIUS, Centric.GEO,
+                                                  Coordinate.ECLIPTIC)
     //hc.setHouseSystem(HouseSystem.PORPHYRIUS);
     p.houseMap["Porphyrius"] = processHouse(housePorphyrius, horoscopePor)
 
 
     val houseCampanus = GPersonHouse()
-    val horoscopeCampanus = horoscopeImpl.getHoroscope(hc.lmt, hc.location, HouseSystem.CAMPANUS, Centric.GEO, Coordinate.ECLIPTIC)
+    val horoscopeCampanus = horoscopeImpl.getHoroscope(hc.lmt, hc.location, null, HouseSystem.CAMPANUS, Centric.GEO,
+                                                       Coordinate.ECLIPTIC)
     //hc.setHouseSystem(HouseSystem.CAMPANUS);
     p.houseMap["Campanus"] = processHouse(houseCampanus, horoscopeCampanus)
 
 
     val houseEqual = GPersonHouse()
-    val horoscopeEqual = horoscopeImpl.getHoroscope(hc.lmt, hc.location, HouseSystem.EQUAL, Centric.GEO, Coordinate.ECLIPTIC)
+    val horoscopeEqual = horoscopeImpl.getHoroscope(hc.lmt, hc.location, null, HouseSystem.EQUAL, Centric.GEO,
+                                                    Coordinate.ECLIPTIC)
     //hc.setHouseSystem(HouseSystem.EQUAL);
     p.houseMap["Equal"] = processHouse(houseEqual, horoscopeEqual)
 
 
     val houseAlcabitius = GPersonHouse()
-    val horoscopeAlc = horoscopeImpl.getHoroscope(hc.lmt, hc.location, HouseSystem.ALCABITIUS, Centric.GEO, Coordinate.ECLIPTIC)
+    val horoscopeAlc = horoscopeImpl.getHoroscope(hc.lmt, hc.location, null, HouseSystem.ALCABITIUS, Centric.GEO,
+                                                  Coordinate.ECLIPTIC)
     //hc.setHouseSystem(HouseSystem.ALCABITIUS);
     p.houseMap["Alcabitius"] = processHouse(houseAlcabitius, horoscopeAlc)
   }
 
-  private fun processHouse(house: GPersonHouse, hc: IHoro): GPersonHouse {
+  private fun processHouse(house: GPersonHouse, hc: IHoroscopeModel): GPersonHouse {
 
     //    hc.getHouseOpt(Planet.SUN).ifPresent(house::setSun);
     //    hc.getHouseOpt(Planet.MOON).ifPresent(house::setMoon);

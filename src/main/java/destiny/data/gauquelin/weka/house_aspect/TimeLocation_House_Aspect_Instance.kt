@@ -16,7 +16,7 @@ import java.util.*
 
 /** 從 time , location 取得 instance  */
 class TimeLocation_House_Aspect_Instance(horoscopeImpl: IHoroscope, time: LocalDateTime, location: Location) : InstanceIF {
-  private val horoscope: IHoro
+  private val horoscope: IHoroscopeModel
 
   init {
     if (instances == null)
@@ -27,7 +27,8 @@ class TimeLocation_House_Aspect_Instance(horoscopeImpl: IHoroscope, time: LocalD
 
     val pointSet = setOf<Point>(*Planets.array, *Asteroids.array, *Hamburgers.array, *FixedStars.array, *LunarNodes.meanArray)
 
-    this.horoscope = horoscopeImpl.getHoroscope(time, location, pointSet, HouseSystem.PLACIDUS, Centric.GEO, Coordinate.ECLIPTIC, 0.0, 1013.25)
+    this.horoscope = horoscopeImpl.getHoroscope(time, location, null, pointSet, HouseSystem.PLACIDUS, Centric.GEO,
+                                                Coordinate.ECLIPTIC, 0.0, 1013.25)
   }
 
   private fun parseInstances() {

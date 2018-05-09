@@ -17,7 +17,7 @@ import java.time.chrono.ChronoLocalDateTime
 import java.util.*
 
 class TimeLocation_AnglePower_Instance(horoscopeImpl: IHoroscope, time: ChronoLocalDateTime<*>, location: ILocation) : InstanceIF {
-  private val horoscope: IHoro
+  private val horoscope: IHoroscopeModel
 
   init {
     if (instances == null)
@@ -28,7 +28,8 @@ class TimeLocation_AnglePower_Instance(horoscopeImpl: IHoroscope, time: ChronoLo
 
     val pointSet = setOf<Point>(*Planets.array,*Asteroids.array,*Hamburgers.array,*FixedStars.array,*LunarNodes.meanArray)
 
-    this.horoscope = horoscopeImpl.getHoroscope(time, location, pointSet as Collection<Point> , HouseSystem.PLACIDUS, Centric.GEO, Coordinate.ECLIPTIC, 0.0, 1013.25)
+    this.horoscope = horoscopeImpl.getHoroscope(time, location, null, pointSet as Collection<Point>,
+                                                HouseSystem.PLACIDUS, Centric.GEO, Coordinate.ECLIPTIC, 0.0, 1013.25)
   }
 
   private fun parseInstances() {

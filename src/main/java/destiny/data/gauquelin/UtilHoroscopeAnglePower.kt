@@ -4,12 +4,12 @@
  */
 package destiny.data.gauquelin
 
-import destiny.astrology.IHoro
+import destiny.astrology.IHoroscopeModel
 import destiny.astrology.Planets
 import destiny.astrology.Utils
 import java.io.Serializable
 
-class UtilHoroscopeAnglePower(h: IHoro) : Serializable {
+class UtilHoroscopeAnglePower(h: IHoroscopeModel) : Serializable {
   val anglePower: GPersonAnglePower
 
   init {
@@ -28,21 +28,21 @@ class UtilHoroscopeAnglePower(h: IHoro) : Serializable {
 
       val planetDeg = positionWithAzimuth.lng
       // ========================= 方向 ===========================
-      if (IHoro.getAngle(planetDeg, degEast) < tempError) {
-        tempError = IHoro.getAngle(planetDeg, degEast)
+      if (IHoroscopeModel.getAngle(planetDeg, degEast) < tempError) {
+        tempError = IHoroscopeModel.getAngle(planetDeg, degEast)
         nearestAngle = "east"
       }
-      if (IHoro.getAngle(planetDeg, degTop) < tempError) {
-        tempError = IHoro.getAngle(planetDeg, degTop)
+      if (IHoroscopeModel.getAngle(planetDeg, degTop) < tempError) {
+        tempError = IHoroscopeModel.getAngle(planetDeg, degTop)
         nearestAngle = "top"
       }
 
-      if (IHoro.getAngle(planetDeg, degWest) < tempError) {
-        tempError = IHoro.getAngle(planetDeg, degWest)
+      if (IHoroscopeModel.getAngle(planetDeg, degWest) < tempError) {
+        tempError = IHoroscopeModel.getAngle(planetDeg, degWest)
         nearestAngle = "west"
       }
-      if (IHoro.getAngle(planetDeg, degBottom) < tempError) {
-        tempError = IHoro.getAngle(planetDeg, degBottom)
+      if (IHoroscopeModel.getAngle(planetDeg, degBottom) < tempError) {
+        tempError = IHoroscopeModel.getAngle(planetDeg, degBottom)
         nearestAngle = "bottom"
       }
 
@@ -87,21 +87,21 @@ class UtilHoroscopeAnglePower(h: IHoro) : Serializable {
 
   private fun getPower(orientalCusp: Double, smaller: Double, cuspDeg: Double, larger: Double, occidentalCusp: Double, degree: Double): Double {
     // 先求出中心度數（最強點)
-    val center = Utils.getNormalizeDegree(IHoro.getAngle(smaller, larger) / 2 + smaller)
+    val center = Utils.getNormalizeDegree(IHoroscopeModel.getAngle(smaller, larger) / 2 + smaller)
     // 離中心點幾度
-    val distance = IHoro.getAngle(center, degree)
+    val distance = IHoroscopeModel.getAngle(center, degree)
     // 再算影響範圍的半徑 ( smaller 到 larger 除以 2)
-    val radius = IHoro.getAngle(smaller, larger) / 2
+    val radius = IHoroscopeModel.getAngle(smaller, larger) / 2
 
     return when {
-      IHoro.isOccidental(degree, larger) -> {
+      IHoroscopeModel.isOccidental(degree, larger) -> {
         //比「大」更大
-        val half = IHoro.getAngle(occidentalCusp, cuspDeg)
+        val half = IHoroscopeModel.getAngle(occidentalCusp, cuspDeg)
         -(distance - radius) / (half - radius)
       }
-      IHoro.isOriental(degree, smaller) -> {
+      IHoroscopeModel.isOriental(degree, smaller) -> {
         //比「小」更小
-        val half = IHoro.getAngle(orientalCusp, cuspDeg) / 2
+        val half = IHoroscopeModel.getAngle(orientalCusp, cuspDeg) / 2
         -(distance - radius) / (half - radius)
       }
       else -> // 在範圍內
