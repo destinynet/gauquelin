@@ -30,7 +30,8 @@ class TimeLocation_AnglePower_Instance(
       parseInstances()
 
     val pointSet = setOf<Point>(*Planets.array,*Asteroids.array,*Hamburgers.array,*FixedStars.array,*LunarNodes.meanArray)
-    val context = HoroscopeContext(pointSet , HouseSystem.PLACIDUS , Centric.GEO , Coordinate.ECLIPTIC , starPositionWithAzimuthImpl , houseCuspImpl)
+    val context = HoroscopeContext(pointSet, HouseSystem.PLACIDUS, Coordinate.ECLIPTIC, Centric.GEO,
+                                   starPositionWithAzimuthImpl, houseCuspImpl)
     this.horoscope = context.getHoroscope(time , location)
   }
 

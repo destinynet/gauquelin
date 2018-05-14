@@ -41,7 +41,8 @@ class GPersonDaoImplTest // extends AbstractGauquelinTest
   @BeforeTest
   fun onSetUp() {
     horoContext =
-      HoroscopeContext(HoroscopeContext.defaultPoints, HouseSystem.PLACIDUS, Centric.GEO, Coordinate.ECLIPTIC,
+      HoroscopeContext(HoroscopeContext.defaultPoints, HouseSystem.PLACIDUS, Coordinate.ECLIPTIC,
+                       Centric.GEO,
                        starPositionWithAzimuthImpl, houseCuspImpl)
     /*
        readers.add(new SportReader());
@@ -184,7 +185,7 @@ class GPersonDaoImplTest // extends AbstractGauquelinTest
     val houseKoch = GPersonHouse()
     val horoscopeKoch =
       horoContext.getHoroscope(hc.lmt, hc.location, null, IHoroscopeContext.defaultPoints, HouseSystem.KOCH,
-                               Centric.GEO, Coordinate.ECLIPTIC)
+                               Coordinate.ECLIPTIC, Centric.GEO)
     //hc.setHouseSystem(HouseSystem.KOCH);
     p.houseMap["Koch"] = processHouse(houseKoch, horoscopeKoch)
 
@@ -192,7 +193,7 @@ class GPersonDaoImplTest // extends AbstractGauquelinTest
     val houseRegiomontanus = GPersonHouse()
     val horoscopeReg =
       horoContext.getHoroscope(hc.lmt, hc.location, null, IHoroscopeContext.defaultPoints, HouseSystem.REGIOMONTANUS,
-                               Centric.GEO, Coordinate.ECLIPTIC)
+                               Coordinate.ECLIPTIC, Centric.GEO)
     //hc.setHouseSystem(HouseSystem.REGIOMONTANUS);
     p.houseMap["Regiomontanus"] = processHouse(houseRegiomontanus, horoscopeReg)
 
@@ -200,7 +201,7 @@ class GPersonDaoImplTest // extends AbstractGauquelinTest
     val housePorphyrius = GPersonHouse()
     val horoscopePor =
       horoContext.getHoroscope(hc.lmt, hc.location, null, IHoroscopeContext.defaultPoints, HouseSystem.PORPHYRIUS,
-                               Centric.GEO, Coordinate.ECLIPTIC)
+                               Coordinate.ECLIPTIC, Centric.GEO)
     //hc.setHouseSystem(HouseSystem.PORPHYRIUS);
     p.houseMap["Porphyrius"] = processHouse(housePorphyrius, horoscopePor)
 
@@ -208,7 +209,7 @@ class GPersonDaoImplTest // extends AbstractGauquelinTest
     val houseCampanus = GPersonHouse()
     val horoscopeCampanus =
       horoContext.getHoroscope(hc.lmt, hc.location, null, IHoroscopeContext.defaultPoints, HouseSystem.CAMPANUS,
-                               Centric.GEO, Coordinate.ECLIPTIC)
+                               Coordinate.ECLIPTIC, Centric.GEO)
     //hc.setHouseSystem(HouseSystem.CAMPANUS);
     p.houseMap["Campanus"] = processHouse(houseCampanus, horoscopeCampanus)
 
@@ -216,7 +217,7 @@ class GPersonDaoImplTest // extends AbstractGauquelinTest
     val houseEqual = GPersonHouse()
     val horoscopeEqual =
       horoContext.getHoroscope(hc.lmt, hc.location, null, IHoroscopeContext.defaultPoints, HouseSystem.EQUAL,
-                               Centric.GEO, Coordinate.ECLIPTIC)
+                               Coordinate.ECLIPTIC, Centric.GEO)
     //hc.setHouseSystem(HouseSystem.EQUAL);
     p.houseMap["Equal"] = processHouse(houseEqual, horoscopeEqual)
 
@@ -224,7 +225,7 @@ class GPersonDaoImplTest // extends AbstractGauquelinTest
     val houseAlcabitius = GPersonHouse()
     val horoscopeAlc =
       horoContext.getHoroscope(hc.lmt, hc.location, null, IHoroscopeContext.defaultPoints, HouseSystem.ALCABITIUS,
-                               Centric.GEO, Coordinate.ECLIPTIC)
+                               Coordinate.ECLIPTIC, Centric.GEO)
     //hc.setHouseSystem(HouseSystem.ALCABITIUS);
     p.houseMap["Alcabitius"] = processHouse(houseAlcabitius, horoscopeAlc)
   }
