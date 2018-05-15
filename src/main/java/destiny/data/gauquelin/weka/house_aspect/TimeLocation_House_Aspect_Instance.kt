@@ -15,20 +15,16 @@ import java.time.LocalDateTime
 import java.util.*
 
 /** 從 time , location 取得 instance  */
-class TimeLocation_House_Aspect_Instance(horoscopeImpl: IHoroscope, time: LocalDateTime, location: Location) : InstanceIF {
+class TimeLocation_House_Aspect_Instance(
+  horoscopeContext : IHoroscopeContext,
+  time: LocalDateTime, location: Location) : InstanceIF {
   private val horoscope: IHoroscopeModel
 
   init {
     if (instances == null)
       parseInstances()
 
-    //HoroscopeContextBean bean = new HoroscopeContextBean();
-    //this.horoscopeContext = bean.getHoroscopeContextPlacidus(time, location);
-
-    val pointSet = setOf<Point>(*Planets.array, *Asteroids.array, *Hamburgers.array, *FixedStars.array, *LunarNodes.meanArray)
-
-    this.horoscope = horoscopeImpl.getHoroscope(time, location, null, pointSet, HouseSystem.PLACIDUS, Centric.GEO,
-                                                Coordinate.ECLIPTIC, 0.0, 1013.25)
+    this.horoscope = horoscopeContext.getHoroscope(time , location)
   }
 
   private fun parseInstances() {

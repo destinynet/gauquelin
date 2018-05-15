@@ -4,8 +4,6 @@
  */
 package destiny.data.gauquelin.weka.anglePower_aspect
 
-import destiny.astrology.HoroscopeImpl
-import destiny.astrology.IHoroscope
 import destiny.astrology.IStarPositionWithAzimuth
 import destiny.astrology.swissephImpl.AzimuthImpl
 import destiny.astrology.swissephImpl.HouseCuspImpl
@@ -17,11 +15,8 @@ import java.util.*
 import kotlin.test.Test
 
 class TimeLocation_AnglePower_InstanceTest {
-  private var horoscopeImpl: IHoroscope? = null
 
   private val azimuthImpl = AzimuthImpl()
-
-  private val starPositionImpl = StarPositionWithAzimuthImpl(azimuthImpl)
 
   private val houseCuspImpl = HouseCuspImpl()
 
@@ -29,8 +24,6 @@ class TimeLocation_AnglePower_InstanceTest {
 
   @Before
   fun init() {
-
-    horoscopeImpl = HoroscopeImpl(starPositionImpl, houseCuspImpl)
     starPositionWithAzimuthImpl = StarPositionWithAzimuthImpl(azimuthImpl)
   }
 
