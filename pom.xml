@@ -22,7 +22,7 @@
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
-      <artifactId>destiny-guice-ee</artifactId>
+      <artifactId>destiny-ee</artifactId>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>

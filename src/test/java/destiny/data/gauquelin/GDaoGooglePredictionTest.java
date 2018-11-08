@@ -8,7 +8,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.transaction.TransactionConfiguration;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.inject.Inject;
 import java.io.File;
@@ -19,7 +19,7 @@ import java.io.PrintStream;
 /** 將資料庫中的 GPerson , 輸出成 Google Prediction API 所需的 CSV 格式檔 */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"classpath:gauquelin.xml"})
-@TransactionConfiguration(transactionManager="transactionManagerGauquelin" , defaultRollback=false)
+@Transactional(transactionManager="transactionManagerGauquelin")
 public class GDaoGooglePredictionTest
 {
   @Inject
@@ -27,8 +27,7 @@ public class GDaoGooglePredictionTest
 
   @Test
   @javax.transaction.Transactional
-  public void testPredict() throws IOException
-  {
+  public void testPredict() {
     GPerson p = dao.get(3L).get();
     System.out.println(p.getCSV());
   }

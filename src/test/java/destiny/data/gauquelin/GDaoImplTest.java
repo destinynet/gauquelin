@@ -8,18 +8,17 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.transaction.TransactionConfiguration;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManagerFactory;
-import javax.transaction.Transactional;
 import java.util.List;
 
 import static org.junit.Assert.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"classpath:gauquelin.xml"})
-@TransactionConfiguration(transactionManager="transactionManagerGauquelin")
+@Transactional(transactionManager="transactionManagerGauquelin")
 public class GDaoImplTest
 {
   @Inject

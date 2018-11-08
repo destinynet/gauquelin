@@ -13,14 +13,14 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.transaction.TransactionConfiguration;
 
 import destiny.data.gauquelin.GDao;
 import destiny.data.gauquelin.GPerson;
+import org.springframework.transaction.annotation.Transactional;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"classpath:mining.xml"})
-@TransactionConfiguration(transactionManager="transactionManagerMining" , defaultRollback=false)
+@Transactional(transactionManager="transactionManagerGauquelin")
 public class ArffOutputerHouseAspectTest
 {
   @Inject
