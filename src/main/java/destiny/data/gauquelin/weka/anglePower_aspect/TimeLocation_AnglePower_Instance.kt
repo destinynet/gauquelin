@@ -17,22 +17,16 @@ import java.time.chrono.ChronoLocalDateTime
 import java.util.*
 
 class TimeLocation_AnglePower_Instance(
+  val horoscopeContext: IHoroscopeContext,
 
-  time: ChronoLocalDateTime<*>,
-  location: ILocation ,
-  starPositionWithAzimuthImpl : IStarPositionWithAzimuth ,
-  houseCuspImpl: IHouseCusp) : InstanceIF {
-  private val horoscope: IHoroscopeModel
+  private val time: ChronoLocalDateTime<*>,
+  private val location: ILocation) : InstanceIF  {
 
+  val pointSet = setOf<Point>(*Planets.array,*Asteroids.array,*Hamburgers.array,*FixedStars.array,*LunarNodes.meanArray)
 
   init {
     if (instances == null)
       parseInstances()
-
-    val pointSet = setOf<Point>(*Planets.array,*Asteroids.array,*Hamburgers.array,*FixedStars.array,*LunarNodes.meanArray)
-    val context = HoroscopeContext(pointSet, HouseSystem.PLACIDUS, Coordinate.ECLIPTIC, Centric.GEO,
-                                   starPositionWithAzimuthImpl, houseCuspImpl)
-    this.horoscope = context.getHoroscope(time , location)
   }
 
   private fun parseInstances() {
@@ -62,6 +56,12 @@ class TimeLocation_AnglePower_Instance(
   override fun getInstance(): Instance {
     val instance = Instance(instances!!.numAttributes())
     instance.setDataset(instances)
+
+//    val context = horoContext {
+//      points(pointSet)
+//    }
+    //val context = HoroscopeContext(pointSet, HouseSystem.PLACIDUS, Coordinate.ECLIPTIC, Centric.GEO, starPositionWithAzimuthImpl, houseCuspImpl)
+    val horoscope = horoscopeContext.getHoroscope(time , location)
 
     // ================ AnglePower =================
     //horoscopeContext.setHouseSystem(HouseSystem.PLACIDUS);

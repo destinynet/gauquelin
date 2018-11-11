@@ -16,35 +16,24 @@ import java.util.*
 
 /** 從 time , location 取得 instance  */
 class TimeLocation_House_Aspect_Instance(
-  horoscopeContext : IHoroscopeContext,
+  horoscopeContext: IHoroscopeContext,
   time: LocalDateTime, location: Location) : InstanceIF {
-  private val horoscope: IHoroscopeModel
+  private val horoscope: IHoroscopeModel = horoscopeContext.getHoroscope(time, location)
 
-  init {
-    if (instances == null)
-      parseInstances()
 
-    this.horoscope = horoscopeContext.getHoroscope(time , location)
-  }
+  private fun getInstancesFromFile() : Instances {
 
-  private fun parseInstances() {
-    //URL url = getClass().getResource("house_aspect.arff");
-    val url = javaClass.getResource("anglePower_aspect.arff")
-    val file: File
+    val url = TimeLocation_House_Aspect_Instance::class.java.getResource("anglePower_aspect.arff")
+    val file = File(url.toURI())
+    val fReader = FileReader(file)
+    val instances = Instances(fReader)
+    instances.setClassIndex(instances.numAttributes() - 1)
 
-    try {
-      file = File(url.toURI())
-      val fReader = FileReader(file)
-      instances = Instances(fReader)
-      instances!!.setClassIndex(instances!!.numAttributes() - 1)
-
-      val e = instances!!.enumerateAttributes()
-      while (e.hasMoreElements()) {
-        println(e.nextElement())
-      }
-    } catch (e: Exception) {
+    val e = instances.enumerateAttributes()
+    while (e.hasMoreElements()) {
+      println(e.nextElement())
     }
-
+    return instances
   }
 
 
@@ -52,7 +41,10 @@ class TimeLocation_House_Aspect_Instance(
    * 這是 House + Aspect 的 instance
    */
   override fun getInstance(): Instance {
-    val instance = Instance(instances!!.numAttributes())
+
+    val instances = getInstancesFromFile()
+    val instance = Instance(instances.numAttributes())
+
     instance.setDataset(instances)
 
 
@@ -60,7 +52,7 @@ class TimeLocation_House_Aspect_Instance(
     //horoscopeContext.setHouseSystem(HouseSystem.PLACIDUS);
     for (p in Planets.array) {
       val attrString = p.toString(Locale.ENGLISH).toLowerCase()
-      val attr = instances!!.attribute(attrString)
+      val attr = instances.attribute(attrString)
       val house = horoscope.getHouse(p)
       if (house != null) {
         instance.setValue(attr, house.toString())
@@ -79,7 +71,7 @@ class TimeLocation_House_Aspect_Instance(
       val propName = p1.toString(Locale.ENGLISH).toLowerCase() + p2.toString(Locale.ENGLISH)
 
       //看看是否有此 Attribute
-      val attr = instances!!.attribute(propName)
+      val attr = instances.attribute(propName)
       if (attr != null) {
         if (aspectString.equals("Square", ignoreCase = true) || aspectString.equals("Opposition", ignoreCase = true))
           aspectString = "SquareOpposition"
@@ -96,7 +88,7 @@ class TimeLocation_House_Aspect_Instance(
 
   companion object {
 
-    private var instances: Instances? = null
+    //private var instances: Instances? = null
   }
 
 }

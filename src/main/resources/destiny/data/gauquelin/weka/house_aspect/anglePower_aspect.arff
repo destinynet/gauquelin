@@ -1,0 +1,70 @@
+@RELATION gauquelin
+
+@ATTRIBUTE sunDir       {east , top , west , bottom}
+@ATTRIBUTE sunPower     NUMERIC
+@ATTRIBUTE moonDir      {east , top , west , bottom}
+@ATTRIBUTE moonPower    NUMERIC
+@ATTRIBUTE mercuryDir   {east , top , west , bottom}
+@ATTRIBUTE mercuryPower NUMERIC
+@ATTRIBUTE venusDir     {east , top , west , bottom}
+@ATTRIBUTE venusPower   NUMERIC
+@ATTRIBUTE marsDir      {east , top , west , bottom}
+@ATTRIBUTE marsPower    NUMERIC
+@ATTRIBUTE jupiterDir   {east , top , west , bottom}
+@ATTRIBUTE jupiterPower NUMERIC
+@ATTRIBUTE saturnDir    {east , top , west , bottom}
+@ATTRIBUTE saturnPower  NUMERIC
+@ATTRIBUTE uranusDir    {east , top , west , bottom}
+@ATTRIBUTE uranusPower  NUMERIC
+@ATTRIBUTE neptuneDir   {east , top , west , bottom}
+@ATTRIBUTE neptunePower NUMERIC
+@ATTRIBUTE plutoDir     {east , top , west , bottom}
+@ATTRIBUTE plutoPower   NUMERIC
+@ATTRIBUTE sunMoon       {Conjunction,SextileTrine,SquareOpposition}
+@ATTRIBUTE sunMercury    {Conjunction}
+@ATTRIBUTE sunVenus      {Conjunction}
+@ATTRIBUTE sunMars       {Conjunction,SextileTrine,SquareOpposition}
+@ATTRIBUTE sunJupiter    {Conjunction,SextileTrine,SquareOpposition}
+@ATTRIBUTE sunSaturn     {Conjunction,SextileTrine,SquareOpposition}
+@ATTRIBUTE sunUranus     {Conjunction,SextileTrine,SquareOpposition}
+@ATTRIBUTE sunNeptune    {Conjunction,SextileTrine,SquareOpposition}
+@ATTRIBUTE sunPluto      {Conjunction,SextileTrine,SquareOpposition}
+@ATTRIBUTE moonMercury   {Conjunction,SextileTrine,SquareOpposition}
+@ATTRIBUTE moonVenus     {Conjunction,SextileTrine,SquareOpposition}
+@ATTRIBUTE moonMars      {Conjunction,SextileTrine,SquareOpposition}
+@ATTRIBUTE moonJupiter   {Conjunction,SextileTrine,SquareOpposition}
+@ATTRIBUTE moonSaturn    {Conjunction,SextileTrine,SquareOpposition}
+@ATTRIBUTE moonUranus    {Conjunction,SextileTrine,SquareOpposition}
+@ATTRIBUTE moonNeptune   {Conjunction,SextileTrine,SquareOpposition}
+@ATTRIBUTE moonPluto     {Conjunction,SextileTrine,SquareOpposition}
+@ATTRIBUTE mercuryVenus  {Conjunction,SextileTrine}
+@ATTRIBUTE mercuryMars   {Conjunction,SextileTrine,SquareOpposition}
+@ATTRIBUTE mercuryJupiter{Conjunction,SextileTrine,SquareOpposition}
+@ATTRIBUTE mercurySaturn {Conjunction,SextileTrine,SquareOpposition}
+@ATTRIBUTE mercuryUranus {Conjunction,SextileTrine,SquareOpposition}
+@ATTRIBUTE mercuryNeptune{Conjunction,SextileTrine,SquareOpposition}
+@ATTRIBUTE mercuryPluto  {Conjunction,SextileTrine,SquareOpposition}
+@ATTRIBUTE venusMars     {Conjunction,SextileTrine,SquareOpposition}
+@ATTRIBUTE venusJupiter  {Conjunction,SextileTrine,SquareOpposition}
+@ATTRIBUTE venusSaturn   {Conjunction,SextileTrine,SquareOpposition}
+@ATTRIBUTE venusUranus   {Conjunction,SextileTrine,SquareOpposition}
+@ATTRIBUTE venusNeptune  {Conjunction,SextileTrine,SquareOpposition}
+@ATTRIBUTE venusPluto    {Conjunction,SextileTrine,SquareOpposition}
+@ATTRIBUTE marsJupiter   {Conjunction,SextileTrine,SquareOpposition}
+@ATTRIBUTE marsSaturn    {Conjunction,SextileTrine,SquareOpposition}
+@ATTRIBUTE marsUranus    {Conjunction,SextileTrine,SquareOpposition}
+@ATTRIBUTE marsNeptune   {Conjunction,SextileTrine,SquareOpposition}
+@ATTRIBUTE marsPluto     {Conjunction,SextileTrine,SquareOpposition}
+@ATTRIBUTE jupiterSaturn {Conjunction,SextileTrine,SquareOpposition}
+@ATTRIBUTE jupiterUranus {Conjunction,SextileTrine,SquareOpposition}
+@ATTRIBUTE jupiterNeptune{Conjunction,SextileTrine,SquareOpposition}
+@ATTRIBUTE jupiterPluto  {Conjunction,SextileTrine,SquareOpposition}
+@ATTRIBUTE saturnUranus  {Conjunction,SextileTrine,SquareOpposition}
+@ATTRIBUTE saturnNeptune {Conjunction,SextileTrine,SquareOpposition}
+@ATTRIBUTE saturnPluto   {Conjunction,SextileTrine,SquareOpposition}
+@ATTRIBUTE uranusNeptune {Conjunction,SextileTrine,SquareOpposition}
+@ATTRIBUTE uranusPluto   {Conjunction,SextileTrine,SquareOpposition}
+@ATTRIBUTE neptunrPluto  {Conjunction,SextileTrine,SquareOpposition}
+@ATTRIBUTE category {sport,scientist,military, painterMusicianActor ,writerJournalist}
+
+@DATA

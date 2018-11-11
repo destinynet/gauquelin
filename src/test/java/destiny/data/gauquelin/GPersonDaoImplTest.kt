@@ -9,41 +9,22 @@ import destiny.astrology.Aspect.Importance
 import destiny.core.calendar.LocationTools
 import org.junit.Assert.assertNotNull
 import org.junit.Test
-import org.junit.runner.RunWith
-import org.springframework.test.context.ContextConfiguration
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner
 import java.util.*
-import javax.inject.Inject
 import kotlin.test.BeforeTest
 
-@RunWith(SpringJUnit4ClassRunner::class)
-@ContextConfiguration(locations = ["classpath:gauquelin.xml"])
-class GPersonDaoImplTest // extends AbstractGauquelinTest
-{
-  @Inject
-  protected lateinit var gDao: GDao
 
-
-  //  @Inject
-  //  private val horoscopeImpl: IHoroscope? = null
-
-  @Inject
-  private lateinit var starPositionWithAzimuthImpl: IStarPositionWithAzimuth
-
-  @Inject
-  private lateinit var houseCuspImpl: IHouseCusp
+class GPersonDaoImplTest : AbstractGauquelinTest() {
 
   /** 專供測試使用的 [IHoroscopeContext] */
   private lateinit var horoContext: IHoroscopeContext
 
-  protected var readers = Collections.synchronizedList(ArrayList<TextDataReader>())
+  private var readers = listOf<TextDataReader>()
 
   @BeforeTest
   fun onSetUp() {
-    horoContext =
-      HoroscopeContext(HoroscopeContext.defaultPoints, HouseSystem.PLACIDUS, Coordinate.ECLIPTIC,
-                       Centric.GEO,
-                       starPositionWithAzimuthImpl, houseCuspImpl)
+
+    horoContext = horoContext {  }
+
     /*
        readers.add(new SportReader());
        readers.add(new Sport450Reader());
