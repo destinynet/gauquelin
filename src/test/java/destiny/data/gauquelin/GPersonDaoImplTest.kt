@@ -9,6 +9,7 @@ import destiny.astrology.Aspect.Importance
 import destiny.core.calendar.LocationTools
 import org.junit.Assert.assertNotNull
 import org.junit.Test
+import org.springframework.data.domain.PageRequest
 import java.util.*
 import kotlin.test.BeforeTest
 
@@ -69,12 +70,13 @@ class GPersonDaoImplTest : AbstractGauquelinTest() {
   fun _testProcessAll() {
     val start = 0
     val pageSize = 200
-    val count = gDao.count - start
+    val count = gDao.count() - start
     println("總共 $count  筆資料")
 
     var h: IHoroscopeModel
     for (i in 0..count / pageSize) {
-      val persons = gDao.findAll((i * pageSize + start).toInt(), pageSize)
+      val pr = PageRequest.of((i * pageSize + start).toInt(), pageSize)
+      val persons = gDao.findAll(pr)
 
       for (p in persons) {
 
@@ -100,7 +102,7 @@ class GPersonDaoImplTest : AbstractGauquelinTest() {
 
         //System.err.println(p.toString() +"\n"+p.getAnglePower());
         if (updated)
-          gDao.update(p)
+          gDao.save(p)
       }
     } //for
   }
@@ -150,7 +152,7 @@ class GPersonDaoImplTest : AbstractGauquelinTest() {
     val gpa = GPersonAspect()
     val aspectCalculator = HoroscopeAspectsCalculator(hc, HoroscopeAspectsCalculatorModern())
 
-    for (data in aspectCalculator.getAspectDataSet(Arrays.asList(*Planets.array), Aspect.getAngles(Importance.HIGH))) {
+    for (data in aspectCalculator.getAspectDataSet(Arrays.asList(*Planet.array), Aspect.getAngles(Importance.HIGH))) {
       gpa.setAspect(data)
     } // each aspect data
     return gpa

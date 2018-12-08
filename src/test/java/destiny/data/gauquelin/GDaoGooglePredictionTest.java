@@ -6,6 +6,8 @@ package destiny.data.gauquelin;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
@@ -28,7 +30,7 @@ public class GDaoGooglePredictionTest
   @Test
   @javax.transaction.Transactional
   public void testPredict() {
-    GPerson p = dao.get(3L).get();
+    GPerson p = dao.get(3L);
     System.out.println(p.getCSV());
   }
   
@@ -120,7 +122,7 @@ public class GDaoGooglePredictionTest
   public void testExportCSV() throws IOException
   {
     FileOutputStream fos = new FileOutputStream(new File("gauquelinAll.csv"));
-    long total = dao.getCount();
+    long total = dao.count();
     int size = 10;
     long pages = total / size ;
     System.out.println("total = " + total + " , pages = " + pages);
@@ -129,7 +131,8 @@ public class GDaoGooglePredictionTest
     PrintStream ps = new PrintStream(fos); 
     for(int page = 0 ; page <= pages ; page++)
     {
-      for(GPerson p : dao.findAll(page*size, size))
+      Pageable pAble = PageRequest.of(page*size , size);
+      for(GPerson p : dao.findAll(pAble))
       {
         //System.out.println(" id = " + p.getId() + " , cat = " + p.getCategory() + " , raw = " + p.getRaw());
         ps.println(p.getCSV());
@@ -149,7 +152,7 @@ public class GDaoGooglePredictionTest
   public void testExportCsvOdd() throws IOException
   {
     FileOutputStream fos = new FileOutputStream(new File("gauquelinOdd.csv"));
-    long total = dao.getCount();
+    long total = dao.count();
     int size = 10;
     long pages = total / size ;
     System.out.println("total = " + total + " , pages = " + pages);
@@ -158,7 +161,8 @@ public class GDaoGooglePredictionTest
     PrintStream ps = new PrintStream(fos); 
     for(int page = 0 ; page <= pages ; page++)
     {
-      for(GPerson p : dao.findAll(page*size, size))
+      Pageable pAble = PageRequest.of(page*size, size);
+      for(GPerson p : dao.findAll(pAble))
       {
         if (p.getId() % 2 == 1)
           ps.println(p.getCSV());

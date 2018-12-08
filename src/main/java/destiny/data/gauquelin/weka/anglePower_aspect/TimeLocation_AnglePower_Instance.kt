@@ -22,7 +22,7 @@ class TimeLocation_AnglePower_Instance(
   private val time: ChronoLocalDateTime<*>,
   private val location: ILocation) : InstanceIF  {
 
-  val pointSet = setOf<Point>(*Planets.array,*Asteroids.array,*Hamburgers.array,*FixedStars.array,*LunarNodes.meanArray)
+  val pointSet = setOf<Point>(*Planet.array,*Asteroid.array,*Hamburger.array,*FixedStar.array,*LunarNode.meanArray)
 
   init {
     if (instances == null)
@@ -68,7 +68,7 @@ class TimeLocation_AnglePower_Instance(
     val util = UtilHoroscopeAnglePower(horoscope)
     val anglePower = util.anglePower
     val refUtil = RefUtil(anglePower)
-    for (p in Planets.array) {
+    for (p in Planet.array) {
       val planetDirStr = p.toString(Locale.ENGLISH).toLowerCase() + "Dir"
       val planetDir = instances!!.attribute(planetDirStr)
       instance.setValue(planetDir, refUtil.getValue(p.toString(Locale.ENGLISH)) as String)
@@ -81,7 +81,7 @@ class TimeLocation_AnglePower_Instance(
     // ============ Aspect ============
     val aspectCalculator = HoroscopeAspectsCalculator(horoscope, HoroscopeAspectsCalculatorModern())
 
-    for (data in aspectCalculator.getAspectDataSet(Arrays.asList(*Planets.array), Aspect.getAngles(Importance.HIGH))) {
+    for (data in aspectCalculator.getAspectDataSet(Arrays.asList(*Planet.array), Aspect.getAngles(Importance.HIGH))) {
       var aspectString = data.aspect!!.toString(Locale.ENGLISH)
       val twoPoints = TreeSet(data.twoPoints)
       val it = twoPoints.iterator()

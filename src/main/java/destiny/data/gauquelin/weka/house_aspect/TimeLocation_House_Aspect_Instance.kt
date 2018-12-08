@@ -50,7 +50,7 @@ class TimeLocation_House_Aspect_Instance(
 
     // ============ House =============
     //horoscopeContext.setHouseSystem(HouseSystem.PLACIDUS);
-    for (p in Planets.array) {
+    for (p in Planet.array) {
       val attrString = p.toString(Locale.ENGLISH).toLowerCase()
       val attr = instances.attribute(attrString)
       val house = horoscope.getHouse(p)
@@ -62,7 +62,7 @@ class TimeLocation_House_Aspect_Instance(
     // ============ Aspect ============
     val aspectCalculator = HoroscopeAspectsCalculator(horoscope, HoroscopeAspectsCalculatorModern())
 
-    for (data in aspectCalculator.getAspectDataSet(Arrays.asList(*Planets.array), Aspect.getAngles(Importance.HIGH))) {
+    for (data in aspectCalculator.getAspectDataSet(Arrays.asList(*Planet.array), Aspect.getAngles(Importance.HIGH))) {
       var aspectString = data.aspect!!.toString(Locale.ENGLISH)
       val twoPoints = TreeSet(data.twoPoints)
       val it = twoPoints.iterator()

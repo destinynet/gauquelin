@@ -4,12 +4,12 @@
  */ 
 package destiny.data.gauquelin.weka;
 
+import destiny.data.gauquelin.GDao;
+import destiny.data.gauquelin.GPerson;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
-import destiny.data.gauquelin.GDao;
-import destiny.data.gauquelin.GPerson;
 
 //TODO : JUnit4
 public class ArffOutputterAnglePowerAspectTest

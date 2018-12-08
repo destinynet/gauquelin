@@ -47,6 +47,14 @@
       <artifactId>aspectjweaver</artifactId>
       <scope>test</scope>
     </dependency>
+
+    <!-- javaee-api 放最後 -->
+    <dependency>
+      <groupId>javax</groupId>
+      <artifactId>javaee-api</artifactId>
+      <version>7.0</version>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
 
 

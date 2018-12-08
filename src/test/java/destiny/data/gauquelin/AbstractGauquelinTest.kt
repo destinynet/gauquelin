@@ -7,10 +7,12 @@ import destiny.DestinyCoreContext
 import org.junit.runner.RunWith
 import org.springframework.test.context.ContextConfiguration
 import org.springframework.test.context.junit4.SpringRunner
+import org.springframework.transaction.annotation.Transactional
 import javax.inject.Inject
 
 @RunWith(SpringRunner::class)
 @ContextConfiguration(locations = ["classpath:core.xml" , "classpath:gauquelin.xml"])
+@Transactional(transactionManager = "txManagerGauquelin")
 open class AbstractGauquelinTest : DestinyCoreContext() {
 
   @Inject

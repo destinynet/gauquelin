@@ -3,9 +3,9 @@
  */
 package destiny.data.gauquelin.weka.house_aspect;
 
+import destiny.data.gauquelin.GDao;
 import weka.classifiers.Classifier;
 import weka.core.Instance;
-import destiny.data.gauquelin.GDao;
 import destiny.data.gauquelin.GPerson;
 
 //TODO : JUnit4
@@ -15,8 +15,8 @@ public class GPersonInstanceTest
 
   public void testGetInstance() throws Exception
   {
-    GPerson gperson = gDao.get(8943L).get();
-    System.out.println("gperson = " + gperson);
+    GPerson gperson = gDao.get(8943L);
+    System.out.println("gPerson = " + gperson);
     GPersonInstance inst = new GPersonInstance(gperson);
     Instance instance = inst.getInstance();
     System.out.println(instance);
