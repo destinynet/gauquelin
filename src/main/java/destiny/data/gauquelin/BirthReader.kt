@@ -7,7 +7,6 @@ import destiny.core.Gender
 import destiny.core.calendar.Location
 import java.io.InputStream
 import java.time.LocalDateTime
-import kotlin.coroutines.experimental.buildSequence
 
 
 data class Family(
@@ -74,7 +73,7 @@ class BirthReader(val filename: String , val hospital: Hospital?, val city: City
   } // read
 
 
-  private fun chunkByFamily(lines: Sequence<String>): Sequence<Family> = buildSequence {
+  private fun chunkByFamily(lines: Sequence<String>): Sequence<Family> = sequence {
     var father: GPerson2? = null
     var mother: GPerson2? = null
     val children = mutableListOf<GPerson2>()
