@@ -5,7 +5,6 @@ package destiny.data.gauquelin
 
 import destiny.core.Gender
 import destiny.core.calendar.Location
-import java.io.InputStream
 import java.time.LocalDateTime
 
 
@@ -14,7 +13,7 @@ data class Family(
   val mother: GPerson2?,
   val children: List<GPerson2>)
 
-class BirthReader(val filename: String , val hospital: Hospital?, val city: City) {
+class BirthReader(val filename: String, val hospital: Hospital?, val city: City) {
 
   enum class City {
     Paris,
@@ -50,26 +49,28 @@ class BirthReader(val filename: String , val hospital: Hospital?, val city: City
                                  )
 
   fun read(): Sequence<Family> {
-    val iStream: InputStream = javaClass.getResourceAsStream(filename)
 
-    return iStream.bufferedReader(Charsets.UTF_8)
-      .lineSequence()
-      .filterNot { it.startsWith("#") }
-      .filterNot { it.isEmpty() }
-      .let { seq -> chunkByFamily(seq) }
-      .filter { family ->
+    return javaClass.getResourceAsStream(filename).use { iStream ->
+      iStream.bufferedReader(Charsets.UTF_8)
+        .lineSequence()
+        .filterNot { it.startsWith("#") }
+        .filterNot { it.isEmpty() }
+        .let { seq -> chunkByFamily(seq) }
+        .filter { family ->
 
-        return@filter family.children.all { child ->
-          val childAfterFather: Boolean = family.father?.lmt?.let { child.lmt.isAfter(it) }?:true
-          val childAfterMother: Boolean = family.mother?.lmt?.let { child.lmt.isAfter(it) }?:true
-          return@all if (childAfterFather && childAfterMother) {
-            true
-          } else {
-            println("warning : age check error : $family")
-            false
+          return@filter family.children.all { child ->
+            val childAfterFather: Boolean = family.father?.lmt?.let { child.lmt.isAfter(it) } ?: true
+            val childAfterMother: Boolean = family.mother?.lmt?.let { child.lmt.isAfter(it) } ?: true
+            return@all if (childAfterFather && childAfterMother) {
+              true
+            } else {
+              println("warning : age check error : $family")
+              false
+            }
           }
         }
-      }
+    }
+
   } // read
 
 
@@ -80,7 +81,7 @@ class BirthReader(val filename: String , val hospital: Hospital?, val city: City
 
     for (line in lines) {
       val token1 = line.split("\t")[1]
-      if ((token1 == "F" || token1 == "M") && (children.size > 0 || (father!=null && mother!= null))) {
+      if ((token1 == "F" || token1 == "M") && (children.size > 0 || (father != null && mother != null))) {
         val cloned = children.toList()
         children.clear()
         yield(Family(father, mother, cloned))
