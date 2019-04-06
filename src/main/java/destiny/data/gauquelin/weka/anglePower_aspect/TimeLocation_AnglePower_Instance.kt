@@ -13,6 +13,7 @@ import destiny.data.gauquelin.weka.InstanceIF
 import weka.core.Instance
 import weka.core.Instances
 import java.io.InputStreamReader
+import java.net.URL
 import java.time.chrono.ChronoLocalDateTime
 import java.util.*
 
@@ -22,39 +23,57 @@ class TimeLocation_AnglePower_Instance(
   private val time: ChronoLocalDateTime<*>,
   private val location: ILocation) : InstanceIF  {
 
+
+
+
   val pointSet = setOf<Point>(*Planet.array,*Asteroid.array,*Hamburger.array,*FixedStar.array,*LunarNode.meanArray)
 
-  init {
-    if (instances == null)
-      parseInstances()
-  }
 
-  private fun parseInstances() {
-    val `is` = javaClass.getResourceAsStream("anglePower_aspect.arff")
-    val reader = InputStreamReader(`is`)
+  val instances: Instances by lazy {
+    //javaClass.getResourceAsStream("anglePower_aspect.arff")
+    javaClass.getResourceAsStream("/destiny/data/gauquelin/weka/house_aspect/anglePower_aspect.arff").use { iStream ->
+      val reader = InputStreamReader(iStream)
+      println("parsing anglePower_aspect.arff ...")
 
-    try {
-      instances = Instances(reader)
-      instances!!.setClassIndex(instances!!.numAttributes() - 1)
-
-      /*
-      Enumeration<Attribute> e = instances.enumerateAttributes();
-      while(e.hasMoreElements())
-      {
-        System.out.println(e.nextElement());
-      }
-      */
-    } catch (e: Exception) {
-      println("Exception : $e")
+      Instances(reader)
     }
-
   }
+
+  init {
+    instances.setClassIndex(instances.numAttributes() - 1)
+  }
+
+//  init {
+//    if (instances == null)
+//      parseInstances()
+//  }
+
+//  private fun parseInstances() {
+//    val iStream = javaClass.getResourceAsStream("anglePower_aspect.arff")
+//    val reader = InputStreamReader(iStream)
+//
+//    try {
+//      instances = Instances(reader)
+//      instances!!.setClassIndex(instances!!.numAttributes() - 1)
+//
+//      /*
+//      Enumeration<Attribute> e = instances.enumerateAttributes();
+//      while(e.hasMoreElements())
+//      {
+//        System.out.println(e.nextElement());
+//      }
+//      */
+//    } catch (e: Exception) {
+//      println("Exception : $e")
+//    }
+//
+//  }
 
   /**
    * 這是 anglePower + Aspect 的 instance
    */
   override fun getInstance(): Instance {
-    val instance = Instance(instances!!.numAttributes())
+    val instance = Instance(instances.numAttributes())
     instance.setDataset(instances)
 
 //    val context = horoContext {
@@ -70,11 +89,11 @@ class TimeLocation_AnglePower_Instance(
     val refUtil = RefUtil(anglePower)
     for (p in Planet.array) {
       val planetDirStr = p.toString(Locale.ENGLISH).toLowerCase() + "Dir"
-      val planetDir = instances!!.attribute(planetDirStr)
+      val planetDir = instances.attribute(planetDirStr)
       instance.setValue(planetDir, refUtil.getValue(p.toString(Locale.ENGLISH)) as String)
 
       val planetPowerStr = p.toString(Locale.ENGLISH).toLowerCase() + "Power"
-      val planetPower = instances!!.attribute(planetPowerStr)
+      val planetPower = instances.attribute(planetPowerStr)
       instance.setValue(planetPower, refUtil.getValue(p.toString(Locale.ENGLISH).toLowerCase() + "Power") as Double)
     }
 
@@ -90,7 +109,7 @@ class TimeLocation_AnglePower_Instance(
       val propName = p1.toString(Locale.ENGLISH).toLowerCase() + p2.toString(Locale.ENGLISH)
 
       //看看是否有此 Attribute
-      val attr = instances!!.attribute(propName)
+      val attr = instances.attribute(propName)
       if (attr != null) {
         if (aspectString.equals("Square", ignoreCase = true) || aspectString.equals("Opposition", ignoreCase = true))
           aspectString = "SquareOpposition"
@@ -105,7 +124,7 @@ class TimeLocation_AnglePower_Instance(
   }
 
   companion object {
-    private var instances: Instances? = null
+    //private var instances: Instances? = null
   }
 
 
