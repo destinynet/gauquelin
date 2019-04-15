@@ -9,6 +9,7 @@ import destiny.core.calendar.Location
 import destiny.core.calendar.LocationTools
 import destiny.core.calendar.NorthSouth
 import destiny.tools.location.TimeZoneUtils
+import mu.KotlinLogging
 import java.io.Serializable
 import java.sql.Timestamp
 import java.time.LocalDateTime
@@ -21,6 +22,71 @@ class ParseUtils : Serializable {
      * Sport 運動冠軍 , Scientist 科學家(及醫師) , Military 軍人 , Painter 畫家 , Musician 音樂家 , Actor 演員 , Politician 政治人物
      * PRO    NUM COU DAY MON YEA H   MN  SEC TZ  LAT LON COD CITY
      */
+    fun parseByNumber2(line: String): GPerson2? {
+      try {
+
+        val st = StringTokenizer(line, "\t")
+        val PRO = st.nextToken()
+
+
+        //某些 NUM 會以驚嘆號結尾，原因不詳
+        val number = st.nextToken().substringBeforeLast('!').toInt()
+
+        val COU = st.nextToken()
+
+        val day = st.nextToken().toInt()
+        val month = st.nextToken().toInt()
+        val year = st.nextToken().toInt()
+
+        val hour = st.nextToken().toInt()
+        val minute = st.nextToken().toInt()
+        val second = st.nextToken().toInt()
+
+        // -1 的話，代表「東一區」
+        val tz: Int = st.nextToken().toInt().let { 0 - it }
+
+
+        val (northSouth, latDeg, latMin) = st.nextToken().let { lat ->
+          val (latDeg, latMin) = lat.splitToSequence('N', 'S').map { it.trim { it <= ' ' } }.map { it.toInt() }.toList().let { list ->
+            list[0] to list[1]
+          }
+          val ns = lat[if (latDeg < 10) 1 else 2]
+          val northSouth = if (ns == 'N') NorthSouth.NORTH else NorthSouth.SOUTH
+          Triple(northSouth, latDeg, latMin)
+        }
+
+        val (eastWest, lngDeg, lngMin) = st.nextToken().let { lng ->
+          val (lngDeg, lngMin) = lng.splitToSequence('E', 'W').map { it.trim { it <= ' ' } }.map { it.toInt() }.toList().let { list ->
+            list[0] to list[1]
+          }
+          val ew = lng[if (lngDeg < 10) 1 else 2]
+          val eastWest = if (ew == 'E') EastWest.EAST else EastWest.WEST
+          Triple(eastWest, lngDeg, lngMin)
+        }
+
+        // 都是 GMT 時間
+
+        val time = LocalDateTime.of(year, month, day, hour, minute, second)
+        val ts = Timestamp.valueOf(time)
+        val location = Location(
+          eastWest, lngDeg, lngMin, 0.0,
+          northSouth, latDeg, latMin, 0.0, TimeZoneUtils.getTimeZone(tz * 60).id, null, 0.0)
+
+
+        val COD = st.nextToken()
+        val city = try {
+          st.nextToken()
+        } catch (ignored: NoSuchElementException) {
+          null
+        }
+
+        return GPerson2(null, number, null, null, time, location, city, line)
+      } catch (e: Exception) {
+        logger.warn("{} : exception : {}", line, e.message)
+        return null
+      }
+    }
+
     fun parseByNumber(line: String): GPerson {
       val st = StringTokenizer(line, "\t")
       val PRO = st.nextToken()
@@ -61,7 +127,7 @@ class ParseUtils : Serializable {
       val ts = Timestamp.valueOf(time)
       val location = Location(
         if (EW == 'E') EastWest.EAST else EastWest.WEST, longDeg, longMin, 0.0,
-        if (NS == 'N') NorthSouth.NORTH else NorthSouth.SOUTH, latDeg, latMin, 0.0, TimeZoneUtils.getTimeZone(tz * 60).id, null , 0.0)
+        if (NS == 'N') NorthSouth.NORTH else NorthSouth.SOUTH, latDeg, latMin, 0.0, TimeZoneUtils.getTimeZone(tz * 60).id, null, 0.0)
 
 
       val person = GPerson()
@@ -123,8 +189,8 @@ class ParseUtils : Serializable {
       //Calendar cal = new GregorianCalendar(time.getYear() , time.getMonth()-1 , time.getDay() , time.getHour() , time.getMinute() , (int)time.getSecond());
       val ts = Timestamp.valueOf(time)
       val location = Location(if (EW == 'E') EastWest.EAST else EastWest.WEST, longDeg, longMin, 0.0,
-                              if (NS == 'N') NorthSouth.NORTH else NorthSouth.SOUTH, latDeg, latMin, 0.0, "GMT", null,
-                              0.0)
+        if (NS == 'N') NorthSouth.NORTH else NorthSouth.SOUTH, latDeg, latMin, 0.0, "GMT", null,
+        0.0)
 
       val person = GPerson()
       person.number = number
@@ -244,8 +310,8 @@ class ParseUtils : Serializable {
       val time = LocalDateTime.of(year, month, day, hour, minute, second)
       val ts = Timestamp.valueOf(time)
       val location = Location(if (EW == 'E') EastWest.EAST else EastWest.WEST, longDeg, longMin, 0.0,
-                              if (NS == 'N') NorthSouth.NORTH else NorthSouth.SOUTH, latDeg, latMin, 0.0, "GMT", null,
-                              0.0)
+        if (NS == 'N') NorthSouth.NORTH else NorthSouth.SOUTH, latDeg, latMin, 0.0, "GMT", null,
+        0.0)
 
       val COD = st.nextToken()
 
@@ -258,5 +324,7 @@ class ParseUtils : Serializable {
 
       return person
     }
+
+    val logger = KotlinLogging.logger { }
   }
 }
