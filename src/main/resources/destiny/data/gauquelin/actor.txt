@@ -1,6 +1,8 @@
 # 新版 http://cura.free.fr/gauq/902gdA5.html
 # 舊版 http://cura.free.fr/gauq/11gdA5a.txt
 # Actor 演員 , 1408位
+# 有 name , list size = 1317
+# 無 name , list size =   91
 
 #  0   1   2   3   4   5  6  7   8   9   10  11  12  13
 # PRO	NUM	COU	DAY	MON	YEA	H	MN	SEC	TZ	LAT	LON	COD	CITY	

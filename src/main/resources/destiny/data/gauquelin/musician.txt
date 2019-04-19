@@ -1,6 +1,9 @@
 # 新版 http://cura.free.fr/gauq/902gdA4.html 
 # 舊版 http://cura.free.fr/gauq/11gdA4m.txt
-# Musician 音樂家 , 1248位 
+
+# Musician 音樂家 , 1248位
+# 有 name , list size = 1193
+# 無 name , list size =   55
 
 M	1474	F	4	1	1866	12	30	20	0	43N45	7E25	MON	MONACO
 M	1475	F	27	4	1848	6	38	32	0	43N18	5E22	13	MARSEILLE

@@ -1,6 +1,10 @@
 # 新版 http://cura.free.fr/gauq/902gdA5.html
 # 舊版 http://cura.free.fr/gauq/11gdA5p.txt
 # Politician 政治家 , 1002 位
+# #1571 資料錯誤 : JUNE 31 六月沒有31日
+#
+# 有 name , list size = 946
+# 無 name , list size =  55
 
 PT	1410	F	20	5	1905	11	50	40	0	45N 3	3E53	43	LE PUY
 PT	1411	F	28	8	1910	4	50	40	0	35N40	0W30	ALG	ORAN

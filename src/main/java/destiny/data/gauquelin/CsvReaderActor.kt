@@ -6,7 +6,8 @@ package destiny.data.gauquelin
 import java.io.InputStream
 import java.time.LocalDateTime
 
-/** 參照 [ActorReader] 以及 [AbstractReader] , [ParseUtils]
+/**
+ *
  * wget --mirror --wait 1 --page-requisites --cut-dirs=1 --relative --no-parent -A '902gd*.html' --no-host-directories http://cura.free.fr/gauq/17archg.html
  *
  * */

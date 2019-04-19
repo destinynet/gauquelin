@@ -2,6 +2,15 @@
 # 新版 (by date   ) http://cura.free.fr/gauq/902gdA3y.html
 # 舊版 http://cura.free.fr/gauq/11gdA3.txt (missing)
 # 軍人 , 3046 位
+# 編號 1 到 3047
+#
+# #131 日期錯誤 (1869 無 2/29)
+# #312 缺
+#
+# 最終有效共 3045 rows
+#
+# 有 name , list size = 2640
+# 無 name , list size =  405
 
 # PRO	NUM	COU	DAY	MON	YEA	H	MN	SEC	TZ	LAT	LON	COD	CITY	
 

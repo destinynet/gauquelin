@@ -2,6 +2,9 @@
 # 舊版 http://cura.free.fr/gauq/11gdA6.txt
 # Writer 作家 , 1352位
 
+# 有 name , list size = 1285
+# 無 name , list size =   67
+
 # PRO	NUM	COU	DAY	MON	YEA	H	MN	SEC	TZ	LAT	LON	COD	CITY	
 
 W	1	F	11	11	1907	19	50	40	0	43N37	1E26	31	TOULOUSE

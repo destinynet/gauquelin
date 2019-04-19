@@ -1,6 +1,8 @@
 # 新版 http://cura.free.fr/gauq/902gdA4.html
 # 舊版 http://cura.free.fr/gauq/11gdA4p.txt
-# Painter 畫家 , 1472 位 
+# Painter 畫家 , 1472 位
+# 有 name , list size = 1409
+# 無 name , list size =   63
 
 
 P	1	F	30	10	1853	15	50	40	0	48N36	2E20	91	ETAMPES

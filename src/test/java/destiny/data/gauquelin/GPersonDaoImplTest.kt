@@ -40,12 +40,6 @@ class GPersonDaoImplTest : AbstractGauquelinTest() {
        readers.add(new JournalistReader());
        readers.add(new MurdererReader());
        readers.add(new AlcoholicReader());
-       //心智五種
-       readers.add(new AcuteDelusionReader()); // ACD
-       readers.add(new HallucinatingReader()); // HALP
-       readers.add(new MentallyDerangedReader()); // MD
-       readers.add(new ManicDepressiveReader()); // MDP
-       readers.add(new SchizophrenicsReader()); // SCH
        */
 
     //法國 2154 (2161) 人
