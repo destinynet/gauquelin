@@ -81,7 +81,7 @@ class AbsProfReader(private val dataFile: String,
     val military = AbsProfReader("military.txt", "military_name.txt", Gender.男).listWithOptionalName
     val musicians = AbsProfReader("musician.txt", "musician_name.txt").listWithOptionalName
     val painters = AbsProfReader("painter.txt", "painter_name.txt").listWithOptionalName
-    val politicans = AbsProfReader("politician.txt", "politician_name.txt").listWithOptionalName
+    val politicians = AbsProfReader("politician.txt", "politician_name.txt").listWithOptionalName
     val scientists = AbsProfReader("scientist.txt", "scientist_name.txt").listWithOptionalName
     val sports = AbsProfReader("sport.txt", "sport_name.txt").listWithOptionalName
     val writers = AbsProfReader("writer.txt", "writer_name.txt").listWithOptionalName

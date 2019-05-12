@@ -4,7 +4,6 @@
 package destiny.data.gauquelin.weka.house_aspect
 
 import destiny.astrology.*
-import destiny.astrology.Aspect.Importance
 import destiny.core.calendar.Location
 import destiny.data.gauquelin.weka.InstanceIF
 import weka.core.Instance
@@ -60,10 +59,10 @@ class TimeLocation_House_Aspect_Instance(
     }
 
     // ============ Aspect ============
-    val aspectCalculator = HoroscopeAspectsCalculator(horoscope, HoroscopeAspectsCalculatorModern())
+    val aspectCalculator = HoroscopeAspectsCalculator(modernCalculator())
 
-    for (data in aspectCalculator.getAspectDataSet(Arrays.asList(*Planet.array), Aspect.getAngles(Importance.HIGH))) {
-      var aspectString = data.aspect!!.toString(Locale.ENGLISH)
+    for (data in aspectCalculator.getAspectDataSet(horoscope.positionMap, Planet.list)) {
+      var aspectString = data.aspect.toString(Locale.ENGLISH)
       val twoPoints = TreeSet(data.twoPoints)
       val it = twoPoints.iterator()
       val p1 = it.next()

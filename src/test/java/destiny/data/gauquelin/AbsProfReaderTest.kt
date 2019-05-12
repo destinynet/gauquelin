@@ -115,7 +115,7 @@ class AbsProfReaderTest {
   @Test
   fun politician() {
     val t0 = System.currentTimeMillis()
-    AbsProfReader.politicans.groupBy { it.name != null }.also { map: Map<Boolean, List<GPerson2>> ->
+    AbsProfReader.politicians.groupBy { it.name != null }.also { map: Map<Boolean, List<GPerson2>> ->
       logger.info("有 name , list size = {}", map.getValue(true).size)
       logger.info("無 name , list size = {}", map.getValue(false).size)
     }

@@ -5,7 +5,6 @@
 package destiny.data.gauquelin.weka.anglePower_aspect
 
 import destiny.astrology.*
-import destiny.astrology.Aspect.Importance
 import destiny.core.calendar.ILocation
 import destiny.data.gauquelin.RefUtil
 import destiny.data.gauquelin.UtilHoroscopeAnglePower
@@ -13,7 +12,6 @@ import destiny.data.gauquelin.weka.InstanceIF
 import weka.core.Instance
 import weka.core.Instances
 import java.io.InputStreamReader
-import java.net.URL
 import java.time.chrono.ChronoLocalDateTime
 import java.util.*
 
@@ -98,10 +96,10 @@ class TimeLocation_AnglePower_Instance(
     }
 
     // ============ Aspect ============
-    val aspectCalculator = HoroscopeAspectsCalculator(horoscope, HoroscopeAspectsCalculatorModern())
+    val aspectCalculator = HoroscopeAspectsCalculator(modernCalculator())
 
-    for (data in aspectCalculator.getAspectDataSet(Arrays.asList(*Planet.array), Aspect.getAngles(Importance.HIGH))) {
-      var aspectString = data.aspect!!.toString(Locale.ENGLISH)
+    for (data in aspectCalculator.getAspectDataSet(horoscope.positionMap, Planet.list)) {
+      var aspectString = data.aspect.toString(Locale.ENGLISH)
       val twoPoints = TreeSet(data.twoPoints)
       val it = twoPoints.iterator()
       val p1 = it.next()

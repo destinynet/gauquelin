@@ -65,6 +65,7 @@ class ParseUtils : Serializable {
 
         // -1 的話，代表「東一區」
         val tz: Int = st.nextToken().toInt().let { 0 - it }
+        TimeZoneUtils.getTimeZone(tz * 60).id // 資料已經都是 GMT 了 , 所以此 tz int 其實沒有實際作用
 
 
         val (northSouth, latDeg, latMin) = parseLat(st.nextToken())
@@ -73,9 +74,12 @@ class ParseUtils : Serializable {
 
         val time = LocalDateTime.of(year, month, day, hour, minute, second)
         val ts = Timestamp.valueOf(time)
+
+
+
         val location = Location(
           eastWest, lngDeg, lngMin, 0.0,
-          northSouth, latDeg, latMin, 0.0, TimeZoneUtils.getTimeZone(tz * 60).id, null, 0.0)
+          northSouth, latDeg, latMin, 0.0, "GMT", null, 0.0)
 
 
         val COD = st.nextToken()
