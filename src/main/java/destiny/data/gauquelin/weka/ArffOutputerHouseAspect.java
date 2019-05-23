@@ -168,7 +168,7 @@ public class ArffOutputerHouseAspect implements Serializable
         sb.append(processAspect(aspect.getSaturnPluto()) + " , ");
         sb.append(processAspect(aspect.getUranusNeptune()) + " , ");
         sb.append(processAspect(aspect.getUranusPluto()) + " , ");
-        sb.append(processAspect(aspect.getNeptunrPluto()) + " , ");
+        sb.append(processAspect(aspect.getNeptunePluto()) + " , ");
         
         //sb.append(person.getCategory() + "\r\n");
         String cat;

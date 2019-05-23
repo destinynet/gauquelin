@@ -141,7 +141,7 @@ public class GPerson implements Serializable
     sb.append("\"" + getShrinkAspect(aspect.getSaturnPluto()) + "\",");
     sb.append("\"" + getShrinkAspect(aspect.getUranusNeptune()) + "\",");
     sb.append("\"" + getShrinkAspect(aspect.getUranusPluto()) + "\",");
-    sb.append("\"" + getShrinkAspect(aspect.getNeptunrPluto())+ "\",");
+    sb.append("\"" + getShrinkAspect(aspect.getNeptunePluto())+ "\",");
     
     //交角強度
     sb.append("\"" + anglePower.getSun()+ "\",");
@@ -159,7 +159,7 @@ public class GPerson implements Serializable
     sb.append("\"" + anglePower.getNeptune()+ "\",");
     sb.append(anglePower.getNeptunePower().toString().substring(0, 5) + ",");
     sb.append("\"" + anglePower.getPluto()+ "\",");
-    sb.append(anglePower.getPlutoPower().toString().substring(0, 5));
+    sb.append(anglePower.getPlutoPower().toString(), 0, 5);
     return sb.toString();
   }
   

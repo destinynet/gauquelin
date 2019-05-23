@@ -142,10 +142,10 @@ class GPersonDaoImplTest : AbstractGauquelinTest() {
 
   private fun processAspect(hc: IHoroscopeModel): GPersonAspect {
     val gpa = GPersonAspect()
-    val aspectCalculator = HoroscopeAspectsCalculator(modernCalculator())
+    val aspectCalculator = HoroscopeAspectsCalculator(HoroscopeAspectsCalculatorModern())
 
 
-    for (data in aspectCalculator.getAspectDataSet(hc.positionMap, Planet.list)) {
+    for (data in aspectCalculator.getAspectDataSet(hc.positionMap, Planet.list , Aspect.getAngles(Aspect.Importance.HIGH))) {
       gpa.setAspect(data)
     } // each aspect data
     return gpa

@@ -8,8 +8,8 @@ package destiny.data.gauquelin
  * 五種心智問題 ... 格式都一樣
  *
  * ACD : "ACUTE DELUSIONS" : mental_ACD.txt  , size = 332
- * HALP : "HALLUCINATING PSYCHOSIS" : mental_HALP.txt , size = 1136
- * MD : "MENTALLY DERANGED" : mental_MD.txt , size = 876
+ * HALP : "HALLUCINATING PSYCHOSIS" 幻覺 : mental_HALP.txt , size = 1136
+ * MD : "MENTALLY DERANGED" 精神錯亂 : mental_MD.txt , size = 876
  * MDP : MANIC-DEPRESSIVE PSYCHOSIS , Manic Depressive 躁鬱症 : mental_MDP.txt , size = 911
  * SCH : SCHIZOPHRENICS , 精神分裂 mental_SCH.txt , size = 1265
  */

@@ -66,11 +66,11 @@ class GPersonAspect : Serializable {
   var saturnPluto: String? = null
   var uranusNeptune: String? = null
   var uranusPluto: String? = null
-  var neptunrPluto: String? = null
+  var neptunePluto: String? = null
 
   fun setAspect(data: HoroscopeAspectData) {
-    val twoPoints = data.twoPoints
-    val localeString = data.aspect!!.toString(Locale.ENGLISH)
+    val twoPoints = data.points
+    val localeString = data.aspect.toString(Locale.ENGLISH)
 
     if (twoPoints.contains(Planet.SUN) && twoPoints.contains(Planet.MOON))
       sunMoon = localeString
@@ -161,7 +161,7 @@ class GPersonAspect : Serializable {
     else if (twoPoints.contains(Planet.URANUS) && twoPoints.contains(Planet.PLUTO))
       uranusPluto = localeString
     else if (twoPoints.contains(Planet.NEPTUNE) && twoPoints.contains(Planet.PLUTO))
-      neptunrPluto = localeString
+      neptunePluto = localeString
 
 
   }
@@ -194,7 +194,7 @@ class GPersonAspect : Serializable {
     result = prime * result + if (moonSaturn == null) 0 else moonSaturn!!.hashCode()
     result = prime * result + if (moonUranus == null) 0 else moonUranus!!.hashCode()
     result = prime * result + if (moonVenus == null) 0 else moonVenus!!.hashCode()
-    result = prime * result + if (neptunrPluto == null) 0 else neptunrPluto!!.hashCode()
+    result = prime * result + if (neptunePluto == null) 0 else neptunePluto!!.hashCode()
     result = prime * result + if (saturnNeptune == null) 0 else saturnNeptune!!.hashCode()
     result = prime * result + if (saturnPluto == null) 0 else saturnPluto!!.hashCode()
     result = prime * result + if (saturnUranus == null) 0 else saturnUranus!!.hashCode()
@@ -350,10 +350,10 @@ class GPersonAspect : Serializable {
         return false
     } else if (moonVenus != other.moonVenus)
       return false
-    if (neptunrPluto == null) {
-      if (other.neptunrPluto != null)
+    if (neptunePluto == null) {
+      if (other.neptunePluto != null)
         return false
-    } else if (neptunrPluto != other.neptunrPluto)
+    } else if (neptunePluto != other.neptunePluto)
       return false
     if (saturnNeptune == null) {
       if (other.saturnNeptune != null)

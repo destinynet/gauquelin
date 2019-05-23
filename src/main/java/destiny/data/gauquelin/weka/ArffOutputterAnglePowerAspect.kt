@@ -184,7 +184,7 @@ class ArffOutputterAnglePowerAspect(private val gpersons: List<GPerson>, private
         sb.append(processAspect(aspect.saturnPluto) + " , ")
         sb.append(processAspect(aspect.uranusNeptune) + " , ")
         sb.append(processAspect(aspect.uranusPluto) + " , ")
-        sb.append(processAspect(aspect.neptunrPluto) + " , ")
+        sb.append(processAspect(aspect.neptunePluto) + " , ")
 
         var cat = person.category
         if (person.category.equals("writer", ignoreCase = true) || person.category.equals("journalist", ignoreCase = true))
