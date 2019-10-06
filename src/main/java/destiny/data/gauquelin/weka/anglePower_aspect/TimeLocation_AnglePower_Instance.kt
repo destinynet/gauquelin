@@ -96,7 +96,7 @@ class TimeLocation_AnglePower_Instance(
     }
 
     // ============ Aspect ============
-    val aspectCalculator = HoroscopeAspectsCalculator(HoroscopeAspectsCalculatorModern())
+    val aspectCalculator = HoroscopeAspectsCalculatorModern()
 
     for (data in aspectCalculator.getAspectDataSet(horoscope.positionMap, Planet.list)) {
       var aspectString = data.aspect.toString(Locale.ENGLISH)

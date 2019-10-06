@@ -103,7 +103,7 @@ public class SuccessfulFrench2154Reader implements TextDataReader {
                   System.out.println("city = " + place + " ,  location = " + location);
                 //當時資料應該都是 GMT0
 
-                Location newLoc = new Location(location.getLng() , location.getLat() , "GMT" , location.getFinalMinuteOffset() , location.getAltitudeMeter());
+                Location newLoc = new Location(location.getLat(), location.getLng() , "GMT" , location.getFinalMinuteOffset() , location.getAltitudeMeter());
                 //person.setLocation(newLoc.getDebugString());
                 person.setLocation(LocationTools.INSTANCE.encode(newLoc));
               }

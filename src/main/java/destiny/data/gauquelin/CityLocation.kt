@@ -35,7 +35,7 @@ class CityLocation : Serializable {
     val lon = java.lang.Double.parseDouble(st.nextToken())
 
     //TODO : 目前資料都是 gmt，時差為 0
-    return Location(lon, lat, "GMT")
+    return Location(lat, lon, "GMT")
   }
 
   companion object {

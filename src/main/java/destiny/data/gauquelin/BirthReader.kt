@@ -143,7 +143,7 @@ class BirthReader(val filename: String, val hospital: Hospital?, val city: City)
     val cod = tokens[13]
 
     val lmt = LocalDateTime.of(year, month, day, hour, min, sec)
-    val loc = Location(lng, lat, tzid, minuteOffset)
+    val loc = Location(lat, lng, tzid, minuteOffset)
 
     return GPerson2(null, num, null, gender, lmt, loc, null, line)
   }
@@ -167,7 +167,7 @@ class BirthReader(val filename: String, val hospital: Hospital?, val city: City)
     val cod = tokens[12]
 
     val lmt = LocalDateTime.of(year, month, day, hour, min, sec)
-    val loc = Location(lng, lat, tzid, minuteOffset)
+    val loc = Location(lat, lng, tzid, minuteOffset)
 
     return GPerson2(null, num, null, gender, lmt, loc, null, line)
   }

@@ -6,23 +6,21 @@ package destiny.data.gauquelin
 
 import destiny.astrology.*
 import destiny.core.calendar.LocationTools
-import org.junit.Assert.assertNotNull
-import org.junit.Test
 import org.springframework.data.domain.PageRequest
 import kotlin.test.BeforeTest
+import kotlin.test.Test
+import kotlin.test.assertNotNull
 
 
 class GPersonDaoImplTest : AbstractGauquelinTest() {
 
   /** 專供測試使用的 [IHoroscopeContext] */
-  private lateinit var horoContext: IHoroscopeContext
+  //private lateinit var horoContext: IHoroscopeContext
 
   private var readers = listOf<TextDataReader>()
 
   @BeforeTest
   fun onSetUp() {
-
-    horoContext = horoContext {  }
 
     /*
        readers.add(new SportReader());
@@ -64,6 +62,8 @@ class GPersonDaoImplTest : AbstractGauquelinTest() {
     val pageSize = 200
     val count = gDao.count() - start
     println("總共 $count  筆資料")
+
+    val horoContext = horoContext {}
 
     var h: IHoroscopeModel
     for (i in 0..count / pageSize) {
@@ -126,7 +126,7 @@ class GPersonDaoImplTest : AbstractGauquelinTest() {
     for (i in 0..count / pageSize) {
       val persons = gDao.findAllByCategory(cat, (i * pageSize).toInt(), pageSize)
       for (p in persons) {
-        h = horoContext.getHoroscope(p.gmtTime, LocationTools.decode(p.location))
+        h = horoContext {}.getHoroscope(p.gmtTime, LocationTools.decode(p.location))
         //hc = horoscopeContextBean.getHoroscopeContextPlacidus(p.getGmtTime(), Location.get(p.getLocation()));
         System.err.println(p)
         val aspect = processAspect(h)
@@ -142,10 +142,10 @@ class GPersonDaoImplTest : AbstractGauquelinTest() {
 
   private fun processAspect(hc: IHoroscopeModel): GPersonAspect {
     val gpa = GPersonAspect()
-    val aspectCalculator = HoroscopeAspectsCalculator(HoroscopeAspectsCalculatorModern())
+    val aspectCalculator = HoroscopeAspectsCalculatorModern()
 
 
-    for (data in aspectCalculator.getAspectDataSet(hc.positionMap, Planet.list , Aspect.getAngles(Aspect.Importance.HIGH))) {
+    for (data in aspectCalculator.getAspectDataSet(hc.positionMap, Planet.list, Aspect.getAngles(Aspect.Importance.HIGH))) {
       gpa.setAspect(data)
     } // each aspect data
     return gpa
@@ -154,54 +154,43 @@ class GPersonDaoImplTest : AbstractGauquelinTest() {
   private fun processHouses(p: GPerson, hc: IHoroscopeModel) {
     val housePlacidus = GPersonHouse()
 
-    val horoscopePlacidus = horoContext.getHoroscope(hc.lmt, hc.location)
+
+    val horoscopePlacidus = horoContext { houseSystem = HouseSystem.PLACIDUS }.getHoroscope(hc.lmt, hc.location)
     //hc.setHouseSystem(HouseSystem.PLACIDUS);
     p.houseMap["placidus"] = processHouse(housePlacidus, horoscopePlacidus)
 
     val houseKoch = GPersonHouse()
-    val horoscopeKoch =
-      horoContext.getHoroscope(hc.lmt, hc.location, null, IHoroscopeContext.defaultPoints, HouseSystem.KOCH,
-                               Coordinate.ECLIPTIC, Centric.GEO)
+    val horoscopeKoch = horoContext { houseSystem = HouseSystem.KOCH }.getHoroscope(hc.lmt, hc.location, null, IHoroscopeContext.defaultPoints)
     //hc.setHouseSystem(HouseSystem.KOCH);
     p.houseMap["Koch"] = processHouse(houseKoch, horoscopeKoch)
 
 
     val houseRegiomontanus = GPersonHouse()
-    val horoscopeReg =
-      horoContext.getHoroscope(hc.lmt, hc.location, null, IHoroscopeContext.defaultPoints, HouseSystem.REGIOMONTANUS,
-                               Coordinate.ECLIPTIC, Centric.GEO)
+    val horoscopeReg = horoContext { houseSystem = HouseSystem.REGIOMONTANUS }.getHoroscope(hc.lmt, hc.location, null, IHoroscopeContext.defaultPoints)
     //hc.setHouseSystem(HouseSystem.REGIOMONTANUS);
     p.houseMap["Regiomontanus"] = processHouse(houseRegiomontanus, horoscopeReg)
 
 
     val housePorphyrius = GPersonHouse()
-    val horoscopePor =
-      horoContext.getHoroscope(hc.lmt, hc.location, null, IHoroscopeContext.defaultPoints, HouseSystem.PORPHYRIUS,
-                               Coordinate.ECLIPTIC, Centric.GEO)
+    val horoscopePor = horoContext { houseSystem = HouseSystem.PORPHYRIUS }.getHoroscope(hc.lmt, hc.location, null, IHoroscopeContext.defaultPoints)
     //hc.setHouseSystem(HouseSystem.PORPHYRIUS);
     p.houseMap["Porphyrius"] = processHouse(housePorphyrius, horoscopePor)
 
 
     val houseCampanus = GPersonHouse()
-    val horoscopeCampanus =
-      horoContext.getHoroscope(hc.lmt, hc.location, null, IHoroscopeContext.defaultPoints, HouseSystem.CAMPANUS,
-                               Coordinate.ECLIPTIC, Centric.GEO)
+    val horoscopeCampanus = horoContext { houseSystem = HouseSystem.CAMPANUS }.getHoroscope(hc.lmt, hc.location, null, IHoroscopeContext.defaultPoints)
     //hc.setHouseSystem(HouseSystem.CAMPANUS);
     p.houseMap["Campanus"] = processHouse(houseCampanus, horoscopeCampanus)
 
 
     val houseEqual = GPersonHouse()
-    val horoscopeEqual =
-      horoContext.getHoroscope(hc.lmt, hc.location, null, IHoroscopeContext.defaultPoints, HouseSystem.EQUAL,
-                               Coordinate.ECLIPTIC, Centric.GEO)
+    val horoscopeEqual = horoContext { houseSystem = HouseSystem.EQUAL }.getHoroscope(hc.lmt, hc.location, null, IHoroscopeContext.defaultPoints)
     //hc.setHouseSystem(HouseSystem.EQUAL);
     p.houseMap["Equal"] = processHouse(houseEqual, horoscopeEqual)
 
 
     val houseAlcabitius = GPersonHouse()
-    val horoscopeAlc =
-      horoContext.getHoroscope(hc.lmt, hc.location, null, IHoroscopeContext.defaultPoints, HouseSystem.ALCABITIUS,
-                               Coordinate.ECLIPTIC, Centric.GEO)
+    val horoscopeAlc = horoContext { houseSystem = HouseSystem.ALCABITIUS }.getHoroscope(hc.lmt, hc.location, null, IHoroscopeContext.defaultPoints)
     //hc.setHouseSystem(HouseSystem.ALCABITIUS);
     p.houseMap["Alcabitius"] = processHouse(houseAlcabitius, horoscopeAlc)
   }

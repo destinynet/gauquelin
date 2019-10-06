@@ -52,7 +52,7 @@ class BirthAndDeathReader {
     val lng = ParseTools.parseLng(tokens[11])
 
     val lmt = LocalDateTime.of(year , month , day , hour , min , sec)
-    val loc = Location(lng , lat , tzid , minuteOffset)
+    val loc = Location(lat, lng, tzid, minuteOffset)
 
     return GPerson2(null , num , null , null , lmt , loc , null , line)
   }
