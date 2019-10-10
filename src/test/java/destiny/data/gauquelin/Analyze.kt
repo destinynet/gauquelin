@@ -133,7 +133,7 @@ class Analyze : DestinyCoreContext() {
 
     val patternContext = PatternContext(AspectEffectiveModern(), aspectsCalculator)
 
-    val effectiveMap: List<Map<Point, Pair<Aspect, Double>>> = persons.map { p ->
+    val effectiveMap = persons.map { p ->
       val horoModel: IHoroscopeModel = horoCtx.getHoroscope(p.lmt, p.loc, p.place , points)
       val starPosMap: Map<Point, IPos> = horoModel.positionMap
       val cuspDegreeMap: Map<Int, Double> = horoModel.cuspDegreeMap
@@ -145,7 +145,7 @@ class Analyze : DestinyCoreContext() {
         points = setOf(Planet.JUPITER),
 //        points = setOf(*Axis.array , *Planet.array),
         aspects = setOf(Aspect.TRINE , Aspect.SEXTILE))
-        .filter { (_ , aspectAndScore) -> aspectAndScore.second > 0.8 }
+        .filter { (_ , _ , score) -> score > 0.8 }
     }.filter { it.isNotEmpty() }
 
     logger.info("total = {} , effective = {} , ratio = {}" , total , effectiveMap.size , (effectiveMap.size / total.toDouble()) )
