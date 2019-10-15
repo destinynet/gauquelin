@@ -19,7 +19,8 @@ class TimeLocation_AnglePower_Instance(
   val horoscopeContext: IHoroscopeContext,
 
   private val time: ChronoLocalDateTime<*>,
-  private val location: ILocation) : InstanceIF  {
+  private val location: ILocation ,
+  private val aspectsCalculator : IHoroscopeAspectsCalculator) : InstanceIF  {
 
 
 
@@ -96,9 +97,9 @@ class TimeLocation_AnglePower_Instance(
     }
 
     // ============ Aspect ============
-    val aspectCalculator = HoroscopeAspectsCalculatorModern()
+    //val aspectCalculator = HoroscopeAspectsCalculatorModern()
 
-    for (data in aspectCalculator.getAspectDataSet(horoscope.positionMap, Planet.list)) {
+    for (data in aspectsCalculator.getAspectDataSet(horoscope.positionMap, Planet.list)) {
       var aspectString = data.aspect.toString(Locale.ENGLISH)
       val twoPoints = TreeSet(data.points)
       val it = twoPoints.iterator()

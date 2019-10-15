@@ -3,7 +3,7 @@
  */
 package destiny.data.gauquelin.weka.house_aspect
 
-import destiny.astrology.HoroscopeAspectsCalculatorModern
+import destiny.astrology.IHoroscopeAspectsCalculator
 import destiny.astrology.IHoroscopeContext
 import destiny.astrology.IHoroscopeModel
 import destiny.astrology.Planet
@@ -19,7 +19,8 @@ import java.util.*
 /** 從 time , location 取得 instance  */
 class TimeLocation_House_Aspect_Instance(
   horoscopeContext: IHoroscopeContext,
-  time: LocalDateTime, location: Location) : InstanceIF {
+  time: LocalDateTime, location: Location,
+  private val aspectsCalculator : IHoroscopeAspectsCalculator) : InstanceIF {
   private val horoscope: IHoroscopeModel = horoscopeContext.getHoroscope(time, location)
 
 
@@ -62,9 +63,9 @@ class TimeLocation_House_Aspect_Instance(
     }
 
     // ============ Aspect ============
-    val aspectCalculator = HoroscopeAspectsCalculatorModern()
+    //val aspectCalculator = HoroscopeAspectsCalculatorModern()
 
-    for (data in aspectCalculator.getAspectDataSet(horoscope.positionMap, Planet.list)) {
+    for (data in aspectsCalculator.getAspectDataSet(horoscope.positionMap, Planet.list)) {
       var aspectString = data.aspect.toString(Locale.ENGLISH)
       val twoPoints = TreeSet(data.points)
       val it = twoPoints.iterator()

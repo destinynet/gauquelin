@@ -29,11 +29,11 @@ class Analyze : DestinyCoreContext() {
   private lateinit var horoCtx: IHoroscopeContext
 
   private val allMental = AbsMentalReader.acd.plus(halp).plus(md).plus(mdp).plus(sch)
-  private val allProfs = AbsProfReader.journalists.plus(military).plus(musicians).plus(painters).plus(politicians).plus(scientists).plus(sports)
+  private val allProfs = AbsProfReader.journalists.asSequence().plus(military).plus(musicians).plus(painters).plus(politicians).plus(scientists).plus(sports).toList()
 
   private val points = setOf(*Planet.array , *Axis.array)
 
-  private val aspectsCalculator = HoroscopeAspectsCalculatorModern()
+  private val aspectsCalculator = aspectsCalculatorModern()
 
   //private val horoAspectsCalculator = HoroscopeAspectsCalculator(aspectsCalculator)
 

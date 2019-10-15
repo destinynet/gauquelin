@@ -6,7 +6,6 @@ package destiny.data.gauquelin.weka.anglePower_aspect
 
 import destiny.core.calendar.Location
 import destiny.data.gauquelin.AbstractGauquelinTest
-import java.lang.Exception
 import java.time.LocalDateTime
 import java.util.*
 import kotlin.test.Test
@@ -20,7 +19,8 @@ class TimeLocation_AnglePower_InstanceTest : AbstractGauquelinTest() {
       try {
         val tli = TimeLocation_AnglePower_Instance(horoContext,
           LocalDateTime.of(1900, 7, i, i, 0, 0),
-          Location.of(Locale.TAIWAN))
+          Location.of(Locale.TAIWAN) ,
+          aspectsCalculatorModern())
         val instance = tli.instance
         //System.out.println(instance);
 
