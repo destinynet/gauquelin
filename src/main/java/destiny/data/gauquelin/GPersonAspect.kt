@@ -3,7 +3,7 @@
  */
 package destiny.data.gauquelin
 
-import destiny.astrology.HoroscopeAspectData
+import destiny.astrology.AspectData
 import destiny.astrology.Planet
 import java.io.Serializable
 import java.util.*
@@ -68,7 +68,7 @@ class GPersonAspect : Serializable {
   var uranusPluto: String? = null
   var neptunePluto: String? = null
 
-  fun setAspect(data: HoroscopeAspectData) {
+  fun setAspect(data: AspectData) {
     val twoPoints = data.points
     val localeString = data.aspect.toString(Locale.ENGLISH)
 

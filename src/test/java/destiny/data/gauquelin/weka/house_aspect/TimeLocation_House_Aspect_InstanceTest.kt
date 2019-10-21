@@ -19,7 +19,7 @@ class TimeLocation_House_Aspect_InstanceTest : AbstractGauquelinTest() {
 
     for (i in 1..1) {
       val tli = TimeLocation_House_Aspect_Instance(horoContext, LocalDateTime.of(2000, 9, i, 0, 0, 0),
-                                                   Location.of(Locale.TAIWAN))
+                                                   Location.of(Locale.TAIWAN) , aspectsCalculatorModern())
       val instance = tli.instance
       println(instance)
 
