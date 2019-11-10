@@ -21,7 +21,7 @@ open class GDaoImplTest : AbstractGauquelinTest() {
   @Test
   fun testEmf() {
     assertNotNull(emfGauquelin)
-    println("emf = $emfGauquelin")
+    logger.info("emf = {}" , emfGauquelin)
   }
 
   /** 若不加上 @Transactional() , 則無法抓到 collections  */
