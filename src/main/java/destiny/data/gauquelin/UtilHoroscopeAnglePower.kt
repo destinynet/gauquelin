@@ -6,7 +6,7 @@ package destiny.data.gauquelin
 
 import destiny.astrology.IHoroscopeModel
 import destiny.astrology.Planet
-import destiny.astrology.Utils
+import destiny.tools.circleUtils
 import java.io.Serializable
 
 class UtilHoroscopeAnglePower(h: IHoroscopeModel) : Serializable {
@@ -55,26 +55,26 @@ class UtilHoroscopeAnglePower(h: IHoroscopeModel) : Serializable {
       var power = 0.0
       assert(nearestAngle != null)
       if (nearestAngle == "east") {
-        larger = Utils.getNormalizeDegree(degEast + 10)
-        smaller = Utils.getNormalizeDegree(degEast - 20)
+        larger = circleUtils.getNormalizeDegree(degEast + 10)
+        smaller = circleUtils.getNormalizeDegree(degEast - 20)
         cuspDeg = degEast
         orientalCusp = degTop
         occidentalCusp = degBottom
       } else if (nearestAngle == "top") {
-        larger = Utils.getNormalizeDegree(degTop + 10)
-        smaller = Utils.getNormalizeDegree(degTop - 20)
+        larger = circleUtils.getNormalizeDegree(degTop + 10)
+        smaller = circleUtils.getNormalizeDegree(degTop - 20)
         cuspDeg = degTop
         orientalCusp = degWest
         occidentalCusp = degEast
       } else if (nearestAngle == "west") {
-        larger = Utils.getNormalizeDegree(degWest)
-        smaller = Utils.getNormalizeDegree(degWest - 20)
+        larger = circleUtils.getNormalizeDegree(degWest)
+        smaller = circleUtils.getNormalizeDegree(degWest - 20)
         cuspDeg = degWest
         orientalCusp = degBottom
         occidentalCusp = degTop
       } else if (nearestAngle == "bottom") {
-        larger = Utils.getNormalizeDegree(degBottom)
-        smaller = Utils.getNormalizeDegree(degBottom - 20)
+        larger = circleUtils.getNormalizeDegree(degBottom)
+        smaller = circleUtils.getNormalizeDegree(degBottom - 20)
         cuspDeg = degBottom
         orientalCusp = degEast
         occidentalCusp = degWest
@@ -87,7 +87,7 @@ class UtilHoroscopeAnglePower(h: IHoroscopeModel) : Serializable {
 
   private fun getPower(orientalCusp: Double, smaller: Double, cuspDeg: Double, larger: Double, occidentalCusp: Double, degree: Double): Double {
     // 先求出中心度數（最強點)
-    val center = Utils.getNormalizeDegree(IHoroscopeModel.getAngle(smaller, larger) / 2 + smaller)
+    val center = circleUtils.getNormalizeDegree(IHoroscopeModel.getAngle(smaller, larger) / 2 + smaller)
     // 離中心點幾度
     val distance = IHoroscopeModel.getAngle(center, degree)
     // 再算影響範圍的半徑 ( smaller 到 larger 除以 2)
