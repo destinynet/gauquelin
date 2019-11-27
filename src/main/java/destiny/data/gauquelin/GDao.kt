@@ -4,7 +4,7 @@
  */
 package destiny.data.gauquelin
 
-import destiny.tools.spring.KRepository
+import org.springframework.data.jpa.repository.JpaRepository
 import java.io.Serializable
 import javax.persistence.EntityManager
 import javax.persistence.PersistenceContext
@@ -17,7 +17,7 @@ interface GDaoCustom {
   fun findAllByCategory(category: String, start: Int, count: Int): List<GPerson>
 }
 
-interface GDao : KRepository<GPerson , Long> , GDaoCustom
+interface GDao : JpaRepository<GPerson, Long>, GDaoCustom
 
 //@Repository(value = "gDao2Custom")
 class GDaoImpl : GDaoCustom , Serializable {
