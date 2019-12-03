@@ -4,6 +4,7 @@
  */
 package destiny.data.gauquelin
 
+import destiny.tools.spring.get
 import org.springframework.data.domain.PageRequest
 import org.springframework.transaction.annotation.Transactional
 import javax.inject.Inject
