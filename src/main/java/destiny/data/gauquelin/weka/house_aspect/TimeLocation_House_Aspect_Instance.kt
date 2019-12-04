@@ -3,10 +3,7 @@
  */
 package destiny.data.gauquelin.weka.house_aspect
 
-import destiny.astrology.IHoroscopeAspectsCalculator
-import destiny.astrology.IHoroscopeContext
-import destiny.astrology.IHoroscopeModel
-import destiny.astrology.Planet
+import destiny.astrology.*
 import destiny.core.calendar.Location
 import destiny.data.gauquelin.weka.InstanceIF
 import weka.core.Instance

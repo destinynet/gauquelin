@@ -72,7 +72,7 @@ class GPersonDaoImplTest : AbstractGauquelinTest() {
 
       for (p in persons) {
 
-        h = horoContext.getHoroscope(p.gmtTime, LocationTools.decode(p.location))
+        h = horoContext.getHoroscope(p.gmtTime, LocationTools.decode(p.location!!))
 
         var updated = false
         if (p.aspect == null) {
@@ -126,7 +126,7 @@ class GPersonDaoImplTest : AbstractGauquelinTest() {
     for (i in 0..count / pageSize) {
       val persons = gDao.findAllByCategory(cat, (i * pageSize).toInt(), pageSize)
       for (p in persons) {
-        h = horoContext {}.getHoroscope(p.gmtTime, LocationTools.decode(p.location))
+        h = horoContext {}.getHoroscope(p.gmtTime, LocationTools.decode(p.location!!))
         //hc = horoscopeContextBean.getHoroscopeContextPlacidus(p.getGmtTime(), Location.get(p.getLocation()));
         System.err.println(p)
         val aspect = processAspect(h)

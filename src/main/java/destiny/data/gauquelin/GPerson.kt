@@ -1,375 +1,202 @@
 /**
- * @author smallufo 
+ * @author smallufo
  * Created on 2009/3/5 at 下午 9:20:23
- */ 
-package destiny.data.gauquelin;
+ */
+package destiny.data.gauquelin
 
-import destiny.core.calendar.ILocation;
-import destiny.core.calendar.LocationTools;
-import org.hibernate.annotations.BatchSize;
-
-import javax.persistence.*;
-import java.io.Serializable;
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
+import destiny.core.calendar.LocationTools.decode
+import org.hibernate.annotations.BatchSize
+import java.io.Serializable
+import java.sql.Timestamp
+import java.time.LocalDateTime
+import java.util.*
+import javax.persistence.*
 
 /**
  * 高格林的一筆資料
  */
 @Entity
-@Table(name="person")
+@Table(name = "person")
 @Cacheable
-@BatchSize(size=10)
-public class GPerson implements Serializable
-{
-  /** 資料庫的 id */
+@BatchSize(size = 10)
+class GPerson : Serializable {
+  /** 資料庫的 id  */
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "id")
-  private long id;
-  
-  private String category;
-  
-  /** 原始的 number ，每種職業會有獨一的 number . 不同職業的 number 會重複，不可拿來做 index */
-  private int number;
+  var id: Long = 0
+  var category: String? = null
+  /** 原始的 number ，每種職業會有獨一的 number . 不同職業的 number 會重複，不可拿來做 index  */
+  var number = 0
+  var name: String? = null
+  /** 男生 = 1 , 女生 = 0 , 未定義則為 -1  */
+  var gender = -1
+  /** 「未調整過時區」的原始出生時間  */
+  var gmtTimestamp: Timestamp? = null
+  var location: String? = null
+  /** 地點  */
+  var place: String? = null
+  /** 原始資料  */
+  var raw: String? = null
+  /** 星體位於什麼宮  */
+  @BatchSize(size = 100)
+  @OneToMany(mappedBy = "gperson", cascade = [CascadeType.ALL], fetch = FetchType.EAGER, orphanRemoval = true)
+  @MapKey(name = "house")
+  var houseMap = Collections.synchronizedMap(HashMap<String, GPersonHouse>())
+  /** 星體交角資料  */
+  @BatchSize(size = 100)
+  @OneToOne(mappedBy = "gperson")
+  @JoinColumn(name = "personId")
+  var aspect: GPersonAspect? = null
+  /** 交角強度  */
+  @BatchSize(size = 100)
+  @OneToOne(mappedBy = "gperson")
+  @JoinColumn(name = "personId")
+  var anglePower: GPersonAnglePower? = null
+  //何星體位於哪一宮
+  //任兩顆星是否呈現交角，或哪種交角
+  //交角強度
 
-  private String name;
-  
-  /** 男生 = 1 , 女生 = 0 , 未定義則為 -1 */
-  private int gender = -1;
-  
-  /** 「未調整過時區」的原始出生時間 */
-  private Timestamp gmtTimestamp;
-  
-  private String location;
-  
-  /** 地點 */
-  private String place;
-  
-  /** 原始資料 */
-  private String raw;
-  
-  /** 星體位於什麼宮 */
-  @BatchSize(size=100)
-  @OneToMany(mappedBy="gperson" ,  cascade=CascadeType.ALL , fetch=FetchType.EAGER , orphanRemoval=true)
-  @MapKey(name="house")
-  private Map<String , GPersonHouse> houseMap = Collections.synchronizedMap(new HashMap<String , GPersonHouse>());
-  
-  /** 星體交角資料 */
-  @BatchSize(size=100)
-  @OneToOne(mappedBy="gperson")
-  @JoinColumn(name="personId")
-  private GPersonAspect aspect;
-  
-  /** 交角強度 */
-  @BatchSize(size=100)
-  @OneToOne(mappedBy="gperson")
-  @JoinColumn(name="personId")
-  private GPersonAnglePower anglePower;
-  
-  public GPerson()
-  {
-  }
-  
-  /** 輸出成 CSV 格式 */ 
-  public String getCSV()
-  {
-    StringBuffer sb = new StringBuffer();
-    //sb.append(getId() + " : ");
-    sb.append("\"");
-    sb.append(getCategory());
-    sb.append("\",");
-    
-    //何星體位於哪一宮
-    GPersonHouse house = houseMap.get("placidus");
-    sb.append(house.getSun() + ",");
-    sb.append(house.getMoon() + ",");
-    sb.append(house.getMercury() + ",");
-    sb.append(house.getVenus() + ",");
-    sb.append(house.getMars() + ",");
-    sb.append(house.getJupiter() + ",");
-    sb.append(house.getSaturn() + ",");
-    sb.append(house.getUranus() + ",");
-    sb.append(house.getNeptune() + ",");
-    sb.append(house.getNeptune() + ",");
-    
-    //任兩顆星是否呈現交角，或哪種交角
-    sb.append("\"" + getShrinkAspect(aspect.getSunMoon()) + "\",");
-    sb.append("\"" + getShrinkAspect(aspect.getSunMercury()) + "\",");
-    sb.append("\"" + getShrinkAspect(aspect.getSunVenus())+ "\",");
-    sb.append("\"" + getShrinkAspect(aspect.getSunMars()) + "\",");
-    sb.append("\"" + getShrinkAspect(aspect.getSunJupiter()) + "\",");
-    sb.append("\"" + getShrinkAspect(aspect.getSunSaturn()) + "\",");
-    sb.append("\"" + getShrinkAspect(aspect.getSunUranus()) + "\",");
-    sb.append("\"" + getShrinkAspect(aspect.getSunNeptune())+ "\",");
-    sb.append("\"" + getShrinkAspect(aspect.getSunPluto())+ "\",");
-    sb.append("\"" + getShrinkAspect(aspect.getMoonMercury()) + "\",");
-    sb.append("\"" + getShrinkAspect(aspect.getMoonVenus()) + "\",");
-    sb.append("\"" + getShrinkAspect(aspect.getMoonMars()) + "\",");
-    sb.append("\"" + getShrinkAspect(aspect.getMoonJupiter())+ "\",");
-    sb.append("\"" + getShrinkAspect(aspect.getMoonSaturn())+ "\",");
-    sb.append("\"" + getShrinkAspect(aspect.getMoonUranus())+ "\",");
-    sb.append("\"" + getShrinkAspect(aspect.getMoonNeptune())+ "\",");
-    sb.append("\"" + getShrinkAspect(aspect.getMoonPluto())+ "\",");
-    sb.append("\"" + getShrinkAspect(aspect.getMercuryVenus())+ "\",");
-    sb.append("\"" + getShrinkAspect(aspect.getMercuryMars())+ "\",");
-    sb.append("\"" + getShrinkAspect(aspect.getMercuryJupiter())+ "\",");
-    sb.append("\"" + getShrinkAspect(aspect.getMercurySaturn())+ "\",");
-    sb.append("\"" + getShrinkAspect(aspect.getMercuryUranus())+ "\",");
-    sb.append("\"" + getShrinkAspect(aspect.getMercuryNeptune())+ "\",");
-    sb.append("\"" + getShrinkAspect(aspect.getMercuryPluto())+ "\",");
-    sb.append("\"" + getShrinkAspect(aspect.getVenusMars())+ "\",");
-    sb.append("\"" + getShrinkAspect(aspect.getVenusJupiter())+ "\",");
-    sb.append("\"" + getShrinkAspect(aspect.getVenusSaturn())+ "\",");
-    sb.append("\"" + getShrinkAspect(aspect.getVenusUranus())+ "\",");
-    sb.append("\"" + getShrinkAspect(aspect.getVenusNeptune())+ "\",");
-    sb.append("\"" + getShrinkAspect(aspect.getVenusPluto())+ "\",");
-    sb.append("\"" + getShrinkAspect(aspect.getMarsJupiter())+ "\",");
-    sb.append("\"" + getShrinkAspect(aspect.getMarsSaturn())+ "\",");
-    sb.append("\"" + getShrinkAspect(aspect.getMarsUranus())+ "\",");
-    sb.append("\"" + getShrinkAspect(aspect.getMarsNeptune())+ "\",");
-    sb.append("\"" + getShrinkAspect(aspect.getMarsPluto())+ "\",");
-    sb.append("\"" + getShrinkAspect(aspect.getJupiterSaturn()) + "\",");
-    sb.append("\"" + getShrinkAspect(aspect.getJupiterUranus()) + "\",");
-    sb.append("\"" + getShrinkAspect(aspect.getJupiterNeptune()) + "\",");
-    sb.append("\"" + getShrinkAspect(aspect.getJupiterPluto()) + "\",");
-    sb.append("\"" + getShrinkAspect(aspect.getSaturnUranus()) + "\",");
-    sb.append("\"" + getShrinkAspect(aspect.getSaturnNeptune()) + "\",");
-    sb.append("\"" + getShrinkAspect(aspect.getSaturnPluto()) + "\",");
-    sb.append("\"" + getShrinkAspect(aspect.getUranusNeptune()) + "\",");
-    sb.append("\"" + getShrinkAspect(aspect.getUranusPluto()) + "\",");
-    sb.append("\"" + getShrinkAspect(aspect.getNeptunePluto())+ "\",");
-    
-    //交角強度
-    sb.append("\"" + anglePower.getSun()+ "\",");
-    sb.append(anglePower.getSunPower().toString().substring(0, 5) + ",");
-    sb.append("\"" + anglePower.getMoon()+ "\",");
-    sb.append(anglePower.getMoonPower().toString().substring(0, 5) + ",");
-    sb.append("\"" + anglePower.getMars()+ "\",");
-    sb.append(anglePower.getMarsPower().toString().substring(0, 5) + ",");
-    sb.append("\"" + anglePower.getJupiter()+ "\",");
-    sb.append(anglePower.getJupiterPower().toString().substring(0, 5) + ",");
-    sb.append("\"" + anglePower.getSaturn()+ "\",");
-    sb.append(anglePower.getSaturnPower().toString().substring(0, 5) + ",");
-    sb.append("\"" + anglePower.getUranus()+ "\",");
-    sb.append(anglePower.getUranusPower().toString().substring(0, 5) + ",");
-    sb.append("\"" + anglePower.getNeptune()+ "\",");
-    sb.append(anglePower.getNeptunePower().toString().substring(0, 5) + ",");
-    sb.append("\"" + anglePower.getPluto()+ "\",");
-    sb.append(anglePower.getPlutoPower().toString(), 0, 5);
-    return sb.toString();
-  }
-  
-  /** 為了節省空間 , 將 Opposition , Trine ... 等 Aspect , 只取前面兩個字元 , 而 null 則傳回 "n" */
-  private String getShrinkAspect(String s)
-  {
-    if (s == null)
-      return "n";
-    else
-      return s.substring(0,2);
+  /** 輸出成 CSV 格式  */
+  val csv: String
+    get() {
+      val sb = StringBuffer()
+      //sb.append(getId() + " : ");
+      sb.append("\"")
+      sb.append(category)
+      sb.append("\",")
+      //何星體位於哪一宮
+      val house = houseMap["placidus"]
+      sb.append(house!!.sun.toString() + ",")
+      sb.append(house.moon.toString() + ",")
+      sb.append(house.mercury.toString() + ",")
+      sb.append(house.venus.toString() + ",")
+      sb.append(house.mars.toString() + ",")
+      sb.append(house.jupiter.toString() + ",")
+      sb.append(house.saturn.toString() + ",")
+      sb.append(house.uranus.toString() + ",")
+      sb.append(house.neptune.toString() + ",")
+      sb.append(house.neptune.toString() + ",")
+      //任兩顆星是否呈現交角，或哪種交角
+      sb.append("\"" + getShrinkAspect(aspect!!.sunMoon) + "\",")
+      sb.append("\"" + getShrinkAspect(aspect!!.sunMercury) + "\",")
+      sb.append("\"" + getShrinkAspect(aspect!!.sunVenus) + "\",")
+      sb.append("\"" + getShrinkAspect(aspect!!.sunMars) + "\",")
+      sb.append("\"" + getShrinkAspect(aspect!!.sunJupiter) + "\",")
+      sb.append("\"" + getShrinkAspect(aspect!!.sunSaturn) + "\",")
+      sb.append("\"" + getShrinkAspect(aspect!!.sunUranus) + "\",")
+      sb.append("\"" + getShrinkAspect(aspect!!.sunNeptune) + "\",")
+      sb.append("\"" + getShrinkAspect(aspect!!.sunPluto) + "\",")
+      sb.append("\"" + getShrinkAspect(aspect!!.moonMercury) + "\",")
+      sb.append("\"" + getShrinkAspect(aspect!!.moonVenus) + "\",")
+      sb.append("\"" + getShrinkAspect(aspect!!.moonMars) + "\",")
+      sb.append("\"" + getShrinkAspect(aspect!!.moonJupiter) + "\",")
+      sb.append("\"" + getShrinkAspect(aspect!!.moonSaturn) + "\",")
+      sb.append("\"" + getShrinkAspect(aspect!!.moonUranus) + "\",")
+      sb.append("\"" + getShrinkAspect(aspect!!.moonNeptune) + "\",")
+      sb.append("\"" + getShrinkAspect(aspect!!.moonPluto) + "\",")
+      sb.append("\"" + getShrinkAspect(aspect!!.mercuryVenus) + "\",")
+      sb.append("\"" + getShrinkAspect(aspect!!.mercuryMars) + "\",")
+      sb.append("\"" + getShrinkAspect(aspect!!.mercuryJupiter) + "\",")
+      sb.append("\"" + getShrinkAspect(aspect!!.mercurySaturn) + "\",")
+      sb.append("\"" + getShrinkAspect(aspect!!.mercuryUranus) + "\",")
+      sb.append("\"" + getShrinkAspect(aspect!!.mercuryNeptune) + "\",")
+      sb.append("\"" + getShrinkAspect(aspect!!.mercuryPluto) + "\",")
+      sb.append("\"" + getShrinkAspect(aspect!!.venusMars) + "\",")
+      sb.append("\"" + getShrinkAspect(aspect!!.venusJupiter) + "\",")
+      sb.append("\"" + getShrinkAspect(aspect!!.venusSaturn) + "\",")
+      sb.append("\"" + getShrinkAspect(aspect!!.venusUranus) + "\",")
+      sb.append("\"" + getShrinkAspect(aspect!!.venusNeptune) + "\",")
+      sb.append("\"" + getShrinkAspect(aspect!!.venusPluto) + "\",")
+      sb.append("\"" + getShrinkAspect(aspect!!.marsJupiter) + "\",")
+      sb.append("\"" + getShrinkAspect(aspect!!.marsSaturn) + "\",")
+      sb.append("\"" + getShrinkAspect(aspect!!.marsUranus) + "\",")
+      sb.append("\"" + getShrinkAspect(aspect!!.marsNeptune) + "\",")
+      sb.append("\"" + getShrinkAspect(aspect!!.marsPluto) + "\",")
+      sb.append("\"" + getShrinkAspect(aspect!!.jupiterSaturn) + "\",")
+      sb.append("\"" + getShrinkAspect(aspect!!.jupiterUranus) + "\",")
+      sb.append("\"" + getShrinkAspect(aspect!!.jupiterNeptune) + "\",")
+      sb.append("\"" + getShrinkAspect(aspect!!.jupiterPluto) + "\",")
+      sb.append("\"" + getShrinkAspect(aspect!!.saturnUranus) + "\",")
+      sb.append("\"" + getShrinkAspect(aspect!!.saturnNeptune) + "\",")
+      sb.append("\"" + getShrinkAspect(aspect!!.saturnPluto) + "\",")
+      sb.append("\"" + getShrinkAspect(aspect!!.uranusNeptune) + "\",")
+      sb.append("\"" + getShrinkAspect(aspect!!.uranusPluto) + "\",")
+      sb.append("\"" + getShrinkAspect(aspect!!.neptunePluto) + "\",")
+      //交角強度
+      sb.append("\"" + anglePower!!.sun + "\",")
+      sb.append(anglePower!!.sunPower.toString().substring(0, 5) + ",")
+      sb.append("\"" + anglePower!!.moon + "\",")
+      sb.append(anglePower!!.moonPower.toString().substring(0, 5) + ",")
+      sb.append("\"" + anglePower!!.mars + "\",")
+      sb.append(anglePower!!.marsPower.toString().substring(0, 5) + ",")
+      sb.append("\"" + anglePower!!.jupiter + "\",")
+      sb.append(anglePower!!.jupiterPower.toString().substring(0, 5) + ",")
+      sb.append("\"" + anglePower!!.saturn + "\",")
+      sb.append(anglePower!!.saturnPower.toString().substring(0, 5) + ",")
+      sb.append("\"" + anglePower!!.uranus + "\",")
+      sb.append(anglePower!!.uranusPower.toString().substring(0, 5) + ",")
+      sb.append("\"" + anglePower!!.neptune + "\",")
+      sb.append(anglePower!!.neptunePower.toString().substring(0, 5) + ",")
+      sb.append("\"" + anglePower!!.pluto + "\",")
+      sb.append(anglePower!!.plutoPower.toString(), 0, 5)
+      return sb.toString()
+    }
+
+  /** 為了節省空間 , 將 Opposition , Trine ... 等 Aspect , 只取前面兩個字元 , 而 null 則傳回 "n"  */
+  private fun getShrinkAspect(s: String?): String {
+    return s?.substring(0, 2) ?: "n"
   }
 
-  public void setId(long id)
-  {
-    this.id = id;
-  }
+  /** 資料都是 gmt 的  */
+  val gmtTime: LocalDateTime
+    get() = gmtTimestamp!!.toLocalDateTime()
 
-  public long getId()
-  {
-    return id;
-  }
-
-  public String getCategory()
-  {
-    return category;
-  }
-
-  public void setCategory(String category)
-  {
-    this.category = category;
-  }
-  
-  public int getNumber()
-  {
-    return number;
-  }
-
-  public void setNumber(int number)
-  {
-    this.number = number;
-  }
-
-  public int getGender()
-  {
-    return gender;
-  }
-
-  public void setGender(int gender)
-  {
-    this.gender = gender;
-  }
-
-  /** 資料都是 gmt 的 */
-  public LocalDateTime getGmtTime() {
-    return gmtTimestamp.toLocalDateTime();
-  }
-  
-  public Timestamp getGmtTimestamp()
-  {
-    return gmtTimestamp;
-  }
-
-  public void setGmtTimestamp(Timestamp timestamp)
-  {
-    this.gmtTimestamp = timestamp;
-  }
-
-  public String getPlace()
-  {
-    return place;
-  }
-
-  public void setPlace(String place)
-  {
-    this.place = place;
-  }
-
-  public String getRaw()
-  {
-    return raw;
-  }
-
-  public void setRaw(String raw)
-  {
-    this.raw = raw;
-  }
-
-  public String getLocation()
-  {
-    return location;
-  }
-
-  public void setLocation(String location)
-  {
-    this.location = location;
-  }
-  
-  public String getName()
-  {
-    return name;
-  }
-
-  public void setName(String name)
-  {
-    this.name = name;
-  }
-  
-  @Override
-  public String toString()
-  {
-    StringBuffer sb = new StringBuffer();
-    sb.append("["+id+"] ");
-    sb.append(" " + category);
-    sb.append("\t");
-    sb.append(number);
-    sb.append("\t" + name);
-    sb.append(" ");
-    if (gender==1)
-      sb.append("M");
-    else if (gender == 0)
-      sb.append("F");
-    else
-      sb.append("?");
-    sb.append(" ");
-    
-    sb.append("gmt = " + gmtTimestamp);
-    sb.append(" ");
-    
-    ILocation loc = LocationTools.INSTANCE.decode(location);
-    sb.append("loc = " + loc);
-    
-    sb.append(" ");
-    sb.append(place);
+  override fun toString(): String {
+    val sb = StringBuffer()
+    sb.append("[$id] ")
+    sb.append(" $category")
+    sb.append("\t")
+    sb.append(number)
+    sb.append("\t" + name)
+    sb.append(" ")
+    if (gender == 1) sb.append("M") else if (gender == 0) sb.append("F") else sb.append("?")
+    sb.append(" ")
+    sb.append("gmt = $gmtTimestamp")
+    sb.append(" ")
+    val loc = decode(location!!)
+    sb.append("loc = $loc")
+    sb.append(" ")
+    sb.append(place)
     /*
     for(String house : houseMap.keySet())
       sb.append("\n分宮法：\t"+house);
     if (aspect != null)
       sb.append("\n日月交 : " + aspect.getSunMoon());
-    */
-    return sb.toString();
+    */return sb.toString()
   }
 
-
-  @Override
-  public int hashCode()
-  {
-    final int prime = 31;
-    int result = 1;
-    result = prime * result + gender;
-    result = prime * result + ((location == null) ? 0 : location.hashCode());
-    result = prime * result + ((gmtTimestamp == null) ? 0 : gmtTimestamp.hashCode());
-    return result;
+  override fun hashCode(): Int {
+    val prime = 31
+    var result = 1
+    result = prime * result + gender
+    result = prime * result + if (location == null) 0 else location.hashCode()
+    result = prime * result + if (gmtTimestamp == null) 0 else gmtTimestamp.hashCode()
+    return result
   }
 
-  @Override
-  public boolean equals(Object obj)
-  {
-    if (this == obj)
-      return true;
-    if (obj == null)
-      return false;
-    if (getClass() != obj.getClass())
-      return false;
-    GPerson other = (GPerson) obj;
-    if (gender != other.gender)
-      return false;
-    if (location == null)
-    {
-      if (other.location != null)
-        return false;
-    }
-    else if (!location.equals(other.location))
-      return false;
-    if (gmtTimestamp == null)
-    {
-      return other.gmtTimestamp == null;
-    }
-    else
-      return gmtTimestamp.equals(other.gmtTimestamp);
+  override fun equals(obj: Any?): Boolean {
+    if (this === obj) return true
+    if (obj == null) return false
+    if (javaClass != obj.javaClass) return false
+    val other = obj as GPerson
+    if (gender != other.gender) return false
+    if (location == null) {
+      if (other.location != null) return false
+    } else if (location != other.location) return false
+    return if (gmtTimestamp == null) {
+      other.gmtTimestamp == null
+    } else gmtTimestamp!!.equals(other.gmtTimestamp)
   }
 
-  public Map<String, GPersonHouse> getHouseMap()
-  {
-    return houseMap;
-  }
-
-  public void setHouseMap(Map<String, GPersonHouse> houseMap)
-  {
-    this.houseMap = houseMap;
-  }
-
-  public GPersonAspect getAspect()
-  {
-    return aspect;
-  }
-
-  public void setAspect(GPersonAspect aspect)
-  {
-    this.aspect = aspect;
-  }
-
-  public GPersonAnglePower getAnglePower()
-  {
-    return anglePower;
-  }
-
-  public void setAnglePower(GPersonAnglePower anglePower)
-  {
-    this.anglePower = anglePower;
-  }
-
-  
 }

@@ -1,53 +1,34 @@
 /**
  * Created by smallufo at 2009/3/11 下午 5:51:27
  */
-package destiny.data.gauquelin;
+package destiny.data.gauquelin
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.BufferedWriter
+import java.io.FileWriter
+import java.io.IOException
 
-
-/** 餵入資料，吐出姓名在尾端 */
-public class TextDataFormatter
-{
-  public TextDataFormatter(TextDataReader reader , String outfile)
-  {
-    BufferedWriter bWriter = null;
-    try
-    {
-      FileWriter fstream = new FileWriter(outfile);
-      bWriter = new BufferedWriter(fstream);
-      
-      for(GPerson person : reader.getPersons())
-      {
-        StringBuffer sb = new StringBuffer(person.getRaw());
-        sb.append("\t");
-        if (person.getName() != null)
-          sb.append(person.getName());
-        bWriter.append(sb+"\r\n");
+/** 餵入資料，吐出姓名在尾端  */
+class TextDataFormatter(reader: TextDataReader, outfile: String?) {
+  init {
+    var bWriter: BufferedWriter? = null
+    try {
+      val fstream = FileWriter(outfile)
+      bWriter = BufferedWriter(fstream)
+      for (person in reader.persons) {
+        val sb = StringBuffer(person.raw)
+        sb.append("\t")
+        if (person.name != null) sb.append(person.name)
+        bWriter.append(sb.toString() + "\r\n")
       }
-      bWriter.flush();
-    }
-    catch (IOException e)
-    {
-      e.printStackTrace();
-    }
-    finally
-    {
-      try
-      {
-        bWriter.close();
-      }
-      catch (IOException e)
-      {
-        e.printStackTrace();
+      bWriter.flush()
+    } catch (e: IOException) {
+      e.printStackTrace()
+    } finally {
+      try {
+        bWriter!!.close()
+      } catch (e: IOException) {
+        e.printStackTrace()
       }
     }
-
-    
   }
-  
-  
-  
 }

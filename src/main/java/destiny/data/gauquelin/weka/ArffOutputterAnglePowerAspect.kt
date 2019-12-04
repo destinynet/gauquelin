@@ -5,6 +5,7 @@
 package destiny.data.gauquelin.weka
 
 import destiny.astrology.Planet
+import destiny.astrology.toString
 import destiny.data.gauquelin.GPerson
 import destiny.data.gauquelin.RefUtil
 import java.io.BufferedWriter
@@ -139,7 +140,7 @@ class ArffOutputterAnglePowerAspect(private val gpersons: List<GPerson>, private
                sb.append(house.getPluto() + " , ");
                */
 
-        val aspect = person.aspect
+        val aspect = person.aspect!!
         sb.append(processAspect(aspect.sunMoon) + " , ")
         sb.append(processAspect(aspect.sunMercury) + " , ")
         sb.append(processAspect(aspect.sunVenus) + " , ")
@@ -189,7 +190,7 @@ class ArffOutputterAnglePowerAspect(private val gpersons: List<GPerson>, private
         var cat = person.category
         if (person.category.equals("writer", ignoreCase = true) || person.category.equals("journalist", ignoreCase = true))
           cat = "writerJournalist"
-        else if (person.category.contains("mental"))
+        else if (person.category!!.contains("mental"))
           cat = "mental"
         else if (person.category.equals("painter", ignoreCase = true) || person.category.equals("musician", ignoreCase = true) || person.category.equals("actor", ignoreCase = true))
           cat = "painterMusicianActor"
