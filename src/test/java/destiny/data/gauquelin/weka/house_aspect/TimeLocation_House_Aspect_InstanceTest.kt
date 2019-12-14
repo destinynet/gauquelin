@@ -3,7 +3,7 @@
  */
 package destiny.data.gauquelin.weka.house_aspect
 
-import destiny.core.calendar.Location
+import destiny.core.calendar.locationOf
 import destiny.data.gauquelin.AbstractGauquelinTest
 import java.time.LocalDateTime
 import java.util.*
@@ -19,7 +19,7 @@ class TimeLocation_House_Aspect_InstanceTest : AbstractGauquelinTest() {
 
     for (i in 1..1) {
       val tli = TimeLocation_House_Aspect_Instance(horoContext, LocalDateTime.of(2000, 9, i, 0, 0, 0),
-                                                   Location.of(Locale.TAIWAN) , aspectsCalculatorModern())
+                                                   locationOf(Locale.TAIWAN) , aspectsCalculatorModern())
       val instance = tli.instance
       println(instance)
 
