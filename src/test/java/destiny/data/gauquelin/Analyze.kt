@@ -38,7 +38,7 @@ class Analyze : DestinyCoreContext() {
   //private val horoAspectsCalculator = HoroscopeAspectsCalculator(aspectsCalculator)
 
   @BeforeTest
-  fun init() {
+  fun init2() {
     horoCtx = horoContext {
       //points(points)
     }
