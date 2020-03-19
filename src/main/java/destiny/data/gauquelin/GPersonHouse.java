@@ -237,9 +237,7 @@ public class GPersonHouse implements Serializable
       return false;
     if (uranus != other.uranus)
       return false;
-    if (venus != other.venus)
-      return false;
-    return true;
+    return venus == other.venus;
   }
 
   @Override

@@ -69,7 +69,7 @@ public class WekaWrapper extends Classifier {
     for (int j = 0; j < s.length; j++) {
       if (!i.isMissing(j)) {
         if (i.attribute(j).isNominal())
-          s[j] = new String(i.stringValue(j));
+          s[j] = i.stringValue(j);
         else if (i.attribute(j).isNumeric())
           s[j] = new Double(i.value(j));
       }
@@ -96,7 +96,7 @@ public class WekaWrapper extends Classifier {
    *
    * @param args the commandline arguments
    */
-  public static void main(String args[]) {
+  public static void main(String[] args) {
     runClassifier(new WekaWrapper(), args);
   }
 
