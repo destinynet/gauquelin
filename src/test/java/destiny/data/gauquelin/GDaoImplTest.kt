@@ -14,7 +14,7 @@ import kotlin.test.assertEquals
 import kotlin.test.assertNotNull
 import kotlin.test.assertSame
 
-open class GDaoImplTest : AbstractGauquelinTest() {
+class GDaoImplTest : AbstractGauquelinTest() {
 
   @Inject
   private lateinit var emfGauquelin: EntityManagerFactory
@@ -28,7 +28,7 @@ open class GDaoImplTest : AbstractGauquelinTest() {
   /** 若不加上 @Transactional() , 則無法抓到 collections  */
   @Transactional
   @Test
-  open fun testGetHouseMap() {
+  fun testGetHouseMap() {
     val gPerson = gDao.get(1L)!!
     assertEquals(7, gPerson.houseMap.size.toLong())
   }
@@ -36,7 +36,7 @@ open class GDaoImplTest : AbstractGauquelinTest() {
   /** 若不加上 @Transactional() , 則無法抓到 collections  */
   @Transactional
   @Test
-  open fun testFindAll() {
+  fun testFindAll() {
     val persons = gDao.findAll(PageRequest.of(0 , 10))
     //val persons = gDao.findAll(0, 10)
     for (gp in persons) {

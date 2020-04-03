@@ -22,13 +22,13 @@ import javax.inject.Inject
 @RunWith(SpringJUnit4ClassRunner::class)
 @ContextConfiguration(locations = ["classpath:gauquelin.xml"])
 @Transactional(transactionManager = "transactionManagerGauquelin")
-open class GDaoGooglePredictionTest {
+class GDaoGooglePredictionTest {
   @Inject
   private lateinit var dao: GDao
 
   @Test
   @javax.transaction.Transactional
-  open fun testPredict() {
+  fun testPredict() {
     val p: GPerson = dao.get(3L)!!
     println(p.csv)
   }
@@ -36,7 +36,7 @@ open class GDaoGooglePredictionTest {
   /** 2011/5/4 ，輸出「工作」，每類工作上限 500人 , 全部 5000 人 */
   @Test
   @javax.transaction.Transactional
-  open fun testExportJobEach5500() {
+  fun testExportJobEach5500() {
     val t = System.currentTimeMillis()
     val fos = FileOutputStream(File("jobs5500.csv"))
     val ps = PrintStream(fos)
@@ -60,7 +60,7 @@ open class GDaoGooglePredictionTest {
    * 一半的資料就有 9271 rows  */
   @Test
   @javax.transaction.Transactional
-  open fun testExportJobCsvOdd() {
+  fun testExportJobCsvOdd() {
     val t = System.currentTimeMillis()
     val fos = FileOutputStream(File("gauquelinJobOdd.csv"))
     val ps = PrintStream(fos)
@@ -102,7 +102,7 @@ open class GDaoGooglePredictionTest {
   /** (useless) 輸出所有 25478 筆資料，成 csv 格式。 跑起來很慢，花費  4.84 小時  */
   @Test
   @javax.transaction.Transactional
-  open fun testExportCSV() {
+  fun testExportCSV() {
     val fos = FileOutputStream(File("gauquelinAll.csv"))
     val total = dao.count()
     val size = 10
@@ -127,7 +127,7 @@ open class GDaoGooglePredictionTest {
   @Test
   @javax.transaction.Transactional
   @Throws(IOException::class)
-  open fun testExportCsvOdd() {
+  fun testExportCsvOdd() {
     val fos = FileOutputStream(File("gauquelinOdd.csv"))
     val total = dao.count()
     val size = 10

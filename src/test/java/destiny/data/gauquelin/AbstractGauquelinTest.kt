@@ -13,7 +13,7 @@ import javax.inject.Inject
 @RunWith(SpringRunner::class)
 @ContextConfiguration(locations = ["classpath:core.xml" , "classpath:gauquelin.xml"])
 @Transactional(transactionManager = "txManagerGauquelin")
-open class AbstractGauquelinTest : DestinyCoreContext() {
+class AbstractGauquelinTest : DestinyCoreContext() {
 
   @Inject
   protected lateinit var gDao: GDao
