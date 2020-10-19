@@ -3,7 +3,7 @@
  */
 package destiny.data.gauquelin
 
-import destiny.DestinyCoreContext
+import destiny.core.DestinyCoreContext
 import org.junit.runner.RunWith
 import org.springframework.test.context.ContextConfiguration
 import org.springframework.test.context.junit4.SpringRunner

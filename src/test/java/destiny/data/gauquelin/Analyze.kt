@@ -3,8 +3,8 @@
  */
 package destiny.data.gauquelin
 
-import destiny.DestinyCoreContext
 import destiny.astrology.*
+import destiny.core.DestinyCoreContext
 import destiny.data.gauquelin.AbsMentalReader.Companion.halp
 import destiny.data.gauquelin.AbsMentalReader.Companion.md
 import destiny.data.gauquelin.AbsMentalReader.Companion.mdp
