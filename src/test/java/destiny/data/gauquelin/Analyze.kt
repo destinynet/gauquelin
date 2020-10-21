@@ -4,6 +4,7 @@
 package destiny.data.gauquelin
 
 import destiny.astrology.*
+import destiny.astrology.AspectsCalculatorImplBuilder.Companion.aspectsCalculatorImpl
 import destiny.core.DestinyCoreContext
 import destiny.data.gauquelin.AbsMentalReader.Companion.halp
 import destiny.data.gauquelin.AbsMentalReader.Companion.md
@@ -33,7 +34,7 @@ class Analyze : DestinyCoreContext() {
 
   private val points = setOf(*Planet.array , *Axis.array)
 
-  private val aspectsCalculator = aspectsCalculatorModern()
+  private val aspectsCalculator = aspectsCalculatorImpl { modern {} }
 
   //private val horoAspectsCalculator = HoroscopeAspectsCalculator(aspectsCalculator)
 

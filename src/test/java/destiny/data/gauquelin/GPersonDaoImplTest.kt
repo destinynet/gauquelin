@@ -5,6 +5,7 @@
 package destiny.data.gauquelin
 
 import destiny.astrology.*
+import destiny.astrology.AspectsCalculatorImplBuilder.Companion.aspectsCalculatorImpl
 import destiny.core.calendar.LocationTools
 import org.springframework.data.domain.PageRequest
 import kotlin.test.BeforeTest
@@ -142,7 +143,8 @@ class GPersonDaoImplTest : AbstractGauquelinTest() {
 
   private fun processAspect(hc: IHoroscopeModel): GPersonAspect {
     val gpa = GPersonAspect()
-    val aspectCalculator = aspectsCalculatorModern()
+
+    val aspectCalculator = aspectsCalculatorImpl { modern {} }
 
     for (data in aspectCalculator.getAspectDataSet(hc.positionMap, Planet.list, Aspect.getAngles(Aspect.Importance.HIGH))) {
       gpa.setAspect(data)

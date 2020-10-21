@@ -20,7 +20,7 @@ class TimeLocation_AnglePower_Instance(
 
   private val time: ChronoLocalDateTime<*>,
   private val location: ILocation ,
-  private val aspectsCalculator : IHoroscopeAspectsCalculator) : InstanceIF  {
+  private val aspectsCalculator : IAspectsCalculator) : InstanceIF  {
 
 
 

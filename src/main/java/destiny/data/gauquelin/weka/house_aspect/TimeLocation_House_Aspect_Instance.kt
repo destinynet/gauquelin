@@ -17,7 +17,7 @@ import java.util.*
 class TimeLocation_House_Aspect_Instance(
   horoscopeContext: IHoroscopeContext,
   time: LocalDateTime, location: Location,
-  private val aspectsCalculator : IHoroscopeAspectsCalculator) : InstanceIF {
+  private val aspectsCalculator : IAspectsCalculator) : InstanceIF {
   private val horoscope: IHoroscopeModel = horoscopeContext.getHoroscope(time, location)
 
 
