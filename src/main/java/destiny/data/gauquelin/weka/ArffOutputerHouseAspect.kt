@@ -13,7 +13,7 @@ import java.io.Serializable
  */
 class ArffOutputerHouseAspect(private val gpersons: List<GPerson>, private val outputFile: String) : Serializable {
   private fun process() {
-    var bWriter: BufferedWriter? = null
+    var bWriter: BufferedWriter?
     try {
       val fstream = FileWriter(outputFile)
       bWriter = BufferedWriter(fstream)

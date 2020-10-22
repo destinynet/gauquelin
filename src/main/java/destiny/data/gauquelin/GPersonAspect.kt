@@ -218,14 +218,14 @@ class GPersonAspect : Serializable {
     return result
   }
 
-  override fun equals(obj: Any?): Boolean {
-    if (this === obj)
+  override fun equals(other: Any?): Boolean {
+    if (this === other)
       return true
-    if (obj == null)
+    if (other == null)
       return false
-    if (javaClass != obj.javaClass)
+    if (javaClass != other.javaClass)
       return false
-    val other = obj as GPersonAspect?
+    val other = other as GPersonAspect?
     if (gperson == null) {
       if (other!!.gperson != null)
         return false

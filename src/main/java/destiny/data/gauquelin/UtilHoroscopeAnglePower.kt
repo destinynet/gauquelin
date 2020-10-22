@@ -52,32 +52,37 @@ class UtilHoroscopeAnglePower(h: IHoroscopeModel) : Serializable {
       var orientalCusp = 0.0
       var occidentalCusp = 0.0
       var cuspDeg = 0.0
-      var power = 0.0
+      var power : Double
       assert(nearestAngle != null)
-      if (nearestAngle == "east") {
-        larger = circleUtils.getNormalizeDegree(degEast + 10)
-        smaller = circleUtils.getNormalizeDegree(degEast - 20)
-        cuspDeg = degEast
-        orientalCusp = degTop
-        occidentalCusp = degBottom
-      } else if (nearestAngle == "top") {
-        larger = circleUtils.getNormalizeDegree(degTop + 10)
-        smaller = circleUtils.getNormalizeDegree(degTop - 20)
-        cuspDeg = degTop
-        orientalCusp = degWest
-        occidentalCusp = degEast
-      } else if (nearestAngle == "west") {
-        larger = circleUtils.getNormalizeDegree(degWest)
-        smaller = circleUtils.getNormalizeDegree(degWest - 20)
-        cuspDeg = degWest
-        orientalCusp = degBottom
-        occidentalCusp = degTop
-      } else if (nearestAngle == "bottom") {
-        larger = circleUtils.getNormalizeDegree(degBottom)
-        smaller = circleUtils.getNormalizeDegree(degBottom - 20)
-        cuspDeg = degBottom
-        orientalCusp = degEast
-        occidentalCusp = degWest
+      when (nearestAngle) {
+        "east" -> {
+          larger = circleUtils.getNormalizeDegree(degEast + 10)
+          smaller = circleUtils.getNormalizeDegree(degEast - 20)
+          cuspDeg = degEast
+          orientalCusp = degTop
+          occidentalCusp = degBottom
+        }
+        "top" -> {
+          larger = circleUtils.getNormalizeDegree(degTop + 10)
+          smaller = circleUtils.getNormalizeDegree(degTop - 20)
+          cuspDeg = degTop
+          orientalCusp = degWest
+          occidentalCusp = degEast
+        }
+        "west" -> {
+          larger = circleUtils.getNormalizeDegree(degWest)
+          smaller = circleUtils.getNormalizeDegree(degWest - 20)
+          cuspDeg = degWest
+          orientalCusp = degBottom
+          occidentalCusp = degTop
+        }
+        "bottom" -> {
+          larger = circleUtils.getNormalizeDegree(degBottom)
+          smaller = circleUtils.getNormalizeDegree(degBottom - 20)
+          cuspDeg = degBottom
+          orientalCusp = degEast
+          occidentalCusp = degWest
+        }
       }
       power = getPower(orientalCusp, smaller, cuspDeg, larger, occidentalCusp, planetDeg)
 

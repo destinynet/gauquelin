@@ -42,7 +42,7 @@ class Sport450Reader : TextDataReader, Serializable {
       file = File(url.toURI())
       val fReader = FileReader(file)
       bReader = BufferedReader(fReader)
-      var line: String? = null
+      var line: String?
       while (bReader.readLine().also { line = it } != null) {
         if (line != "" && line!![0] != '#') {
           val gp = parseType3(line!!)

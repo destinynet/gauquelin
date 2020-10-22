@@ -17,7 +17,7 @@ object ParseTools {
   }
 
   fun parseLat(token: String): Double {
-    return token.split(nsRegex).filterNot { it.isEmpty() }.let {
+    return token.split(nsRegex).filterNot { it.length == 0 }.let {
       val deg = it[0].toInt()
       val min = it[1].toInt()
       return@let (deg + min.toDouble() / 60.0).let { if (token.contains("S")) 0.0 - it else it }
@@ -25,7 +25,7 @@ object ParseTools {
   }
 
   fun parseLng(token: String): Double {
-    return token.split(ewRegex).filterNot { it.isEmpty() }.let {
+    return token.split(ewRegex).filterNot { it.length == 0 }.let {
       val deg = it[0].toInt()
       val min = it[1].toInt()
       return@let (deg + min.toDouble() / 60.0).let { if (token.contains("W")) 0.0 - it else it }

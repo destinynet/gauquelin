@@ -54,7 +54,7 @@ class BirthReader(val filename: String, val hospital: Hospital?, val city: City)
       iStream.bufferedReader(Charsets.UTF_8)
         .lineSequence()
         .filterNot { it.startsWith("#") }
-        .filterNot { it.isEmpty() }
+        .filterNot { it.length == 0 }
         .let { seq -> chunkByFamily(seq) }
         .filter { family ->
 

@@ -185,11 +185,11 @@ class GPerson : Serializable {
     return result
   }
 
-  override fun equals(obj: Any?): Boolean {
-    if (this === obj) return true
-    if (obj == null) return false
-    if (javaClass != obj.javaClass) return false
-    val other = obj as GPerson
+  override fun equals(other: Any?): Boolean {
+    if (this === other) return true
+    if (other == null) return false
+    if (javaClass != other.javaClass) return false
+    val other = other as GPerson
     if (gender != other.gender) return false
     if (location == null) {
       if (other.location != null) return false

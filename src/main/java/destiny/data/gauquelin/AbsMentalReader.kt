@@ -19,7 +19,7 @@ class AbsMentalReader(private val dataFile: String) {
     javaClass.getResourceAsStream(dataFile).bufferedReader(Charsets.UTF_8).useLines { lines ->
       lines
         .filterNot { it.startsWith("#") }
-        .filterNot { it.isEmpty() }
+        .filterNot { it.length == 0 }
         .map { line -> ParseUtils.parseMental(line) }
         .filterNotNull()
         .toList()

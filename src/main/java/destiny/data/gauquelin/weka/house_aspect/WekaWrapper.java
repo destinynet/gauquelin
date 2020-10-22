@@ -71,7 +71,7 @@ public class WekaWrapper extends Classifier {
         if (i.attribute(j).isNominal())
           s[j] = i.stringValue(j);
         else if (i.attribute(j).isNumeric())
-          s[j] = new Double(i.value(j));
+          s[j] = i.value(j);
       }
     }
     

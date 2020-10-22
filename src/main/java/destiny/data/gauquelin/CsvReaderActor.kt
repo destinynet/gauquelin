@@ -18,7 +18,7 @@ class CsvReaderActor(val dataFile: String, val nameFile: String) {
 
     iStream.bufferedReader(Charsets.UTF_8).readLines()
       .filterNot { it.startsWith("#") }
-      .filterNot { it.isEmpty() }
+      .filterNot { it.length == 0 }
       .forEach { line ->
         val tokens = line.split("\t").toList()
         //println(tokens.joinToString(","))

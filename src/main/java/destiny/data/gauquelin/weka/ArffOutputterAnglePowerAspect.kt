@@ -23,7 +23,7 @@ class ArffOutputterAnglePowerAspect(private val gpersons: List<GPerson>, private
   }
 
   private fun process() {
-    var bWriter: BufferedWriter? = null
+    var bWriter: BufferedWriter?
 
     try {
       val fstream = FileWriter(outputFile)

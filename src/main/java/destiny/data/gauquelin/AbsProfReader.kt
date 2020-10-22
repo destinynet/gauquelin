@@ -18,7 +18,7 @@ class AbsProfReader(private val dataFile: String,
     javaClass.getResourceAsStream(dataFile).bufferedReader(Charsets.UTF_8).useLines { lines ->
       lines
         .filterNot { it.startsWith("#") }
-        .filterNot { it.isEmpty() }
+        .filterNot { it.length == 0 }
         .map { line -> ParseUtils.parseByNumber(line) }
         .filterNotNull()
         .map { it.apply { gender = preDefGender } }
@@ -45,7 +45,7 @@ class AbsProfReader(private val dataFile: String,
       javaClass.getResourceAsStream(fileName).bufferedReader(Charsets.UTF_8).useLines { lines ->
         lines
           .filterNot { it.startsWith("#") }
-          .filterNot { it.isEmpty() }
+          .filterNot { it.length == 0 }
           .map { line -> ParseUtils.parseName(line) }
           .toList()
       }

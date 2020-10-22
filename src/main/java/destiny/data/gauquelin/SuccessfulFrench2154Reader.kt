@@ -25,13 +25,13 @@ class SuccessfulFrench2154Reader(private val geocodingImpl: IGeocoding, private 
   private fun process() {
     val url = javaClass.getResource("successfulFrench2154.txt")
     val file: File
-    var bReader: BufferedReader? = null
+    var bReader: BufferedReader?
     val city = CityLocation()
     try {
       file = File(url.toURI())
       val fReader = FileReader(file)
       bReader = BufferedReader(fReader)
-      var line: String? = null
+      var line: String?
       while (bReader.readLine().also { line = it } != null) {
         if (line != "" && line!![0] != '#') {
           val professions = line!!.substring(8, 13).trim { it <= ' ' }
