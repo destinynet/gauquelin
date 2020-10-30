@@ -5,21 +5,23 @@
 package destiny.data.gauquelin
 
 import destiny.tools.spring.get
-import org.junit.Test
-import org.junit.runner.RunWith
+import org.junit.jupiter.api.TestInstance
+import org.junit.jupiter.api.extension.ExtendWith
 import org.springframework.data.domain.PageRequest
 import org.springframework.data.domain.Pageable
 import org.springframework.test.context.ContextConfiguration
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner
+import org.springframework.test.context.junit.jupiter.SpringExtension
 import org.springframework.transaction.annotation.Transactional
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
 import java.io.PrintStream
 import javax.inject.Inject
+import kotlin.test.Test
 
 /** 將資料庫中的 GPerson , 輸出成 Google Prediction API 所需的 CSV 格式檔  */
-@RunWith(SpringJUnit4ClassRunner::class)
+@ExtendWith(SpringExtension::class)
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @ContextConfiguration(locations = ["classpath:gauquelin.xml"])
 @Transactional(transactionManager = "transactionManagerGauquelin")
 class GDaoGooglePredictionTest {

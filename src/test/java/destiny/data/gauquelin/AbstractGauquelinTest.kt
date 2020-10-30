@@ -4,13 +4,15 @@
 package destiny.data.gauquelin
 
 import destiny.core.DestinyCoreContext
-import org.junit.runner.RunWith
+import org.junit.jupiter.api.TestInstance
+import org.junit.jupiter.api.extension.ExtendWith
 import org.springframework.test.context.ContextConfiguration
-import org.springframework.test.context.junit4.SpringRunner
+import org.springframework.test.context.junit.jupiter.SpringExtension
 import org.springframework.transaction.annotation.Transactional
 import javax.inject.Inject
 
-@RunWith(SpringRunner::class)
+@ExtendWith(SpringExtension::class)
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @ContextConfiguration(locations = ["classpath:core.xml" , "classpath:gauquelin.xml"])
 @Transactional(transactionManager = "txManagerGauquelin")
 class AbstractGauquelinTest : DestinyCoreContext() {

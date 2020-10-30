@@ -16,13 +16,15 @@ import destiny.data.gauquelin.AbsProfReader.Companion.painters
 import destiny.data.gauquelin.AbsProfReader.Companion.politicians
 import destiny.data.gauquelin.AbsProfReader.Companion.scientists
 import destiny.data.gauquelin.AbsProfReader.Companion.sports
-import org.junit.runner.RunWith
+import org.junit.jupiter.api.TestInstance
+import org.junit.jupiter.api.extension.ExtendWith
 import org.springframework.test.context.ContextConfiguration
-import org.springframework.test.context.junit4.SpringRunner
+import org.springframework.test.context.junit.jupiter.SpringExtension
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 
-@RunWith(SpringRunner::class)
+@ExtendWith(SpringExtension::class)
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @ContextConfiguration(locations = ["classpath:core.xml"])
 class Analyze : DestinyCoreContext() {
 

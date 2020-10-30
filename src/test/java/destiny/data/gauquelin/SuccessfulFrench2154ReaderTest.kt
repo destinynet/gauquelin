@@ -5,13 +5,15 @@ package destiny.data.gauquelin
 
 import destiny.tools.location.IGeocoding
 import destiny.tools.location.TimeZoneService
-import org.junit.Test
-import org.junit.runner.RunWith
+import org.junit.jupiter.api.TestInstance
+import org.junit.jupiter.api.extension.ExtendWith
 import org.springframework.test.context.ContextConfiguration
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner
+import org.springframework.test.context.junit.jupiter.SpringExtension
 import javax.inject.Inject
+import kotlin.test.Test
 
-@RunWith(SpringJUnit4ClassRunner::class)
+@ExtendWith(SpringExtension::class)
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @ContextConfiguration(locations = ["classpath:core.xml"])
 class SuccessfulFrench2154ReaderTest {
 
