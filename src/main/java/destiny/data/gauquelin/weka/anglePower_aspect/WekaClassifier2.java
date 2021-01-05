@@ -48,8 +48,7 @@ package destiny.data.gauquelin.weka.anglePower_aspect;
  */
 public class WekaClassifier2
 {
-  public static double classify(Object[] i) throws Exception
-  {
+  public static double classify(Object[] i) {
 
     double p = Double.NaN;
     p = WekaClassifier2.N1c154c2403(i);

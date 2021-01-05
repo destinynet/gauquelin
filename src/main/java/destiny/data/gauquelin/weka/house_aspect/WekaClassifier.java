@@ -6,8 +6,7 @@ package destiny.data.gauquelin.weka.house_aspect;
 
 public class WekaClassifier
 {
-  public static double classify(Object[] i) throws Exception
-  {
+  public static double classify(Object[] i) {
 
     double p = Double.NaN;
     p = WekaClassifier.N2672ff0(i);
