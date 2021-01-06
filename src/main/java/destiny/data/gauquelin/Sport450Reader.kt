@@ -11,7 +11,7 @@ import kotlin.collections.ArrayList
 
 class Sport450Reader : TextDataReader, Serializable {
 
-  var ps = Collections.synchronizedList(ArrayList<GPerson>())
+  var ps: MutableList<GPerson> = Collections.synchronizedList(ArrayList<GPerson>())
 
   override fun getPersons(): MutableList<GPerson> {
     return ps

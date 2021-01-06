@@ -42,7 +42,7 @@ class GPerson : Serializable {
   @BatchSize(size = 100)
   @OneToMany(mappedBy = "gperson", cascade = [CascadeType.ALL], fetch = FetchType.EAGER, orphanRemoval = true)
   @MapKey(name = "house")
-  var houseMap = Collections.synchronizedMap(HashMap<String, GPersonHouse>())
+  var houseMap: MutableMap<String, GPersonHouse> = Collections.synchronizedMap(HashMap<String, GPersonHouse>())
   /** 星體交角資料  */
   @BatchSize(size = 100)
   @OneToOne(mappedBy = "gperson")
