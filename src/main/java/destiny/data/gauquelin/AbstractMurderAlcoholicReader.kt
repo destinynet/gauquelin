@@ -1,78 +1,43 @@
 /**
- * @author smallufo 
+ * @author smallufo
  * Created on 2009/3/12 at 上午 1:10:23
- */ 
-package destiny.data.gauquelin;
+ */
+package destiny.data.gauquelin
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.Serializable;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.io.*
 
-public abstract class AbstractMurderAlcoholicReader implements TextDataReader , Serializable
-{
-  private String datafile;
-  private String category;
-  
-  protected List<GPerson> persons = Collections.synchronizedList(new ArrayList<GPerson>());
-  
-  public AbstractMurderAlcoholicReader(String datafile , String category)
-  {
-    this.datafile = datafile;
-    this.category = category;
-  }
-  
-  private void process()
-  {
-    URL url = getClass().getResource(datafile);
-    File file;
-    BufferedReader bReader = null;
-    try
-    {
-      file = new File(url.toURI());
-      FileReader fReader = new FileReader(file);
-      bReader = new BufferedReader(fReader);
+abstract class AbstractMurderAlcoholicReader(private val datafile: String, private val category: String) :
+  TextDataReader, Serializable {
 
-      String line = null;
-      while ((line = bReader.readLine()) != null)
-      {
-        if (!line.equals("") && line.charAt(0) != '#')
-        {
-//          GPerson gp = ParseUtils.Companion.parseMurderAlcoholic(line);
-//          gp.setCategory(category);
-//          persons.add(gp);
+  override val persons: List<GPerson>
+    get() {
+      val ps = mutableListOf<GPerson>()
+      val url = javaClass.getResource(datafile)
+      val file: File
+      var bReader: BufferedReader? = null
+      try {
+        file = File(url.toURI())
+        val fReader = FileReader(file)
+        bReader = BufferedReader(fReader)
+        var line: String? = null
+        while (bReader.readLine().also { line = it } != null) {
+          if (line != "" && line!![0] != '#') {
+//            val gp: GPerson2? = ParseUtils.parseMurderAlcoholic(line!!)
+//            gp.setCategory(category)
+//            ps.add(gp)
+          }
+        }
+      } catch (e: Exception) {
+        e.printStackTrace()
+      } finally {
+        try {
+          bReader!!.close()
+        } catch (e: IOException) {
+          e.printStackTrace()
         }
       }
+      return ps.toList()
+    }
 
-    }
-    catch (Exception e)
-    {
-      e.printStackTrace();
-    }
-    finally
-    {
-      try
-      {
-        bReader.close();
-      }
-      catch (IOException e)
-      {
-        e.printStackTrace();
-      }
-    }
-  }
-  
 
-  @Override
-  public List<GPerson> getPersons()
-  {
-    if (persons.size() == 0)
-      process();
-    return persons;
-  }
 }

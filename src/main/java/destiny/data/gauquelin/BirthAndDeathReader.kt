@@ -25,7 +25,7 @@ class BirthAndDeathReader {
     iStream.bufferedReader(Charsets.UTF_8).useLines { sequence ->
       sequence
         .filterNot { it.startsWith("#") }
-        .filterNot { it.length == 0 }
+        .filterNot { it.isEmpty() }
         .chunked(2).forEach { lines ->
           val birth = parseLine(lines[0])
           val death = parseLine(lines[1])
