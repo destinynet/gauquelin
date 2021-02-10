@@ -4,9 +4,9 @@
  */
 package destiny.data.causer
 
-import destiny.astrology.IStarPosition
-import destiny.astrology.IStarTransit
-import destiny.astrology.swissephImpl.RiseTransImpl
+import destiny.core.astrology.IStarPosition
+import destiny.core.astrology.IStarTransit
+import destiny.core.RiseTransImpl
 import destiny.core.*
 import destiny.core.calendar.EastWest
 import destiny.core.calendar.Location

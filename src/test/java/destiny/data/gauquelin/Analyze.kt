@@ -3,9 +3,10 @@
  */
 package destiny.data.gauquelin
 
-import destiny.astrology.*
-import destiny.astrology.AspectsCalculatorImplBuilder.Companion.aspectsCalculatorImpl
 import destiny.core.DestinyCoreContext
+import destiny.core.astrology.*
+import destiny.core.astrology.AspectsCalculatorImplBuilder.Companion.aspectsCalculatorImpl
+import destiny.core.astrology.Planet
 import destiny.data.gauquelin.AbsMentalReader.Companion.halp
 import destiny.data.gauquelin.AbsMentalReader.Companion.md
 import destiny.data.gauquelin.AbsMentalReader.Companion.mdp

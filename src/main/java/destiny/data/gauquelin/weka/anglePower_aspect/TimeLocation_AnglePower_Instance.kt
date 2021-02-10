@@ -4,7 +4,7 @@
  */
 package destiny.data.gauquelin.weka.anglePower_aspect
 
-import destiny.astrology.*
+import destiny.core.astrology.*
 import destiny.core.calendar.ILocation
 import destiny.data.gauquelin.RefUtil
 import destiny.data.gauquelin.UtilHoroscopeAnglePower

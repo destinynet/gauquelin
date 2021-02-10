@@ -4,8 +4,8 @@
  */
 package destiny.data.gauquelin
 
-import destiny.astrology.IHoroscopeModel
-import destiny.astrology.Planet
+import destiny.core.astrology.IHoroscopeModel
+import destiny.core.astrology.Planet
 import destiny.tools.circleUtils
 import java.io.Serializable
 

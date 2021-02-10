@@ -4,8 +4,8 @@
  */
 package destiny.data.gauquelin
 
-import destiny.astrology.Planet
-import destiny.astrology.toString
+import destiny.core.astrology.Planet
+import destiny.core.astrology.toString
 import java.io.Serializable
 import java.util.*
 import javax.persistence.*

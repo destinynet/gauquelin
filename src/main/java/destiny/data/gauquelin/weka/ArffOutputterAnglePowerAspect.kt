@@ -4,8 +4,8 @@
  */
 package destiny.data.gauquelin.weka
 
-import destiny.astrology.Planet
-import destiny.astrology.toString
+import destiny.core.astrology.Planet
+import destiny.core.astrology.toString
 import destiny.data.gauquelin.GPerson
 import destiny.data.gauquelin.RefUtil
 import java.io.BufferedWriter

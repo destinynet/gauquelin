@@ -4,8 +4,8 @@
  */
 package destiny.data.gauquelin
 
-import destiny.astrology.*
-import destiny.astrology.AspectsCalculatorImplBuilder.Companion.aspectsCalculatorImpl
+import destiny.core.astrology.*
+import destiny.core.astrology.AspectsCalculatorImplBuilder.Companion.aspectsCalculatorImpl
 import destiny.core.calendar.LocationTools
 import org.springframework.data.domain.PageRequest
 import kotlin.test.BeforeTest

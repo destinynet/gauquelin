@@ -4,8 +4,8 @@
  */
 package destiny.data.gauquelin.weka.anglePower_aspect
 
-import destiny.astrology.AspectsCalculatorImplBuilder.Companion.aspectsCalculatorImpl
-import destiny.astrology.horoContext
+import destiny.core.astrology.AspectsCalculatorImplBuilder.Companion.aspectsCalculatorImpl
+import destiny.core.astrology.horoContext
 import destiny.core.calendar.locationOf
 import destiny.data.gauquelin.AbstractGauquelinTest
 import java.time.LocalDateTime

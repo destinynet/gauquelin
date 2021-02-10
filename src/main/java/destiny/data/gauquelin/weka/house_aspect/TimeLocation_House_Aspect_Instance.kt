@@ -3,7 +3,7 @@
  */
 package destiny.data.gauquelin.weka.house_aspect
 
-import destiny.astrology.*
+import destiny.core.astrology.*
 import destiny.core.calendar.Location
 import destiny.data.gauquelin.weka.InstanceIF
 import weka.core.Instance
