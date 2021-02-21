@@ -8,10 +8,8 @@ import destiny.core.astrology.IStarPosition
 import destiny.core.astrology.IStarTransit
 import destiny.core.RiseTransImpl
 import destiny.core.*
-import destiny.core.calendar.EastWest
 import destiny.core.calendar.Location
 import destiny.core.calendar.ISolarTerms
-import destiny.core.calendar.NorthSouth
 import destiny.core.calendar.chinese.IChineseDate
 import destiny.core.calendar.eightwords.*
 import destiny.core.chinese.eightwords.IFortuneDirection

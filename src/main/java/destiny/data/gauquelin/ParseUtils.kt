@@ -5,10 +5,10 @@
 package destiny.data.gauquelin
 
 import destiny.core.Gender
-import destiny.core.calendar.EastWest
+import destiny.core.News.EastWest
+import destiny.core.News.NorthSouth
 import destiny.core.calendar.Location
 import destiny.core.calendar.LocationTools
-import destiny.core.calendar.NorthSouth
 import destiny.tools.location.TimeZoneUtils
 import mu.KotlinLogging
 import java.io.Serializable
