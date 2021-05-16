@@ -146,7 +146,7 @@ class GPersonDaoImplTest : AbstractGauquelinTest() {
 
     val aspectCalculator = aspectsCalculatorImpl { modern {} }
 
-    for (data in aspectCalculator.getAspectDataSet(hc.positionMap, Planet.list, Aspect.getAngles(Aspect.Importance.HIGH))) {
+    for (data in aspectCalculator.getAspectDataSet(hc.positionMap, Planet.list, Aspect.getAspects(Aspect.Importance.HIGH))) {
       gpa.setAspect(data)
     } // each aspect data
     return gpa
