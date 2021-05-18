@@ -6,7 +6,9 @@ package destiny.data.gauquelin
 
 import destiny.core.astrology.IHoroscopeModel
 import destiny.core.astrology.Planet
+import destiny.core.astrology.ZodiacDegree
 import destiny.tools.CircleTools
+import destiny.tools.CircleTools.normalize
 import java.io.Serializable
 
 class UtilHoroscopeAnglePower(h: IHoroscopeModel) : Serializable {
@@ -52,7 +54,7 @@ class UtilHoroscopeAnglePower(h: IHoroscopeModel) : Serializable {
       var orientalCusp = 0.0
       var occidentalCusp = 0.0
       var cuspDeg = 0.0
-      var power : Double
+      var power: Double
       assert(nearestAngle != null)
       when (nearestAngle) {
         "east" -> {
@@ -84,32 +86,47 @@ class UtilHoroscopeAnglePower(h: IHoroscopeModel) : Serializable {
           occidentalCusp = degWest
         }
       }
-      power = getPower(orientalCusp, smaller, cuspDeg, larger, occidentalCusp, planetDeg)
+      power = getPower(
+        ZodiacDegree(orientalCusp),
+        ZodiacDegree(smaller),
+        ZodiacDegree(cuspDeg),
+        ZodiacDegree(larger),
+        ZodiacDegree(occidentalCusp),
+        ZodiacDegree(planetDeg)
+      )
 
       anglePower.setValue(planet, nearestAngle, power)
     }
   }
 
-  private fun getPower(orientalCusp: Double, smaller: Double, cuspDeg: Double, larger: Double, occidentalCusp: Double, degree: Double): Double {
+  private fun getPower(
+    orientalCusp: ZodiacDegree,
+    smaller: ZodiacDegree,
+    cuspDeg: ZodiacDegree,
+    larger: ZodiacDegree,
+    occidentalCusp: ZodiacDegree,
+    degree: ZodiacDegree
+  ): Double {
     // 先求出中心度數（最強點)
-    val center = CircleTools.getNormalizeDegree(IHoroscopeModel.getAngle(smaller, larger) / 2 + smaller)
+    val center = ZodiacDegree((smaller.getAngle(larger) / 2 + smaller.value).normalize())
     // 離中心點幾度
-    val distance = IHoroscopeModel.getAngle(center, degree)
+    val distance = center.getAngle(degree)
+    //val distance = IHoroscopeModel.getAngle(center, degree)
     // 再算影響範圍的半徑 ( smaller 到 larger 除以 2)
-    val radius = IHoroscopeModel.getAngle(smaller, larger) / 2
+    val radius = smaller.getAngle(larger) / 2
 
     return when {
-      IHoroscopeModel.isOccidental(degree, larger) -> {
+      degree.isOccidental(larger) -> {
         //比「大」更大
-        val half = IHoroscopeModel.getAngle(occidentalCusp, cuspDeg)
+        val half = occidentalCusp.getAngle(cuspDeg)
         -(distance - radius) / (half - radius)
       }
-      IHoroscopeModel.isOriental(degree, smaller) -> {
+      degree.isOriental(smaller)  -> {
         //比「小」更小
-        val half = IHoroscopeModel.getAngle(orientalCusp, cuspDeg) / 2
+        val half = orientalCusp.getAngle(cuspDeg) / 2
         -(distance - radius) / (half - radius)
       }
-      else -> // 在範圍內
+      else                        -> // 在範圍內
         1 - distance / radius
     }
   }
