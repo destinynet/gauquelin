@@ -7,7 +7,6 @@ package destiny.data.gauquelin
 import destiny.core.astrology.IHoroscopeModel
 import destiny.core.astrology.Planet
 import destiny.core.astrology.ZodiacDegree
-import destiny.tools.CircleTools
 import destiny.tools.CircleTools.normalize
 import java.io.Serializable
 
@@ -17,10 +16,10 @@ class UtilHoroscopeAnglePower(h: IHoroscopeModel) : Serializable {
   init {
     anglePower = GPersonAnglePower()
 
-    val degEast = h.getCuspDegree(1)
-    val degTop = h.getCuspDegree(10)
-    val degWest = h.getCuspDegree(7)
-    val degBottom = h.getCuspDegree(4)
+    val degEast = ZodiacDegree(h.getCuspDegree(1))
+    val degTop = ZodiacDegree(h.getCuspDegree(10))
+    val degWest = ZodiacDegree(h.getCuspDegree(7))
+    val degBottom = ZodiacDegree(h.getCuspDegree(4))
     for (planet in Planet.array) {
       //與四個頂點，哪個點最近
       var nearestAngle: String? = null
@@ -28,71 +27,71 @@ class UtilHoroscopeAnglePower(h: IHoroscopeModel) : Serializable {
 
       val positionWithAzimuth = h.getPosition(planet)!!
 
-      val planetDeg = positionWithAzimuth.lng
+      val planetDeg = positionWithAzimuth.lngDeg
       // ========================= 方向 ===========================
-      if (IHoroscopeModel.getAngle(planetDeg, degEast) < tempError) {
-        tempError = IHoroscopeModel.getAngle(planetDeg, degEast)
+      if (planetDeg.getAngle(degEast) < tempError) {
+        tempError = planetDeg.getAngle(degEast)
         nearestAngle = "east"
       }
-      if (IHoroscopeModel.getAngle(planetDeg, degTop) < tempError) {
-        tempError = IHoroscopeModel.getAngle(planetDeg, degTop)
+      if (planetDeg.getAngle(degTop) < tempError) {
+        tempError = planetDeg.getAngle(degTop)
         nearestAngle = "top"
       }
 
-      if (IHoroscopeModel.getAngle(planetDeg, degWest) < tempError) {
-        tempError = IHoroscopeModel.getAngle(planetDeg, degWest)
+      if (planetDeg.getAngle(degWest) < tempError) {
+        tempError = planetDeg.getAngle(degWest)
         nearestAngle = "west"
       }
-      if (IHoroscopeModel.getAngle(planetDeg, degBottom) < tempError) {
-        tempError = IHoroscopeModel.getAngle(planetDeg, degBottom)
+      if (planetDeg.getAngle(degBottom) < tempError) {
+        tempError = planetDeg.getAngle(degBottom)
         nearestAngle = "bottom"
       }
 
       // =================== 力量 ======================
-      var smaller = 0.0
-      var larger = 0.0
-      var orientalCusp = 0.0
-      var occidentalCusp = 0.0
-      var cuspDeg = 0.0
+      var smaller = ZodiacDegree(0.0)
+      var larger = ZodiacDegree(0.0)
+      var orientalCusp = ZodiacDegree(0.0)
+      var occidentalCusp = ZodiacDegree(0.0)
+      var cuspDeg = ZodiacDegree(0.0)
       var power: Double
       assert(nearestAngle != null)
       when (nearestAngle) {
         "east" -> {
-          larger = CircleTools.getNormalizeDegree(degEast + 10)
-          smaller = CircleTools.getNormalizeDegree(degEast - 20)
+          larger = degEast + 10
+          smaller = degEast - 20
           cuspDeg = degEast
           orientalCusp = degTop
           occidentalCusp = degBottom
         }
         "top" -> {
-          larger = CircleTools.getNormalizeDegree(degTop + 10)
-          smaller = CircleTools.getNormalizeDegree(degTop - 20)
+          larger = degTop + 10
+          smaller = degTop - 20
           cuspDeg = degTop
           orientalCusp = degWest
           occidentalCusp = degEast
         }
         "west" -> {
-          larger = CircleTools.getNormalizeDegree(degWest)
-          smaller = CircleTools.getNormalizeDegree(degWest - 20)
+          larger = degWest
+          smaller = degWest - 20
           cuspDeg = degWest
           orientalCusp = degBottom
           occidentalCusp = degTop
         }
         "bottom" -> {
-          larger = CircleTools.getNormalizeDegree(degBottom)
-          smaller = CircleTools.getNormalizeDegree(degBottom - 20)
+          larger = degBottom
+          smaller = degBottom - 20
           cuspDeg = degBottom
           orientalCusp = degEast
           occidentalCusp = degWest
         }
       }
       power = getPower(
-        ZodiacDegree(orientalCusp),
-        ZodiacDegree(smaller),
-        ZodiacDegree(cuspDeg),
-        ZodiacDegree(larger),
-        ZodiacDegree(occidentalCusp),
-        ZodiacDegree(planetDeg)
+        orientalCusp,
+        smaller,
+        cuspDeg,
+        larger,
+        occidentalCusp,
+        planetDeg
       )
 
       anglePower.setValue(planet, nearestAngle, power)
