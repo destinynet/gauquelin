@@ -16,10 +16,10 @@ class UtilHoroscopeAnglePower(h: IHoroscopeModel) : Serializable {
   init {
     anglePower = GPersonAnglePower()
 
-    val degEast = h.getCuspDegree(1).toZodiacDegree()
-    val degTop = h.getCuspDegree(10).toZodiacDegree()
-    val degWest = h.getCuspDegree(7).toZodiacDegree()
-    val degBottom = h.getCuspDegree(4).toZodiacDegree()
+    val degEast = h.getCuspDegree(1)
+    val degTop = h.getCuspDegree(10)
+    val degWest = h.getCuspDegree(7)
+    val degBottom = h.getCuspDegree(4)
     for (planet in Planet.array) {
       //與四個頂點，哪個點最近
       var nearestAngle: String? = null
