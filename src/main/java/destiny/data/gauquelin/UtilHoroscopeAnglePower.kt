@@ -7,7 +7,7 @@ package destiny.data.gauquelin
 import destiny.core.astrology.IHoroscopeModel
 import destiny.core.astrology.Planet
 import destiny.core.astrology.ZodiacDegree
-import destiny.tools.CircleTools.normalize
+import destiny.core.astrology.ZodiacDegree.Companion.toZodiacDegree
 import java.io.Serializable
 
 class UtilHoroscopeAnglePower(h: IHoroscopeModel) : Serializable {
@@ -16,10 +16,10 @@ class UtilHoroscopeAnglePower(h: IHoroscopeModel) : Serializable {
   init {
     anglePower = GPersonAnglePower()
 
-    val degEast = ZodiacDegree(h.getCuspDegree(1))
-    val degTop = ZodiacDegree(h.getCuspDegree(10))
-    val degWest = ZodiacDegree(h.getCuspDegree(7))
-    val degBottom = ZodiacDegree(h.getCuspDegree(4))
+    val degEast = h.getCuspDegree(1).toZodiacDegree()
+    val degTop = h.getCuspDegree(10).toZodiacDegree()
+    val degWest = h.getCuspDegree(7).toZodiacDegree()
+    val degBottom = h.getCuspDegree(4).toZodiacDegree()
     for (planet in Planet.array) {
       //與四個頂點，哪個點最近
       var nearestAngle: String? = null
@@ -48,11 +48,11 @@ class UtilHoroscopeAnglePower(h: IHoroscopeModel) : Serializable {
       }
 
       // =================== 力量 ======================
-      var smaller = ZodiacDegree(0.0)
-      var larger = ZodiacDegree(0.0)
-      var orientalCusp = ZodiacDegree(0.0)
-      var occidentalCusp = ZodiacDegree(0.0)
-      var cuspDeg = ZodiacDegree(0.0)
+      var smaller = 0.0.toZodiacDegree()
+      var larger = 0.0.toZodiacDegree()
+      var orientalCusp = 0.0.toZodiacDegree()
+      var occidentalCusp = 0.0.toZodiacDegree()
+      var cuspDeg = 0.0.toZodiacDegree()
       var power: Double
       assert(nearestAngle != null)
       when (nearestAngle) {
@@ -107,7 +107,7 @@ class UtilHoroscopeAnglePower(h: IHoroscopeModel) : Serializable {
     degree: ZodiacDegree
   ): Double {
     // 先求出中心度數（最強點)
-    val center = ZodiacDegree((smaller.getAngle(larger) / 2 + smaller.value).normalize())
+    val center = (smaller.getAngle(larger) / 2 + smaller.value).toZodiacDegree()
     // 離中心點幾度
     val distance = center.getAngle(degree)
     //val distance = IHoroscopeModel.getAngle(center, degree)
