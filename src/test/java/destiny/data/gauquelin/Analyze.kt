@@ -6,7 +6,6 @@ package destiny.data.gauquelin
 import destiny.core.DestinyCoreContext
 import destiny.core.astrology.*
 import destiny.core.astrology.AspectsCalculatorImplBuilder.Companion.aspectsCalculatorImpl
-import destiny.core.astrology.Planet
 import destiny.data.gauquelin.AbsMentalReader.Companion.halp
 import destiny.data.gauquelin.AbsMentalReader.Companion.md
 import destiny.data.gauquelin.AbsMentalReader.Companion.mdp
@@ -96,7 +95,7 @@ class Analyze : DestinyCoreContext() {
 
       val horoModel: IHoroscopeModel = horoCtx.getHoroscope(p.lmt, p.loc, p.place , points)
       val starPosMap: Map<Point, IPos> = horoModel.positionMap
-      val cuspDegreeMap: Map<Int, Double> = horoModel.cuspDegreeMap
+      val cuspDegreeMap: Map<Int, ZodiacDegree> = horoModel.cuspDegreeMap
 
       total++
 
@@ -140,7 +139,7 @@ class Analyze : DestinyCoreContext() {
     val effectiveMap = persons.map { p ->
       val horoModel: IHoroscopeModel = horoCtx.getHoroscope(p.lmt, p.loc, p.place , points)
       val starPosMap: Map<Point, IPos> = horoModel.positionMap
-      val cuspDegreeMap: Map<Int, Double> = horoModel.cuspDegreeMap
+      val cuspDegreeMap: Map<Int, ZodiacDegree> = horoModel.cuspDegreeMap
 
       total++
 
