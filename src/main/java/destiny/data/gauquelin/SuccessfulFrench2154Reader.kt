@@ -9,7 +9,6 @@ import destiny.tools.location.IGeocoding
 import destiny.tools.location.TimeZoneService
 import java.io.*
 import java.net.URISyntaxException
-import java.sql.Timestamp
 import java.time.LocalDateTime
 import java.util.*
 
@@ -63,8 +62,7 @@ class SuccessfulFrench2154Reader(private val geocodingImpl: IGeocoding, private 
               val min = line!!.substring(72, 74).toInt()
               // 都是 GMT 時間
               val time = LocalDateTime.of(year, month, day, hour, min, 0)
-              val ts = Timestamp.valueOf(time)
-              person.gmtTimestamp = ts
+              person.gmtTimestamp = time
               val place = line!!.substring(78, 104).trim { it <= ' ' }
               // 經緯度
               val loc = city.getLocation(place)

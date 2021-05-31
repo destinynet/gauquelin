@@ -7,7 +7,6 @@ package destiny.data.gauquelin
 import destiny.core.calendar.LocationTools.decode
 import org.hibernate.annotations.BatchSize
 import java.io.Serializable
-import java.sql.Timestamp
 import java.time.LocalDateTime
 import java.util.*
 import javax.persistence.*
@@ -32,7 +31,7 @@ class GPerson : Serializable {
   /** 男生 = 1 , 女生 = 0 , 未定義則為 -1  */
   var gender = -1
   /** 「未調整過時區」的原始出生時間  */
-  var gmtTimestamp: Timestamp? = null
+  var gmtTimestamp: LocalDateTime? = null
   var location: String? = null
   /** 地點  */
   var place: String? = null
@@ -150,7 +149,7 @@ class GPerson : Serializable {
 
   /** 資料都是 gmt 的  */
   val gmtTime: LocalDateTime
-    get() = gmtTimestamp!!.toLocalDateTime()
+    get() = gmtTimestamp!!
 
   override fun toString(): String {
     val sb = StringBuffer()

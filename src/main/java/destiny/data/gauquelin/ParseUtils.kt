@@ -12,7 +12,6 @@ import destiny.core.calendar.LocationTools
 import destiny.tools.location.TimeZoneUtils
 import mu.KotlinLogging
 import java.io.Serializable
-import java.sql.Timestamp
 import java.time.LocalDate
 import java.time.LocalDateTime
 import java.util.*
@@ -73,7 +72,6 @@ class ParseUtils : Serializable {
         // 都是 GMT 時間
 
         val time = LocalDateTime.of(year, month, day, hour, minute, second)
-        val ts = Timestamp.valueOf(time)
 
 
 
@@ -140,7 +138,7 @@ class ParseUtils : Serializable {
 
       // 時間都是 GMT , 因為沒有時區這欄，所以推測都是 GMT
       val time = LocalDateTime.of(year, month, day, hour, minute, second)
-      val ts = Timestamp.valueOf(time)
+
       val location = Location(
         if (EW == 'E') EastWest.EAST else EastWest.WEST, longDeg, longMin, 0.0,
         if (NS == 'N') NorthSouth.NORTH else NorthSouth.SOUTH, latDeg, latMin, 0.0, "GMT", null, 0.0)
@@ -148,7 +146,7 @@ class ParseUtils : Serializable {
       val person = GPerson()
       person.number = number
       person.gender = -1
-      person.gmtTimestamp = ts
+      person.gmtTimestamp = time
       person.location = LocationTools.encode(location)
       person.name = name
       person.raw = line
@@ -208,7 +206,6 @@ class ParseUtils : Serializable {
 
         // 都是 GMT 時間
         val time = LocalDateTime.of(year, month, day, hour, minute, second)
-        val ts = Timestamp.valueOf(time)
         val location = Location(eastWest, lngDeg, lngMin, 0.0, northSouth, latDeg, latMin, 0.0, "GMT", null, 0.0)
 
         val COD = st.nextToken()
