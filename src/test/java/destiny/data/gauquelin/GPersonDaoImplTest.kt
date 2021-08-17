@@ -7,6 +7,7 @@ package destiny.data.gauquelin
 import destiny.core.astrology.*
 import destiny.core.astrology.AspectsCalculatorImplBuilder.Companion.aspectsCalculatorImpl
 import destiny.core.calendar.LocationTools
+import destiny.core.calendar.TimeTools
 import org.springframework.data.domain.PageRequest
 import kotlin.test.BeforeTest
 import kotlin.test.Test
@@ -155,43 +156,44 @@ class GPersonDaoImplTest : AbstractGauquelinTest() {
   private fun processHouses(p: GPerson, hc: IHoroscopeModel) {
     val housePlacidus = GPersonHouse()
 
+    val gmtJulDay = TimeTools.getGmtJulDay(hc.lmt, hc.location)
 
     val horoscopePlacidus = horoContext { houseSystem = HouseSystem.PLACIDUS }.getHoroscope(hc.lmt, hc.location)
     //hc.setHouseSystem(HouseSystem.PLACIDUS);
     p.houseMap["placidus"] = processHouse(housePlacidus, horoscopePlacidus)
 
     val houseKoch = GPersonHouse()
-    val horoscopeKoch = horoContext { houseSystem = HouseSystem.KOCH }.getHoroscope(hc.lmt, hc.location, null, IHoroscopeContext.defaultPoints)
+    val horoscopeKoch = horoContext { houseSystem = HouseSystem.KOCH }.getHoroscope(gmtJulDay, hc.location, null, IHoroscopeContext.defaultPoints)
     //hc.setHouseSystem(HouseSystem.KOCH);
     p.houseMap["Koch"] = processHouse(houseKoch, horoscopeKoch)
 
 
     val houseRegiomontanus = GPersonHouse()
-    val horoscopeReg = horoContext { houseSystem = HouseSystem.REGIOMONTANUS }.getHoroscope(hc.lmt, hc.location, null, IHoroscopeContext.defaultPoints)
+    val horoscopeReg = horoContext { houseSystem = HouseSystem.REGIOMONTANUS }.getHoroscope(gmtJulDay, hc.location, null, IHoroscopeContext.defaultPoints)
     //hc.setHouseSystem(HouseSystem.REGIOMONTANUS);
     p.houseMap["Regiomontanus"] = processHouse(houseRegiomontanus, horoscopeReg)
 
 
     val housePorphyrius = GPersonHouse()
-    val horoscopePor = horoContext { houseSystem = HouseSystem.PORPHYRIUS }.getHoroscope(hc.lmt, hc.location, null, IHoroscopeContext.defaultPoints)
+    val horoscopePor = horoContext { houseSystem = HouseSystem.PORPHYRIUS }.getHoroscope(gmtJulDay, hc.location, null, IHoroscopeContext.defaultPoints)
     //hc.setHouseSystem(HouseSystem.PORPHYRIUS);
     p.houseMap["Porphyrius"] = processHouse(housePorphyrius, horoscopePor)
 
 
     val houseCampanus = GPersonHouse()
-    val horoscopeCampanus = horoContext { houseSystem = HouseSystem.CAMPANUS }.getHoroscope(hc.lmt, hc.location, null, IHoroscopeContext.defaultPoints)
+    val horoscopeCampanus = horoContext { houseSystem = HouseSystem.CAMPANUS }.getHoroscope(gmtJulDay, hc.location, null, IHoroscopeContext.defaultPoints)
     //hc.setHouseSystem(HouseSystem.CAMPANUS);
     p.houseMap["Campanus"] = processHouse(houseCampanus, horoscopeCampanus)
 
 
     val houseEqual = GPersonHouse()
-    val horoscopeEqual = horoContext { houseSystem = HouseSystem.EQUAL }.getHoroscope(hc.lmt, hc.location, null, IHoroscopeContext.defaultPoints)
+    val horoscopeEqual = horoContext { houseSystem = HouseSystem.EQUAL }.getHoroscope(gmtJulDay, hc.location, null, IHoroscopeContext.defaultPoints)
     //hc.setHouseSystem(HouseSystem.EQUAL);
     p.houseMap["Equal"] = processHouse(houseEqual, horoscopeEqual)
 
 
     val houseAlcabitius = GPersonHouse()
-    val horoscopeAlc = horoContext { houseSystem = HouseSystem.ALCABITIUS }.getHoroscope(hc.lmt, hc.location, null, IHoroscopeContext.defaultPoints)
+    val horoscopeAlc = horoContext { houseSystem = HouseSystem.ALCABITIUS }.getHoroscope(gmtJulDay, hc.location, null, IHoroscopeContext.defaultPoints)
     //hc.setHouseSystem(HouseSystem.ALCABITIUS);
     p.houseMap["Alcabitius"] = processHouse(houseAlcabitius, horoscopeAlc)
   }

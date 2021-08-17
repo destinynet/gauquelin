@@ -6,6 +6,7 @@ package destiny.data.gauquelin
 import destiny.core.DestinyCoreContext
 import destiny.core.astrology.*
 import destiny.core.astrology.AspectsCalculatorImplBuilder.Companion.aspectsCalculatorImpl
+import destiny.core.calendar.TimeTools
 import destiny.data.gauquelin.AbsMentalReader.Companion.halp
 import destiny.data.gauquelin.AbsMentalReader.Companion.md
 import destiny.data.gauquelin.AbsMentalReader.Companion.mdp
@@ -92,8 +93,8 @@ class Analyze : DestinyCoreContext() {
     val patternContext = PatternContext(AspectEffectiveModern(), aspectsCalculator)
 
     persons.map { p ->
-
-      val horoModel: IHoroscopeModel = horoCtx.getHoroscope(p.lmt, p.loc, p.place , points)
+      val gmtJulDay = TimeTools.getGmtJulDay(p.lmt, p.loc)
+      val horoModel: IHoroscopeModel = horoCtx.getHoroscope(gmtJulDay, p.loc, p.place , points)
       val starPosMap: Map<Point, IPos> = horoModel.positionMap
       val cuspDegreeMap: Map<Int, ZodiacDegree> = horoModel.cuspDegreeMap
 
@@ -137,7 +138,8 @@ class Analyze : DestinyCoreContext() {
     val patternContext = PatternContext(AspectEffectiveModern(), aspectsCalculator)
 
     val effectiveMap = persons.map { p ->
-      val horoModel: IHoroscopeModel = horoCtx.getHoroscope(p.lmt, p.loc, p.place , points)
+      val gmtJulDay = TimeTools.getGmtJulDay(p.lmt, p.loc)
+      val horoModel: IHoroscopeModel = horoCtx.getHoroscope(gmtJulDay, p.loc, p.place , points)
       val starPosMap: Map<Point, IPos> = horoModel.positionMap
       val cuspDegreeMap: Map<Int, ZodiacDegree> = horoModel.cuspDegreeMap
 
