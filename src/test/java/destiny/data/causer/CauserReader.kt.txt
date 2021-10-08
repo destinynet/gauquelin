@@ -12,7 +12,6 @@ import destiny.core.calendar.Location
 import destiny.core.calendar.ISolarTerms
 import destiny.core.calendar.chinese.IChineseDate
 import destiny.core.calendar.eightwords.*
-import destiny.core.chinese.eightwords.IFortuneDirection
 import destiny.core.chinese.StemBranch
 import org.junit.runner.RunWith
 import org.springframework.beans.factory.annotation.Qualifier
