@@ -51,7 +51,7 @@ class TimeLocation_House_Aspect_Instance(
     // ============ House =============
     //horoscopeContext.setHouseSystem(HouseSystem.PLACIDUS);
     for (p in Planet.array) {
-      val attrString = p.toString(Locale.ENGLISH).toLowerCase()
+      val attrString = p.toString(Locale.ENGLISH).lowercase(Locale.getDefault())
       val attr = instances.attribute(attrString)
       val house = horoscope.getHouse(p)
       if (house != null) {
@@ -68,7 +68,7 @@ class TimeLocation_House_Aspect_Instance(
       val it = twoPoints.iterator()
       val p1 = it.next()
       val p2 = it.next()
-      val propName = p1.toString(Locale.ENGLISH).toLowerCase() + p2.toString(Locale.ENGLISH)
+      val propName = p1.toString(Locale.ENGLISH).lowercase(Locale.getDefault()) + p2.toString(Locale.ENGLISH)
 
       //看看是否有此 Attribute
       val attr = instances.attribute(propName)

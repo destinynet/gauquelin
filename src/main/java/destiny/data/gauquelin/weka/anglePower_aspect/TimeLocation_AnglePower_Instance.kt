@@ -87,13 +87,13 @@ class TimeLocation_AnglePower_Instance(
     val anglePower = util.anglePower
     val refUtil = RefUtil(anglePower)
     for (p in Planet.array) {
-      val planetDirStr = p.toString(Locale.ENGLISH).toLowerCase() + "Dir"
+      val planetDirStr = p.toString(Locale.ENGLISH).lowercase(Locale.getDefault()) + "Dir"
       val planetDir = instances.attribute(planetDirStr)
       instance.setValue(planetDir, refUtil.getValue(p.toString(Locale.ENGLISH)) as String)
 
-      val planetPowerStr = p.toString(Locale.ENGLISH).toLowerCase() + "Power"
+      val planetPowerStr = p.toString(Locale.ENGLISH).lowercase(Locale.getDefault()) + "Power"
       val planetPower = instances.attribute(planetPowerStr)
-      instance.setValue(planetPower, refUtil.getValue(p.toString(Locale.ENGLISH).toLowerCase() + "Power") as Double)
+      instance.setValue(planetPower, refUtil.getValue(p.toString(Locale.ENGLISH).lowercase(Locale.getDefault()) + "Power") as Double)
     }
 
     // ============ Aspect ============
@@ -105,7 +105,7 @@ class TimeLocation_AnglePower_Instance(
       val it = twoPoints.iterator()
       val p1 = it.next()
       val p2 = it.next()
-      val propName = p1.toString(Locale.ENGLISH).toLowerCase() + p2.toString(Locale.ENGLISH)
+      val propName = p1.toString(Locale.ENGLISH).lowercase(Locale.getDefault()) + p2.toString(Locale.ENGLISH)
 
       //看看是否有此 Attribute
       val attr = instances.attribute(propName)

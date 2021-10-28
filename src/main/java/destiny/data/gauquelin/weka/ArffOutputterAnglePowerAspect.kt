@@ -118,10 +118,10 @@ class ArffOutputterAnglePowerAspect(private val gpersons: List<GPerson>, private
 
         refUtil = RefUtil(anglePower)
         for (planet in Planet.array) {
-          val dir = refUtil.getValue(planet.toString(Locale.ENGLISH).toLowerCase()) as String
+          val dir = refUtil.getValue(planet.toString(Locale.ENGLISH).lowercase(Locale.getDefault())) as String
           sb.append(dir)
           sb.append(",")
-          val d = refUtil.getValue(planet.toString(Locale.ENGLISH).toLowerCase() + "Power") as Double
+          val d = refUtil.getValue(planet.toString(Locale.ENGLISH).lowercase(Locale.getDefault()) + "Power") as Double
           sb.append(d)
           sb.append(", ")
         }
