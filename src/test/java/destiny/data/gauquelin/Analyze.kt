@@ -6,6 +6,7 @@ package destiny.data.gauquelin
 import destiny.core.DestinyCoreContext
 import destiny.core.astrology.*
 import destiny.core.astrology.AspectsCalculatorImplBuilder.Companion.aspectsCalculatorImpl
+import destiny.core.astrology.HoroscopeConfigBuilder.Companion.horoscope
 import destiny.core.calendar.TimeTools
 import destiny.data.gauquelin.AbsMentalReader.Companion.halp
 import destiny.data.gauquelin.AbsMentalReader.Companion.md
@@ -28,13 +29,10 @@ import kotlin.test.Test
 @ContextConfiguration(locations = ["classpath:core.xml"])
 class Analyze : DestinyCoreContext() {
 
-
-  private lateinit var horoCtx: IHoroscopeContext
-
   private val allMental = AbsMentalReader.acd.plus(halp).plus(md).plus(mdp).plus(sch)
   private val allProfs = AbsProfReader.journalists.asSequence().plus(military).plus(musicians).plus(painters).plus(politicians).plus(scientists).plus(sports).toList()
 
-  private val points = setOf(*Planet.array , *Axis.array)
+  private val pointsToShow = setOf(*Planet.array, *Axis.array)
 
   private val aspectsCalculator = aspectsCalculatorImpl { modern {} }
 
@@ -87,7 +85,7 @@ class Analyze : DestinyCoreContext() {
 
     persons.map { p ->
       val gmtJulDay = TimeTools.getGmtJulDay(p.lmt, p.loc)
-      val horoModel: IHoroscopeModel = horoCtx.getHoroscope(gmtJulDay, p.loc, p.place , points)
+      val horoModel: IHoroscopeModel = horoscopeFeature.getModel(gmtJulDay, p.loc, horoscope { points = pointsToShow})
       val starPosMap: Map<Point, IPos> = horoModel.positionMap
       val cuspDegreeMap: Map<Int, ZodiacDegree> = horoModel.cuspDegreeMap
 
@@ -132,7 +130,8 @@ class Analyze : DestinyCoreContext() {
 
     val effectiveMap = persons.map { p ->
       val gmtJulDay = TimeTools.getGmtJulDay(p.lmt, p.loc)
-      val horoModel: IHoroscopeModel = horoCtx.getHoroscope(gmtJulDay, p.loc, p.place , points)
+
+      val horoModel: IHoroscopeModel = horoscopeFeature.getModel(gmtJulDay, p.loc, horoscope { points = pointsToShow})
       val starPosMap: Map<Point, IPos> = horoModel.positionMap
       val cuspDegreeMap: Map<Int, ZodiacDegree> = horoModel.cuspDegreeMap
 

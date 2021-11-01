@@ -8,7 +8,6 @@ import destiny.core.astrology.Aspect
 import destiny.core.astrology.AspectsCalculatorImplBuilder.Companion.aspectsCalculatorImpl
 import destiny.core.astrology.HoroscopeConfigBuilder.Companion.horoscope
 import destiny.core.astrology.HouseSystem.*
-import destiny.core.astrology.IHoroscopeContext
 import destiny.core.astrology.IHoroscopeModel
 import destiny.core.astrology.Planet
 import destiny.core.calendar.LocationTools
@@ -21,8 +20,6 @@ import kotlin.test.assertNotNull
 
 class GPersonDaoImplTest : AbstractGauquelinTest() {
 
-  /** 專供測試使用的 [IHoroscopeContext] */
-  //private lateinit var horoContext: IHoroscopeContext
 
   private var readers = listOf<TextDataReader>()
 
