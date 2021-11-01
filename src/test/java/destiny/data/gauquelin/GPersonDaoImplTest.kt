@@ -4,8 +4,13 @@
  */
 package destiny.data.gauquelin
 
-import destiny.core.astrology.*
+import destiny.core.astrology.Aspect
 import destiny.core.astrology.AspectsCalculatorImplBuilder.Companion.aspectsCalculatorImpl
+import destiny.core.astrology.HoroscopeConfigBuilder.Companion.horoscope
+import destiny.core.astrology.HouseSystem.*
+import destiny.core.astrology.IHoroscopeContext
+import destiny.core.astrology.IHoroscopeModel
+import destiny.core.astrology.Planet
 import destiny.core.calendar.LocationTools
 import destiny.core.calendar.TimeTools
 import org.springframework.data.domain.PageRequest
@@ -65,7 +70,6 @@ class GPersonDaoImplTest : AbstractGauquelinTest() {
     val count = gDao.count() - start
     println("總共 $count  筆資料")
 
-    val horoContext = horoContext {}
 
     var h: IHoroscopeModel
     for (i in 0..count / pageSize) {
@@ -74,7 +78,7 @@ class GPersonDaoImplTest : AbstractGauquelinTest() {
 
       for (p in persons) {
 
-        h = horoContext.getHoroscope(p.gmtTime, LocationTools.decode(p.location!!))
+        h = horoscopeFeature.getModel(p.gmtTime, LocationTools.decode(p.location!!))
 
         var updated = false
         if (p.aspect == null) {
@@ -128,7 +132,7 @@ class GPersonDaoImplTest : AbstractGauquelinTest() {
     for (i in 0..count / pageSize) {
       val persons = gDao.findAllByCategory(cat, (i * pageSize).toInt(), pageSize)
       for (p in persons) {
-        h = horoContext {}.getHoroscope(p.gmtTime, LocationTools.decode(p.location!!))
+        h = horoscopeFeature.getModel(p.gmtTime, LocationTools.decode(p.location!!))
         //hc = horoscopeContextBean.getHoroscopeContextPlacidus(p.getGmtTime(), Location.get(p.getLocation()));
         System.err.println(p)
         val aspect = processAspect(h)
@@ -158,42 +162,43 @@ class GPersonDaoImplTest : AbstractGauquelinTest() {
 
     val gmtJulDay = TimeTools.getGmtJulDay(hc.lmt, hc.location)
 
-    val horoscopePlacidus = horoContext { houseSystem = HouseSystem.PLACIDUS }.getHoroscope(hc.lmt, hc.location)
+
+    val horoscopePlacidus = horoscopeFeature.getModel(hc.lmt, hc.location, horoscope { houseSystem = PLACIDUS })
     //hc.setHouseSystem(HouseSystem.PLACIDUS);
     p.houseMap["placidus"] = processHouse(housePlacidus, horoscopePlacidus)
 
     val houseKoch = GPersonHouse()
-    val horoscopeKoch = horoContext { houseSystem = HouseSystem.KOCH }.getHoroscope(gmtJulDay, hc.location, null, IHoroscopeContext.defaultPoints)
+    val horoscopeKoch = horoscopeFeature.getModel(hc.lmt, hc.location, horoscope { houseSystem = KOCH })
     //hc.setHouseSystem(HouseSystem.KOCH);
     p.houseMap["Koch"] = processHouse(houseKoch, horoscopeKoch)
 
 
     val houseRegiomontanus = GPersonHouse()
-    val horoscopeReg = horoContext { houseSystem = HouseSystem.REGIOMONTANUS }.getHoroscope(gmtJulDay, hc.location, null, IHoroscopeContext.defaultPoints)
+    val horoscopeReg = horoscopeFeature.getModel(hc.lmt, hc.location, horoscope { houseSystem = REGIOMONTANUS })
     //hc.setHouseSystem(HouseSystem.REGIOMONTANUS);
     p.houseMap["Regiomontanus"] = processHouse(houseRegiomontanus, horoscopeReg)
 
 
     val housePorphyrius = GPersonHouse()
-    val horoscopePor = horoContext { houseSystem = HouseSystem.PORPHYRIUS }.getHoroscope(gmtJulDay, hc.location, null, IHoroscopeContext.defaultPoints)
+    val horoscopePor = horoscopeFeature.getModel(hc.lmt, hc.location, horoscope { houseSystem = PORPHYRIUS })
     //hc.setHouseSystem(HouseSystem.PORPHYRIUS);
     p.houseMap["Porphyrius"] = processHouse(housePorphyrius, horoscopePor)
 
 
     val houseCampanus = GPersonHouse()
-    val horoscopeCampanus = horoContext { houseSystem = HouseSystem.CAMPANUS }.getHoroscope(gmtJulDay, hc.location, null, IHoroscopeContext.defaultPoints)
+    val horoscopeCampanus = horoscopeFeature.getModel(hc.lmt, hc.location, horoscope { houseSystem = CAMPANUS })
     //hc.setHouseSystem(HouseSystem.CAMPANUS);
     p.houseMap["Campanus"] = processHouse(houseCampanus, horoscopeCampanus)
 
 
     val houseEqual = GPersonHouse()
-    val horoscopeEqual = horoContext { houseSystem = HouseSystem.EQUAL }.getHoroscope(gmtJulDay, hc.location, null, IHoroscopeContext.defaultPoints)
+    val horoscopeEqual = horoscopeFeature.getModel(hc.lmt, hc.location, horoscope { houseSystem = EQUAL })
     //hc.setHouseSystem(HouseSystem.EQUAL);
     p.houseMap["Equal"] = processHouse(houseEqual, horoscopeEqual)
 
 
     val houseAlcabitius = GPersonHouse()
-    val horoscopeAlc = horoContext { houseSystem = HouseSystem.ALCABITIUS }.getHoroscope(gmtJulDay, hc.location, null, IHoroscopeContext.defaultPoints)
+    val horoscopeAlc = horoscopeFeature.getModel(hc.lmt, hc.location, horoscope { houseSystem = ALCABITIUS })
     //hc.setHouseSystem(HouseSystem.ALCABITIUS);
     p.houseMap["Alcabitius"] = processHouse(houseAlcabitius, horoscopeAlc)
   }

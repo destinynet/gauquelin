@@ -21,7 +21,6 @@ import org.junit.jupiter.api.TestInstance
 import org.junit.jupiter.api.extension.ExtendWith
 import org.springframework.test.context.ContextConfiguration
 import org.springframework.test.context.junit.jupiter.SpringExtension
-import kotlin.test.BeforeTest
 import kotlin.test.Test
 
 @ExtendWith(SpringExtension::class)
@@ -41,12 +40,6 @@ class Analyze : DestinyCoreContext() {
 
   //private val horoAspectsCalculator = HoroscopeAspectsCalculator(aspectsCalculator)
 
-  @BeforeTest
-  fun init2() {
-    horoCtx = horoContext {
-      //points(points)
-    }
-  }
 
   @Test
   fun runMental() {

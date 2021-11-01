@@ -6,6 +6,7 @@ package destiny.data.gauquelin.weka.house_aspect
 import destiny.core.astrology.*
 import destiny.core.calendar.Location
 import destiny.data.gauquelin.weka.InstanceIF
+import destiny.tools.Feature
 import weka.core.Instance
 import weka.core.Instances
 import java.io.File
@@ -15,10 +16,10 @@ import java.util.*
 
 /** 從 time , location 取得 instance  */
 class TimeLocation_House_Aspect_Instance(
-  horoscopeContext: IHoroscopeContext,
+  horoscopeFeature: Feature<HoroscopeConfig, IHoroscopeModel>,
   time: LocalDateTime, location: Location,
   private val aspectsCalculator : IAspectsCalculator) : InstanceIF {
-  private val horoscope: IHoroscopeModel = horoscopeContext.getHoroscope(time, location)
+  private val horoscope: IHoroscopeModel = horoscopeFeature.getModel(time, location)
 
 
   private fun getInstancesFromFile() : Instances {

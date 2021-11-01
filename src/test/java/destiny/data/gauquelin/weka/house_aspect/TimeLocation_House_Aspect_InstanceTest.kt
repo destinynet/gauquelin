@@ -4,7 +4,6 @@
 package destiny.data.gauquelin.weka.house_aspect
 
 import destiny.core.astrology.AspectsCalculatorImplBuilder.Companion.aspectsCalculatorImpl
-import destiny.core.astrology.horoContext
 import destiny.core.calendar.locationOf
 import destiny.data.gauquelin.AbstractGauquelinTest
 import java.time.LocalDateTime
@@ -17,10 +16,8 @@ class TimeLocation_House_Aspect_InstanceTest : AbstractGauquelinTest() {
   @Test
   fun testGetInstance() {
 
-    val horoContext = horoContext { }
-
     for (i in 1..1) {
-      val tli = TimeLocation_House_Aspect_Instance(horoContext, LocalDateTime.of(2000, 9, i, 0, 0, 0),
+      val tli = TimeLocation_House_Aspect_Instance(horoscopeFeature, LocalDateTime.of(2000, 9, i, 0, 0, 0),
         locationOf(Locale.TAIWAN), aspectsCalculatorImpl { modern {} })
       val instance = tli.instance
       println(instance)

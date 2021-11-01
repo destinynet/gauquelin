@@ -9,6 +9,7 @@ import destiny.core.calendar.ILocation
 import destiny.data.gauquelin.RefUtil
 import destiny.data.gauquelin.UtilHoroscopeAnglePower
 import destiny.data.gauquelin.weka.InstanceIF
+import destiny.tools.Feature
 import weka.core.Instance
 import weka.core.Instances
 import java.io.InputStreamReader
@@ -16,10 +17,10 @@ import java.time.chrono.ChronoLocalDateTime
 import java.util.*
 
 class TimeLocation_AnglePower_Instance(
-  val horoscopeContext: IHoroscopeContext,
-
+  private val horoscopeFeature: Feature<HoroscopeConfig, IHoroscopeModel>,
+  private val horoscopeConfig: HoroscopeConfig,
   private val time: ChronoLocalDateTime<*>,
-  private val location: ILocation ,
+  private val location: ILocation,
   private val aspectsCalculator : IAspectsCalculator) : InstanceIF  {
 
 
@@ -79,7 +80,7 @@ class TimeLocation_AnglePower_Instance(
 //      points(pointSet)
 //    }
     //val context = HoroscopeContext(pointSet, HouseSystem.PLACIDUS, Coordinate.ECLIPTIC, Centric.GEO, starPositionWithAzimuthImpl, houseCuspImpl)
-    val horoscope = horoscopeContext.getHoroscope(time , location)
+    val horoscope = horoscopeFeature.getModel(time , location)
 
     // ================ AnglePower =================
     //horoscopeContext.setHouseSystem(HouseSystem.PLACIDUS);
