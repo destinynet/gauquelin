@@ -26,7 +26,7 @@ class TimeLocation_AnglePower_Instance(
 
 
 
-  val pointSet = setOf<Point>(*Planet.array,*Asteroid.array,*Hamburger.array,*FixedStar.array,*LunarNode.meanArray)
+  val pointSet = setOf<Point>(*Planet.values, *Asteroid.values, *Hamburger.values, *FixedStar.values, *LunarNode.meanArray)
 
 
   val instances: Instances by lazy {
@@ -87,7 +87,7 @@ class TimeLocation_AnglePower_Instance(
     val util = UtilHoroscopeAnglePower(horoscope)
     val anglePower = util.anglePower
     val refUtil = RefUtil(anglePower)
-    for (p in Planet.array) {
+    for (p in Planet.values) {
       val planetDirStr = p.toString(Locale.ENGLISH).lowercase(Locale.getDefault()) + "Dir"
       val planetDir = instances.attribute(planetDirStr)
       instance.setValue(planetDir, refUtil.getValue(p.toString(Locale.ENGLISH)) as String)

@@ -51,7 +51,7 @@ class TimeLocation_House_Aspect_Instance(
 
     // ============ House =============
     //horoscopeContext.setHouseSystem(HouseSystem.PLACIDUS);
-    for (p in Planet.array) {
+    for (p in Planet.values) {
       val attrString = p.toString(Locale.ENGLISH).lowercase(Locale.getDefault())
       val attr = instances.attribute(attrString)
       val house = horoscope.getHouse(p)

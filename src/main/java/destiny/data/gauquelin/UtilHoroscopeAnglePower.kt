@@ -20,7 +20,7 @@ class UtilHoroscopeAnglePower(h: IHoroscopeModel) : Serializable {
     val degTop = h.getCuspDegree(10)
     val degWest = h.getCuspDegree(7)
     val degBottom = h.getCuspDegree(4)
-    for (planet in Planet.array) {
+    for (planet in Planet.values) {
       //與四個頂點，哪個點最近
       var nearestAngle: String? = null
       var tempError = 360.0

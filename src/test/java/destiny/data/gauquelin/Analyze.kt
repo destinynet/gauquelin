@@ -32,7 +32,7 @@ class Analyze : DestinyCoreContext() {
   private val allMental = AbsMentalReader.acd.plus(halp).plus(md).plus(mdp).plus(sch)
   private val allProfs = AbsProfReader.journalists.asSequence().plus(military).plus(musicians).plus(painters).plus(politicians).plus(scientists).plus(sports).toList()
 
-  private val pointsToShow = setOf(*Planet.array, *Axis.array)
+  private val pointsToShow = setOf(*Planet.values, *Axis.array)
 
   private val aspectsCalculator = aspectsCalculatorImpl { modern {} }
 
