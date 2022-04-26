@@ -6,6 +6,7 @@ package destiny.data.gauquelin.weka.anglePower_aspect
 
 import destiny.core.astrology.*
 import destiny.core.calendar.ILocation
+import destiny.core.toString
 import destiny.data.gauquelin.RefUtil
 import destiny.data.gauquelin.UtilHoroscopeAnglePower
 import destiny.data.gauquelin.weka.InstanceIF

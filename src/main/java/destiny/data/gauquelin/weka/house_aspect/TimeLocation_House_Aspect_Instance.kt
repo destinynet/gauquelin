@@ -5,6 +5,7 @@ package destiny.data.gauquelin.weka.house_aspect
 
 import destiny.core.astrology.*
 import destiny.core.calendar.Location
+import destiny.core.toString
 import destiny.data.gauquelin.weka.InstanceIF
 import destiny.tools.Feature
 import weka.core.Instance
