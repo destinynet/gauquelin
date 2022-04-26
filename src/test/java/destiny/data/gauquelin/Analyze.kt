@@ -86,7 +86,7 @@ class Analyze : DestinyCoreContext() {
     persons.map { p ->
       val gmtJulDay = TimeTools.getGmtJulDay(p.lmt, p.loc)
       val horoModel: IHoroscopeModel = horoscopeFeature.getModel(gmtJulDay, p.loc, horoscope { points = pointsToShow})
-      val starPosMap: Map<Point, IPos> = horoModel.positionMap
+      val starPosMap: Map<AstroPoint, IPos> = horoModel.positionMap
       val cuspDegreeMap: Map<Int, ZodiacDegree> = horoModel.cuspDegreeMap
 
       total++
@@ -132,7 +132,7 @@ class Analyze : DestinyCoreContext() {
       val gmtJulDay = TimeTools.getGmtJulDay(p.lmt, p.loc)
 
       val horoModel: IHoroscopeModel = horoscopeFeature.getModel(gmtJulDay, p.loc, horoscope { points = pointsToShow})
-      val starPosMap: Map<Point, IPos> = horoModel.positionMap
+      val starPosMap: Map<AstroPoint, IPos> = horoModel.positionMap
       val cuspDegreeMap: Map<Int, ZodiacDegree> = horoModel.cuspDegreeMap
 
       total++

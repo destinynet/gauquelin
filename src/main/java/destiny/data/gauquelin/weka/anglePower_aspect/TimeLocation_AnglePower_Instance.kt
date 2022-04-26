@@ -26,7 +26,7 @@ class TimeLocation_AnglePower_Instance(
 
 
 
-  val pointSet = setOf<Point>(*Planet.values, *Asteroid.values, *Hamburger.values, *FixedStar.values, *LunarNode.meanArray)
+  val pointSet = setOf<AstroPoint>(*Planet.values, *Asteroid.values, *Hamburger.values, *FixedStar.values, *LunarNode.meanArray)
 
 
   val instances: Instances by lazy {
