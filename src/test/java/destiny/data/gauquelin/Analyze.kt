@@ -22,6 +22,7 @@ import org.junit.jupiter.api.TestInstance
 import org.junit.jupiter.api.extension.ExtendWith
 import org.springframework.test.context.ContextConfiguration
 import org.springframework.test.context.junit.jupiter.SpringExtension
+import java.util.*
 import kotlin.test.Test
 
 @ExtendWith(SpringExtension::class)
@@ -100,7 +101,7 @@ class Analyze : DestinyCoreContext() {
       logger.info("[{} {}] \t {}", index, p.name, p.raw)
       logger.trace("lmt = {} , loc = {} ", p.lmt, p.loc)
       patterns.forEach { pattern ->
-        logger.info("\t{} , 分數 : {}", pattern.notes , pattern.score)
+        logger.info("\t{} , 分數 : {}", pattern.getNotes(Locale.TAIWAN), pattern.score)
       }
       matched++
     }
