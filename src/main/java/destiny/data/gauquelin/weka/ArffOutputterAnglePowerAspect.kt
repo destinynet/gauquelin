@@ -8,6 +8,7 @@ import destiny.core.astrology.Planet
 import destiny.core.toString
 import destiny.data.gauquelin.GPerson
 import destiny.data.gauquelin.RefUtil
+import mu.KotlinLogging
 import java.io.BufferedWriter
 import java.io.FileWriter
 import java.util.*
@@ -203,6 +204,7 @@ class ArffOutputterAnglePowerAspect(private val gpersons: List<GPerson>, private
       }
 
     } catch (e: Exception) {
+      logger.warn { "error : $e" }
     }
 
   } // process()
@@ -218,6 +220,10 @@ class ArffOutputterAnglePowerAspect(private val gpersons: List<GPerson>, private
     else if (orig.equals("Square", ignoreCase = true) || orig.equals("Opposition", ignoreCase = true))
       return "SquareOpposition"
     return orig
+  }
+
+  companion object {
+    private val logger = KotlinLogging.logger { }
   }
 
 }

@@ -4,6 +4,7 @@
 package destiny.data.gauquelin.weka
 
 import destiny.data.gauquelin.GPerson
+import mu.KotlinLogging
 import java.io.BufferedWriter
 import java.io.FileWriter
 import java.io.Serializable
@@ -148,6 +149,7 @@ class ArffOutputerHouseAspect(private val gpersons: List<GPerson>, private val o
         bWriter.flush()
       }
     } catch (e: Exception) {
+      logger.warn { "error : $e" }
     }
   }
 
@@ -160,5 +162,9 @@ class ArffOutputerHouseAspect(private val gpersons: List<GPerson>, private val o
 
   init {
     process()
+  }
+
+  companion object {
+    private val logger = KotlinLogging.logger { }
   }
 }
