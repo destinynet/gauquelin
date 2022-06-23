@@ -5,7 +5,7 @@ package destiny.data.gauquelin
 
 import destiny.core.astrology.AspectData
 import destiny.core.astrology.Planet
-import destiny.core.astrology.toString
+import destiny.tools.getTitle
 import java.io.Serializable
 import java.util.*
 import javax.persistence.*
@@ -71,7 +71,7 @@ class GPersonAspect : Serializable {
 
   fun setAspect(data: AspectData) {
     val twoPoints = data.points
-    val localeString = data.aspect.toString(Locale.ENGLISH)
+    val localeString = data.aspect.getTitle(Locale.ENGLISH)
 
     if (twoPoints.contains(Planet.SUN) && twoPoints.contains(Planet.MOON))
       sunMoon = localeString
